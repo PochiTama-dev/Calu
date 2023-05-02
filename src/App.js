@@ -4,7 +4,7 @@ import  Home from './Components/Home/Home';
 import  About  from './Components/About/About';
 import  Contact  from './Components/Contact/Contact';
 import  Services  from './Components/Services/Services';
-
+import './App.css'
 function App() {
   return (
     <Router>
