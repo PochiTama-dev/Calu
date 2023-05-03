@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Calu/static/css/main.e5b2f880.css",
+    "main.js": "/Calu/static/js/main.f4d0b982.js",
+    "static/js/787.0b9e84b2.chunk.js": "/Calu/static/js/787.0b9e84b2.chunk.js",
+    "index.html": "/Calu/index.html",
+    "main.e5b2f880.css.map": "/Calu/static/css/main.e5b2f880.css.map",
+    "main.f4d0b982.js.map": "/Calu/static/js/main.f4d0b982.js.map",
+    "787.0b9e84b2.chunk.js.map": "/Calu/static/js/787.0b9e84b2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5b2f880.css",
+    "static/js/main.f4d0b982.js"
+  ]
+}
