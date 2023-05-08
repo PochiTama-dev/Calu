@@ -1,66 +1,38 @@
-import React from "react";
+import { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
+import './home.css'
 
-function Home() {
-  const cloudLayerLeftStyle = {
-    position: "fixed",
-    left: "0",
-    top: "0",
-    zIndex: "-1",
-    animation: "slide-left 30s linear infinite",
-  };
+const Home = () => {
+  const numSections = 4;
+  const [currentSection, setCurrentSection] = useState(0);
 
-  const cloudLayerRightStyle = {
-    position: "fixed",
-    right: "0",
-    top: "0",
-    zIndex: "-1",
-    animation: "slide-right 40s linear infinite",
-  };
-
-  const clouds = Array.from({ length: 40 }, (_, i) => {
-    const xPos = Math.random() * window.innerWidth;
-    const yPos = Math.random() * window.innerHeight;
-    const minSize = 1000;
-    const maxSize = 1250;
-    const size = Math.floor(
-      Math.random() * (maxSize - minSize + 1) + minSize
-    );
-    const aspectRatio = 0.75;
-
-    const width = Math.floor(size * aspectRatio);
-    const height = size;
-
-    const slideCloudsKeyframes = `@keyframes slide-clouds-${i} {
-      0% { left: ${xPos - window.innerWidth}px; }
-      100% { left: ${xPos + window.innerWidth}px; }
-    }`;
-
-    return (
-      <>
-        <style>{slideCloudsKeyframes}</style>
-        <img
-          key={i}
-          style={{
-            position: "absolute",
-            left: `${xPos}px`,
-            top: `${yPos}px`,
-            width: `${width}px`,
-            height: `${height}px`,
-            animation: `slide-clouds-${i} 60s linear infinite`,
-          }}
-          src="./nube1.png"
-          alt="cloud"
-        />
-      </>
-    );
+  const handlers = useSwipeable({
+    onSwipedUp: () => setCurrentSection((prev) => Math.min(prev + 1, numSections - 1)),
+    onSwipedDown: () => setCurrentSection((prev) => Math.max(prev - 1, 0)),
   });
 
+  const handleScroll = (e) => {
+    const delta = e.deltaY;
+    if (delta > 0) {
+      setCurrentSection((prev) => Math.min(prev + 1, numSections - 1));
+    } else if (delta < 0) {
+      setCurrentSection((prev) => Math.max(prev - 1, 0));
+    }
+  };
+
   return (
-    <>
-      <div style={cloudLayerLeftStyle}>{clouds}</div>
-      <div style={cloudLayerRightStyle}>{clouds}</div>
-    </>
+    <div {...handlers} onWheel={handleScroll} style={{ 
+      transform: `translateY(-${currentSection * 100}vh)`,
+      height: '110vh',
+      width: '100%',
+      transition: 'transform 0.5s ease-in-out'
+    }}>
+      <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className="section-1">Sección 1</section>
+      <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className="section-2">Sección 2</section>
+      <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className="section-3">Sección 3</section>
+      <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className="section-4">Sección 4</section>
+    </div>
   );
-}
+};
 
 export default Home;
