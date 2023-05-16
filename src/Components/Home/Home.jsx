@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import './home.css'
+import { Header} from '../Header/header';
 
 const Home = () => {
   const numSections = 4;
@@ -27,6 +28,7 @@ const Home = () => {
       width: '100%',
       transition: 'transform 0.5s ease-in-out'
     }}>
+      <Header/>
       <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className="section-1">Sección 1</section>
       <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className="section-2">Sección 2</section>
       <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className="section-3">Sección 3</section>
