@@ -1,15 +1,38 @@
-.section-1{
+.title-first{
+    color: #3AF6FF;
+}
+.sub-first{
+    color:#EB39D9;
+}
+
+.sub-second{
+    color: white;
+}
+
+.section-1, .section-2 p{
+    color: white;
+}
+
+.ctn-servicios{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: red;
 }
-.section-2{
-    background-color: blue;
-}
-.section-3{
-    background-color: green;
-}
-.section-4{
-    background-color: yellow;
-}
-.section-5{
-    background-color: purple;
-}
+
+.animate__fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
