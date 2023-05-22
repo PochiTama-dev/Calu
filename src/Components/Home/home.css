@@ -1,22 +1,51 @@
-.title-first{
-    color: #3AF6FF;
+
+.title-first-quienes-somos{
+  color: #3AF6FF;
+  padding:35% 0% 3% 0%;
+  text-align: center;
+
 }
+
 .sub-first{
     color:#EB39D9;
+    text-align: center;
+    line-height: 15px;
+    
 }
 
 .sub-second{
     color: white;
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+.text-first{
+  text-align: center;
+
 }
 
 .section-1, .section-2 p{
     color: white;
+    padding: 0px 3px
+}
+
+.title-first-nuestros-servicios{
+  color: #3AF6FF;
+  padding: 14% 0% 3% 0%;
+  text-align: center;
+}
+
+.text-second{
+  text-align: center;
+  margin-bottom: 7%;
+
 }
 
 .ctn-servicios{
     width: 80%;
     height: 40%;
     display: flex;
+    margin: 0% auto;
     justify-content: center;
     align-items: center;
     background-color: red;
