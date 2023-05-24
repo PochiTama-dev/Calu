@@ -24,7 +24,7 @@
 
 }
 
-.section-1, .section-2 p{
+.section-1, .section-2, .section-3 p{
     color: white;
     padding: 0px 3px;
 }
@@ -41,7 +41,7 @@
 
 }
 
-.ctn-servicios{
+.ctn-servicios, .ctn-portafolio {
     width: 90%;
     height: 25%;
     display: flex;
@@ -51,14 +51,14 @@
     /* background-color: rgba(0, 0, 255, 0.288); */
 }
 
-.icono{
+.icono-servicios, .icono-portafolio{
   justify-content: space-between;
   width: 29%;
   height: 30%;
   padding: 0% 3% 0% 3%;
 }
 
-.text-icono, .text-icono2, .text-icono3{
+.text-icono-servicios, .text-icono2-servicios, .text-icono3-servicios, .text-icono-portafolio, .text-icono2-portafolio, .text-icono3-portafolio{
   position: fixed;
   font-size: 12px;
   width: 30%;
@@ -66,16 +66,59 @@
   text-align: center;
 }
 
-.text-icono{
-  margin: 90% 60% 0% 1% ;
+.text-icono-servicios{
+  margin: 90% 60% 0% 1%;
 }
 
-.text-icono2{
+.text-icono2-servicios{
   margin: 90% 3% 0% 4%;
 }
 
-.text-icono3{
-  margin: 90% 3% 0% 60%;
+.text-icono3-servicios{
+  margin: 90% 2% 0% 60%;
+}
+
+.title-first-portafolio{
+  color: #3AF6FF;
+  padding: 14% 0% 3% 0%;
+  text-align: center;
+}
+
+.text-icono-portafolio, .text-icono2-portafolio, .text-icono3-portafolio{
+  font-size: 11px;
+}
+
+.text-icono-portafolio{
+  margin: 90% 60% 0% 1%;
+}
+
+.text-icono2-portafolio{
+  margin: 90% 3% 0% 4%;
+}
+
+.text-icono3-portafolio{
+  margin: 90% 0% 0% 60%;
+}
+
+.button-portafolio, .button-portafolio2, .button-portafolio3{
+  position: fixed;
+  font-size: 13px;
+  width: 17%;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-color: linear-gradient(180deg, rgba(58,246,255,1) 40%, rgba(185,4,139,0.9154228855721394) 60%);
+}
+
+.button-portafolio{
+  margin: 52% 60% 0% 1%;
+}
+
+.button-portafolio2{
+  margin: 52% 3% 0% 4%;
+}
+
+.button-portafolio3{
+  margin: 52% 0% 0% 60%;
 }
 
 .animate__fadeIn {

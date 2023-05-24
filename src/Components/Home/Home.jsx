@@ -6,6 +6,7 @@ import { Header} from '../Header/header';
 import icono from "../Home/icon_eye.svg"
 import icono2 from "../Home/🦆 icon _key_.svg"
 import icono3 from "../Home/🦆 icon _pie chart_.svg"
+import icono4 from "../Home/icono_imagen.svg"
 
 const Home = () => {
   const numSections = 4;
@@ -44,15 +45,29 @@ const Home = () => {
         <h1 className='title-first-nuestros-servicios'>NUESTROS SERVICIOS</h1>
         <p className='text-second'>Contamos con una amplia gama de servicios diseñados a la medida de cada emprendimiento que quie ra tener éxito en el mundo digital.</p>
         <div className='ctn-servicios'>
-          <img className='icono' src={icono3} alt="icono pay" />
-          <p className='text-icono'>CONSULTORIA ESTRATEGICA</p>
-          <img className='icono' src={icono} alt="icono ojo" />
-          <p className='text-icono2'>GESTIÓN DE REDES SOCIALES</p>
-          <img className='icono' src={icono2} alt="icono llave" />
-          <p className='text-icono3'>PUBLICIDAD DIGITAL</p>
+          <img className='icono-servicios' src={icono3} alt="icono pay" />
+          <p className='text-icono-servicios'>CONSULTORIA ESTRATEGICA</p>
+          <img className='icono-servicios' src={icono} alt="icono ojo" />
+          <p className='text-icono2-servicios'>GESTIÓN DE REDES SOCIALES</p>
+          <img className='icono-servicios' src={icono2} alt="icono llave" />
+          <p className='text-icono3-servicios'>PUBLICIDAD DIGITAL</p>
         </div>
       </section>
-      <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className={`section-3 ${currentSection === 2 ? 'animate__animated animate__fadeIn' : ''}`}><h1 className='title-first'>PORTAFOLIO</h1></section>
+      <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className={`section-3 ${currentSection === 2 ? 'animate__animated animate__fadeIn' : ''}`}>
+        <h1 className='title-first-portafolio'>PORTAFOLIO</h1>
+        <p className='text-second'>Ya son varias las personas que decidieron confiar en nuestros servicios y sumarse a la transformación digital.</p>
+        <div className='ctn-portafolio'>
+          <img className='icono-portafolio' src={icono4} alt="icono pay" />
+          <p className='text-icono-portafolio'>DON OFICIOS</p>
+          <a className='button-portafolio' href=" ">Ver mas</a>
+          <img className='icono-portafolio' src={icono4} alt="icono ojo" />
+          <p className='text-icono2-portafolio'>STILL JOBS</p>
+          <a className='button-portafolio2' href=" ">Ver mas</a>
+          <img className='icono-portafolio' src={icono4} alt="icono llave" />
+          <p className='text-icono3-portafolio'>COMUNIDAD DE MARCAS</p>
+          <a className='button-portafolio3' href=" ">Ver mas</a>
+        </div>
+      </section>
       <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className={`section-4 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}><h1 className='title-first'>NOVEDADES</h1></section>
     </div>
   );
