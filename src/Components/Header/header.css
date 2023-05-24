@@ -1,0 +1,13 @@
+.navBar {
+    width: 100%;
+    background: linear-gradient(130deg, rgba(6,68,223,0.6671043417366946) 0%, rgba(0,20,70,1) 40%);
+    height: 85px;
+}
+
+.logoCalu {
+    display: flex;
+    justify-content: start;
+    width: 10%;
+    height: 85px;
+    padding-left: 1%;
+}

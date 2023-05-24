@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import 'animate.css/animate.min.css';
 import './home.css'
+import { Header} from '../Header/header';
 
 const Home = () => {
   const numSections = 4;
@@ -28,6 +29,7 @@ const Home = () => {
       width: '100%',
       transition: 'transform 0.5s ease-in-out'
     }}>
+      <Header/>
       <section style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }} className={`section-1 ${currentSection === 0 ? 'animate__animated animate__fadeIn' : ''}`}>
          <h1 className='title-first'>¿QUIENES SOMOS?</h1>
          <h2 className='sub-first'>SOMOS UN EQUIPO</h2>
