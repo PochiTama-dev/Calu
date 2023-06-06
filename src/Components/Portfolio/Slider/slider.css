@@ -1,0 +1,22 @@
+.container {
+  margin: 0px 20% 0px 20%;
+}
+
+.btn_arr {
+  background-color: transparent;
+  border: none;
+  margin-top: 70px;
+}
+.arrow:hover {
+  border: solid 2px rgba(58, 246, 255, 1);
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .title-first-quienes-somos {
+    color: #3af6ff;
+    padding: 25% 0% 2% 0%;
+    text-align: left;
+    font-size: 150%;
+  }
+}
