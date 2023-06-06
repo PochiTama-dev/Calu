@@ -6,7 +6,7 @@ import { Header } from "../Header/header";
 import icono from "../Home/icon_eye.svg";
 import icono2 from "../Home/🦆 icon _key_.svg";
 import icono3 from "../Home/🦆 icon _pie chart_.svg";
-import Portfolio from "../Portfolio/Portfolio";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   const numSections = 4;
@@ -77,7 +77,6 @@ const Home = () => {
         }`}
       >
         <div className="ctn-portafolio"></div>
-        <Portfolio></Portfolio>
       </section>
       <section
         style={{ height: "110vh", transition: "transform 0.5s ease-in-out" }}
@@ -87,6 +86,7 @@ const Home = () => {
       >
         <h1 className="title-first">NOVEDADES</h1>
       </section>
+      <Footer> </Footer>
     </div>
   );
 };
