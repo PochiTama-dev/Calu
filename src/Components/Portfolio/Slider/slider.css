@@ -11,6 +11,17 @@
   border: solid 2px rgba(58, 246, 255, 1);
   cursor: pointer;
 }
+.arrowL {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  left: 0;
+}
+.arrowR {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
 
 @media (max-width: 480px) {
   .title-first-quienes-somos {
