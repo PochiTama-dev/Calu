@@ -1,0 +1,75 @@
+.about_container {
+  margin: 2% 15% 0% 15%;
+}
+.title-first-quienes-somos {
+  color: #3af6ff;
+  padding: 5% 0% 2% 0%;
+  text-align: left;
+  font-size: 62px;
+}
+
+.sub-first {
+  color: #eb39d9;
+  text-align: left;
+  line-height: 15px;
+  font-size: 40px;
+}
+
+.sub-second {
+  color: white;
+  text-align: left;
+  padding-bottom: 1%;
+  font-size: 40px;
+}
+
+.text-first {
+  text-align: justify;
+  font-size: 24px;
+}
+.text-last {
+  color: white;
+  text-align: left;
+  padding-bottom: 1%;
+  margin-top: 3%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .title-first-quienes-somos {
+    color: #3af6ff;
+    padding: 25% 0% 2% 0%;
+    text-align: left;
+    font-size: 150%;
+  }
+
+  .sub-first {
+    padding-top: 5%;
+    color: #eb39d9;
+    text-align: left;
+    line-height: 15px;
+    font-size: 120%;
+  }
+
+  .sub-second {
+    color: white;
+    text-align: left;
+    padding-bottom: 1%;
+    font-size: 120%;
+  }
+
+  .text-first {
+    padding-top: 5%;
+    text-align: justify;
+    font-size: 100%;
+  }
+  .text-last {
+    padding-top: 5%;
+    color: white;
+    text-align: left;
+    padding-bottom: 1%;
+    margin-top: 3%;
+    font-size: 120%;
+    font-weight: bold;
+  }
+}
