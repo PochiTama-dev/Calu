@@ -17,8 +17,10 @@ export const Header = () => {
           <img className='logoCalu' src={miImagen} alt='Logo Calu' />
         </Link>
         <div className={showLinks ? 'links ' : 'link show '}>
-          <Link to={'/blog'}> Blog </Link>
+          <Link to={'/'}> Home </Link>
           <Link to={'/services'}> Servicios </Link>
+          <Link to={'/blog'}> Blog </Link>
+          <Link to={'/Contact'}> Contacto </Link>
         </div>
         <span
           onClick={handleLinks}
