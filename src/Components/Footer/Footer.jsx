@@ -1,15 +1,21 @@
 import React from "react";
 import "./footer.css";
-import face_icon from "./social_icon.svg";
+
 import calu_logo from "./calu_logo.svg";
+import fb_logo from "./Facebook.png";
+import insta_logo from "./Instagram.png";
+import ld_logo from "./Linkedin.png";
+import tk_logo from "./TikTok.png";
+import sp_logo from "./Spotify.png";
 
 const Footer = () => {
   return (
     <div className="footer_container">
-      <div className="logo">
-        <img className="logo_img" src={calu_logo} alt="calu" />
+      <div className="logo_calu">
+        <img src={calu_logo} alt="calu" />
         <p>TU AGENCIA DE MARKETING DIGITAL</p>
       </div>
+
       <div className="servicios">
         <h2>SERVICIOS</h2>
         <ul>
@@ -20,12 +26,25 @@ const Footer = () => {
           <li>Email Marketing</li>
         </ul>
       </div>
+
       <div className="redes">
-        <h1>REDES</h1>
+        <h2>REDES</h2>
         <div className="social_icons">
-          <img src={face_icon} alt="" />
-          <img src={face_icon} alt="" />
-          <img src={face_icon} alt="" />
+          <a href="">
+            <img src={ld_logo} alt="linkedin" />
+          </a>
+          <a href="">
+            <img src={fb_logo} alt="facebook" />
+          </a>
+          <a href="">
+            <img src={insta_logo} alt="instagram" />
+          </a>
+          <a href="">
+            <img src={tk_logo} alt="tiktok" />
+          </a>
+          <a href="">
+            <img src={sp_logo} alt="spotify" />
+          </a>
         </div>
       </div>
     </div>
