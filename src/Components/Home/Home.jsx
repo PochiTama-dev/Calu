@@ -11,6 +11,7 @@ import Portfolio from "../Portfolio/Portfolio";
 const Home = () => {
   const numSections = 4;
   const [currentSection, setCurrentSection] = useState(0);
+  const [showText, setShowText] = useState(null);
 
   const handlers = useSwipeable({
     onSwipedUp: () =>
@@ -27,20 +28,24 @@ const Home = () => {
     }
   };
 
+  const handleShowText = (text) => {
+    setShowText(text === showText ? null : text);
+  };
+
   return (
     <div
       {...handlers}
       onWheel={handleScroll}
       style={{
         transform: `translateY(-${currentSection * 100}vh)`,
-        height: "100vh",
+<  height: "100vh",
         width: "100%",
         transition: "transform 0.5s ease-in-out",
       }}
     >
       <Header />
       <section
-        style={{
+  style={{
           height: "110vh",
           transition: "transform 0.5s ease-in-out",
         }}
@@ -87,6 +92,7 @@ const Home = () => {
       >
         <h1 className="title-first">NOVEDADES</h1>
       </section>
+
     </div>
   );
 };

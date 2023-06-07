@@ -1,13 +1,58 @@
 .navBar {
-    width: 100%;
-    background: linear-gradient(130deg, rgba(6,68,223,0.6671043417366946) 0%, rgba(0,20,70,1) 40%);
-    height: 85px;
+  width: 100%;
+  background: linear-gradient(
+    130deg,
+    rgba(6, 68, 223, 0.6671043417366946) 0%,
+    rgba(0, 20, 70, 1) 40%
+  );
+  height: 23%;
 }
 
 .logoCalu {
+  display: flex;
+  justify-content: start;
+  height: 10rem;
+  padding: 1% 1%;
+}
+
+.navBar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+.link a {
+  text-decoration: none;
+}
+.burger {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .burger {
+    display: block;
+    width: 5vh;
+    height: 5vh;
+    margin: 10px;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+  }
+  .link.show {
     display: flex;
-    justify-content: start;
-    width: 22%;
-    height: 78px;
-    padding: 1% 1%;
+    width: 45%;
+    justify-content: space-between;
+  }
+  .link.show a {
+    text-decoration: none;
+  }
+  .link {
+    display: none;
+  }
 }
