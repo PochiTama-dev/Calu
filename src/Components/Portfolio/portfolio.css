@@ -1,0 +1,57 @@
+.slider {
+  margin: 150px 250px 0px 250px;
+}
+.title-first-portafolio {
+  color: #3af6ff;
+  padding: 5% 0% 0% 0%;
+  text-align: left;
+  font-size: 58px;
+}
+.text_second {
+  text-align: left;
+  margin-bottom: 0%;
+  font-size: 24px;
+  margin: 0% 15% 0px 15%;
+  color: white;
+  padding: 0px 3px;
+}
+.card p {
+  color: white;
+  font-weight: bold;
+}
+.button-portafolio {
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  /*color: linear-gradient(
+    180deg,
+    rgba(58, 246, 255, 1) 40%,
+    rgba(185, 4, 139, 0.9154228855721394) 60%
+  );*/
+}
+.title-first-portafolio {
+  margin: 5% 15% 0px 15%;
+}
+@media (max-width: 480px) {
+  .portfolio_container {
+    width: 100%;
+  }
+  .title-first-portafolio {
+    color: #3af6ff;
+    padding: 5% 0% 5% 0%;
+    text-align: left;
+    font-size: 150%;
+  }
+
+  .text_second {
+    text-align: left;
+    margin-bottom: 0%;
+    font-size: 100%;
+    margin: 0% 15% 0px 15%;
+  }
+
+  .slider {
+    margin: auto;
+  }
+}

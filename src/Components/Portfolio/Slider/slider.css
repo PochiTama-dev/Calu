@@ -1,0 +1,34 @@
+.arrowL {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 100px;
+  width: 50px;
+}
+.arrowR {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 100px;
+}
+.carouselItem {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+@media (max-width: 480px) {
+  .title-first-quienes-somos {
+    color: #3af6ff;
+    padding: 25% 0% 2% 0%;
+    text-align: left;
+    font-size: 150%;
+  }
+  .arrowL {
+    width: 30px;
+  }
+  .arrowR {
+    width: 30px;
+  }
+}
