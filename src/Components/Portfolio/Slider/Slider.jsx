@@ -20,23 +20,35 @@ function Slider({ children }) {
       items: 1,
     },
   };
+  const CustomLeftArrow = ({ onClick }) => (
+    <div onClick={onClick}>
+      <img src={arrow_L} alt=" <= " className="arrowL" />
+    </div>
+  );
+
+  const CustomRightArrow = ({ onClick }) => (
+    <div onClick={onClick}>
+      <img src={arrow_R} alt=" => " className="arrowR" />
+    </div>
+  );
   return (
-    <div>
-      <div className="container">
-        <Carousel
-          renderButtonGroupOutside={true}
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          swipeable={true}
-          draggable={false}
-          infinite={true}
-          responsive={responsive}
-          showDots={false}
-        >
-          {children.map((children) => {
-            return <div>{children}</div>;
-          })}
-        </Carousel>
-      </div>
+    <div className="container">
+      <Carousel
+        containerClass="carousel-container"
+        renderButtonGroupOutside={true}
+        swipeable={true}
+        draggable={false}
+        infinite={true}
+        responsive={responsive}
+        showDots={false}
+        customLeftArrow={<CustomLeftArrow />}
+        customRightArrow={<CustomRightArrow />}
+        itemClass="carouselItem"
+      >
+        {children.map((children, index) => {
+          return <div key={index}>{children}</div>;
+        })}
+      </Carousel>
     </div>
   );
 }
