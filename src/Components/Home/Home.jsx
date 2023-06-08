@@ -7,6 +7,7 @@ import icono from '../Home/icon_eye.svg';
 import icono2 from '../Home/🦆 icon _key_.svg';
 import icono3 from '../Home/🦆 icon _pie chart_.svg';
 import icono4 from '../Home/icono_imagen.svg';
+import contacto from '../../images/Contactanos.png';
 
 const Home = () => {
   const numSections = 4;
@@ -58,6 +59,7 @@ const Home = () => {
           proceso, escuchándote y aconsejándote para que tu experiencia y la de
           tu público sea única.
         </p>
+        <img src={contacto} alt='Logo Contacto' />
       </section>
       <section
         style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
