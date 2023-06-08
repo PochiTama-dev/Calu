@@ -28,10 +28,6 @@ const Home = () => {
     }
   };
 
-  const handleShowText = (text) => {
-    setShowText(text === showText ? null : text);
-  };
-
   return (
     <div
       {...handlers}
@@ -45,7 +41,7 @@ const Home = () => {
     >
       <Header />
       <section
-        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-1 ${
           currentSection === 0 ? 'animate__animated animate__fadeIn' : ''
         }`}
@@ -64,7 +60,7 @@ const Home = () => {
         </p>
       </section>
       <section
-        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-2 ${
           currentSection === 1 ? 'animate__animated animate__fadeIn' : ''
         }`}
@@ -75,52 +71,37 @@ const Home = () => {
           cada emprendimiento que quie ra tener éxito en el mundo digital.
         </p>
         <div className='ctn-servicios'>
-          <img
-            className='icono-servicios'
-            src={icono3}
-            alt='icono pay'
-            onClick={() => handleShowText('iconoPay')}
-          />
-          {showText === 'iconoPay' && (
+          <div className='servicios'>
+            <img className='icono-servicios' src={icono3} alt='icono pay' />
+            <p className='text-icono-servicios'>CONSULTORIA ESTRATEGICA</p>
             <p className='text-transition'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
               quod numquam. Velit fuga reiciendis, illum esse quis repudiandae.
               Ut, nihil.
             </p>
-          )}
-          <p className='text-icono-servicios'>CONSULTORIA ESTRATEGICA</p>
-          <img
-            className='icono-servicios'
-            src={icono}
-            alt='icono ojo'
-            onClick={() => handleShowText('iconoOjo')}
-          />
-          {showText === 'iconoOjo' && (
+          </div>
+          <div className='servicios'>
+            <img className='icono-servicios' src={icono} alt='icono ojo' />
+            <p className='text-icono2-servicios'>GESTIÓN DE REDES SOCIALES</p>
             <p className='text-transition'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
               quod numquam. Velit fuga reiciendis, illum esse quis repudiandae.
               Ut, nihil.
             </p>
-          )}
-          <p className='text-icono2-servicios'>GESTIÓN DE REDES SOCIALES</p>
-          <img
-            className='icono-servicios'
-            src={icono2}
-            alt='icono llave'
-            onClick={() => handleShowText('iconoLlave')}
-          />
-          {showText === 'iconoLlave' && (
+          </div>
+          <div className='servicios'>
+            <img className='icono-servicios' src={icono2} alt='icono llave' />
+            <p className='text-icono3-servicios'>PUBLICIDAD DIGITAL</p>
             <p className='text-transition'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
               quod numquam. Velit fuga reiciendis, illum esse quis repudiandae.
               Ut, nihil.
             </p>
-          )}
-          <p className='text-icono3-servicios'>PUBLICIDAD DIGITAL</p>
+          </div>
         </div>
       </section>
       <section
-        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-3 ${
           currentSection === 2 ? 'animate__animated animate__fadeIn' : ''
         }`}
@@ -131,25 +112,31 @@ const Home = () => {
           servicios y sumarse a la transformación digital.
         </p>
         <div className='ctn-portafolio'>
-          <img className='icono-portafolio' src={icono4} alt='icono pay' />
-          <p className='text-icono-portafolio'>DON OFICIOS</p>
-          <a className='button-portafolio' href=' '>
-            Ver mas
-          </a>
-          <img className='icono-portafolio' src={icono4} alt='icono ojo' />
-          <p className='text-icono2-portafolio'>STILL JOBS</p>
-          <a className='button-portafolio2' href=' '>
-            Ver mas
-          </a>
-          <img className='icono-portafolio' src={icono4} alt='icono llave' />
-          <p className='text-icono3-portafolio'>COMUNIDAD DE MARCAS</p>
-          <a className='button-portafolio3' href=' '>
-            Ver mas
-          </a>
+          <div className='portfolio'>
+            <img className='icono-portafolio' src={icono4} alt='icono pay' />
+            <p className='text-icono-portafolio'>DON OFICIOS</p>
+            <a className='button-portafolio' href=' '>
+              Ver mas
+            </a>
+          </div>
+          <div className='portfolio'>
+            <img className='icono-portafolio' src={icono4} alt='icono ojo' />
+            <p className='text-icono-portafolio'>STILL JOBS</p>
+            <a className='button-portafolio' href=' '>
+              Ver mas
+            </a>
+          </div>
+          <div className='portfolio'>
+            <img className='icono-portafolio' src={icono4} alt='icono llave' />
+            <p className='text-icono-portafolio'>COMUNIDAD DE MARCAS</p>
+            <a className='button-portafolio' href=' '>
+              Ver mas
+            </a>
+          </div>
         </div>
       </section>
       <section
-        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-4 ${
           currentSection === 3 ? 'animate__animated animate__fadeIn' : ''
         }`}

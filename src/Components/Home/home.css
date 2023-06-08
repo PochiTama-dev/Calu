@@ -38,105 +38,42 @@
   margin-bottom: 0%;
 }
 
-.ctn-servicios,
+.ctn-servicios {
+  width: 100%;
+  display: flex;
+  margin: 0% auto;
+  justify-content: center;
+  align-items: center;
+}
 .ctn-portafolio {
-  width: 90%;
-  height: 25%;
+  width: 100%;
+  height: 100%;
   display: flex;
   margin: 0% auto;
   justify-content: center;
   align-items: center;
   /* background-color: rgba(0, 0, 255, 0.288); */
 }
-
-.icono-servicios,
-.icono-portafolio {
-  justify-content: space-between;
-  width: 29%;
-  height: 30%;
-  padding: 0% 3% 0% 3%;
-  cursor: pointer;
-}
-.text-transition {
+.servicios {
+  height: 20rem;
   display: flex;
-  animation-name: txtTransition;
-  animation-duration: 0.5s;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+.icono-servicios {
+  width: 10vh;
+  height: 10vh;
 }
 
-.text-icono-servicios,
-.text-icono2-servicios,
-.text-icono3-servicios,
-.text-icono-portafolio,
-.text-icono2-portafolio,
-.text-icono3-portafolio {
-  position: fixed;
-  font-size: 12px;
-  width: 30%;
-  height: 30%;
-  text-align: center;
-}
-
-.text-icono-servicios {
-  margin: 90% 60% 0% 1%;
-}
-
-.text-icono2-servicios {
-  margin: 90% 3% 0% 4%;
-}
-
-.text-icono3-servicios {
-  margin: 90% 2% 0% 60%;
+.text-transition:hover {
+  opacity: 1;
 }
 
 .title-first-portafolio {
   color: #3af6ff;
   padding: 14% 0% 3% 0%;
   text-align: center;
-}
-
-.text-icono-portafolio,
-.text-icono2-portafolio,
-.text-icono3-portafolio {
-  font-size: 11px;
-}
-
-.text-icono-portafolio {
-  margin: 90% 60% 0% 1%;
-}
-
-.text-icono2-portafolio {
-  margin: 90% 3% 0% 4%;
-}
-
-.text-icono3-portafolio {
-  margin: 90% 0% 0% 60%;
-}
-
-.button-portafolio,
-.button-portafolio2,
-.button-portafolio3 {
-  position: fixed;
-  font-size: 13px;
-  width: 17%;
-  text-align: center;
-  text-decoration: none;
-  text-decoration-color: linear-gradient(
-    180deg,
-    rgba(58, 246, 255, 1) 40%,
-    rgba(185, 4, 139, 0.9154228855721394) 60%
-  );
-}
-
-.button-portafolio {
-  margin: 52% 60% 0% 1%;
-}
-
-.button-portafolio2 {
-  margin: 52% 3% 0% 4%;
-}
-
-.button-portafolio3 {
-  margin: 52% 0% 0% 60%;
 }
 
 .animate__fadeIn {
@@ -153,14 +90,102 @@
   }
 }
 
-@keyframes txtTransition {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+@media (min-width: 480px) {
+  .section-1,
+  .section-2,
+  .section-3 {
+    height: 90vh;
+    margin: 0 auto;
   }
-  to {
+  .title-first-quienes-somos,
+  .title-first-nuestros-servicios,
+  .title-first-portafolio {
+    padding: 0;
+  }
+  .ctn-servicios {
+    height: 30rem;
+  }
+  .icono-servicios {
+    width: 7vh;
+    height: 7vh;
+  }
+  .text-icono-servicios,
+  .text-icono2-servicios,
+  .text-icono3-servicios {
+    margin-left: 16px;
+  }
+  .text-transition {
+    width: 100%;
+    opacity: 1;
+  }
+  .title-first-portafolio {
+    margin-top: 12rem;
+  }
+
+  .ctn-portafolio {
+    display: flex;
+    height: auto;
+    margin-top: 2rem;
+    align-items: flex-start;
+  }
+
+  .ctn-portafolio .portfolio {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctn-portafolio .portfolio .icono-portafolio {
+    cursor: pointer;
+    margin-top: 15px;
+    width: 50%;
+  }
+  .ctn-portafolio .portfolio .icono-portafolio:nth-child(2) {
+    width: 40%;
+  }
+
+  .ctn-portafolio .portfolio .text-icono-portafolio {
+    font-size: 11px;
+  }
+  .ctn-portafolio .portfolio .button-portafolio {
+    height: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .section-1,
+  .section-2,
+  .section-3 {
+    margin: 0 auto;
+  }
+
+  .ctn-servicios {
+    display: flex;
+    height: 24rem;
+  }
+
+  .icono-servicios {
+    width: 50px;
+    height: 50px;
+  }
+  .text-transition {
+    width: 80%;
+    opacity: 0;
+    transform: translateX(400%);
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in;
+  }
+  .servicios:hover .text-transition {
     opacity: 1;
     transform: translateX(0%);
+  }
+  .icono-portafolio {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .ctn-portafolio .portfolio .text-icono-portafolio {
+    font-size: 15px;
   }
 }
