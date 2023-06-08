@@ -59,7 +59,7 @@ const Home = () => {
           proceso, escuchándote y aconsejándote para que tu experiencia y la de
           tu público sea única.
         </p>
-        <img src={contacto} alt='Logo Contacto' />
+        <img src={contacto} alt='Logo Contacto' className='logo-contacto' />
       </section>
       <section
         style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
@@ -84,7 +84,7 @@ const Home = () => {
           </div>
           <div className='servicios'>
             <img className='icono-servicios' src={icono} alt='icono ojo' />
-            <p className='text-icono2-servicios'>GESTIÓN DE REDES SOCIALES</p>
+            <p className='text-icono-servicios'>GESTIÓN DE REDES SOCIALES</p>
             <p className='text-transition'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
               quod numquam. Velit fuga reiciendis, illum esse quis repudiandae.
@@ -93,7 +93,7 @@ const Home = () => {
           </div>
           <div className='servicios'>
             <img className='icono-servicios' src={icono2} alt='icono llave' />
-            <p className='text-icono3-servicios'>PUBLICIDAD DIGITAL</p>
+            <p className='text-icono-servicios'>PUBLICIDAD DIGITAL</p>
             <p className='text-transition'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
               quod numquam. Velit fuga reiciendis, illum esse quis repudiandae.
