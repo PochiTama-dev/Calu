@@ -6,6 +6,7 @@ import { Header } from '../Header/header';
 import icono from '../Home/icon_eye.svg';
 import icono2 from '../Home/🦆 icon _key_.svg';
 import icono3 from '../Home/🦆 icon _pie chart_.svg';
+import icono4 from '../Home/icono_imagen.svg';
 import Footer from '../Footer/Footer';
 import contacto from '../../images/Contactanos.png';
 
@@ -46,7 +47,7 @@ const Home = () => {
           currentSection === 0 ? 'animate__animated animate__fadeIn' : ''
         }`}
       >
-        <h1 className='title-first-quienes-somos'>¿QUIENES SOMOS?</h1>
+        <h1 className='home-title-first-quienes-somos'>¿QUIENES SOMOS?</h1>
         <h2 className='sub-first'>SOMOS UN EQUIPO</h2>
         <h2 className='sub-second'>APASIONADO POR LA TRANSFORMACION DIGITAL</h2>
         <p className='text-first'>
