@@ -16,12 +16,12 @@ export const Header = () => {
         <Link to={'/'}>
           <img className='logoCalu' src={miImagen} alt='Logo Calu' />
         </Link>
-        <div className={showLinks ? 'links ' : 'link show '}>
+        <aside className={showLinks ? 'links ' : 'link show '}>
           <Link to={'/'}> Home </Link>
           <Link to={'/services'}> Servicios </Link>
           <Link to={'/blog'}> Blog </Link>
           <Link to={'/Contact'}> Contacto </Link>
-        </div>
+        </aside>
         <span
           onClick={handleLinks}
           className={`btn ${showLinks ? 'bar' : 'cross'}`}

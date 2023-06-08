@@ -40,7 +40,7 @@
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 372px) {
   .btn {
     display: block;
     width: 5vh;
@@ -69,12 +69,28 @@
     bottom: 2px;
   }
   .link.show {
-    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
-    justify-content: space-between;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateX(-40%);
+    opacity: 0.8;
+    background-color: black;
+    z-index: 99;
+    overflow-y: auto;
+    transition: transform 0.5s ease-in, opacity 0.5s ease-in;
   }
   .link.show a {
     text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    transform: translateX(40%);
+    transition: all 0.5s ease-in-out;
   }
   .links {
     display: none;
