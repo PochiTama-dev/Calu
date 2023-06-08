@@ -1,10 +1,13 @@
-import React from 'react'
-import './services.css'
+import './services.css';
+import { Header } from '../Header/header';
 
 const Services = () => {
   return (
-    <div>Services</div>
-  )
-}
+    <>
+      <Header />
+      <div>Services</div>
+    </>
+  );
+};
 
-export default Services
+export default Services;

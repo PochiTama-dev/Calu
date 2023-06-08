@@ -6,13 +6,12 @@ import { Header } from '../Header/header';
 import icono from '../Home/icon_eye.svg';
 import icono2 from '../Home/🦆 icon _key_.svg';
 import icono3 from '../Home/🦆 icon _pie chart_.svg';
-import icono4 from '../Home/icono_imagen.svg';
+import Footer from '../Footer/Footer';
 import contacto from '../../images/Contactanos.png';
 
 const Home = () => {
   const numSections = 4;
   const [currentSection, setCurrentSection] = useState(0);
-  const [showText, setShowText] = useState(null);
 
   const handlers = useSwipeable({
     onSwipedUp: () =>
@@ -142,9 +141,8 @@ const Home = () => {
         className={`section-4 ${
           currentSection === 3 ? 'animate__animated animate__fadeIn' : ''
         }`}
-      >
-        <h1 className='title-first'>NOVEDADES</h1>
-      </section>
+      ></section>
+      <Footer> </Footer>
     </div>
   );
 };
