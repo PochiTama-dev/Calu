@@ -50,11 +50,11 @@
   /* background-color: rgba(0, 0, 255, 0.288); */
 }
 
-.servicios {
+.nuestros-servicios {
   height: 20rem;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 .icono-servicios {
@@ -176,7 +176,7 @@
     transform: translateX(400%);
     transition: opacity 0.3s ease-in-out, transform 0.2s ease-in;
   }
-  .servicios:hover .text-transition {
+  .nuestros-servicios:hover .text-transition {
     opacity: 1;
     transform: translateX(0%);
   }
@@ -187,5 +187,14 @@
 
   .ctn-portafolio .portfolio .text-icono-portafolio {
     font-size: 15px;
+  }
+  .logo-contacto {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 20%;
+  }
+  .logo-contacto img {
+    height: 100%;
   }
 }

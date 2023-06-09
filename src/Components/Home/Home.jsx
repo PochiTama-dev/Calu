@@ -9,6 +9,7 @@ import icono3 from '../Home/🦆 icon _pie chart_.svg';
 import icono4 from '../Home/icono_imagen.svg';
 import Footer from '../Footer/Footer';
 import contacto from '../../images/Contactanos.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const numSections = 4;
@@ -59,7 +60,9 @@ const Home = () => {
           proceso, escuchándote y aconsejándote para que tu experiencia y la de
           tu público sea única.
         </p>
-        <img src={contacto} alt='Logo Contacto' className='logo-contacto' />
+        <Link to={'/contact'} className='logo-contacto'>
+          <img src={contacto} alt='logo-contacto' />
+        </Link>
       </section>
       <section
         style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
@@ -73,7 +76,7 @@ const Home = () => {
           cada emprendimiento que quie ra tener éxito en el mundo digital.
         </p>
         <div className='ctn-servicios'>
-          <div className='servicios'>
+          <div className='nuestros-servicios'>
             <img className='icono-servicios' src={icono3} alt='icono pay' />
             <p className='text-icono-servicios'>CONSULTORIA ESTRATEGICA</p>
             <p className='text-transition'>
@@ -82,7 +85,7 @@ const Home = () => {
               Ut, nihil.
             </p>
           </div>
-          <div className='servicios'>
+          <div className='nuestros-servicios'>
             <img className='icono-servicios' src={icono} alt='icono ojo' />
             <p className='text-icono-servicios'>GESTIÓN DE REDES SOCIALES</p>
             <p className='text-transition'>
@@ -91,7 +94,7 @@ const Home = () => {
               Ut, nihil.
             </p>
           </div>
-          <div className='servicios'>
+          <div className='nuestros-servicios'>
             <img className='icono-servicios' src={icono2} alt='icono llave' />
             <p className='text-icono-servicios'>PUBLICIDAD DIGITAL</p>
             <p className='text-transition'>
@@ -101,6 +104,9 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <Link to={'/contact'} className='logo-contacto'>
+          <img src={contacto} alt='logo-contacto' />
+        </Link>
       </section>
       <section
         style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
@@ -136,6 +142,9 @@ const Home = () => {
             </a>
           </div>
         </div>
+        <Link to={'/contact'} className='logo-contacto'>
+          <img src={contacto} alt='logo-contacto' />
+        </Link>
       </section>
       <section
         style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
