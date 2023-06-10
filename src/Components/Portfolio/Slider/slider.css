@@ -15,20 +15,13 @@
 .carouselItem {
   display: flex;
   justify-content: center;
-  width: fit-content;
 }
 
-@media (max-width: 480px) {
-  .title-first-quienes-somos {
-    color: #3af6ff;
-    padding: 25% 0% 2% 0%;
-    text-align: left;
-    font-size: 150%;
-  }
+@media (max-width: 767px) {
   .arrowL {
-    width: 30px;
+    width: 40px;
   }
   .arrowR {
-    width: 30px;
+    width: 40px;
   }
 }

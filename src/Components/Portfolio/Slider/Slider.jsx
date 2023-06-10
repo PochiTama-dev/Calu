@@ -16,7 +16,7 @@ function Slider({ children }) {
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 480, min: 0 },
+      breakpoint: { max: 767, min: 0 },
       items: 1,
     },
   };
@@ -32,24 +32,23 @@ function Slider({ children }) {
     </div>
   );
   return (
-    <div className="container">
-      <Carousel
-        containerClass="carousel-container"
-        renderButtonGroupOutside={true}
-        swipeable={true}
-        draggable={false}
-        infinite={true}
-        responsive={responsive}
-        showDots={false}
-        customLeftArrow={<CustomLeftArrow />}
-        customRightArrow={<CustomRightArrow />}
-        itemClass="carouselItem"
-      >
-        {children.map((children, index) => {
-          return <div key={index}>{children}</div>;
-        })}
-      </Carousel>
-    </div>
+    <Carousel
+      containerClass="carousel-container"
+      renderButtonGroupOutside={true}
+      swipeable={true}
+      draggable={false}
+      infinite={true}
+      responsive={responsive}
+      showDots={false}
+      customLeftArrow={<CustomLeftArrow />}
+      customRightArrow={<CustomRightArrow />}
+      itemClass="carouselItem"
+      partialVisible={false}
+    >
+      {children.map((children, index) => {
+        return <div key={index}>{children}</div>;
+      })}
+    </Carousel>
   );
 }
 

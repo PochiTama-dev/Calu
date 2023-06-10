@@ -9,6 +9,10 @@
     rgba(185, 4, 139, 0.2) 60%
   );
 }
+.card p {
+  color: white;
+  font-weight: bold;
+}
 .image {
   text-align: center;
   margin: 20px 0px 5px 0px;
