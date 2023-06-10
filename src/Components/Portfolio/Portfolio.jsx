@@ -15,7 +15,7 @@ const Portfolio = () => {
 
       <p className="text_second">
         Ya son varias las personas que decidieron confiar en nuestros servicios
-        y sumarse a la transformación digital.
+        y sumarse a la transformación digital...
       </p>
       <div className="slider">
         <Slider>
