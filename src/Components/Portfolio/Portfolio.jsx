@@ -11,7 +11,7 @@ import sj_logo from "./Logo_SJ.png";
 const Portfolio = () => {
   return (
     <div className="portfolio_container">
-      <h1 className="title-first-portafolio">NUESTROS TRABAJOS</h1>
+      <h1 className="title-first-portafolio"> NUESTROS TRABAJOS</h1>
 
       <p className="text_second">
         Ya son varias las personas que decidieron confiar en nuestros servicios
