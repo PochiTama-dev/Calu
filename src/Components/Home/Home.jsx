@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import "animate.css/animate.min.css";
@@ -132,3 +133,4 @@ const Home = () => {
 };
 
 export default Home;
+
