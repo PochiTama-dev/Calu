@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./Card/Card";
 import Slider from "./Slider/Slider";
-import icono4 from "./icono_imagen.svg";
 import "./portfolio.css";
 import don_logo from "./Logo_Don.png";
 import mc_logo from "./Logo_MC.jpg";
@@ -11,18 +10,18 @@ import sj_logo from "./Logo_SJ.png";
 const Portfolio = () => {
   return (
     <div className="portfolio_container">
-      <h1 className="title-first-portafolio"> NUESTROS TRABAJOS</h1>
+      <h1 className="title_portfolio"> NUESTROS TRABAJOS</h1>
 
-      <p className="text_second">
+      <p className="text_description">
         Ya son varias las personas que decidieron confiar en nuestros servicios
-        y sumarse a la transformación digital...
+        y sumarse a la transformación digital
       </p>
       <div className="slider">
         <Slider>
           <Card
             image={
               <img
-                className="icono-portafolio"
+                className="icon-portfolio"
                 src={don_logo}
                 alt="icono pay"
                 width="50%"
@@ -33,7 +32,7 @@ const Portfolio = () => {
               <a
                 target="_blank"
                 className="
-        button-portafolio"
+                button_portfolio"
                 href="https://www.instagram.com/don.oficios/  "
               >
                 Ver más
@@ -44,7 +43,7 @@ const Portfolio = () => {
           <Card
             image={
               <img
-                className="icono-portafolio"
+                className="icon-portfolio"
                 src={sj_logo}
                 alt="icono ojo"
                 width="50%"
@@ -55,7 +54,7 @@ const Portfolio = () => {
               <a
                 target="_blank"
                 className="
-        button-portafolio"
+                button_portfolio"
                 href=" https://www.instagram.com/stilljobsok/ "
               >
                 Ver más
@@ -66,7 +65,7 @@ const Portfolio = () => {
           <Card
             image={
               <img
-                className="icono-portafolio"
+                className="icon-portfolio"
                 src={pochitama_logo}
                 alt="icono llave"
                 width="50%"
@@ -77,7 +76,7 @@ const Portfolio = () => {
               <a
                 target="_blank"
                 className="
-        button-portafolio"
+                button_portfolio"
                 href=" https://www.instagram.com/pochitama.dev/"
               >
                 Ver más
@@ -87,7 +86,7 @@ const Portfolio = () => {
           <Card
             image={
               <img
-                className="icono-portafolio"
+                className="icon-portfolio"
                 src={mc_logo}
                 alt="icono llave"
                 width="50%"
@@ -98,7 +97,7 @@ const Portfolio = () => {
               <a
                 target="_blank"
                 className="
-        button-portafolio"
+        button_portfolio"
                 href="https://www.instagram.com/marielacattarelli/  "
               >
                 Ver más

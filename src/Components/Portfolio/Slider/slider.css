@@ -1,3 +1,6 @@
+.carousel-container {
+  max-width: 100%;
+}
 .arrowL {
   position: absolute;
   z-index: 10;
@@ -12,6 +15,7 @@
   right: 0;
   top: 100px;
 }
+
 .carouselItem {
   display: flex;
   justify-content: center;
