@@ -50,13 +50,6 @@
   /* background-color: rgba(0, 0, 255, 0.288); */
 }
 
-.nuestros-servicios {
-  height: 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-}
 .icono-servicios {
   width: 10vh;
   height: 10vh;
