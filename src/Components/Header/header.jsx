@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import './header.css';
 import miImagen from '../Header/logocalu.png';
 import { Link } from 'react-router-dom';
-import bars from '../../images/bars-solid.svg';
 
 export const Header = () => {
-  const [showLinks, setShowLinks] = useState(false);
+  const [showLinks, setShowLinks] = useState(true);
 
   const handleLinks = () => {
     setShowLinks(!showLinks);
@@ -17,13 +16,22 @@ export const Header = () => {
         <Link to={'/'}>
           <img className='logoCalu' src={miImagen} alt='Logo Calu' />
         </Link>
-        <div className={showLinks ? 'link show ' : 'link'}>
-          <Link to={'/blog'}> BLOG </Link>
-          <Link to={'/products'}> Productos </Link>
-        </div>
-        <button className='burger' onClick={handleLinks}>
-          <img src={bars} alt='logoBurger' />
-        </button>
+        <aside className={showLinks ? 'links ' : 'link show '}>
+          <Link to={'/'}> Home </Link>
+          <Link to={'/services'}> Servicios </Link>
+          <Link to={'/blog'}> Blog </Link>
+          <Link to={'/Contact'}> Contacto </Link>
+        </aside>
+        <span
+          onClick={handleLinks}
+          className={`btn ${showLinks ? 'bar' : 'cross'}`}
+        >
+          <div>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </span>
       </nav>
     </header>
   );
