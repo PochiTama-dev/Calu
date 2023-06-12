@@ -33,7 +33,7 @@ function Slider({ children }) {
   );
 
   return (
-    <div>
+    <div className="carousel">
       <Carousel
         containerClass="carousel-container"
         swipeable={true}
@@ -56,20 +56,4 @@ function Slider({ children }) {
   );
 }
 
-/*{
-   return (
-   <div className="container">
-      <button className="btn_arr">
-        <img className="arrow" src={arrow_L} />
-      </button>
-      {children.map((children, index) => {
-        return <div>{children}</div>;
-      })}
-      <button className="btn_arr">
-        <img className="arrow" src={arrow_R} />
-      </button>
-      </div>
-      );
-      
-    }*/
 export default Slider;
