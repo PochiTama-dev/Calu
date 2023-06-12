@@ -1,6 +1,6 @@
 import React from "react";
 import "./novedades.css";
-import Card_news from "./Card/Card_news";
+import Card_news from "./Card_news/Card_news";
 const Novedades = () => {
   return (
     <div className="novedades_container">

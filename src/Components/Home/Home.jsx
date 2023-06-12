@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import "animate.css/animate.min.css";
@@ -10,7 +9,7 @@ import icono3 from "../Home/🦆 icon _pie chart_.svg";
 import Footer from "../Footer/Footer";
 import contacto from "../../images/Contactanos.png";
 import { Link } from "react-router-dom";
-import Portfolio from "../Portfolio/Portfolio";
+
 import About from "../About/About";
 import Novedades from "../Novedades/Novedades";
 
@@ -107,7 +106,7 @@ const Home = () => {
         }`}
       >
         <div className="portfolio"></div>
-        <Portfolio />
+
         <Link to={"/contact"} className="logo-contacto">
           <img src={contacto} alt="logo-contacto" />
         </Link>
@@ -133,4 +132,3 @@ const Home = () => {
 };
 
 export default Home;
-
