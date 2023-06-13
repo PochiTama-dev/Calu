@@ -1,6 +1,5 @@
 import React from "react";
 import "./footer.css";
-
 import calu_logo from "./calu_logo.svg";
 import fb_logo from "./Facebook.png";
 import insta_logo from "./Instagram.png";
@@ -19,11 +18,14 @@ const Footer = () => {
       <div className="servicios">
         <h2>SERVICIOS</h2>
         <ul>
-          <li>Consultoría Estatégica</li>
+          <li>Consultoría Estratégica</li>
+          <li>Gestión de Redes Sociales</li>
           <li>Publicidad Digital</li>
-          <li>Desarrolo Web</li>
-          <li>Manejo de Redes</li>
-          <li>Email Marketing</li>
+          <li>E-mail Marketings</li>
+          <li>Book Institucional</li>
+          <li>Creación de Contenido</li>
+          <li>Modelo de Negocio</li>
+          <li>Desarrollo Web</li>
         </ul>
       </div>
 

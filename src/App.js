@@ -6,9 +6,11 @@ import Contact from './Components/Contact/Contact';
 import Services from './Components/Services/Services';
 import './App.css';
 import Blog from './Components/Blog/Blog';
+import VideoBackgroundComponent from './Components/VideoBackgroundComponent/VideoBackgroundComponent';
 function App() {
   return (
     <Router>
+      <VideoBackgroundComponent/>
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
