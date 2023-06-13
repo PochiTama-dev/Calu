@@ -11,6 +11,7 @@ import contacto from "../../images/Contactanos.png";
 import { Link } from "react-router-dom";
 import Portfolio from "../Portfolio/Portfolio";
 import About from "../About/About";
+import News from "../News/News";
 
 const Home = () => {
   const numSections = 4;
@@ -111,12 +112,21 @@ const Home = () => {
         </Link>
       </section>
       <section
-        style={{ height: "90vh", transition: "transform 0.5s ease-in-out" }}
+        style={{ transition: "transform 0.5s ease-in-out" }}
         className={`section-4 ${
           currentSection === 3 ? "animate__animated animate__fadeIn" : ""
         }`}
-      ></section>
-      <Footer> </Footer>
+      >
+        <News />
+      </section>
+      <section
+        style={{ transition: "transform 0.5s ease-in-out" }}
+        className={`section-5 ${
+          currentSection === 3 ? "animate__animated animate__fadeIn" : ""
+        }`}
+      >
+        <Footer />
+      </section>
     </div>
   );
 };
