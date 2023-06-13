@@ -34,7 +34,6 @@
 
 .ctn-servicios {
   width: 100%;
-  display: flex;
   margin: 0% auto;
   justify-content: center;
   align-items: center;
@@ -53,10 +52,6 @@
 .icono-servicios {
   width: 10vh;
   height: 10vh;
-}
-
-.text-transition:hover {
-  opacity: 1;
 }
 
 .title-first-portafolio {
@@ -95,16 +90,13 @@
     padding: 0;
   }
   .ctn-servicios {
-    display: flex;
     overflow: hidden;
     justify-content: flex-start;
   }
   .ctn-servicios .nuestros-servicios {
     height: 50%;
-    overflow: hidden;
   }
   .ctn-servicios .nuestros-servicios .card {
-    display: flex;
     flex-direction: column;
     margin: 10px auto;
     border-radius: 30% 0% 30% 0%;
@@ -130,15 +122,16 @@
   }
 
   .text-transition {
-    width: 100%;
-    font-size: 11px;
-    opacity: 0;
-    transform: translateX(400%);
-    transition: opacity 0.3s ease-in-out, transform 0.5s ease-in;
+    font-size: 14px;
+    width: 80%;
   }
-  .nuestros-servicios:hover .text-transition {
+  .nuestros-servicios:not(:nth-child(1)) .text-transition {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .nuestros-servicios:nth-child(1) .text-transition {
     opacity: 1;
-    transform: translateX(0%);
+    transition: opacity 1s ease-in-out;
   }
   .title-first-portafolio {
     margin-top: 12rem;
@@ -183,10 +176,6 @@
     margin: 0 auto;
   }
 
-  .ctn-servicios {
-    display: flex;
-  }
-
   .icono-servicios {
     width: 100px;
     height: 100px;
@@ -194,17 +183,10 @@
   .ctn-servicios .nuestros-servicios .card {
     height: 12rem;
   }
-  .text-transition {
-    font-size: 17px;
-    width: 80%;
-    opacity: 0;
-    transform: translateX(400%);
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in;
+  .ctn-servicios .slider {
+    margin: 0 auto;
   }
-  .nuestros-servicios:hover .text-transition {
-    opacity: 1;
-    transform: translateX(0%);
-  }
+
   .icono-portafolio {
     width: auto;
     margin: 0 auto;
@@ -214,16 +196,14 @@
     font-size: 15px;
   }
   .logo-contacto {
-    display: flex;
-    justify-content: flex-end;
+    display: block;
     height: 10%;
-    width: 9%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 999;
   }
   .logo-contacto img {
     height: 100%;
-    position: sticky;
   }
 }
