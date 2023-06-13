@@ -31,41 +31,29 @@ function Slider({ children }) {
       <img src={arrow_R} alt=" => " className="arrowR" />
     </div>
   );
+
   return (
-    <Carousel
-      containerClass="carousel-container"
-      renderButtonGroupOutside={true}
-      swipeable={true}
-      draggable={false}
-      infinite={true}
-      responsive={responsive}
-      showDots={false}
-      customLeftArrow={<CustomLeftArrow />}
-      customRightArrow={<CustomRightArrow />}
-      itemClass="carouselItem"
-      partialVisible={false}
-    >
-      {children.map((children, index) => {
-        return <div key={index}>{children}</div>;
-      })}
-    </Carousel>
+    <div className="carousel">
+      <Carousel
+        containerClass="carousel-container"
+        swipeable={true}
+        draggable={false}
+        removeArrowOnDeviceType={["mobile"]}
+        infinite={true}
+        responsive={responsive}
+        showDots={true}
+        customLeftArrow={<CustomLeftArrow />}
+        customRightArrow={<CustomRightArrow />}
+        itemClass="carouselItem"
+        autoPlay={true}
+        autoPlaySpeed={"4500"}
+      >
+        {children.map((children, index) => {
+          return <div key={index}>{children}</div>;
+        })}
+      </Carousel>
+    </div>
   );
 }
 
-/*{
-   return (
-   <div className="container">
-      <button className="btn_arr">
-        <img className="arrow" src={arrow_L} />
-      </button>
-      {children.map((children, index) => {
-        return <div>{children}</div>;
-      })}
-      <button className="btn_arr">
-        <img className="arrow" src={arrow_R} />
-      </button>
-      </div>
-      );
-      
-    }*/
 export default Slider;
