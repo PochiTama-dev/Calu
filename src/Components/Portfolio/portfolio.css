@@ -1,17 +1,16 @@
 .slider {
   /*margin: 150px 250px 0px 250px;*/
   margin-top: 150px;
-
-  justify-content: center;
 }
-.title-first-portafolio {
+
+.title_portfolio {
   color: #3af6ff;
   padding: 5% 0% 0% 0%;
   text-align: left;
   font-size: 58px;
   margin: 5% 0% 0% 15%;
 }
-.text_second {
+.text_description {
   text-align: left;
   margin-bottom: 0%;
   font-size: 24px;
@@ -19,35 +18,28 @@
   color: white;
   padding: 0px 3px;
 }
-.card p {
-  color: white;
-  font-weight: bold;
-}
-.button-portafolio {
+
+.button_portfolio {
   color: rgba(185, 4, 139, 0.9154228855721394);
   text-align: center;
   text-decoration: none;
   font-weight: bold;
-  /*color: linear-gradient(
-    180deg,
-    rgba(58, 246, 255, 1) 40%,
-    rgba(185, 4, 139, 0.9154228855721394) 60%
-  );*/
 }
 @media (max-width: 1024px) {
-  .title-first-portafolio {
+  .title_portfolio {
     font-size: 45px;
   }
 }
+
 @media (max-width: 767px) {
   .portfolio_container {
     width: 100%;
   }
-  .title-first-portafolio {
+  .title_portfolio {
     color: #3af6ff;
     padding: 5% 0% 5% 0%;
     text-align: left;
-    font-size: 35px;
+    font-size: 30px;
   }
 
   .text_second {
@@ -59,5 +51,13 @@
 
   .slider {
     margin-top: 100px;
+  }
+}
+@media (max-width: 480px) {
+  .title_portfolio {
+    font-size: 25px;
+  }
+  .text_description {
+    font-size: 22px;
   }
 }

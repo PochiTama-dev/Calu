@@ -8,7 +8,7 @@ const Card = ({ image, title, btn }) => {
 
       <div className="title">{title}</div>
 
-      <div className="btn">{btn}</div>
+      <div className="card_btn">{btn}</div>
     </div>
   );
 };
