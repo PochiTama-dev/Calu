@@ -105,8 +105,11 @@ const Home = () => {
           currentSection === 2 ? "animate__animated animate__fadeIn" : ""
         }`}
       >
-        <div className="portfolio"></div>
-        <Portfolio />
+        <div className="portfolio">
+          {" "}
+          <Portfolio />
+        </div>
+
         <Link to={"/contact"} className="logo-contacto">
           <img src={contacto} alt="logo-contacto" />
         </Link>
