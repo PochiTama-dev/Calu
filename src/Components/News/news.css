@@ -30,6 +30,14 @@
   font-weight: bold;
 }
 
+@media (max-width: 1024px) {
+  .cards_novedades {
+    display: block;
+
+    margin: 80px 0 150px 0;
+  }
+}
+
 @media (max-width: 767px) {
   .title_novedades {
     padding: 15% 0% 2% 0%;

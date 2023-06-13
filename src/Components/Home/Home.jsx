@@ -100,7 +100,7 @@ const Home = () => {
         </Link>
       </section>
       <section
-        style={{ height: "90vh", transition: "transform 0.5s ease-in-out" }}
+        style={{ height: "110vh", transition: "transform 0.5s ease-in-out" }}
         className={`section-3 ${
           currentSection === 2 ? "animate__animated animate__fadeIn" : ""
         }`}
