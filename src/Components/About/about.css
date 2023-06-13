@@ -1,32 +1,32 @@
 .about_container {
   margin: 2% 15% 0% 15%;
 }
-.title-first-quienes-somos {
+.title_about {
   color: #3af6ff;
   padding: 5% 0% 2% 0%;
   text-align: left;
   font-size: 62px;
 }
 
-.sub-first {
+.sub_1 {
   color: #eb39d9;
   text-align: left;
   line-height: 15px;
   font-size: 40px;
 }
 
-.sub-second {
+.sub_2 {
   color: white;
   text-align: left;
   padding-bottom: 1%;
   font-size: 40px;
 }
 
-.text-first {
+.about_container p {
   text-align: justify;
   font-size: 24px;
 }
-.text-last {
+.text_last {
   color: white;
   text-align: left;
   padding-bottom: 1%;
@@ -35,41 +35,55 @@
   font-weight: bold;
 }
 
-@media (max-width: 480px) {
-  .title-first-quienes-somos {
-    color: #3af6ff;
-    padding: 25% 0% 2% 0%;
-    text-align: left;
+@media (max-width: 1024px) {
+  .title_about {
+    font-size: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .title_about {
+    padding: 15% 0% 2% 0%;
+    font-size: 170%;
+  }
+
+  .sub_1 {
+    padding-top: 5%;
+
     font-size: 150%;
   }
 
-  .sub-first {
-    padding-top: 5%;
-    color: #eb39d9;
-    text-align: left;
-    line-height: 15px;
-    font-size: 120%;
+  .sub_2 {
+    font-size: 140%;
   }
 
-  .sub-second {
-    color: white;
-    text-align: left;
-    padding-bottom: 1%;
-    font-size: 120%;
-  }
-
-  .text-first {
-    padding-top: 5%;
-    text-align: justify;
+  .about_container p {
     font-size: 100%;
   }
   .text-last {
-    padding-top: 5%;
-    color: white;
-    text-align: left;
-    padding-bottom: 1%;
-    margin-top: 3%;
     font-size: 120%;
-    font-weight: bold;
+  }
+}
+
+@media (max-width: 480px) {
+  .title_about {
+    padding: 15% 0% 2% 0%;
+
+    font-size: 170%;
+  }
+
+  .sub_1 {
+    padding-top: 5%;
+    font-size: 150%;
+  }
+
+  .sub_2 {
+    font-size: 130%;
+  }
+
+  .about_container p {
+    font-size: 110%;
+  }
+  .text-last {
+    font-size: 120%;
   }
 }
