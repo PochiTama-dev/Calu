@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './header.css';
-import miImagen from '../Header/logocalu.png';
+import miImagen from '../../images/logocalu.png';
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
@@ -22,10 +22,7 @@ export const Header = () => {
           <Link to={'/blog'}> Blog </Link>
           <Link to={'/Contact'}> Contacto </Link>
         </aside>
-        <span
-          onClick={handleLinks}
-          className={`btn ${showLinks ? 'bar' : 'cross'}`}
-        >
+        <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
           <div>
             <i></i>
             <i></i>
