@@ -13,6 +13,7 @@ import News from '../News/News';
 import Slider from '../Portfolio/Slider/Slider';
 import Card from '../Portfolio/Card/Card';
 import LogoContact from '../Logo-contact/LogoContact';
+import Onboarding from '../Onboarding/Onboarding';
 
 const Home = () => {
   const numSections = 4;
@@ -122,6 +123,12 @@ const Home = () => {
         className={`section-4 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <News />
+      </section>
+      <section
+        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        className={`section-5 ${currentSection === 4 ? 'animate__animated animate__fadeIn' : ''}`}
+      >
+        <Onboarding />
       </section>
       <section
         style={{ transition: 'transform 0.5s ease-in-out' }}

@@ -1,0 +1,87 @@
+.onboarding {
+  display: flex;
+  overflow: hidden;
+  margin-top: 80%;
+}
+.onboarding .logoCalu {
+  display: none;
+}
+.onboarding .parrafo {
+  color: white;
+  position: relative;
+  z-index: 2;
+  min-width: 100%;
+  font-size: 3vh;
+}
+.onboarding .logoAvion {
+  position: relative;
+  opacity: 0.7;
+  z-index: 1;
+  height: 30vh;
+  transform: rotate(-117deg) rotateX(164deg);
+  animation: moveLeftToRight 5s linear infinite;
+}
+
+.contactFlex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5%;
+}
+.contact {
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  border-radius: 30% 0% 30% 0%;
+  margin-bottom: 15px;
+  width: 30%;
+  height: 6vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.contact a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+@media (min-width: 900px) {
+  .logoAvion {
+    display: none;
+  }
+  .onboarding .logoCalu {
+    display: block;
+    position: relative;
+    right: 0;
+    height: 55%;
+  }
+  .onboarding {
+    margin-top: 20%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .onboarding .parrafo {
+    position: static;
+    z-index: initial;
+    min-width: initial;
+    font-size: initial;
+  }
+  .contactFlex {
+    position: relative;
+    bottom: 30%;
+  }
+  .contactFlex .contact {
+    background: linear-gradient(rgba(58, 246, 255, 0.3) 30%, rgba(185, 4, 139, 0.3) 60%);
+    border-radius: 60% 0 60% 0;
+  }
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    left: -170%;
+  }
+  100% {
+    left: 5%;
+  }
+}
