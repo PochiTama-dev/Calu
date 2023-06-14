@@ -1,10 +1,5 @@
 .navBar {
   width: 100%;
-  background: linear-gradient(
-    130deg,
-    rgba(6, 68, 223, 0.6671043417366946) 0%,
-    rgba(0, 20, 70, 1) 40%
-  );
   height: 23%;
 }
 
