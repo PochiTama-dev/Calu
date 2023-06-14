@@ -42,12 +42,13 @@
 }
 
 @media (max-width: 900px) {
-  .btn {
+  .btn.bar {
     display: block;
     width: 5vh;
     height: 5vh;
     margin: 15px;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
   }
   .btn i {
     background-color: #fff;
@@ -75,21 +76,23 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    transform: translateX(-40%);
+    transform: translateY(0%);
     opacity: 0.8;
     background-color: black;
     z-index: 99;
     overflow-y: auto;
     transition: transform 0.3s ease-in, opacity 0.3s ease-in;
   }
+  .link.show a {
+    margin-top: 10px;
+  }
 
   .links {
-    transform: translateX(-200%);
+    transform: translateY(-100%);
   }
   .link.show a,
   .links a {
@@ -98,5 +101,9 @@
     font-size: 1.5rem;
     transform: translateX(40%);
     transition: all 0.2s ease-in-out;
+  }
+  .link.show + .btn.cross {
+    margin-top: 45%;
+    transition: margin-top 0.5s ease-in-out;
   }
 }
