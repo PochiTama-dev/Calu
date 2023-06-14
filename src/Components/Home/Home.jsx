@@ -1,19 +1,18 @@
-import { useState } from "react";
-import { useSwipeable } from "react-swipeable";
-import "animate.css/animate.min.css";
-import "./home.css";
-import { Header } from "../Header/header";
-import icono from "../Home/icon_eye.svg";
-import icono2 from "../Home/🦆 icon _key_.svg";
-import icono3 from "../Home/🦆 icon _pie chart_.svg";
-import Footer from "../Footer/Footer";
-import contacto from "../../images/Contactanos.png";
-import { Link } from "react-router-dom";
-import Portfolio from "../Portfolio/Portfolio";
-import About from "../About/About";
-import News from "../News/News";
+import { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
+import 'animate.css/animate.min.css';
+import './home.css';
+import { Header } from '../Header/header';
+import icono from '../Home/icon_eye.svg';
+import icono2 from '../Home/🦆 icon _key_.svg';
+import icono3 from '../Home/🦆 icon _pie chart_.svg';
+import Footer from '../Footer/Footer';
+import Portfolio from '../Portfolio/Portfolio';
+import About from '../About/About';
+import News from '../News/News';
 import Slider from '../Portfolio/Slider/Slider';
 import Card from '../Portfolio/Card/Card';
+import LogoContact from '../Logo-contact/LogoContact';
 
 const Home = () => {
   const numSections = 4;
@@ -45,20 +44,16 @@ const Home = () => {
       }}
     >
       <Header />
+      <LogoContact />
       <section
         style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-1 ${currentSection === 0 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <About />
       </section>
-      <Link to={'/contact'} className='logo-contacto'>
-        <img src={contacto} alt='logo-contacto' />
-      </Link>
       <section
-        style={{ height: "110vh", transition: "transform 0.5s ease-in-out" }}
-        className={`section-2 ${
-          currentSection === 1 ? "animate__animated animate__fadeIn" : ""
-        }`}
+        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        className={`section-2 ${currentSection === 1 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <h1 className='title-first-nuestros-servicios'>NUESTROS SERVICIOS</h1>
         <p className='text-second'>
@@ -115,33 +110,22 @@ const Home = () => {
         </div>
       </section>
       <section
-        style={{ height: "110vh", transition: "transform 0.5s ease-in-out" }}
-        className={`section-3 ${
-          currentSection === 2 ? "animate__animated animate__fadeIn" : ""
-        }`}
+        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        className={`section-3 ${currentSection === 2 ? 'animate__animated animate__fadeIn' : ''}`}
       >
-        <div className="portfolio">
-          {" "}
+        <div className='portfolio'>
           <Portfolio />
         </div>
-
-        <Link to={"/contact"} className="logo-contacto">
-          <img src={contacto} alt="logo-contacto" />
-        </Link>
       </section>
       <section
-        style={{ transition: "transform 0.5s ease-in-out" }}
-        className={`section-4 ${
-          currentSection === 3 ? "animate__animated animate__fadeIn" : ""
-        }`}
+        style={{ transition: 'transform 0.5s ease-in-out' }}
+        className={`section-4 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <News />
       </section>
       <section
-        style={{ transition: "transform 0.5s ease-in-out" }}
-        className={`section-5 ${
-          currentSection === 3 ? "animate__animated animate__fadeIn" : ""
-        }`}
+        style={{ transition: 'transform 0.5s ease-in-out' }}
+        className={`section-5 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <Footer />
       </section>

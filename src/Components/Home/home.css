@@ -102,7 +102,7 @@
     border-radius: 30% 0% 30% 0%;
     width: 90%;
     height: 10rem;
-    background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+    background: transparent;
   }
   .ctn-servicios .nuestros-servicios .card .title {
     font-size: 75%;
@@ -183,6 +183,16 @@
   .ctn-servicios .nuestros-servicios .card {
     height: 12rem;
   }
+  .ctn-servicios .nuestros-servicios .text-transition {
+    opacity: 0;
+    transform: translateX(400%);
+  }
+  .ctn-servicios .nuestros-servicios:hover .text-transition {
+    overflow: hidden;
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 0.2s, transform 0.4s ease-in-out;
+  }
   .ctn-servicios .slider {
     margin: 0 auto;
   }
@@ -205,5 +215,8 @@
   }
   .logo-contacto img {
     height: 100%;
+  }
+  .react-multi-carousel-dot-list {
+    display: none !important;
   }
 }
