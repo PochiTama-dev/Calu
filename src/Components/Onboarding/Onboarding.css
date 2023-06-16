@@ -28,18 +28,18 @@
   align-items: center;
   margin-left: 5%;
 }
-.contact {
-  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
-  border-radius: 30% 0% 30% 0%;
+.contact-btn {
+  background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  border-radius: 3rem 0 3rem 0;
   margin-bottom: 15px;
-  width: 30%;
+  width: 15rem;
   height: 6vh;
   align-items: center;
   display: flex;
   justify-content: center;
 }
 
-.contact a {
+.contact-btn a {
   text-decoration: none;
   color: white;
   font-weight: bold;
