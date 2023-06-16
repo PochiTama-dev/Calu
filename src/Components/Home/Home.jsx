@@ -41,21 +41,20 @@ const Home = () => {
       }}
     >
       <Header />
-      <LogoContact />
       <section
-        style={{ height: '90vh', transition: 'transform 0.5s ease-in-out' }}
+        style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-1 ${currentSection === 0 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <About />
       </section>
       <section
-        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-2 ${currentSection === 1 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <OurServices />
       </section>
       <section
-        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
+        style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
         className={`section-3 ${currentSection === 2 ? 'animate__animated animate__fadeIn' : ''}`}
       >
         <div className='portfolio'>
@@ -68,18 +67,7 @@ const Home = () => {
       >
         <News />
       </section>
-      <section
-        style={{ height: '110vh', transition: 'transform 0.5s ease-in-out' }}
-        className={`section-5 ${currentSection === 4 ? 'animate__animated animate__fadeIn' : ''}`}
-      >
-        <Onboarding />
-      </section>
-      <section
-        style={{ transition: 'transform 0.5s ease-in-out' }}
-        className={`section-5 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}
-      >
-        <Footer />
-      </section>
+      <Footer />
     </div>
   );
 };

@@ -3,14 +3,13 @@
   flex-direction: row;
   align-self: center;
   justify-content: space-around;
-  bottom: 0;
-  background: rgb(4, 25, 88);
   background: linear-gradient(
     180deg,
     rgba(4, 25, 88, 1) 36%,
     rgba(0, 0, 0, 1) 88%
   );
 }
+
 .logo_calu {
   display: flex;
   flex-direction: column;
