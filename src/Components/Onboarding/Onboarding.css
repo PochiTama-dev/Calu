@@ -11,7 +11,7 @@
   position: relative;
   z-index: 2;
   min-width: 100%;
-  font-size: 24px;
+  font-size: 20px;
 }
 .onboarding .parrafo h4 {
   color: #eb39d9;
@@ -49,7 +49,7 @@
     display: block;
     position: relative;
     right: 0;
-    height: 80%;
+    height: 55%;
   }
   .onboarding {
     margin-top: 20%;
@@ -64,7 +64,7 @@
   }
   .contactFlex {
     position: relative;
-    bottom: 15%;
+    bottom: 25%;
     height: 8%;
   }
   .contactFlex .btn-contact {
