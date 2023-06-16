@@ -16,7 +16,7 @@ import LogoContact from '../Logo-contact/LogoContact';
 import Onboarding from '../Onboarding/Onboarding';
 
 const Home = () => {
-  const numSections = 4;
+  const numSections = 5;
   const [currentSection, setCurrentSection] = useState(0);
 
   const handlers = useSwipeable({
