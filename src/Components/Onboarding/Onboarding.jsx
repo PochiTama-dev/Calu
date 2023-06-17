@@ -4,7 +4,6 @@ import './Onboarding.css';
 import logoCalu from '../../images/logocalu.png';
 import { Link } from 'react-router-dom';
 
-//PONER .section123 background transparent
 const Onboarding = () => {
   return (
     <>
@@ -22,7 +21,7 @@ const Onboarding = () => {
         <img src={logoCalu} alt='logo calu' className='logoCalu' />
       </div>
       <div className='contactFlex'>
-        <div className='btn-contact'>
+        <div className='contact-btn'>
           <Link to={'/contact'}>Contactanos</Link>
         </div>
       </div>
