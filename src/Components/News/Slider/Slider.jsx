@@ -29,6 +29,8 @@ function Slider({ children }) {
         infinite={true}
         responsive={responsive}
         showDots={true}
+        renderDotsOutside={true}
+        dotListClass="custom-dot-list-style"
         itemClass="carouselItem"
         autoPlay={true}
         autoPlaySpeed={"4500"}
