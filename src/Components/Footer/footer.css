@@ -84,4 +84,14 @@ ul {
   .logo_calu p {
     margin-top: -20px;
   }
+  ul {
+    list-style: none;
+    font-size: 19px;
+  }
+  .servicios {
+    font-size: 18px;
+  }
+  .redes {
+    font-size: 18px;
+  }
 }
