@@ -122,7 +122,14 @@ const Home = () => {
       >
         <News />
       </section>
-        <Footer />
+
+      <section>
+        <Onboarding
+          style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
+          className={`section-5 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}
+        />
+      </section>
+      <Footer />
     </div>
   );
 };

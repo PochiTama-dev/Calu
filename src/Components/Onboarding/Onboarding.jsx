@@ -4,7 +4,6 @@ import './Onboarding.css';
 import logoCalu from '../../images/logocalu.png';
 import { Link } from 'react-router-dom';
 
-//PONER .section123 background transparent
 const Onboarding = () => {
   return (
     <>
