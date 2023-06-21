@@ -1,21 +1,22 @@
-import { useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
-import 'animate.css/animate.min.css';
-import './home.css';
-import {Header} from '../Header/header';
-import Footer from '../Footer/Footer';
-import Portfolio from '../Portfolio/Portfolio';
-import About from '../About/About';
-import News from '../News/News';
-import Onboarding from '../Onboarding/Onboarding';
-import OurServices from '../OurServices/OurServices';
+import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
+import "animate.css/animate.min.css";
+import "./home.css";
+import { Header } from "../Header/header";
+import Footer from "../Footer/Footer";
+import Portfolio from "../Portfolio/Portfolio";
+import About from "../About/About";
+import News from "../News/News";
+import Onboarding from "../Onboarding/Onboarding";
+import OurServices from "../OurServices/OurServices";
 
 const Home = () => {
   const numSections = 5;
   const [currentSection, setCurrentSection] = useState(0);
 
   const handlers = useSwipeable({
-    onSwipedUp: () => setCurrentSection((prev) => Math.min(prev + 1, numSections - 1)),
+    onSwipedUp: () =>
+      setCurrentSection((prev) => Math.min(prev + 1, numSections - 1)),
     onSwipedDown: () => setCurrentSection((prev) => Math.max(prev - 1, 0)),
   });
 
@@ -29,22 +30,26 @@ const Home = () => {
   };
 
   const sectionStyles = {
-    height: '100vh',
-    transition: 'transform 0.5s ease-in-out',
+    height: "100vh",
+    transition: "transform 0.5s ease-in-out",
   };
 
   const getSectionClassName = (sectionNumber) =>
-    `section-${sectionNumber} ${currentSection === sectionNumber ? 'animate__animated animate__fadeIn' : ''}`;
+    `section-${sectionNumber} ${
+      currentSection === sectionNumber
+        ? "animate__animated animate__fadeIn"
+        : ""
+    }`;
 
   return (
     <div
       {...handlers}
       onWheel={handleScroll}
       style={{
-        transform: `translateY(-${currentSection * 120}vh)`,
-        height: '100vh',
-        width: '100%',
-        transition: 'transform 0.5s ease-in-out',
+        transform: `translateY(-${currentSection * 100}vh)`,
+        height: "100vh",
+        width: "100%",
+        transition: "transform 0.5s ease-in-out",
       }}
     >
       <Header />
@@ -64,8 +69,8 @@ const Home = () => {
       </section>
       <section style={sectionStyles} className={getSectionClassName(4)}>
         <Onboarding />
+        <Footer />
       </section>
-      <Footer />
     </div>
   );
 };

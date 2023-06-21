@@ -3,12 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
-.ourServices p{
+.ourServices p {
   font-size: 24px;
 }
-
-
-
