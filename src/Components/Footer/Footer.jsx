@@ -1,11 +1,11 @@
 import React from "react";
 import "./footer.css";
-import calu_logo from "./calu_logo.svg";
-import fb_logo from "./Facebook.png";
-import insta_logo from "./Instagram.png";
-import ld_logo from "./Linkedin.png";
-import tk_logo from "./TikTok.png";
-import sp_logo from "./Spotify.png";
+import calu_logo from "./icons/calu_logo.svg";
+import fb_logo from "./icons/Facebook.png";
+import insta_logo from "./icons/Instagram.png";
+import ld_logo from "./icons/Linkedin.png";
+import tk_logo from "./icons/TikTok.png";
+import sp_logo from "./icons/Spotify.png";
 
 const Footer = () => {
   return (

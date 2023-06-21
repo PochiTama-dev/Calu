@@ -1,0 +1,35 @@
+.srv_title {
+  display: flex;
+  justify-content: center;
+  color: #3af6ff;
+  font-size: 35px;
+}
+.srv_cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .srv_cards {
+    display: block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .srv_title h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 386px) {
+  .srv_title h1 {
+    font-size: 30px;
+  }
+}

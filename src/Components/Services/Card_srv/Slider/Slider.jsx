@@ -24,16 +24,12 @@ function Slider({ children }) {
       <Carousel
         containerClass="carousel-container"
         swipeable={true}
-        draggable={false}
+        draggable={true}
         removeArrowOnDeviceType={["mobile", "tablet"]}
         infinite={true}
         responsive={responsive}
         showDots={true}
-        renderDotsOutside={true}
-        dotListClass="custom-dot-list-style"
         itemClass="carouselItem"
-        autoPlay={true}
-        autoPlaySpeed={"4500"}
       >
         {children.map((children, index) => {
           return <div key={index}>{children}</div>;
