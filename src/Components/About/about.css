@@ -1,5 +1,6 @@
 .about_container {
   margin: 2% 15% 0% 15%;
+  height: 100%
 }
 .title_about {
   color: #3af6ff;
@@ -23,6 +24,7 @@
 }
 
 .about_container p {
+  color: white;
   text-align: justify;
   font-size: 24px;
 }
@@ -57,6 +59,7 @@
   }
 
   .about_container p {
+    color: white;
     font-size: 100%;
   }
   .text-last {
@@ -81,6 +84,7 @@
   }
 
   .about_container p {
+    color: white;
     font-size: 110%;
   }
   .text-last {

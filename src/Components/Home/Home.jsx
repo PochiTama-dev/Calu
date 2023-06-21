@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import 'animate.css/animate.min.css';
 import './home.css';
-import { Header } from '../Header/header';
+import {Header} from '../Header/header';
 import Footer from '../Footer/Footer';
 import Portfolio from '../Portfolio/Portfolio';
 import About from '../About/About';
 import News from '../News/News';
-import Slider from '../Portfolio/Slider/Slider';
-import Card from '../Portfolio/Card/Card';
 import Onboarding from '../Onboarding/Onboarding';
 import OurServices from '../OurServices/OurServices';
 
@@ -30,6 +28,14 @@ const Home = () => {
     }
   };
 
+  const sectionStyles = {
+    height: '100vh',
+    transition: 'transform 0.5s ease-in-out',
+  };
+
+  const getSectionClassName = (sectionNumber) =>
+    `section-${sectionNumber} ${currentSection === sectionNumber ? 'animate__animated animate__fadeIn' : ''}`;
+
   return (
     <div
       {...handlers}
@@ -42,38 +48,22 @@ const Home = () => {
       }}
     >
       <Header />
-      <section
-        style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
-        className={`section-1 ${currentSection === 0 ? 'animate__animated animate__fadeIn' : ''}`}
-      >
+      <section style={sectionStyles} className={getSectionClassName(0)}>
         <About />
       </section>
-      <section
-        style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
-        className={`section-2 ${currentSection === 1 ? 'animate__animated animate__fadeIn' : ''}`}
-      >
+      <section style={sectionStyles} className={getSectionClassName(1)}>
         <OurServices />
       </section>
-      <section
-        style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
-        className={`section-3 ${currentSection === 2 ? 'animate__animated animate__fadeIn' : ''}`}
-      >
-        <div className='portfolio'>
+      <section style={sectionStyles} className={getSectionClassName(2)}>
+        <div className="portfolio">
           <Portfolio />
         </div>
       </section>
-      <section
-        style={{ transition: 'transform 0.5s ease-in-out' }}
-        className={`section-4 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}
-      >
+      <section style={sectionStyles} className={getSectionClassName(3)}>
         <News />
       </section>
-
-      <section>
-        <Onboarding
-          style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
-          className={`section-5 ${currentSection === 3 ? 'animate__animated animate__fadeIn' : ''}`}
-        />
+      <section style={sectionStyles} className={getSectionClassName(4)}>
+        <Onboarding />
       </section>
       <Footer />
     </div>

@@ -1,6 +1,5 @@
 //CSS
 import './Onboarding.css';
-
 import logoCalu from '../../images/logocalu.png';
 import { Link } from 'react-router-dom';
 

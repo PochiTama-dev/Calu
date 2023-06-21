@@ -13,9 +13,11 @@
 
 .navBar nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
+
+
 .links {
   display: flex;
   justify-content: space-around;
@@ -50,6 +52,12 @@
     margin: 15px;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
+  }
+
+  .navBar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .btn i {
     background-color: #fff;

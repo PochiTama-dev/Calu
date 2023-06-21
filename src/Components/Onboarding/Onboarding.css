@@ -3,9 +3,11 @@
   overflow: hidden;
   margin-top: 80%;
 }
+
 .onboarding .logoCalu {
   display: none;
 }
+
 .onboarding .parrafo {
   color: white;
   position: relative;
@@ -13,9 +15,11 @@
   min-width: 100%;
   font-size: 20px;
 }
+
 .onboarding .parrafo h4 {
   color: #eb39d9;
 }
+
 .onboarding .parrafo h3 {
   color: #3af6ff;
   font-size: 32px;
@@ -27,6 +31,7 @@
   align-items: center;
   margin-left: 5%;
 }
+
 .contact-btn {
   background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 3rem 0 3rem 0;
@@ -49,25 +54,29 @@
     display: block;
     position: relative;
     right: 0;
-    width: 100%;
-    height: 100%;
+    max-width: 40%;
+    height: auto;
   }
+
   .onboarding {
     margin-top: 20%;
     height: 100%;
     align-items: center;
     justify-content: center;
   }
+
   .onboarding .parrafo {
     position: static;
     z-index: initial;
     min-width: initial;
   }
+
   .contactFlex {
     position: relative;
     bottom: 25%;
     height: 8%;
   }
+
   .contactFlex .btn-contact {
     background: linear-gradient(rgba(58, 246, 255, 0.3) 30%, rgba(185, 4, 139, 0.3) 60%);
     border-radius: 40% 0 40% 0;
