@@ -15,8 +15,6 @@ const Card_news = ({ image, title, btn }) => {
         <div className="image">{image}</div>
       </div>
       <div className="title">{title}</div>
-
-      <div className="card_btn">{btn}</div>
     </div>
   );
 };
