@@ -7,7 +7,8 @@ import Footer from '../Footer/Footer';
 import Portfolio from '../Portfolio/Portfolio';
 import About from '../About/About';
 import News from '../News/News';
-import LogoContact from '../Logo-contact/LogoContact';
+import Slider from '../Portfolio/Slider/Slider';
+import Card from '../Portfolio/Card/Card';
 import Onboarding from '../Onboarding/Onboarding';
 import OurServices from '../OurServices/OurServices';
 
@@ -67,7 +68,7 @@ const Home = () => {
       >
         <News />
       </section>
-      <Footer />
+        <Footer />
     </div>
   );
 };

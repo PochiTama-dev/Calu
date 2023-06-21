@@ -22,7 +22,7 @@ const Onboarding = () => {
         <img src={logoCalu} alt='logo calu' className='logoCalu' />
       </div>
       <div className='contactFlex'>
-        <div className='btn-contact'>
+        <div className='contact-btn'>
           <Link to={'/contact'}>Contactanos</Link>
         </div>
       </div>
