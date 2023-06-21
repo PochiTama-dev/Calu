@@ -11,15 +11,14 @@
   position: relative;
   z-index: 2;
   min-width: 100%;
-  font-size: 3vh;
+  font-size: 20px;
 }
-.onboarding .logoAvion {
-  position: relative;
-  opacity: 0.7;
-  z-index: 1;
-  height: 30vh;
-  transform: rotate(-117deg) rotateX(164deg);
-  animation: moveLeftToRight 5s linear infinite;
+.onboarding .parrafo h4 {
+  color: #eb39d9;
+}
+.onboarding .parrafo h3 {
+  color: #3af6ff;
+  font-size: 32px;
 }
 
 .contactFlex {
@@ -46,9 +45,6 @@
 }
 
 @media (min-width: 900px) {
-  .logoAvion {
-    display: none;
-  }
   .onboarding .logoCalu {
     display: block;
     position: relative;
@@ -65,23 +61,16 @@
     position: static;
     z-index: initial;
     min-width: initial;
-    font-size: initial;
   }
   .contactFlex {
     position: relative;
-    bottom: 30%;
+    bottom: 25%;
+    height: 8%;
   }
-  .contactFlex .contact {
+  .contactFlex .btn-contact {
     background: linear-gradient(rgba(58, 246, 255, 0.3) 30%, rgba(185, 4, 139, 0.3) 60%);
-    border-radius: 60% 0 60% 0;
-  }
-}
-
-@keyframes moveLeftToRight {
-  0% {
-    left: -170%;
-  }
-  100% {
-    left: 5%;
+    border-radius: 40% 0 40% 0;
+    width: 15%;
+    height: 75%;
   }
 }
