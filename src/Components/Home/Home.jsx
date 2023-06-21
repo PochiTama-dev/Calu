@@ -122,6 +122,7 @@ const Home = () => {
       >
         <News />
       </section>
+
       <section>
         <Onboarding
           style={{ height: '100vh', transition: 'transform 0.5s ease-in-out' }}
