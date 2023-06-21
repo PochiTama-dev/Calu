@@ -1,7 +1,7 @@
 .onboarding {
   display: flex;
   overflow: hidden;
-  margin-top: 80%;
+  height: 100%;
 }
 
 .onboarding .logoCalu {

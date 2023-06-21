@@ -41,7 +41,7 @@ const Home = () => {
       {...handlers}
       onWheel={handleScroll}
       style={{
-        transform: `translateY(-${currentSection * 100}vh)`,
+        transform: `translateY(-${currentSection * 120}vh)`,
         height: '100vh',
         width: '100%',
         transition: 'transform 0.5s ease-in-out',
