@@ -28,10 +28,12 @@
   left: 0;
 }
 
-.open_btn {
+.open_btn p {
   display: block;
   margin: 15px;
   cursor: pointer;
+  color: #eb39d9;
+  font-weight: bold;
 }
 .close_btn_container {
   position: absolute;
