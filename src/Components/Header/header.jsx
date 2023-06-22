@@ -18,8 +18,11 @@ export const Header = () => {
         </Link>
         <nav className={showLinks ? 'links ' : 'link show '}>
           <Link to={'/'}> Home </Link>
+          <hr />
           <Link to={'/services'}> Servicios </Link>
+          <hr />
           <Link to={'/blog'}> Blog </Link>
+          <hr />
           <Link to={'/Contact'}> Contacto </Link>
         </nav>
         <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
