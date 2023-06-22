@@ -1,6 +1,6 @@
-import icono from '../Home/icon_eye.svg';
-import icono2 from '../Home/🦆 icon _key_.svg';
-import icono3 from '../Home/🦆 icon _pie chart_.svg';
+import icono2 from '../Services/icons/publicidad_digital.png';
+import icono from '../Services/icons/gestion_redes.png';
+import icono3 from '../Services/icons/consultoria_estrategica.png';
 import Slider from '../Portfolio/Slider/Slider';
 import Card from '../Portfolio/Card/Card';
 import './OurServices.css';
