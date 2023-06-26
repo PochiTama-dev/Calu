@@ -9,7 +9,7 @@ import sp_logo from "./icons/Spotify.png";
 
 const Footer = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 560;
+  const breakpoint = 561;
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
