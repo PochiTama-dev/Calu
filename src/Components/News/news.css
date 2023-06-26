@@ -18,7 +18,7 @@
 .cards_novedades {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+
   margin-top: 100px;
   justify-content: space-between;
 }
