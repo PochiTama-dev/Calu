@@ -1,11 +1,11 @@
 import "./services.css";
 import React from "react";
 import { Header } from "../Header/header";
-
 import servicios from "./constants";
 import Slider from "../Services/Card_srv/Slider/Slider";
 import Card_srv_flip from "./Card_srv/Card_srv_flip";
 import Footer from "../Footer/Footer";
+import CTN from "../CTN/CTN";
 
 const Services = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -57,6 +57,7 @@ const Services = () => {
             ))}
           </div>
         </div>
+        <CTN/>
         <Footer />
       </>
     );
@@ -86,6 +87,7 @@ const Services = () => {
           </Slider>
         </div>
       </div>
+      <CTN/>
       <Footer />
     </>
   );

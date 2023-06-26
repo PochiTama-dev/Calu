@@ -80,7 +80,7 @@ const servicios = [
   {
     id: 7,
     img: <img src={modelo_negocio} width="210px" />,
-    title: " MDOELO DE NEGOCIO ",
+    title: " MODELO DE NEGOCIO ",
     sub: "LE DAMOS FORMA A TU IDEA Y TE AYUDAMOS A QUE SE CONVIERTA EN REALIDAD ",
     des_1:
       "¿Te cuesta definir el modelo de negocio de tu proyecto? Analicemos en equipo tu idea, definamos de qué manera vas a crear valor, cómo te vas a diferenciar de la competencia y cómo vas a generar ingresos.",
