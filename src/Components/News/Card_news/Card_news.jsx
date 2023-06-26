@@ -14,7 +14,7 @@ const Card_news = ({ image, title, btn }) => {
         </div>
         <div className="image">{image}</div>
       </div>
-      <div className="title">{title}</div>
+      <div className="title_news">{title}</div>
     </div>
   );
 };
