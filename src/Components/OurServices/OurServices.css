@@ -55,6 +55,14 @@
   .ctn-servicios .react-multi-carousel-dot-list .react-multi-carousel-dot--active button {
     background: #07d2ff;
   }
+  .ctn-servicios
+    .slider
+    .carousel
+    .react-multi-carousel-list.carousel-container
+    .react-multi-carousel-track
+    .react-multi-carousel-item.carouselItem {
+    width: 314px !important;
+  }
 }
 
 .icono-servicios {
@@ -66,7 +74,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 200px auto 0;
 }
 
 .ourServices p {
