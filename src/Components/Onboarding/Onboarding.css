@@ -18,6 +18,7 @@
 
 .onboarding .parrafo h4 {
   color: #eb39d9;
+  font-size: 32px;
 }
 
 .onboarding .parrafo h3 {
@@ -30,6 +31,8 @@
   justify-content: flex-start;
   align-items: center;
   margin-left: 5%;
+  position: relative;
+  bottom: 40vh;
 }
 
 .contact-btn {
@@ -54,13 +57,13 @@
     display: block;
     position: relative;
     right: 0;
-    max-width: 40%;
-    height: auto;
+    max-width: 54%;
+    height: 70%;
   }
 
   .onboarding {
     height: 100%;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
@@ -68,11 +71,11 @@
     position: static;
     z-index: initial;
     min-width: initial;
+    margin-left: 7%;
   }
 
   .contactFlex {
     position: relative;
-    bottom: 25%;
     height: 8%;
   }
 
