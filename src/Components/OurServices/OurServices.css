@@ -81,3 +81,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.react-multi-carousel-dot-list {
+  display: none;
+}

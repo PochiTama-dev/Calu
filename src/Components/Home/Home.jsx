@@ -9,6 +9,7 @@ import About from '../About/About';
 import News from '../News/News';
 import Onboarding from '../Onboarding/Onboarding';
 import OurServices from '../OurServices/OurServices';
+import CTN from '../CTN/CTN';
 
 const Home = () => {
   const numSections = 5;
@@ -49,9 +50,9 @@ const Home = () => {
         transition: 'transform 0.5s ease-in-out',
       }}
     >
-      
-      <section style={sectionStyles} className={getSectionClassName(0)}>
       <Header />
+      <section style={sectionStyles} className={getSectionClassName(0)}>
+
         <Onboarding />
       </section>
       <section style={sectionStyles} className={getSectionClassName(1)}>
@@ -67,8 +68,12 @@ const Home = () => {
       </section>
       <section style={sectionStyles} className={getSectionClassName(4)}>
         <News />
+        </section>
+        <section>
+        <CTN/>
         <Footer />
-      </section>
+        </section>
+      
     </div>
   );
 };

@@ -30,15 +30,15 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
-              <p className='paragraph'>
-                ¿Sentís que tu marca no despega?
-              </p>
+              >
+              </Card>
+
             </div>
             <div className='nuestros-servicios'>
               <Card
                 image={<img className='icono-servicios' src={icono} alt='icono ojo' />}
-                title={<p className='text-icono-servicios'>GESTIÓN DE REDES SOCIALES</p>}
+                title={<p className='text-icono-servicios'>GESTIÓN DE REDES SOCIALES
+                </p>}
                 btn={
                   <a className=' button_portfolio' href='/services'>
                     Ver más
