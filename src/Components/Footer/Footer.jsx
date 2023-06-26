@@ -8,6 +8,7 @@ import tk_logo from "./icons/TikTok.png";
 import sp_logo from "./icons/Spotify.png";
 
 const Footer = () => {
+
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 561;
   React.useEffect(() => {
@@ -67,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
     );
-  }
+
   return (
     <div className="footer_container">
       <div className="logo_calu">
@@ -76,20 +77,17 @@ const Footer = () => {
       </div>
 
       <div className="servicios">
-        <h1>SERVICIOS</h1>
-
-        <div className="servicios_">
-          <ul>
-            <li>Consultoría Estratégica</li>
-            <li>Gestión de Redes Sociales</li>
-            <li>Publicidad Digital</li>
-            <li>E-mail Marketings</li>
-            <li>Book Institucional</li>
-            <li>Creación de Contenido</li>
-            <li>Modelo de Negocio</li>
-            <li>Desarrollo Web</li>
-          </ul>
-        </div>
+        <h2>SERVICIOS</h2>
+        <ul>
+          <li>Consultoría Estratégica</li>
+          <li>Gestión de Redes Sociales</li>
+          <li>Publicidad Digital</li>
+          <li>E-mail Marketings</li>
+          <li>Book Institucional</li>
+          <li>Creación de Contenido</li>
+          <li>Modelo de Negocio</li>
+          <li>Desarrollo Web</li>
+        </ul>
       </div>
 
       <div className="redes">
