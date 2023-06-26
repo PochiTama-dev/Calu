@@ -31,16 +31,32 @@ const Footer = () => {
 
           <div className="servicios_">
             <ul>
-              <li>Consultoría Estratégica</li>
-              <li>Gestión de Redes Sociales</li>
-              <li>Publicidad Digital</li>
-              <li>E-mail Marketings</li>
+              <li>
+                <span>Consultoría Estratégica</span>
+              </li>
+              <li>
+                <span>Gestión de Redes Sociales</span>
+              </li>
+              <li>
+                <span>Publicidad Digital</span>
+              </li>
+              <li>
+                <span>E-mail Marketings</span>
+              </li>
             </ul>
             <ul>
-              <li>Book Institucional</li>
-              <li>Creación de Contenido</li>
-              <li>Modelo de Negocio</li>
-              <li>Desarrollo Web</li>
+              <li>
+                <span>Book Institucional</span>
+              </li>
+              <li>
+                <span>Creación de Contenido</span>
+              </li>
+              <li>
+                <span>Modelo de Negocio</span>
+              </li>
+              <li>
+                <span>Desarrollo Web</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -80,14 +96,30 @@ const Footer = () => {
 
         <div className="servicios_">
           <ul>
-            <li>Consultoría Estratégica</li>
-            <li>Gestión de Redes Sociales</li>
-            <li>Publicidad Digital</li>
-            <li>E-mail Marketings</li>
-            <li>Book Institucional</li>
-            <li>Creación de Contenido</li>
-            <li>Modelo de Negocio</li>
-            <li>Desarrollo Web</li>
+            <li>
+              <span>Consultoría Estratégica</span>
+            </li>
+            <li>
+              <span>Gestión de Redes Sociales</span>
+            </li>
+            <li>
+              <span>Publicidad Digital</span>
+            </li>
+            <li>
+              <span>E-mail Marketings</span>
+            </li>
+            <li>
+              <span>Book Institucional</span>
+            </li>
+            <li>
+              <span>Creación de Contenido</span>
+            </li>
+            <li>
+              <span>Modelo de Negocio</span>
+            </li>
+            <li>
+              <span>Desarrollo Web</span>
+            </li>
           </ul>
         </div>
       </div>

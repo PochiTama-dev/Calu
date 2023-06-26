@@ -50,17 +50,12 @@
   margin: 5px;
 }
 
-ul {
-  list-style: none;
+li {
   font-size: 22px;
-}
-
-.footer_container ul li::before {
-  content: "•";
   color: #eb39d9;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+}
+li span {
+  color: white; /* text color */
 }
 
 @media (max-width: 1024px) {
@@ -92,7 +87,6 @@ ul {
     margin-top: -20px;
   }
   ul {
-    list-style: none;
     font-size: 19px;
   }
   .servicios {
