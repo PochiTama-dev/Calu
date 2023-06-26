@@ -23,11 +23,8 @@
     height: 280px;
     background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   }
-  .ctn-servicios .nuestros-servicios .card .title {
-    font-size: 75%;
-  }
   .ctn-servicios .nuestros-servicios .card p {
-    font-size: 50%;
+    font-size: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
