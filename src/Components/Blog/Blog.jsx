@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../../firebase-config";
+import { Header } from "../Header/header";
 
 function Blog({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -22,6 +23,7 @@ function Blog({ isAuth }) {
 
   return (
     <div className="BlogPage">
+      <Header/>
       {postLists.map((post) => {
         return (
           <div className="post">

@@ -8,14 +8,14 @@ const Onboarding = () => {
     <>
       <div className='onboarding'>
         <div className='parrafo'>
-          <h4>Tu agencia de marketing digital</h4>
+          <h4>TU AGENCIA DE MARKETING DIGITAL</h4>
           <p>Mejora la visibilidad de tu marca </p>
           <p>
             Te aydamos a hacer crecer tu genocio, llevarlo al siguiente nivel y sumarte al
             ecosistema digital.
           </p>
           <p>No dejes pasar la oportunidad, subite a la transformación digital.</p>
-          <h3>¡Qué tu negocio despegue!</h3>
+          <h3>¡QUE TU NEGOCIO DESPEGUE!</h3>
           <div className='contact-btn'>
           <Link to={'/contact'}>Contactanos</Link>
         </div>
