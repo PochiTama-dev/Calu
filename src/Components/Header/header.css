@@ -2,6 +2,9 @@
   width: 100%;
   height: 18%;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 .logoCalu {
   display: flex;
@@ -13,6 +16,9 @@
 .navBar nav {
   display: flex;
   margin-right: 35px;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
 }
 
 .links {
