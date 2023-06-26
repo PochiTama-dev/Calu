@@ -13,11 +13,13 @@ import "./OurServices.css";
 const OurServices = () => {
   return (
     <div className="ourServices">
-      <h1 className="title-first-nuestros-servicios">NUESTROS SERVICIOS</h1>
-      <p className="text-second">
-        Contamos con una amplia gama de servicios diseñados a la medida de cada
-        emprendimiento que quie ra tener éxito en el mundo digital.
-      </p>
+      <div className="title_des">
+        <h1 className="title-first-nuestros-servicios">NUESTROS SERVICIOS</h1>
+        <p className="text-description">
+          Contamos con una amplia gama de servicios diseñados a la medida de
+          cada emprendimiento que quie ra tener éxito en el mundo digital.
+        </p>
+      </div>
       <div className="ctn-servicios">
         <div className="slider">
           <Slider>
