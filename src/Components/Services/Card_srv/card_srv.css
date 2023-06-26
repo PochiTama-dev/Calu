@@ -1,0 +1,90 @@
+.card_srv_cont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 380px;
+  margin: 30px 10px 30px 10px;
+  height: 400px;
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+  border-radius: 20px;
+}
+.card_srv_info {
+  margin: 10px 5px 5px 5px;
+}
+
+.sub {
+  color: white;
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+  font-size: 18px;
+}
+.des {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 10px 50px 10px;
+}
+.des_1 {
+  margin-top: 20px;
+}
+.des_3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.card_btn_ctn {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.card_btn {
+  background: none;
+  border: none;
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  z-index: 99;
+  backdrop-filter: blur(3px);
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.3) 40%) top,
+  linear-gradient(rgba(4, 25, 88, 0.3) 80%, transparent) bottom,
+  linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+  linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+}
+
+.visible {
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: -50%;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 3;
+}
+
+@media (max-width: 1024px) {
+  .card_f {
+    max-width: 250px;
+    height: 250px;
+  }
+
+  .title {
+    margin: 0px;
+  }
+}
