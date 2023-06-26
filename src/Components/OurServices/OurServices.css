@@ -27,7 +27,7 @@
     font-size: 75%;
   }
   .ctn-servicios .nuestros-servicios .card p {
-    font-size: 70%;
+    font-size: 50%;
   }
   .ctn-servicios .nuestros-servicios .card .btn {
     display: none;
@@ -51,9 +51,6 @@
   .nuestros-servicios:nth-child(1) .text-transition {
     opacity: 1;
     transition: opacity 1s ease-in-out;
-  }
-  .ctn-servicios .react-multi-carousel-dot-list {
-    bottom: 35%;
   }
   .ctn-servicios .react-multi-carousel-dot-list .react-multi-carousel-dot--active button {
     background: #07d2ff;
