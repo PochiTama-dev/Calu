@@ -71,6 +71,7 @@
     position: static;
     z-index: initial;
     min-width: initial;
+    margin-left: 7%;
   }
 
   .contactFlex {
