@@ -11,7 +11,7 @@ import Onboarding from '../Onboarding/Onboarding';
 import OurServices from '../OurServices/OurServices';
 
 const Home = () => {
-  const numSections = 6;
+  const numSections = 5;
   const [currentSection, setCurrentSection] = useState(0);
 
   const handlers = useSwipeable({
@@ -49,8 +49,9 @@ const Home = () => {
         transition: 'transform 0.5s ease-in-out',
       }}
     >
+      
       <section style={sectionStyles} className={getSectionClassName(0)}>
-        <Header />
+      <Header />
         <Onboarding />
       </section>
       <section style={sectionStyles} className={getSectionClassName(1)}>
@@ -66,8 +67,6 @@ const Home = () => {
       </section>
       <section style={sectionStyles} className={getSectionClassName(4)}>
         <News />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(5)}>
         <Footer />
       </section>
     </div>

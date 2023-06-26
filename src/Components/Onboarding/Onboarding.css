@@ -14,6 +14,7 @@
   z-index: 2;
   min-width: 100%;
   font-size: 20px;
+  padding-top: 200px;
 }
 
 .onboarding .parrafo h4 {
@@ -38,7 +39,6 @@
 .contact-btn {
   background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 3rem 0 3rem 0;
-  margin-bottom: 15px;
   width: 15rem;
   height: 6vh;
   align-items: center;
@@ -59,6 +59,10 @@
     right: 0;
     max-width: 54%;
     height: 70%;
+  }
+
+  .contact-btn {
+  bottom: 40px;
   }
 
   .onboarding {

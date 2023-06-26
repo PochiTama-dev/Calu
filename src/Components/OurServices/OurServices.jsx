@@ -27,9 +27,7 @@ const OurServices = () => {
                 }
               ></Card>
               <p className='paragraph'>
-                ¿Sentís que tu marca no despega? En CALU analizamos la situación actual y diseñamos
-                una estrategia de comunicación para definir la identidad digital de tu marca y
-                mejorar tus resultados.
+                ¿Sentís que tu marca no despega?
               </p>
             </div>
             <div className='nuestros-servicios'>
@@ -43,9 +41,7 @@ const OurServices = () => {
                 }
               ></Card>
               <p className='paragraph'>
-                Te ayudamos a identificar tu público ideal, definimos una estrategia y armamos un
-                plan de contenidos para mejorar la presencia digital de tu marca, darle más alcance
-                y aumentar tus ventas.
+                Te ayudamos a identificar tu público ideal
               </p>
             </div>
             <div className='nuestros-servicios'>
@@ -59,9 +55,7 @@ const OurServices = () => {
                 }
               ></Card>
               <p className='paragraph'>
-                Creamos tus campañas de publicidad, en Google ADS, Meta ADS, LinkedIn Ads y TikTok
-                Ads con anuncios altamente personalizados y segmentados, para dirigirlos a un
-                público que realmente se interese en tus productos o servicios.
+                Creamos tus campañas de publicidad
               </p>
             </div>
           </Slider>

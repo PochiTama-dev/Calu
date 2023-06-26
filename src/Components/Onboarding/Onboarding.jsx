@@ -16,13 +16,13 @@ const Onboarding = () => {
           </p>
           <p>No dejes pasar la oportunidad, subite a la transformación digital.</p>
           <h3>¡Qué tu negocio despegue!</h3>
+          <div className='contact-btn'>
+          <Link to={'/contact'}>Contactanos</Link>
+        </div>
         </div>
         <img src={logoCalu} alt='logo calu' className='logoCalu' />
       </div>
       <div className='contactFlex'>
-        <div className='contact-btn'>
-          <Link to={'/contact'}>Contactanos</Link>
-        </div>
       </div>
     </>
   );
