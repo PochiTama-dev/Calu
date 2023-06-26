@@ -49,8 +49,9 @@ const Home = () => {
         transition: 'transform 0.5s ease-in-out',
       }}
     >
-      <Header />
+      
       <section style={sectionStyles} className={getSectionClassName(0)}>
+      <Header />
         <About />
       </section>
       <section style={sectionStyles} className={getSectionClassName(1)}>
