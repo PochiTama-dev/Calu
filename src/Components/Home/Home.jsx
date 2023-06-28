@@ -40,41 +40,41 @@ const Home = () => {
     }`;
 
   return (
-    <div
-      {...handlers}
-      onWheel={handleScroll}
-      style={{
-        transform: `translateY(-${currentSection * 100}vh)`,
-        height: '100vh',
-        width: '100%',
-        transition: 'transform 0.5s ease-in-out',
-      }}
-    >
+    <>
       <Header />
-      <section style={sectionStyles} className={getSectionClassName(0)}>
-
-        <Onboarding />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(1)}>
-        <About />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(2)}>
-        <OurServices />
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(3)}>
-        <div className='portfolio'>
-          <Portfolio />
-        </div>
-      </section>
-      <section style={sectionStyles} className={getSectionClassName(4)}>
-        <News />
+      <div
+        {...handlers}
+        onWheel={handleScroll}
+        style={{
+          transform: `translateY(-${currentSection * 100}vh)`,
+          height: '100vh',
+          width: '100%',
+          transition: 'transform 0.5s ease-in-out',
+        }}
+      >
+        <section style={sectionStyles} className={getSectionClassName(0)}>
+          <Onboarding />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(1)}>
+          <About />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(2)}>
+          <OurServices />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(3)}>
+          <div className='portfolio'>
+            <Portfolio />
+          </div>
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(4)}>
+          <News />
         </section>
         <section>
-        <CTN/>
-        <Footer />
+          <CTN />
+          <Footer />
         </section>
-      
-    </div>
+      </div>
+    </>
   );
 };
 
