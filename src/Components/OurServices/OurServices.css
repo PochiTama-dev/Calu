@@ -18,9 +18,8 @@
     flex-direction: column;
     margin: 30px 0px 30px 0px;
     border-radius: 30% 0% 30% 0%;
-    width: 300px;
-    max-width: 480px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     background: linear-gradient(
       rgba(58, 246, 255, 0.2) 30%,
       rgba(185, 4, 139, 0.2) 60%
@@ -29,7 +28,7 @@
   .ctn-servicios .nuestros-servicios .card .title {
     font-size: 18px;
   }
-  .ctn-servicios .nuestros-servicios .card p {
+  .ctn-servicios .nuestros-servicios .card .p {
     font-size: 16px;
   }
   .ctn-servicios .nuestros-servicios .card .btn {
