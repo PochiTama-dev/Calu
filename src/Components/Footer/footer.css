@@ -49,6 +49,9 @@
   flex-direction: column;
   align-items: center;
 }
+.redes h1 {
+  font-size: 30px;
+}
 
 .social_icons img {
   width: 50px;

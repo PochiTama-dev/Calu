@@ -24,8 +24,14 @@ section {
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 767px) {
   h1 {
-    font-size: 30px;
+    font-size: 36px;
     font-family: "Archive", Arial, sans-serif;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  p {
+    font-size: 20px;
   }
 }
 
@@ -35,6 +41,12 @@ section {
     font-size: 38px;
     font-family: "Archive", Arial, sans-serif;
   }
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 24px;
+  }
 }
 
 /* Estilos para escritorio */
@@ -42,5 +54,11 @@ section {
   h1 {
     font-size: 58px;
     font-family: "Archive", Arial, sans-serif;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 28px;
   }
 }

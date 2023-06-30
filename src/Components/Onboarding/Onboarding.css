@@ -2,6 +2,7 @@
   display: flex;
   overflow: hidden;
   height: 100%;
+  margin: 0 0 0% 7%;
 }
 
 .onboarding .logoCalu {
@@ -13,7 +14,6 @@
   position: relative;
   z-index: 2;
   min-width: 100%;
-  font-size: 24px;
   padding-top: 200px;
 }
 
@@ -21,9 +21,8 @@
   color: #eb39d9;
 }
 
-.onboarding .parrafo h3 {
+.onboarding .parrafo h2 {
   color: #3af6ff;
-  font-size: 32px;
 }
 
 .contactFlex {
@@ -78,7 +77,6 @@
     position: static;
     z-index: initial;
     min-width: initial;
-    margin-left: 7%;
   }
 
   .contactFlex {

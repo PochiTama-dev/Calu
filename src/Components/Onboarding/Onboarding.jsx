@@ -17,7 +17,7 @@ const Onboarding = () => {
           <p>
             No dejes pasar la oportunidad, subite a la transformación digital.
           </p>
-          <h3>¡QUE TU NEGOCIO DESPEGUE!</h3>
+          <h2>¡QUE TU NEGOCIO DESPEGUE!</h2>
           <div className="contact-btn">
             <Link to={"/contact"}>Contactanos</Link>
           </div>
