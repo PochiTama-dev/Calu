@@ -28,6 +28,7 @@ const Home = () => {
     }`;
 
   return (
+
     <div className="container">
       <Header />
       <section style={sectionStyles} className={getSectionClassName(0)}>
@@ -50,6 +51,7 @@ const Home = () => {
         <Footer />
       </section>
     </div>
+
   );
 };
 
