@@ -10,12 +10,6 @@ section {
   height: 100vh;
   scroll-snap-align: start;
 }
-.title-first-nuestros-servicios,
-.title-first-portafolio {
-  color: #3af6ff;
-  text-align: center;
-  margin-top: 40px; /* Ajusta el valor de margin-top según sea necesario */
-}
 
 .sub-first {
   color: #eb39d9;
