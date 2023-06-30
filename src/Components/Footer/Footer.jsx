@@ -21,64 +21,66 @@ const Footer = () => {
   if (width > breakpoint) {
     return (
       <div className="footer_container">
-        <div className="logo_calu">
-          <img src={calu_logo} alt="calu" />
-          <p>TU AGENCIA DE MARKETING DIGITAL</p>
-        </div>
-
-        <div className="servicios">
-          <h1>SERVICIOS</h1>
-
-          <div className="servicios_">
-            <ul>
-              <li>
-                <span>Consultoría Estratégica</span>
-              </li>
-              <li>
-                <span>Gestión de Redes Sociales</span>
-              </li>
-              <li>
-                <span>Publicidad Digital</span>
-              </li>
-              <li>
-                <span>E-mail Marketings</span>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <span>Book Institucional</span>
-              </li>
-              <li>
-                <span>Creación de Contenido</span>
-              </li>
-              <li>
-                <span>Modelo de Negocio</span>
-              </li>
-              <li>
-                <span>Desarrollo Web</span>
-              </li>
-            </ul>
+        <div className="footer_elements">
+          <div className="logo_calu">
+            <img src={calu_logo} alt="calu" />
+            <p>TU AGENCIA DE MARKETING DIGITAL</p>
           </div>
-        </div>
 
-        <div className="redes">
-          <h2>REDES</h2>
-          <div className="social_icons">
-            <a href="">
-              <img src={ld_logo} alt="linkedin" />
-            </a>
-            <a href="">
-              <img src={fb_logo} alt="facebook" />
-            </a>
-            <a href="">
-              <img src={insta_logo} alt="instagram" />
-            </a>
-            <a href="">
-              <img src={tk_logo} alt="tiktok" />
-            </a>
-            <a href="">
-              <img src={sp_logo} alt="spotify" />
-            </a>
+          <div className="servicios">
+            <h1>SERVICIOS</h1>
+
+            <div className="servicios_">
+              <ul>
+                <li>
+                  <span>Consultoría Estratégica</span>
+                </li>
+                <li>
+                  <span>Gestión de Redes Sociales</span>
+                </li>
+                <li>
+                  <span>Publicidad Digital</span>
+                </li>
+                <li>
+                  <span>E-mail Marketings</span>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Book Institucional</span>
+                </li>
+                <li>
+                  <span>Creación de Contenido</span>
+                </li>
+                <li>
+                  <span>Modelo de Negocio</span>
+                </li>
+                <li>
+                  <span>Desarrollo Web</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="redes">
+            <h2>REDES</h2>
+            <div className="social_icons">
+              <a href="">
+                <img src={ld_logo} alt="linkedin" />
+              </a>
+              <a href="">
+                <img src={fb_logo} alt="facebook" />
+              </a>
+              <a href="">
+                <img src={insta_logo} alt="instagram" />
+              </a>
+              <a href="">
+                <img src={tk_logo} alt="tiktok" />
+              </a>
+              <a href="">
+                <img src={sp_logo} alt="spotify" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,9 @@
 .footer_container {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.footer_elements {
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -8,6 +13,7 @@
     rgba(4, 25, 88, 1) 36%,
     rgba(0, 0, 0, 1) 88%
   );
+  bottom: 0;
 }
 
 .logo_calu {
