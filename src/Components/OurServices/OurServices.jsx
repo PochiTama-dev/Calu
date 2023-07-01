@@ -17,7 +17,7 @@ const OurServices = () => {
       <h1 className="title-first-nuestros-servicios">NUESTROS SERVICIOS</h1>
       <p className="text-description">
         Contamos con una amplia gama de servicios diseñados a la medida de cada
-        emprendimiento que quie ra tener éxito en el mundo digital.
+        emprendimiento que quiera tener éxito en el mundo digital.
       </p>
 
       <div className="ctn-servicios">
