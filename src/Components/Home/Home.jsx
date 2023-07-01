@@ -10,7 +10,8 @@ import News from "../News/News";
 import Onboarding from "../Onboarding/Onboarding";
 import OurServices from "../OurServices/OurServices";
 import CTN from "../CTN/CTN";
-
+import Contact_button from "./Contact_button/Contact_button";
+import React from "react";
 const Home = () => {
   const numSections = 5;
   const [currentSection, setCurrentSection] = useState(0);
@@ -26,11 +27,47 @@ const Home = () => {
         ? "animate__animated animate__fadeIn"
         : ""
     }`;
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 767;
+  React.useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
 
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
+  if (width > breakpoint) {
+    return (
+      <div className="container">
+        <Header />
+        <Contact_button />
+        <section style={sectionStyles} className={getSectionClassName(0)}>
+          <Onboarding />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(1)}>
+          <About />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(2)}>
+          <OurServices />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(3)}>
+          <Portfolio />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(4)}>
+          <News />
+        </section>
+        <section>
+          <CTN />
+          <Footer />
+        </section>
+      </div>
+    );
+  }
   return (
-
     <div className="container">
       <Header />
+      <Contact_button />
       <section style={sectionStyles} className={getSectionClassName(0)}>
         <Onboarding />
       </section>
@@ -48,10 +85,11 @@ const Home = () => {
       </section>
       <section>
         <CTN />
+      </section>
+      <section>
         <Footer />
       </section>
     </div>
-
   );
 };
 

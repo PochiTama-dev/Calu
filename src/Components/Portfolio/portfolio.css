@@ -30,6 +30,11 @@
   text-align: center;
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
 }
 
 @media (max-width: 767px) {

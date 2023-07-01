@@ -46,6 +46,11 @@
     font-size: 35px;
   }
 }
+@media (max-width: 767px) {
+  .CTN_ctn2 {
+    margin-top: 250px;
+  }
+}
 @media (max-width: 500px) {
   .CTN_title {
     font-size: 28px;

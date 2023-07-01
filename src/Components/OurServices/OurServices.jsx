@@ -7,8 +7,9 @@ import modelo from "../Services/icons/modelo_negocio.png";
 import creacion from "../Services/icons/creación_contenido.png";
 import desarrollo from "../Services/icons/desarrollo_web.png";
 import Slider from "../Portfolio/Slider/Slider";
-import Card from "../Portfolio/Card/Card";
+
 import "./OurServices.css";
+import Card_our from "./Card_OurService/Card_our";
 
 const OurServices = () => {
   return (
@@ -23,7 +24,7 @@ const OurServices = () => {
         <div className="slider">
           <Slider>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -44,10 +45,10 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -68,10 +69,10 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -92,10 +93,10 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -117,10 +118,10 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -142,11 +143,11 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
 
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -167,10 +168,10 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -192,11 +193,11 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
 
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -218,7 +219,7 @@ const OurServices = () => {
                     Ver más
                   </a>
                 }
-              ></Card>
+              ></Card_our>
             </div>
           </Slider>
         </div>

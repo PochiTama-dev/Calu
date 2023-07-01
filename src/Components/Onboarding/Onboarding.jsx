@@ -19,7 +19,7 @@ const Onboarding = () => {
           </p>
           <h2>¡QUE TU NEGOCIO DESPEGUE!</h2>
           <div className="contact-btn">
-            <Link to={"/contact"}>Contactanos</Link>
+            <Link to={"/contact"}>¡Contáctanos!</Link>
           </div>
         </div>
         <img src={logoCalu} alt="logo calu" className="logoCalu" />

@@ -13,13 +13,13 @@
     font-size: 15px;
   }
 
-  .ctn-servicios .nuestros-servicios .card .title {
+  .ctn-servicios .nuestros-servicios .card_our .title {
     font-size: 18px;
   }
-  .ctn-servicios .nuestros-servicios .card .p {
+  .ctn-servicios .nuestros-servicios .card_our .p {
     font-size: 16px;
   }
-  .ctn-servicios .nuestros-servicios .card .btn {
+  .ctn-servicios .nuestros-servicios .card_our .btn {
     display: none;
   }
   .icono-servicios {
@@ -54,4 +54,7 @@
 
 .react-multi-carousel-dot-list {
   display: none;
+}
+.text-icono-servicios {
+  font-weight: bold;
 }

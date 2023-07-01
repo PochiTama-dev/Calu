@@ -28,7 +28,7 @@ const Sidebar = () => {
         </div>
       </aside>
       <span onClick={handleBar} className="open_btn">
-        <p>VER MAS</p>
+        <p>Ver Más</p>
       </span>
     </div>
   );
