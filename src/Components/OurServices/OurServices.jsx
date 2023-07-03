@@ -7,24 +7,24 @@ import modelo from "../Services/icons/modelo_negocio.png";
 import creacion from "../Services/icons/creación_contenido.png";
 import desarrollo from "../Services/icons/desarrollo_web.png";
 import Slider from "../Portfolio/Slider/Slider";
-import Card from "../Portfolio/Card/Card";
+
 import "./OurServices.css";
+import Card_our from "./Card_OurService/Card_our";
 
 const OurServices = () => {
   return (
     <div className="ourServices">
-      <div className="title_des">
-        <h1 className="title-first-nuestros-servicios">NUESTROS SERVICIOS</h1>
-        <p className="text-description">
-          Contamos con una amplia gama de servicios diseñados a la medida de
-          cada emprendimiento que quie ra tener éxito en el mundo digital.
-        </p>
-      </div>
+      <h1 className="title-first-nuestros-servicios">NUESTROS SERVICIOS</h1>
+      <p className="text-description">
+        Contamos con una amplia gama de servicios diseñados a la medida de cada
+        emprendimiento que quiera tener éxito en el mundo digital.
+      </p>
+
       <div className="ctn-servicios">
         <div className="slider">
           <Slider>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -40,13 +40,15 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className=" button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -62,13 +64,15 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className=" button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -84,13 +88,15 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className="button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -107,13 +113,15 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className="button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -130,14 +138,16 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className="button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
 
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -153,13 +163,15 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className="button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -176,14 +188,16 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className="button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
 
             <div className="nuestros-servicios">
-              <Card
+              <Card_our
                 image={
                   <img
                     className="icono-servicios"
@@ -200,10 +214,12 @@ const OurServices = () => {
                     </p>
                   </p>
                 }
-              ></Card>
-              <a className="button_portfolio" href="/services">
-                Ver más
-              </a>
+                btn={
+                  <a className=" button_portfolio" href="/services">
+                    Ver más
+                  </a>
+                }
+              ></Card_our>
             </div>
           </Slider>
         </div>

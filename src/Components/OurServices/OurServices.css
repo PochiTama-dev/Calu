@@ -5,7 +5,6 @@
   }
 
   .ctn-servicios .nuestros-servicios {
-    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,87 +12,49 @@
   .ctn-servicios .nuestros-servicios .paragraph {
     font-size: 15px;
   }
-  .ctn-servicios .nuestros-servicios .card {
-    display: flex;
-    flex-direction: column;
-    margin: 30px 0px 30px 0px;
-    border-radius: 30% 0% 30% 0%;
-    width: 300px;
-    max-width: 480px;
-    height: 300px;
-    background: linear-gradient(
-      rgba(58, 246, 255, 0.2) 30%,
-      rgba(185, 4, 139, 0.2) 60%
-    );
+
+  .ctn-servicios .nuestros-servicios .card_our .title {
+    font-size: 18px;
   }
-  .ctn-servicios .nuestros-servicios .card .title {
-    font-size: 75%;
-  }
-  .ctn-servicios .nuestros-servicios .card p {
+  .ctn-servicios .nuestros-servicios .card_our .p {
     font-size: 16px;
   }
-  .ctn-servicios .nuestros-servicios .card .btn {
+  .ctn-servicios .nuestros-servicios .card_our .btn {
     display: none;
   }
   .icono-servicios {
     width: 100%;
   }
   .text-icono-servicios {
-    margin-left: 16px;
     font-size: 14px;
-  }
-
-  .text-transition {
-    font-size: 14px;
-    width: 80%;
-  }
-  .nuestros-servicios:not(:nth-child(1)) .text-transition {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  .nuestros-servicios:nth-child(1) .text-transition {
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-  }
-  .ctn-servicios .react-multi-carousel-dot-list {
-    bottom: 35%;
-  }
-  .ctn-servicios
-    .react-multi-carousel-dot-list
-    .react-multi-carousel-dot--active
-    button {
-    background: #07d2ff;
   }
 }
 .text-description {
-  text-align: center;
-  margin-bottom: 0px;
+  text-align: left;
+
+  margin: 0% 15% 0 7%;
+  color: white;
 }
-.title_des {
-  margin-bottom: -120px;
+.title-first-nuestros-servicios {
+  color: #3af6ff;
+  text-align: left;
+
+  margin: 2% 0% 25px 7%;
 }
+
 .icono-servicios {
   width: 10vh;
-  height: 10vh;
 }
 .ourServices {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin: 200px auto 0;
-}
-
-.ourServices p {
-  font-size: 24px;
-}
-
-.ctn-servicios {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
 }
 
 .react-multi-carousel-dot-list {
   display: none;
+}
+.text-icono-servicios {
+  font-weight: bold;
 }

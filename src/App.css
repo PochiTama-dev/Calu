@@ -1,51 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 @font-face {
   font-family: "Archive";
-  src: url('./Archive-Regular.ttf');
+  src: url("./Archive-Regular.ttf");
 }
 
-body{
-    font-family: 'Montserrat', sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 section {
-    margin: 0;
-    background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 40%) top,
-                linear-gradient(rgba(4, 25, 88, 0.6) 80%, transparent) bottom,
-                linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
-                linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(1px);
-  }
+  margin: 0;
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 40%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 80%, transparent) bottom,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+  background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px),
+    100% calc(50% - 5px), 100% 100%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(1px);
+}
 
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 767px) {
-    h1{
-        font-size: 30px;
-        font-family: "Archive", Arial, sans-serif; 
-      }
+  h1 {
+    font-size: 36px;
+    font-family: "Archive", Arial, sans-serif;
   }
-  
-  /* Estilos para tablet */
-  @media only screen and (min-width: 768px) and (max-width: 1023px) {
-    h1{
-        font-size: 38px;
-        font-family: "Archive", Arial, sans-serif; 
-      }
+  h2 {
+    font-size: 26px;
   }
-  
-  /* Estilos para escritorio */
-  @media only screen and (min-width: 1024px) {
-    h1{
-        font-size: 58px;
-        font-family: "Archive", Arial, sans-serif; 
-      }
+  p {
+    font-size: 20px;
   }
-  
+}
 
+/* Estilos para tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 38px;
+    font-family: "Archive", Arial, sans-serif;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 24px;
+  }
+}
 
-  
-
-
+/* Estilos para escritorio */
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 58px;
+    font-family: "Archive", Arial, sans-serif;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 28px;
+  }
+}

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 320px;
+  justify-content: center;
 }
 .card_cont {
   display: flex;

@@ -2,6 +2,7 @@
   display: flex;
   overflow: hidden;
   height: 100%;
+  margin: 0 15% 0% 7%;
 }
 
 .onboarding .logoCalu {
@@ -13,18 +14,16 @@
   position: relative;
   z-index: 2;
   min-width: 100%;
-  font-size: 20px;
   padding-top: 200px;
+  margin-top: -30px;
 }
 
-.onboarding .parrafo h4 {
+.onboarding .parrafo h1 {
   color: #eb39d9;
-  font-size: 32px;
 }
 
-.onboarding .parrafo h3 {
+.onboarding .parrafo h2 {
   color: #3af6ff;
-  font-size: 32px;
 }
 
 .contactFlex {
@@ -37,7 +36,10 @@
 }
 
 .contact-btn {
-  background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  background-image: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
   border-radius: 3rem 0 3rem 0;
   width: 15rem;
   height: 6vh;
@@ -50,19 +52,21 @@
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 18px;
 }
 
 @media (min-width: 900px) {
   .onboarding .logoCalu {
     display: block;
     position: relative;
+    margin-top: 90px;
     right: 0;
     max-width: 54%;
     height: 70%;
   }
 
   .contact-btn {
-  bottom: 40px;
+    bottom: 40px;
   }
 
   .onboarding {
@@ -75,7 +79,6 @@
     position: static;
     z-index: initial;
     min-width: initial;
-    margin-left: 7%;
   }
 
   .contactFlex {
@@ -84,7 +87,10 @@
   }
 
   .contactFlex .btn-contact {
-    background: linear-gradient(rgba(58, 246, 255, 0.3) 30%, rgba(185, 4, 139, 0.3) 60%);
+    background: linear-gradient(
+      rgba(58, 246, 255, 0.3) 30%,
+      rgba(185, 4, 139, 0.3) 60%
+    );
     border-radius: 40% 0 40% 0;
     width: 15%;
     height: 75%;
