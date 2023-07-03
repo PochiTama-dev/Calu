@@ -1,9 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './header.css';
 import miImagen from '../../images/logocalu.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase-config";
 
 export const Header = () => {
+  const [isAuth, setIsAuth] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsAuth(localStorage.getItem("isAuth") === "true");
+  }, [location]);
+
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.removeItem("isAuth");
+      setIsAuth(false);
+      window.location.pathname = "/Adminlogin";
+    });
+  };
+
   const [showLinks, setShowLinks] = useState(true);
 
   const handleLinks = () => {
@@ -12,6 +29,14 @@ export const Header = () => {
 
   return (
     <header className='navBar'>
+      {!isAuth ? (
+        <Link to="/Adminlogin"></Link>
+      ) : (
+        <>
+          <Link to="/CreatePost"> Create Post </Link>
+          <button onClick={signUserOut}> Log Out</button>
+        </>
+      )}
       <nav>
         <Link to={'/'}>
           <img className='logoCalu' src={miImagen} alt='Logo Calu' />
