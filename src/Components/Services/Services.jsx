@@ -49,6 +49,9 @@ const Services = () => {
                       </div>
                     </div>
                     <div className='card_srv_cont'>
+                      <div className='srv_icon'>
+                        <div>{nextService.img}</div>
+                      </div>
                       <div className='card_srv_info'>
                         <div className='title_srv'>{nextService.title}</div>
                         <div className='sub_d'>{nextService.sub}</div>
@@ -58,9 +61,6 @@ const Services = () => {
                           <div>{nextService.des_2}</div>
                         </div>
                         <div className='des_3d'>{nextService.des_3}</div>
-                      </div>
-                      <div className='srv_icon'>
-                        <div>{nextService.img}</div>
                       </div>
                     </div>
                   </div>
