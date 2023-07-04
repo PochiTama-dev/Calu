@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './header.css';
-import miImagen from '../../images/logocalu.png';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./header.css";
+import miImagen from "../../images/logocalu.png";
+import { Link, useLocation } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 
@@ -28,9 +28,9 @@ export const Header = () => {
   };
 
   return (
+
     <header className='navBar'>
      
-      <nav>
 
       {!isAuth ? (
         <Link to="/Admin-login"></Link>
@@ -40,19 +40,27 @@ export const Header = () => {
           <button onClick={signUserOut}> Log Out</button>
         </>
       )}
+      
+      <nav>
         <Link to={'/'}>
           <img className='logoCalu' src={miImagen} alt='Logo Calu' />
+
         </Link>
-        <nav className={showLinks ? 'links ' : 'link show '}>
-          <Link to={'/'}> Home </Link>
+        <nav className={showLinks ? "links " : "link show "}>
           <hr />
-          <Link to={'/services'}> Servicios </Link>
+          <Link to={"/"}> Home </Link>
           <hr />
-          <Link to={'/blog'}> Blog </Link>
+          <Link to={"/services"}> Servicios </Link>
           <hr />
-          <Link to={'/Contact'}> Contacto </Link>
+          <Link to={"/blog"}> Blog </Link>
+          <hr />
+          <Link to={"/Contact"}> Contacto </Link>
+          <hr />
         </nav>
-        <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
+        <span
+          onClick={handleLinks}
+          className={`btn ${showLinks ? "bar" : "cross"}`}
+        >
           <div>
             <i></i>
             <i></i>

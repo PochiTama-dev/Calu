@@ -95,14 +95,14 @@
   .link.show,
   .links {
     position: absolute;
+    left: 0;
     top: 0;
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    transform: translateX(-30%);
+    height: 300px;
+    transform: translateY(40%);
     opacity: 0.9;
     z-index: 99;
     overflow-y: auto;
@@ -111,13 +111,10 @@
       linear-gradient(rgba(4, 25, 88, 0.6) 80%, transparent) bottom,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
   }
   .link.show a {
     margin-top: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: left;
   }
 
   .links {
@@ -128,6 +125,5 @@
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
-    font-weight: bold;
   }
 }
