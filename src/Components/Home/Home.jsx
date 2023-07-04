@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useSwipeable } from "react-swipeable";
 import "animate.css/animate.min.css";
 import "./home.css";
 import { Header } from "../Header/header";
@@ -27,6 +26,7 @@ const Home = () => {
         ? "animate__animated animate__fadeIn"
         : ""
     }`;
+
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 767;
   React.useEffect(() => {

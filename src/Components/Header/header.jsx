@@ -17,7 +17,7 @@ export const Header = () => {
     signOut(auth).then(() => {
       localStorage.removeItem("isAuth");
       setIsAuth(false);
-      window.location.pathname = "/Adminlogin";
+      window.location.pathname = "/Admin-login";
     });
   };
 
@@ -28,18 +28,23 @@ export const Header = () => {
   };
 
   return (
-    <header className="navBar">
+
+    <header className='navBar'>
+     
+
       {!isAuth ? (
-        <Link to="/Adminlogin"></Link>
+        <Link to="/Admin-login"></Link>
       ) : (
         <>
-          <Link to="/CreatePost"> Create Post </Link>
+          <Link to="/Create-Post"> Create Post </Link>
           <button onClick={signUserOut}> Log Out</button>
         </>
       )}
+      
       <nav>
-        <Link to={"/"}>
-          <img className="logoCalu" src={miImagen} alt="Logo Calu" />
+        <Link to={'/'}>
+          <img className='logoCalu' src={miImagen} alt='Logo Calu' />
+
         </Link>
         <nav className={showLinks ? "links " : "link show "}>
           <hr />
