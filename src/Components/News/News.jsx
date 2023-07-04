@@ -2,7 +2,6 @@ import React from "react";
 import "./news.css";
 import Card_news from "./Card_news/Card_news";
 import Slider from "./Slider/Slider";
-import Sidebar from "./Sidebar/Sidebar";
 const News = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
@@ -61,9 +60,6 @@ const News = () => {
               ></Card_news>{" "}
             </a>
           </div>
-          <div className="btn_cont">
-            <Sidebar> </Sidebar>
-          </div>
         </div>
       </div>
     );
@@ -102,7 +98,7 @@ const News = () => {
       </div>
       <div className="btn_cont">
         <button className="news_btn">
-          <Sidebar>VER MAS </Sidebar>
+          <div>VER MAS </div>
         </button>
       </div>
     </div>
