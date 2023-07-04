@@ -3,6 +3,16 @@
   margin-top: 100px;
 }
 
+.scroll_ctn {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+section {
+  justify-content: center;
+  height: 100vh;
+  scroll-snap-align: start;
+}
 .srv_title {
   display: flex;
   justify-content: center;

@@ -1,16 +1,17 @@
 .flip-card {
   display: flex;
   margin: 30px 10px 30px 10px;
-  width: 350px;
-  height: 390px;
+
+  height: 420px;
   perspective: 1000px; /* efecto 3d*/
 }
 .filters__.rotate {
   transform: rotateY(180deg);
 }
 .title {
-  font-size: 18px;
+  font-size: 20px;
   color: rgba(185, 4, 139, 0.9154228855721394);
+  font-weight: bold;
 }
 .sub {
   font-size: 16px;
@@ -31,6 +32,7 @@
   margin-top: 20px;
 }
 .card_btn {
+  margin-top: 20px;
   background: none;
   font-size: 16px;
   font-weight: bold;
@@ -96,7 +98,7 @@
 
 @media (max-width: 767px) {
   .flip-card {
-    width: 350px;
+    width: 390px;
   }
   .des_3 {
     margin-top: 15px;
