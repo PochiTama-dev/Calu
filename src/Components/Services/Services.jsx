@@ -1,11 +1,11 @@
-import './services.css';
-import React from 'react';
-import { Header } from '../Header/header';
-import servicios from './constants';
-import Slider from '../Services/Card_srv/Slider/Slider';
-import Card_srv_flip from './Card_srv/Card_srv_flip';
-import Footer from '../Footer/Footer';
-import CTN from '../CTN/CTN';
+import "./services.css";
+import React from "react";
+import { Header } from "../Header/header";
+import servicios from "./constants";
+import Slider from "../Services/Card_srv/Slider/Slider";
+import Card_srv_flip from "./Card_srv/Card_srv_flip";
+import Footer from "../Footer/Footer";
+import CTN from "../CTN/CTN";
 
 const Services = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -13,9 +13,9 @@ const Services = () => {
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
-    window.addEventListener('resize', handleResizeWindow);
+    window.addEventListener("resize", handleResizeWindow);
     return () => {
-      window.removeEventListener('resize', handleResizeWindow);
+      window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
 
@@ -23,8 +23,8 @@ const Services = () => {
     return (
       <>
         <Header />;
-        <div className='services_container'>
-          <div className='srv_title'>
+        <div className="services_container">
+          <div className="srv_title">
             <h1>Nuestros Servicios</h1>
           </div>
           <div>
@@ -32,35 +32,35 @@ const Services = () => {
               if (index % 2 === 0) {
                 const nextService = servicios[index + 1];
                 return (
-                  <div className='srv_cards' key={index}>
-                    <div className='card_srv_cont'>
-                      <div className='card_srv_info'>
-                        <div className='title_srv'>{servicio.title}</div>
-                        <div className='sub_d'>{servicio.sub}</div>
-                        <div className='des_1d'>
+                  <div className="srv_cards" key={index}>
+                    <div className="card_srv_cont">
+                      <div className="card_srv_info">
+                        <div className="title_srv">{servicio.title}</div>
+                        <div className="sub_d">{servicio.sub}</div>
+                        <div className="des_1d">
                           <div>{servicio.des_1}</div>
                           <br />
                           <div>{servicio.des_2}</div>
                         </div>
-                        <div className='des_3d'>{servicio.des_3}</div>
+                        <div className="des_3d">{servicio.des_3}</div>
                       </div>
-                      <div className='srv_icon'>
+                      <div className="srv_icon">
                         <div>{servicio.img}</div>
                       </div>
                     </div>
-                    <div className='card_srv_cont'>
-                      <div className='srv_icon'>
+                    <div className="card_srv_cont">
+                      <div className="srv_icon">
                         <div>{nextService.img}</div>
                       </div>
-                      <div className='card_srv_info'>
-                        <div className='title_srv'>{nextService.title}</div>
-                        <div className='sub_d'>{nextService.sub}</div>
-                        <div className='des_1d'>
+                      <div className="card_srv_info">
+                        <div className="title_srv">{nextService.title}</div>
+                        <div className="sub_d">{nextService.sub}</div>
+                        <div className="des_1d">
                           <div>{nextService.des_1}</div>
                           <br />
                           <div>{nextService.des_2}</div>
                         </div>
-                        <div className='des_3d'>{nextService.des_3}</div>
+                        <div className="des_3d">{nextService.des_3}</div>
                       </div>
                     </div>
                   </div>
@@ -72,7 +72,7 @@ const Services = () => {
           </div>
         </div>
         <CTN />
-        <div className='footer-services'>
+        <div className="footer-services">
           <Footer />
         </div>
       </>
@@ -82,14 +82,14 @@ const Services = () => {
   return (
     <>
       <Header />
-      <div className='services_container'>
-        <div className='srv_cards'>
-          <div className='srv_title'>
+      <div className="services_container">
+        <div className="srv_cards">
+          <div className="srv_title">
             <h1>Nuestros Servicios</h1>
           </div>
           <Slider>
             {servicios.map((servicios) => (
-              <div>
+              <div className="slider_cards">
                 <Card_srv_flip
                   image={servicios.img}
                   title={servicios.title}
@@ -103,8 +103,10 @@ const Services = () => {
           </Slider>
         </div>
       </div>
-      <CTN />
-      <div className='footer-services'>
+      <div>
+        <CTN />
+      </div>
+      <div className="footer-services">
         <Footer />
       </div>
     </>
