@@ -128,7 +128,7 @@ const Footer = () => {
         </div>
 
         <div className="redes">
-          <h2>REDES</h2>
+          <h1>REDES</h1>
           <div className="social_icons">
             <a href="">
               <img src={ld_logo} alt="linkedin" />
