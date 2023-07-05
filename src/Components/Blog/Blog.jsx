@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../Header/header';
 import Footer from '../Footer/Footer';
 import './blog.css';
+import CardBlogDev from './CardBlogDev';
+import CTN from '../CTN/CTN';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
@@ -30,84 +32,96 @@ function Blog({ isAuth }) {
   }, [deletePost]);
 
   return (
-    <div className='BlogPage'>
+    <>
       <Header />
-
-      <div className='content'>
-        <h1 className='blogTitle'>NUESTRO BLOG</h1>
-        <div className='postContainer'>
-          <div className='cardContainerblog'>
-            {postList.map((post) => (
-              <div className='card-blog' key={post.id}>
-                <div className='cardHeaderblog'>
-                  <div className='titleblog'>
-                    <p>{post.title}</p>
+      <div className='BlogPage'>
+        <div className='content'>
+          <h1 className='blogTitle'>NUESTRO BLOG</h1>
+          <div className='postContainer'>
+            <div className='cardContainerblog'>
+              {postList.map((post) => (
+                <div className='card-blog' key={post.id}>
+                  <div className='cardHeaderblog'>
+                    <div className='titleblog'>
+                      <p>{post.title}</p>
+                    </div>
+                    <div className='deleteblog'>
+                      {isAuth && post.author && post.author.id === auth.currentUser.uid && (
+                        <>
+                          <button
+                            onClick={() => {
+                              deletePost(post.id);
+                            }}
+                            className='deleteblogButton'
+                          >
+                            &#128465; Delete
+                          </button>
+                          <button
+                            onClick={() => {
+                              // Lógica para editar el post
+                            }}
+                            className='editblogButton'
+                          >
+                            &#9998; Edit
+                          </button>
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <div className='deleteblog'>
-                    {isAuth && post.author && post.author.id === auth.currentUser.uid && (
-                      <>
-                        <button
-                          onClick={() => {
-                            deletePost(post.id);
-                          }}
-                          className='deleteblogButton'
-                        >
-                          &#128465; Delete
-                        </button>
-                        <button
-                          onClick={() => {
-                            // Lógica para editar el post
-                          }}
-                          className='editblogButton'
-                        >
-                          &#9998; Edit
-                        </button>
-                      </>
-                    )}
-                  </div>
+                  <div className='cardTextblogContainer'>{post.postText}</div>
+                  {post.author && <h3>@{post.author.name}</h3>}
+                  <button className='viewButton' onClick={() => handlePostClick(post.id)}>
+                    Leer Más
+                  </button>
                 </div>
-                <div className='cardTextblogContainer'>{post.postText}</div>
-                {post.author && <h3>@{post.author.name}</h3>}
-                <button className='viewButton' onClick={() => handlePostClick(post.id)}>
-                  Leer Más
-                </button>
-              </div>
-            ))}
+              ))}
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+              <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
+            </div>
           </div>
+          {/* <div className='cardContainerblog'></div>
+          <div className='cardContainerblog'></div>
+          <div className='cardContainerblog'></div>
+          <div className='cardContainerblog'></div> */}
         </div>
-        <div className='cardContainerblog'></div>
-        <div className='cardContainerblog'></div>
-        <div className='cardContainerblog'></div>
-        <div className='cardContainerblog'></div>
+        <aside className='lateralBar'>
+          <h2 className='blogTitle'>Novedades</h2>
+          <div className='lateralContainer'>
+            <Link to={'#'}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+              exercitationem quis!
+            </Link>
+          </div>
+          <hr />
+          <div className='lateralContainer'>
+            <Link to={'#'}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+              exercitationem quis!
+            </Link>
+          </div>
+          <hr />
+          <div className='lateralContainer'>
+            <Link to={'#'}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+              exercitationem quis!
+            </Link>
+          </div>
+          <hr />
+        </aside>
       </div>
-      <aside className='lateralBar'>
-        <h2 className='blogTitle'>Novedades</h2>
-        <div className='lateralContainer'>
-          <Link to={'#'}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
-            exercitationem quis!
-          </Link>
-        </div>
-        <hr />
-        <div className='lateralContainer'>
-          <Link to={'#'}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
-            exercitationem quis!
-          </Link>
-        </div>
-        <hr />
-        <div className='lateralContainer'>
-          <Link to={'#'}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
-            exercitationem quis!
-          </Link>
-        </div>
-        <hr />
-      </aside>
+      <div className='ctn'>
+        <CTN />
+      </div>
       <div className='footer-blog'>
         <Footer />
       </div>
-    </div>
+    </>
   );
 }
 

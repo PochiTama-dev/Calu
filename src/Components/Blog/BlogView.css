@@ -1,0 +1,50 @@
+.blogContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.blogCard {
+  background-color: rgba(86, 86, 86, 0.5);
+  width: 80%;
+  color: white;
+}
+
+.blogImg {
+  width: 90%;
+}
+@media (min-width: 375px) {
+  .blogImg {
+    width: 90%;
+    margin: 15px;
+  }
+  .date-tagContainer {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
+  .date-tagContainer hr {
+    width: 100%;
+  }
+  .date-tags {
+    color: white;
+    width: 100%;
+  }
+  .footer-blogView {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 100vh;
+  }
+}
+@media (min-width: 900px) {
+  .blogImg {
+    margin: 50px;
+  }
+  .date-tagContainer {
+    justify-content: flex-start;
+    margin-left: 90px;
+  }
+  .footer-blogView {
+    margin-top: 50vh;
+  }
+}
