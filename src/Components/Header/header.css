@@ -4,14 +4,6 @@
   position: fixed;
   top: 0;
   z-index: 99;
-  background: linear-gradient(transparent, rgba(4, 25, 88, 0.8) 0%) top,
-    linear-gradient(rgba(4, 25, 88, 0.8) 55%, transparent) bottom,
-    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
-    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-  background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px),
-    100% calc(50% - 5px), 100% 100%;
-  background-repeat: no-repeat;
-  backdrop-filter: blur(1px);
 }
 ::-webkit-scrollbar {
   display: none;
@@ -34,9 +26,9 @@
   height: 120px;
 }
 
-.links_ctn {
+.links {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
   width: 100%;
   text-decoration: none;
 }
@@ -61,18 +53,6 @@
 }
 
 @media (max-width: 900px) {
-  .links_ctn {
-    margin-top: 10px;
-    border: solid 2px rgb(206, 206, 206);
-    width: 90%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .line {
-    border: solid 1px rgb(206, 206, 206);
-  }
   hr {
     color: white;
     width: 100%;
@@ -121,34 +101,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 25px;
-    height: 250px;
+    height: 300px;
     transform: translateY(40%);
     opacity: 0.9;
     z-index: 99;
     overflow-y: auto;
     transition: opacity 0.3s ease-in;
-    background: linear-gradient(transparent, rgba(4, 25, 88, 0.8) 10%) top,
-      linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
+    background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 40%) top,
+      linear-gradient(rgba(4, 25, 88, 0.6) 80%, transparent) bottom,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px),
-      100% calc(50% - 5px), 100% 100%;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(5px);
   }
   .link.show a {
-    margin-top: 7px;
-    margin-left: 15px;
+    margin-top: 10px;
   }
 
   .links {
-    transform: translateY(-200%);
+    transform: translateY(-100%);
   }
   .link.show a,
   .links a {
     text-decoration: none;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 }

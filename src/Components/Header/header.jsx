@@ -28,7 +28,10 @@ export const Header = () => {
   };
 
   return (
-    <header className="navBar">
+
+    <header className='navBar'>
+     
+
       {!isAuth ? (
         <Link to="/Admin-login"></Link>
       ) : (
@@ -37,24 +40,22 @@ export const Header = () => {
           <button onClick={signUserOut}> Log Out</button>
         </>
       )}
-
+      
       <nav>
-        <Link to={"/"}>
-          <img className="logoCalu" src={miImagen} alt="Logo Calu" />
+        <Link to={'/'}>
+          <img className='logoCalu' src={miImagen} alt='Logo Calu' />
+
         </Link>
         <nav className={showLinks ? "links " : "link show "}>
-          <div className="links_ctn">
-            <Link to={"/"}> HOME </Link>
-            <div className="line"></div>
-            <Link to={"/services"}> SERVICIOS </Link>
-            <div className="line"></div>
-            <Link to={"/blog"}> BLOG </Link>
-            <div className="line"></div>
-            <Link to={"/Contact"} className="contact">
-              {" "}
-              CONTACTO{" "}
-            </Link>
-          </div>
+          <hr />
+          <Link to={"/"}> Home </Link>
+          <hr />
+          <Link to={"/services"}> Servicios </Link>
+          <hr />
+          <Link to={"/blog"}> Blog </Link>
+          <hr />
+          <Link to={"/Contact"}> Contacto </Link>
+          <hr />
         </nav>
         <span
           onClick={handleLinks}
