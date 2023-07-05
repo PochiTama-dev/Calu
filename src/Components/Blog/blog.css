@@ -2,7 +2,7 @@
   height: 70vh;
   display: flex;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .blogTitle {
@@ -57,4 +57,58 @@
 .titleblog {
   text-align: center;
   margin: 10px 0px 0px 0px;
+}
+
+.lateralBar {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+
+hr {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 5px;
+}
+
+@media (min-width: 375px) {
+  .content {
+    margin-top: 15vh;
+  }
+  .BlogPage {
+    height: 2vh;
+  }
+  .postContainer {
+    width: 80%;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+  }
+  .lateralBar {
+    position: initial;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+  }
+  .lateralBar .lateralContainer {
+    margin-top: 10px;
+  }
+  .footer-blog {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 150vh;
+  }
+}
+
+@media (min-width: 900px) {
+  .lateralBar {
+    position: absolute;
+    right: 0;
+    width: 30%;
+  }
 }
