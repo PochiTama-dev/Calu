@@ -1,6 +1,5 @@
 .blogContainer {
   display: flex;
-  justify-content: center;
 }
 
 .blogCard {
@@ -13,6 +12,9 @@
   width: 90%;
 }
 @media (min-width: 375px) {
+  .blogCard {
+    width: 100%;
+  }
   .blogImg {
     width: 90%;
     margin: 15px;
@@ -29,11 +31,13 @@
     color: white;
     width: 100%;
   }
-  .footer-blogView {
+
+  .CTN_ctn .CTN_ctn2 {
+    margin: 20px;
+  }
+
+  .footer-blogView .footer_container {
     position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 100vh;
   }
 }
 @media (min-width: 900px) {
@@ -44,7 +48,24 @@
     justify-content: flex-start;
     margin-left: 90px;
   }
-  .footer-blogView {
-    margin-top: 50vh;
+  .lateralBar {
+    position: initial;
+    width: auto;
+  }
+}
+@media (min-width: 1920px) {
+  .blogCard {
+    width: 80%;
+  }
+  .lateralBar {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+  .lateralBar .lateralContainer {
+    font-size: 24px;
   }
 }
