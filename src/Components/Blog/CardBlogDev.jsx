@@ -1,6 +1,6 @@
 const CardBlogDev = ({ deletePost, handlePostClick }) => {
   return (
-    <div>
+    <div className='cards'>
       <div className='card-blog'>
         <div className='cardHeaderblog'>
           <div className='titleblog'>
@@ -27,10 +27,8 @@ const CardBlogDev = ({ deletePost, handlePostClick }) => {
             </>
           </div>
         </div>
-        <div className='cardTextblogContainer'>
-          <p>Lorem ipsum dolor sit amet. </p>
-        </div>
-        <h3>@Facuuuuuu</h3>
+        <div className='cardTextblogContainer'>Lorem ipsum dolor sit amet consectetur.</div>
+        <h3>@Facu</h3>
         <button className='viewButton' onClick={() => handlePostClick(1)}>
           Leer Más
         </button>
