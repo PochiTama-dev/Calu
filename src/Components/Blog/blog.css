@@ -1,11 +1,11 @@
+.contact_button_ctn {
+  position: fixed;
+}
 .BlogPage {
-  height: 70vh;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.content {
-  width: 100%;
+  margin-top: 20px;
 }
 .blogTitle {
   text-align: center;
@@ -14,8 +14,6 @@
 }
 
 .postContainer {
-  width: 100vh;
-  height: 100%;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
@@ -37,7 +35,7 @@
 .cardContainerblog {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 30px;
 }
 
@@ -62,6 +60,7 @@
 }
 
 .lateralBar {
+  background-color: rgba(255, 255, 255, 0.2);
   width: 30%;
   height: 100%;
   display: flex;
@@ -78,19 +77,14 @@ hr {
 
 @media (min-width: 375px) {
   .postContainer {
-    width: 80%;
     flex-wrap: wrap;
-    margin-left: 2rem;
     align-items: flex-start;
-  }
-  .postContainer .cardContainerblog {
-    margin-top: 20px;
   }
   .postContainer .cardContainerblog .card-blog {
     width: 130px;
     height: 150px;
     padding: 0;
-    margin-top: 30px;
+    margin-top: 10px;
   }
   .card-blog .cardTextblogContainer {
     font-size: 12px;
@@ -98,26 +92,32 @@ hr {
   .card-blog h3 {
     font-size: 15px;
   }
-
+  .card-blog .viewButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
   .lateralBar {
     position: initial;
     width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 16vh;
   }
   .lateralBar .lateralContainer {
     margin-top: 10px;
   }
-  .ctn {
-    margin-top: 95vh;
+  .ctn .CTN_ctn2 {
+    margin: 0;
   }
   .footer-blog {
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 90vh;
+  }
+  .footer-blog .footer_container {
+    position: relative;
   }
 }
 
@@ -125,34 +125,39 @@ hr {
   .BlogPage {
     display: flex;
     align-items: center;
+    margin-top: 12vh;
   }
-  .postContainer {
-    width: 65%;
-    margin-left: 20px;
+  .postContainer .cardContainerblog {
+    justify-content: flex-start;
+  }
+  .postContainer .cardContainerblog .cards {
+    width: 45%;
   }
   .postContainer .cardContainerblog .card-blog {
     width: 100%;
     height: 100%;
   }
   .card-blog p {
-    font-size: 2rem;
+    font-size: 3rem;
+    margin: 0;
   }
-  .card-blog .cardHeaderblog {
-    margin: 20px;
-  }
+
   .card-blog .deleteblog {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
-  .card-blog .cardTextblogContainer p {
-    font-size: 1rem;
+  .card-blog .cardTextblogContainer {
+    font-size: 3rem;
+    margin: 0;
   }
   .card-blog h3 {
-    font-size: 26px;
+    font-size: 3rem;
+    margin: 5px;
   }
   .card-blog button {
-    font-size: 20px;
+    font-size: 32px;
   }
+
   .lateralBar {
     position: absolute;
     right: 0;
@@ -160,9 +165,25 @@ hr {
     margin-top: 0;
   }
   .ctn {
-    margin-top: 200vh;
+    margin-top: 0;
   }
-  .footer-blog {
-    margin-top: 400px;
+}
+
+@media (min-width: 1920px) {
+  .postContainer .cardContainerblog .cards {
+    width: 35%;
+  }
+  .postContainer .cardContainerblog .card-blog {
+    width: 50%;
+  }
+  .lateralBar {
+    top: 25%;
+    width: 25%;
+  }
+  .lateralBar .blogTitle {
+    margin: 0;
+  }
+  .lateralBar .lateralContainer {
+    margin-top: 60px;
   }
 }
