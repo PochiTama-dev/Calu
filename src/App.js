@@ -9,18 +9,20 @@ import './App.css';
 import Blog from './Components/Blog/Blog';
 import BlogView from './Components/Blog/BlogView'; // Importa el componente BlogView aquí
 import VideoBackgroundComponent from './Components/VideoBackgroundComponent/VideoBackgroundComponent';
-import AdminLogin from './Components/AdminLogin/AdminLogin'
+import AdminLogin from './Components/Admin/AdminLogin/AdminLogin';
 import CreatePost from './Components/CreatePost/CreatePost';
+import AdminCrud from './Components/Admin/AdminCrud';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
   return (
     <Router>
       <div>
-        <VideoBackgroundComponent/>
+        <VideoBackgroundComponent />
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/admin-login' element={<AdminLogin setIsAuth={setIsAuth} />} />
+          <Route path='/admin-crud' element={<AdminCrud setIsAuth={setIsAuth} />} />
           <Route path='/create-post' element={<CreatePost />} />
           <Route path='/about' element={<About />} />
           <Route path='/blog' element={<Blog isAuth={isAuth} />} />
@@ -34,4 +36,3 @@ function App() {
 }
 
 export default App;
-
