@@ -80,14 +80,6 @@ function Blog({ isAuth }) {
                 </button>
               </div>
             ))}
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
-            <CardBlogDev deletePost={deletePost()} handlePostClick={handlePostClick} />
           </div>
         </div>
         {/* <div className='cardContainerblog'></div>
