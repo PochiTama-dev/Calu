@@ -40,6 +40,7 @@ function BlogView() {
       <div className='BlogView'>
         <Header />
         <Contact_button />
+
         {post && (
           <>
             <h1 className='blogTitle'>{post.title}</h1>
@@ -59,23 +60,26 @@ function BlogView() {
               src='http://eguzkieco-jardin.com/wp-content/uploads/2016/05/bosque.'
               alt='asdasd'
             />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione hic optio minima a
-              blanditiis magnam, cumque perferendis. Voluptate, saepe tempora a voluptatem soluta
-              laudantium rerum maiores ex in impedit quis modi nobis temporibus incidunt dicta
-              libero recusandae ea, explicabo qui id voluptas quas sit totam consequatur! Ducimus
-              beatae molestiae asperiores.
-            </p>
-            <h2>subtitulo</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nihil quae ex
-              non velit exercitationem deleniti aspernatur quis ipsa ullam in delectus inventore,
-              ratione laborum quaerat praesentium asperiores nam, aliquam necessitatibus. Pariatur,
-              est odit reprehenderit eaque corrupti tempora et distinctio temporibus saepe adipisci
-              minima dicta incidunt iste velit? Quas, nostrum?
-            </p>
+            <div className='blogText'>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione hic optio minima a
+                blanditiis magnam, cumque perferendis. Voluptate, saepe tempora a voluptatem soluta
+                laudantium rerum maiores ex in impedit quis modi nobis temporibus incidunt dicta
+                libero recusandae ea, explicabo qui id voluptas quas sit totam consequatur! Ducimus
+                beatae molestiae asperiores.
+              </p>
+              <p style={{ margin: 0 }}>
+                <h2>subtitulo</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nihil quae ex
+                non velit exercitationem deleniti aspernatur quis ipsa ullam in delectus inventore,
+                ratione laborum quaerat praesentium asperiores nam, aliquam necessitatibus.
+                Pariatur, est odit reprehenderit eaque corrupti tempora et distinctio temporibus
+                saepe adipisci minima dicta incidunt iste velit? Quas, nostrum?
+              </p>
+            </div>
             <div>Autor: Facu</div>
           </div>
+          <Sidebar />
         </div>
         <div className='date-tagContainer'>
           <div className='date-tags'>
@@ -84,7 +88,7 @@ function BlogView() {
             <p>Tag #1, Tag #2, Tag #3</p>
           </div>
         </div>
-        <Sidebar />
+
         <CTN />
         <div className='footer-blogView'>
           <Footer />

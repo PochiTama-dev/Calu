@@ -5,11 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import { Header } from '../Header/header';
 import Footer from '../Footer/Footer';
 import './blog.css';
-import CardBlogDev from './CardBlogDev';
+import logo from '../../images/logocalu.png';
 import CTN from '../CTN/CTN';
 import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
+import CardBlogDev from './CardBlogDev';
 
 // TODO: Borrar CardBlogDev
 
@@ -47,9 +48,12 @@ function Blog({ isAuth }) {
             <div className='cardContainerblog'>
               {postList.map((post) => (
                 <div className='card-blog' key={post.id}>
+                  <div className='blogImage'>
+                    <img src={logo} alt='' />
+                  </div>
                   <div className='cardHeaderblog'>
                     <div className='titleblog'>
-                      <p>{post.title}</p>
+                      <h2>{post.title}</h2>
                     </div>
                     <div className='deleteblog'>
                       {isAuth && post.author && post.author.id === auth.currentUser.uid && (
@@ -75,20 +79,17 @@ function Blog({ isAuth }) {
                     </div>
                   </div>
                   <div className='cardTextblogContainer'>{post.postText}</div>
-                  {post.author && <h3>@{post.author.name}</h3>}
+
                   <button className='viewButton' onClick={() => handlePostClick(post.id)}>
-                    Leer Más
+                    {'Leer Más>>'}
                   </button>
                 </div>
               ))}
+              <CardBlogDev handlePostClick={handlePostClick} />
             </div>
           </div>
           <Sidebar />
         </div>
-        {/* <div className='cardContainerblog'></div>
-          <div className='cardContainerblog'></div>
-          <div className='cardContainerblog'></div>
-          <div className='cardContainerblog'></div> */}
       </div>
 
       <div className='ctn'>
