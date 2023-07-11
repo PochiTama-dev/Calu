@@ -127,8 +127,12 @@ hr {
     align-items: center;
     margin-top: 12vh;
   }
+  .postContainer {
+    width: 55%;
+  }
   .postContainer .cardContainerblog {
     justify-content: flex-start;
+    overflow: scroll;
   }
   .postContainer .cardContainerblog .cards {
     width: 45%;
@@ -170,11 +174,16 @@ hr {
 }
 
 @media (min-width: 1920px) {
+  .postContainer {
+    width: initial;
+    margin-right: 20%;
+  }
   .postContainer .cardContainerblog .cards {
     width: 35%;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 50%;
+    width: 30%;
+    height: 25rem;
   }
   .lateralBar {
     top: 25%;

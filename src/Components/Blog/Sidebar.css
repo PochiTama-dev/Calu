@@ -1,0 +1,23 @@
+@media (min-width: 375px) {
+  .lateralBar .lateralContainer .card_our {
+    max-width: 150px;
+    height: 150px;
+  }
+
+  .lateralBar .lateralContainer .card_our .card_btn .button_portfolio {
+    position: initial;
+  }
+}
+
+@media (min-width: 900px) {
+  .lateralBar .lateralContainer .card_our {
+    max-width: 250px;
+    height: 250px;
+  }
+}
+
+@media (win-width: 1920px) {
+  .lateralBar {
+    top: 15%;
+  }
+}
