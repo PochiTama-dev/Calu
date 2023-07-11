@@ -1,3 +1,7 @@
+.blog-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+}
 .contact_button_ctn {
   position: fixed;
 }
@@ -14,10 +18,10 @@
 }
 
 .postContainer {
+  width: 100%;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -59,22 +63,6 @@
   margin: 10px 0px 0px 0px;
 }
 
-.lateralBar {
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  right: 0;
-}
-
-hr {
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 5px;
-}
-
 @media (min-width: 375px) {
   .postContainer {
     flex-wrap: wrap;
@@ -97,17 +85,7 @@ hr {
     border: none;
     cursor: pointer;
   }
-  .lateralBar {
-    position: initial;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .lateralBar .lateralContainer {
-    margin-top: 10px;
-  }
+
   .ctn .CTN_ctn2 {
     margin: 0;
   }
@@ -127,9 +105,7 @@ hr {
     align-items: center;
     margin-top: 12vh;
   }
-  .postContainer {
-    width: 55%;
-  }
+
   .postContainer .cardContainerblog {
     justify-content: flex-start;
     overflow: scroll;
@@ -138,8 +114,8 @@ hr {
     width: 45%;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 100%;
-    height: 100%;
+    width: 48%;
+    height: 50%;
   }
   .card-blog p {
     font-size: 3rem;
@@ -174,9 +150,8 @@ hr {
 }
 
 @media (min-width: 1920px) {
-  .postContainer {
-    width: initial;
-    margin-right: 20%;
+  .blog-sidebar {
+    flex-wrap: nowrap;
   }
   .postContainer .cardContainerblog .cards {
     width: 35%;
@@ -185,9 +160,9 @@ hr {
     width: 30%;
     height: 25rem;
   }
-  .lateralBar {
-    top: 25%;
-    width: 25%;
+  .blog-sidebar .lateralBar {
+    position: initial;
+    margin: 0 0 0 50px;
   }
   .lateralBar .blogTitle {
     margin: 0;
