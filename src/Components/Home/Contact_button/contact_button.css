@@ -5,7 +5,7 @@
   justify-content: center;
   bottom: 0;
   right: 0;
-  margin: 0 30px 10px 0;
+  margin: 0 30px 80px 0;
   z-index: 1;
   cursor: pointer;
   border-radius: 50px;
@@ -28,7 +28,7 @@
   rotate: 90deg;
   bottom: 0;
   right: 70px;
-  margin-bottom: 140px;
+  margin-bottom: 210px;
 }
 .contact_ctn button {
   cursor: pointer;
@@ -54,16 +54,17 @@
 @media (max-width: 767px) {
   .contact_logo {
     width: 60px;
+    margin: 15px 0 10px 10px;
   }
   .contact_button_ctn {
-    margin: 0 20px 15px 0;
-    width: 100px;
-    height: 100px;
+    margin: 0 20px 50px 0;
+    width: 90px;
+    height: 90px;
     border-radius: 30px;
   }
   .arrow_up {
-    right: 50px;
-    margin-bottom: 140px;
+    right: 45px;
+    margin-bottom: 170px;
     bottom: -25px;
     width: 40px;
   }
