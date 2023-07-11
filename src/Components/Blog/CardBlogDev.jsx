@@ -1,9 +1,13 @@
+import logo from '../../images/logocalu.png';
 const CardBlogDev = ({ deletePost, handlePostClick }) => {
   return (
     <div className='card-blog'>
+      <div className='blogImage'>
+        <img src={logo} alt='' />
+      </div>
       <div className='cardHeaderblog'>
         <div className='titleblog'>
-          <p>Lorem ipsum.</p>
+          <h2>Lorem ipsum.</h2>
         </div>
         <div className='deleteblog'>
           <>
@@ -29,9 +33,8 @@ const CardBlogDev = ({ deletePost, handlePostClick }) => {
       <div className='cardTextblogContainer'>
         <p>Lorem ipsum dolor sit amet. </p>
       </div>
-      <h3>@Facuuuuuu</h3>
       <button className='viewButton' onClick={() => handlePostClick(1)}>
-        Leer Más
+        {'Leer Más >>'}
       </button>
     </div>
   );
