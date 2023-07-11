@@ -63,6 +63,7 @@
     width: 90%;
     height: 90%;
     display: flex;
+    margin: 8px 0 0 0;
     flex-direction: column;
     justify-content: space-around;
   }
