@@ -8,10 +8,9 @@
   display: flex;
   justify-content: center;
 }
-.card_f {
+.card_f_news {
   display: flex;
   flex-direction: column;
-
   border-radius: 30% 0% 30% 0%;
   width: 300px;
   height: 300px;
@@ -43,7 +42,7 @@
 }
 
 @media (max-width: 1300px) {
-  .card_f {
+  .card_f_news {
     max-width: 230px;
     height: 230px;
   }

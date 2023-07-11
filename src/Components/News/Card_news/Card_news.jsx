@@ -6,7 +6,7 @@ const Card_news = ({ image, title, btn }) => {
   return (
     <div className="card_news">
       <div className="card_cont">
-        <div className="card_f">
+        <div className="card_f_news">
           <div className="arrow">
             <img src={arrow_R} alt=" " className="arrow_R" />
             <img src={arrow_R} alt=" " className="arrow_R" />

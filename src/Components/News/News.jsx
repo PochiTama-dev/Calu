@@ -16,50 +16,33 @@ const News = () => {
   if (width > breakpoint) {
     return (
       <div className="novedades_container">
-        <div>
-          <h1 className="title_novedades">NOVEDADES</h1>
-          <p>No te pierdas los úlimos contenidos de nuestro blog.</p>
-          <div className="cards_novedades">
-            <a href="">
-              <Card_news
-                image={
-                  <img
-                    className="icons_novedades"
-                    src={""}
-                    alt=""
-                    width="50%"
-                  />
-                }
-                title={"TENDENCIAS 2023"}
-              ></Card_news>
-            </a>
-            <a href="">
-              <Card_news
-                image={
-                  <img
-                    className="icons_novedades"
-                    src={""}
-                    alt=""
-                    width="50%"
-                  />
-                }
-                title={"TENDENCIAS 2023"}
-              ></Card_news>
-            </a>
-            <a href="">
-              <Card_news
-                image={
-                  <img
-                    className="icons_novedades"
-                    src={""}
-                    alt=""
-                    width="50%"
-                  />
-                }
-                title={"TENDENCIAS 2023"}
-              ></Card_news>{" "}
-            </a>
-          </div>
+        <h1 className="title_novedades">NOVEDADES</h1>
+        <p>No te pierdas los úlimos contenidos de nuestro blog.</p>
+        <div className="cards_novedades">
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>
+          </a>
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>
+          </a>
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>{" "}
+          </a>
         </div>
       </div>
     );
