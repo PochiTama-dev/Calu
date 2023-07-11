@@ -66,12 +66,12 @@
   }
   .blogCard .blogText p {
     width: 35%;
+    font-size: 3rem;
   }
   .blogCard .blogText h2 {
-    position: relative;
-    bottom: 10%;
     text-align: center;
     margin: 0;
+    font-size: larger;
   }
   .lateralBar {
     display: flex;
