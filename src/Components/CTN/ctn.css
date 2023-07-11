@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 500px;
+  margin-bottom: 120px;
 }
 .CTN_title {
   color: #3af6ff;
@@ -54,23 +54,21 @@
   .CTN_title {
     font-size: 40px;
   }
-  .CTN_ctn2 {
-    margin-top: 100px;
-  }
+
   .CTN_ctn p {
     font-size: 28px;
   }
 }
 @media (max-width: 767px) {
-  .CTN_ctn2 {
-    margin-top: 250px;
-  }
   .CTN_title {
     font-size: 34px;
+    margin-bottom: 80px;
+    margin-top: 130px;
   }
 
   .CTN_ctn p {
     font-size: 24px;
+    margin-top: 80px;
   }
 }
 @media (max-width: 513px) {
