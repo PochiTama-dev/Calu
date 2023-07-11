@@ -40,6 +40,11 @@
     width: 80%;
     border-radius: 1rem;
   }
+  .contact .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+  }
   .contact .contact-button {
     font-weight: bold;
     color: white;
@@ -52,6 +57,7 @@
     border: none;
     cursor: pointer;
     margin: 30px 0 65px 0;
+    border-radius: 1rem;
   }
 }
 
