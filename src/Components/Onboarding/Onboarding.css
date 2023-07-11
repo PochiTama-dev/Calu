@@ -1,28 +1,37 @@
 .onboarding {
   display: flex;
+  align-items: center;
   overflow: hidden;
   height: 100%;
-  margin: 0 15% 0% 7%;
+  margin-left: 7%;
+  flex-direction: row;
 }
-
-.onboarding .logoCalu {
+.onb_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.onboarding .logoOnboard {
   display: none;
 }
 
 .onboarding .parrafo {
   color: white;
-  position: relative;
+  text-align: left;
+
   z-index: 2;
-  min-width: 100%;
-  padding-top: 200px;
-  margin-top: -30px;
+  margin-right: 7%;
+}
+.onboarding .parrafo p {
+  text-align: justify;
 }
 
-.onboarding .parrafo h1 {
+.onboarding h1 {
   color: #eb39d9;
+  font-size: 36px;
 }
 
-.onboarding .parrafo h2 {
+.onboarding h2 {
   color: #3af6ff;
 }
 
@@ -40,7 +49,7 @@
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
   );
-  border-radius: 3rem 0 3rem 0;
+  border-radius: 50px;
   width: 15rem;
   height: 6vh;
   align-items: center;
@@ -56,29 +65,30 @@
 }
 
 @media (min-width: 900px) {
-  .onboarding .logoCalu {
+  .logo_ctn {
+    width: 1000px;
+  }
+  .onboarding .logoOnboard {
     display: block;
     position: relative;
-    margin-top: 90px;
-    right: 0;
-    max-width: 54%;
-    height: 70%;
-  }
+    right: 150px;
 
-  .contact-btn {
-    bottom: 40px;
+    width: 120%;
   }
 
   .onboarding {
-    height: 100%;
-    align-items: flex-start;
-    justify-content: center;
+    display: flex;
+    align-items: center;
   }
 
   .onboarding .parrafo {
     position: static;
     z-index: initial;
-    min-width: initial;
+    margin-right: 100px;
+  }
+
+  .onboarding .parrafo h1 {
+    font-size: 38px;
   }
 
   .contactFlex {
