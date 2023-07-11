@@ -1,58 +1,53 @@
-import CardOur from '../OurServices/Card_OurService/Card_our';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
+
 const Sidebar = () => {
   return (
     <aside className='lateralBar'>
       <h2 className='blogTitle'>Novedades</h2>
       <div className='lateralContainer'>
-        <CardOur
-          image={<img className='icono-servicios' src={''} alt='icono' />}
-          title={
-            <p className='text-icono-servicios'>
-              Lorem, ipsum.
-              <p className='paragraph'>Lorem ipsum dolor sit amet.</p>
-            </p>
-          }
-          btn={
-            <a className=' button_portfolio' href='#'>
-              Ver más
-            </a>
-          }
-        ></CardOur>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+          exercitationem quis!
+        </p>
+        <Link to={'/blog/1'}>ver mas</Link>
+      </div>
+      <div className='lateralContainer'>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+          exercitationem quis!
+        </p>
+        <Link to={'/blog/1'}>ver mas</Link>
+      </div>
+      <div className='lateralContainer'>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+          exercitationem quis!
+        </p>
+        <Link to={'/blog/1'}>ver mas</Link>
+      </div>
+      <div className='lateralContainer'>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+          exercitationem quis!
+        </p>
+        <Link to={'/blog/1'}>ver mas</Link>
       </div>
       <hr />
       <div className='lateralContainer'>
-        <CardOur
-          image={<img className='icono-servicios' src={''} alt='icono' />}
-          title={
-            <p className='text-icono-servicios'>
-              Lorem, ipsum.
-              <p className='paragraph'>Lorem ipsum dolor sit amet.</p>
-            </p>
-          }
-          btn={
-            <a className=' button_portfolio' href='#'>
-              Ver más
-            </a>
-          }
-        ></CardOur>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+          exercitationem quis!
+        </p>
+        <Link to={'/blog/1'}>ver mas</Link>
       </div>
       <hr />
       <div className='lateralContainer'>
-        <CardOur
-          image={<img className='icono-servicios' src={''} alt='icono' />}
-          title={
-            <p className='text-icono-servicios'>
-              Lorem, ipsum.
-              <p className='paragraph'>Lorem ipsum dolor sit amet.</p>
-            </p>
-          }
-          btn={
-            <a className=' button_portfolio' href='#'>
-              Ver más
-            </a>
-          }
-        ></CardOur>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
+          exercitationem quis!
+        </p>
+        <Link to={'/blog/1'}>ver mas</Link>
       </div>
       <hr />
     </aside>

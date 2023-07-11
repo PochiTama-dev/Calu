@@ -42,52 +42,55 @@ function Blog({ isAuth }) {
       <Contact_button />
       <div className='BlogPage'>
         <h1 className='blogTitle'>NUESTRO BLOG</h1>
-        <div className='postContainer'>
-          <div className='cardContainerblog'>
-            {postList.map((post) => (
-              <div className='card-blog' key={post.id}>
-                <div className='cardHeaderblog'>
-                  <div className='titleblog'>
-                    <p>{post.title}</p>
+        <div className='blog-sidebar'>
+          <div className='postContainer'>
+            <div className='cardContainerblog'>
+              {postList.map((post) => (
+                <div className='card-blog' key={post.id}>
+                  <div className='cardHeaderblog'>
+                    <div className='titleblog'>
+                      <p>{post.title}</p>
+                    </div>
+                    <div className='deleteblog'>
+                      {isAuth && post.author && post.author.id === auth.currentUser.uid && (
+                        <>
+                          <button
+                            onClick={() => {
+                              deletePost(post.id);
+                            }}
+                            className='deleteblogButton'
+                          >
+                            &#128465; Delete
+                          </button>
+                          <button
+                            onClick={() => {
+                              // Lógica para editar el post
+                            }}
+                            className='editblogButton'
+                          >
+                            &#9998; Edit
+                          </button>
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <div className='deleteblog'>
-                    {isAuth && post.author && post.author.id === auth.currentUser.uid && (
-                      <>
-                        <button
-                          onClick={() => {
-                            deletePost(post.id);
-                          }}
-                          className='deleteblogButton'
-                        >
-                          &#128465; Delete
-                        </button>
-                        <button
-                          onClick={() => {
-                            // Lógica para editar el post
-                          }}
-                          className='editblogButton'
-                        >
-                          &#9998; Edit
-                        </button>
-                      </>
-                    )}
-                  </div>
+                  <div className='cardTextblogContainer'>{post.postText}</div>
+                  {post.author && <h3>@{post.author.name}</h3>}
+                  <button className='viewButton' onClick={() => handlePostClick(post.id)}>
+                    Leer Más
+                  </button>
                 </div>
-                <div className='cardTextblogContainer'>{post.postText}</div>
-                {post.author && <h3>@{post.author.name}</h3>}
-                <button className='viewButton' onClick={() => handlePostClick(post.id)}>
-                  Leer Más
-                </button>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+          <Sidebar />
         </div>
         {/* <div className='cardContainerblog'></div>
           <div className='cardContainerblog'></div>
           <div className='cardContainerblog'></div>
           <div className='cardContainerblog'></div> */}
       </div>
-      <Sidebar />
+
       <div className='ctn'>
         <CTN />
       </div>
