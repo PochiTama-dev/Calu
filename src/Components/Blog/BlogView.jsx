@@ -30,9 +30,8 @@ function BlogView() {
     getPost();
   }, [id]);
 
-  //cambiar a !post el condicional para que use los datos de firebase
-  if (post) {
-    return <div>Loading...</div>;
+  if (!post) {
+    return <div>Loading...</div>; // Muestra un mensaje de carga mientras se obtienen los datos
   }
 
   return (
@@ -41,33 +40,12 @@ function BlogView() {
         <Header />
         <Contact_button />
 
-        {post && (
-          <>
-            <h1 className='blogTitle'>{post.title}</h1>
-            <div className='blogContainer'>
-              <div className='blogCard'>
-                <div>{post.postText}</div>
-                <div>{post.author.name}</div>
-              </div>
-            </div>
-          </>
-        )}
-        <h1 className='blogTitle'>Titulo del post</h1>
+        <h1 className='blogTitle'>{post.title}</h1>
         <div className='blogContainer'>
           <div className='blogCard'>
-            <img
-              className='blogImg'
-              src='http://eguzkieco-jardin.com/wp-content/uploads/2016/05/bosque.'
-              alt='asdasd'
-            />
+            <img className='blogImg' src={post.imageUrl} alt='' />
             <div className='blogText'>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione hic optio minima a
-                blanditiis magnam, cumque perferendis. Voluptate, saepe tempora a voluptatem soluta
-                laudantium rerum maiores ex in impedit quis modi nobis temporibus incidunt dicta
-                libero recusandae ea, explicabo qui id voluptas quas sit totam consequatur! Ducimus
-                beatae molestiae asperiores.
-              </p>
+              <p>{post.postText}</p>
               <p style={{ margin: 0 }}>
                 <h2>subtitulo</h2>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nihil quae ex
@@ -77,7 +55,7 @@ function BlogView() {
                 saepe adipisci minima dicta incidunt iste velit? Quas, nostrum?
               </p>
             </div>
-            <div>Autor: Facu</div>
+            <div>Autor: {post.author.name}</div>
           </div>
           <Sidebar />
         </div>
