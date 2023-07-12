@@ -7,6 +7,7 @@ import { auth } from "../../firebase-config";
 
 export const Header = () => {
   const [isAuth, setIsAuth] = useState(false);
+  const [showAdminMenu, setShowAdminMenu] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,6 +24,9 @@ export const Header = () => {
 
   const [showLinks, setShowLinks] = useState(true);
 
+  const handleAdminMenu = () => {
+    setShowAdminMenu(!showAdminMenu);
+  };
   const handleLinks = () => {
     setShowLinks(!showLinks);
   };
@@ -34,10 +38,20 @@ export const Header = () => {
           <Link to="/Admin-login"></Link>
         ) : (
           <>
-            <Link to="/Create-Post"> Create Post </Link>
-            <button onClick={signUserOut}> Log Out</button>
+            <div className="admin-menu">
+              <button className="admin-btn" onClick={handleAdminMenu}>
+                Admin
+              </button>
+              {showAdminMenu && (
+                <div className="admin-dropdown">
+                  <Link to="/Create-Post">Create Post</Link>
+                  <button onClick={signUserOut}>Log Out</button>
+                </div>
+              )}
+            </div>
           </>
         )}
+
 
         <nav>
           <Link to={"/"}>
