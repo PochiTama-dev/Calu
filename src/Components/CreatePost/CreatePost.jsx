@@ -9,6 +9,8 @@ function CreatePost() {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState(null);
+  const [youtubeLink, setYoutubeLink] = useState("");
+  const [additionalContent, setAdditionalContent] = useState("");
   const postsCollectionRef = collection(db, "posts");
   const navigate = useNavigate();
 
@@ -16,7 +18,7 @@ function CreatePost() {
     const checkAuthentication = () => {
       const user = auth.currentUser;
       if (!user) {
-        navigate("/admin-login"); // Redirige al usuario a la página de inicio de sesión si no está autenticado
+        navigate("/admin-login");
       }
     };
 
@@ -31,12 +33,16 @@ function CreatePost() {
       imageUrl = await getDownloadURL(storageRef);
     }
 
-    await addDoc(postsCollectionRef, {
+    const newPost = {
       title,
       postText,
       imageUrl,
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
-    });
+      youtubeLink,
+      additionalContent
+    };
+
+    await addDoc(postsCollectionRef, newPost);
     navigate("/blog");
   };
 
@@ -67,6 +73,26 @@ function CreatePost() {
         <div className="inputGp">
           <label>Image:</label>
           <input type="file" onChange={(event) => setImage(event.target.files[0])} />
+        </div>
+        <div className="inputGp">
+          <label>YouTube Link:</label>
+          <input
+            placeholder="YouTube link..."
+            value={youtubeLink}
+            onChange={(event) => {
+              setYoutubeLink(event.target.value);
+            }}
+          />
+        </div>
+        <div className="inputGp">
+          <label>Additional Content:</label>
+          <textarea
+            placeholder="Additional content..."
+            value={additionalContent}
+            onChange={(event) => {
+              setAdditionalContent(event.target.value);
+            }}
+          />
         </div>
         <button onClick={createPost}>Submit Post</button>
       </div>
