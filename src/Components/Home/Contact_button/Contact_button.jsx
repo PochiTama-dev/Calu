@@ -39,8 +39,8 @@ const Contact_button = () => {
             <Link to={"/contact"}>
               <img className="contact_logo" src={icono_contacto} />
             </Link>
-            {isHovering && <Hover />}
           </div>
+          {isHovering && <Hover />}
         </div>
       </div>
     </div>
