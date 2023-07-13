@@ -30,7 +30,7 @@ function BlogView() {
     getPost();
   }, [id]);
 
-  if (!post) {
+  if (post) {
     return <div>Loading...</div>; // Muestra un mensaje de carga mientras se obtienen los datos
   }
 
@@ -39,25 +39,42 @@ function BlogView() {
       <div className='blogView'>
         <Header />
         <Contact_button />
-
-        <h1 className='blogTitle'>{post.title}</h1>
-        <div className='blogContainer'>
-          <div className='blogCard'>
-            <img className='blogImg' src={post.imageUrl} alt='' />
-            <div className='blogText'>
-              <p>{post.postText}</p>
-              <p style={{ margin: 0 }}>
-                <h2>subtitulo</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nihil quae ex
-                non velit exercitationem deleniti aspernatur quis ipsa ullam in delectus inventore,
-                ratione laborum quaerat praesentium asperiores nam, aliquam necessitatibus.
-                Pariatur, est odit reprehenderit eaque corrupti tempora et distinctio temporibus
-                saepe adipisci minima dicta incidunt iste velit? Quas, nostrum?
-              </p>
+        {post && (
+          <>
+            <h1 className='blogTitle'>{post.title}</h1>
+            <div className='blogContainer'>
+              <div className='blogCard'>
+                <div>{post.postText}</div>
+                <div>{post.author.name}</div>
+              </div>
             </div>
-            <div>Autor: {post.author.name}</div>
+          </>
+        )}
+        <h1 className='blogTitle'>Titulo del post</h1>
+        <div className='view'>
+          <div className='blogContainer'>
+            <div className='blogCard'>
+              <img
+                className='blogImg'
+                src='http://eguzkieco-jardin.com/wp-content/uploads/2016/05/bosque.'
+                alt=''
+              />
+              <div className='blogText'>
+                <p>{'post.postText'}</p>
+                <p style={{ margin: 0 }}>
+                  <h2>subtitulo</h2>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nihil quae
+                  ex non velit exercitationem deleniti aspernatur quis ipsa ullam in delectus
+                  inventore, ratione laborum quaerat praesentium asperiores nam, aliquam
+                  necessitatibus. Pariatur, est odit reprehenderit eaque corrupti tempora et
+                  distinctio temporibus saepe adipisci minima dicta incidunt iste velit? Quas,
+                  nostrum?
+                </p>
+              </div>
+              <div>Autor: Facu</div>
+            </div>
+            <Sidebar />
           </div>
-          <Sidebar />
         </div>
         <div className='date-tagContainer'>
           <div className='date-tags'>
@@ -66,8 +83,9 @@ function BlogView() {
             <p>Tag #1, Tag #2, Tag #3</p>
           </div>
         </div>
-
-        <CTN />
+        <div className='ctn'>
+          <CTN />
+        </div>
         <div className='footer-blogView'>
           <Footer />
         </div>

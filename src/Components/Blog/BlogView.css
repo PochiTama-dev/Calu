@@ -1,3 +1,7 @@
+.view {
+  display: flex;
+  justify-content: center;
+}
 .blogContainer {
   display: flex;
 }
@@ -17,6 +21,7 @@
 @media (min-width: 375px) {
   .blogContainer {
     flex-wrap: wrap;
+    width: 95%;
   }
   .blogCard {
     width: 100%;
@@ -41,6 +46,12 @@
   .ctn .CTN_ctn {
     height: initial;
   }
+  .ctn .CTN_ctn .CTN_title {
+    margin: 25px 0 25px;
+  }
+  .ctn .CTN_ctn .CTN_ctn2 p {
+    margin: 0;
+  }
   .footer-blogView .footer_container {
     position: relative;
     z-index: 0;
@@ -62,6 +73,9 @@
 @media (min-width: 1920px) {
   .blog-sidebar {
     display: flex;
+  }
+  .blogContainer {
+    flex-wrap: nowrap;
   }
   .blogCard {
     width: 80%;

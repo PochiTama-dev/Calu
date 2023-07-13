@@ -52,15 +52,24 @@
   width: 320px;
   height: 320px;
   padding: 20px;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
+.card-blog .cardHeaderblog span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
 .card-blog h2 {
   color: white;
   margin: 0;
 }
+.card-blog .leerMas {
+  color: #eb39d9;
+}
 
 .titleblog {
-  text-align: center;
+  text-align: left;
   margin: 0;
 }
 .footer-blog .footer_container {
@@ -81,7 +90,7 @@
   }
   .card-blog .blogImage {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .card-blog .blogImage img {
     width: 150px;
@@ -97,6 +106,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    text-align: start;
   }
 
   .ctn .CTN_ctn2 {
@@ -119,7 +129,7 @@
     margin-top: 12vh;
   }
   .card-blog .blogImage img {
-    width: 70%;
+    width: 100%;
   }
 
   .postContainer .cardContainerblog {
