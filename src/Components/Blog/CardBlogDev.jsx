@@ -1,4 +1,7 @@
+// CardBlogDev.js
+import React from 'react';
 import logo from '../../images/logocalu.png';
+
 const CardBlogDev = ({ deletePost, handlePostClick }) => {
   return (
     <div className='card-blog'>
@@ -13,7 +16,7 @@ const CardBlogDev = ({ deletePost, handlePostClick }) => {
           <>
             <button
               onClick={() => {
-                deletePost();
+                deletePost(1, null);
               }}
               className='deleteblogButton'
             >
@@ -39,4 +42,5 @@ const CardBlogDev = ({ deletePost, handlePostClick }) => {
     </div>
   );
 };
+
 export default CardBlogDev;
