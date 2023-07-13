@@ -9,7 +9,9 @@
   right: 0;
   overflow: scroll;
 }
-
+.lateralBar .lateralContainer {
+  color: white;
+}
 hr {
   color: rgba(255, 255, 255, 0.8);
   margin-top: 5px;

@@ -11,7 +11,13 @@
 .blogImg {
   width: 90%;
 }
+.blogView .contact_ctn .arrow_up {
+  position: fixed;
+}
 @media (min-width: 375px) {
+  .blogContainer {
+    flex-wrap: wrap;
+  }
   .blogCard {
     width: 100%;
   }
@@ -32,8 +38,12 @@
     width: 100%;
   }
 
+  .ctn .CTN_ctn {
+    height: initial;
+  }
   .footer-blogView .footer_container {
     position: relative;
+    z-index: 0;
   }
 }
 @media (min-width: 900px) {
@@ -74,8 +84,5 @@
     flex-direction: column;
     width: 20%;
     margin: 0 0 0 20px;
-  }
-  .lateralBar .lateralContainer {
-    font-size: 24px;
   }
 }

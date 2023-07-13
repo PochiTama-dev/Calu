@@ -37,7 +37,7 @@ function BlogView() {
 
   return (
     <>
-      <div className='BlogView'>
+      <div className='blogView'>
         <Header />
         <Contact_button />
 

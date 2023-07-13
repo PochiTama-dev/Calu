@@ -1,3 +1,6 @@
+.blog .arrow_up {
+  position: fixed;
+}
 .blog-sidebar {
   display: flex;
   flex-wrap: wrap;
@@ -59,6 +62,10 @@
 .titleblog {
   text-align: center;
   margin: 0;
+}
+.footer-blog .footer_container {
+  position: relative;
+  z-index: 0;
 }
 
 @media (min-width: 375px) {
@@ -155,6 +162,13 @@
   }
   .ctn {
     margin-top: 0;
+  }
+  .ctn .CTN_ctn {
+    height: initial;
+  }
+  .blog .footer-blog .footer_container {
+    position: relative;
+    z-index: 0;
   }
 }
 

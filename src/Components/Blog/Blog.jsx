@@ -18,6 +18,8 @@ function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
   const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
+  const timestamp = new Date();
+  const time = `${timestamp.getDay()}/${timestamp.getMonth()}/${timestamp.getFullYear()}`;
 
   const deletePost = async (id) => {
     const postDoc = doc(db, 'posts', id);
@@ -38,7 +40,7 @@ function Blog({ isAuth }) {
   }, [deletePost]);
 
   return (
-    <>
+    <div className='blog'>
       <Header />
       <Contact_button />
       <div className='BlogPage'>
@@ -52,6 +54,7 @@ function Blog({ isAuth }) {
                     <img src={logo} alt='' />
                   </div>
                   <div className='cardHeaderblog'>
+                    <span>{time}</span>
                     <div className='titleblog'>
                       <h2>{post.title}</h2>
                     </div>
@@ -85,20 +88,18 @@ function Blog({ isAuth }) {
                   </button>
                 </div>
               ))}
-              <CardBlogDev handlePostClick={handlePostClick} />
             </div>
           </div>
           <Sidebar />
         </div>
       </div>
-
       <div className='ctn'>
         <CTN />
       </div>
       <div className='footer-blog'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
