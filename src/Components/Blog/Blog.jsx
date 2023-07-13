@@ -15,8 +15,12 @@ import CardBlogDev from './CardBlogDev';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
+  const [hover, sethover] = useState(false);
+
   const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
+  const timestamp = new Date();
+  const time = `${timestamp.getDay()}/${timestamp.getMonth()}/${timestamp.getFullYear()}`;
 
   const deletePost = async (id, imageUrl) => {
     const postDoc = doc(db, 'posts', id);
@@ -44,8 +48,15 @@ function Blog({ isAuth }) {
     getPosts();
   }, []);
 
+  const handleMouseEnter = (id) => {
+    sethover(true);
+  };
+
+  const handleMouseLeave = () => {
+    sethover(false);
+  };
   return (
-    <>
+    <div className='blog'>
       <Header />
       <Contact_button />
       <div className='BlogPage'>
@@ -54,44 +65,45 @@ function Blog({ isAuth }) {
           <div className='postContainer'>
             <div className='cardContainerblog'>
               {postList.map((post) => (
-                <div className='card-blog' key={post.id}>
+                <div
+                  className='card-blog'
+                  key={post.id}
+                  onClick={() => handlePostClick(post.id)}
+                  onMouseEnter={() => handleMouseEnter(post.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <div className='blogImage'>
                     <img src={post.imageUrl} alt='' />
                   </div>
+                  {hover && <p className='leerMas'>{'LEER MÁS>>'}</p>}
                   <div className='cardHeaderblog'>
+                    <span>{time}</span>
                     <div className='titleblog'>
                       <h2>{post.title}</h2>
                     </div>
                     <div className='deleteblog'>
-                      {isAuth &&
-                        post.author &&
-                        post.author.id === auth.currentUser?.uid && (
-                          <>
-                            <button
-                              onClick={() => {
-                                deletePost(post.id, post.imageUrl);
-                              }}
-                              className='deleteblogButton'
-                            >
-                              &#128465; Delete
-                            </button>
-                            <button
-                              onClick={() => {
-                                // Lógica para editar el post
-                              }}
-                              className='editblogButton'
-                            >
-                              &#9998; Edit
-                            </button>
-                          </>
-                        )}
+                      {isAuth && post.author && post.author.id === auth.currentUser?.uid && (
+                        <>
+                          <button
+                            onClick={() => {
+                              deletePost(post.id, post.imageUrl);
+                            }}
+                            className='deleteblogButton'
+                          >
+                            &#128465; Delete
+                          </button>
+                          <button
+                            onClick={() => {
+                              // Lógica para editar el post
+                            }}
+                            className='editblogButton'
+                          >
+                            &#9998; Edit
+                          </button>
+                        </>
+                      )}
                     </div>
                   </div>
-                  <div className='cardTextblogContainer'>{post.postText}</div>
-
-                  <button className='viewButton' onClick={() => handlePostClick(post.id)}>
-                    {'Leer Más>>'}
-                  </button>
                 </div>
               ))}
               <CardBlogDev deletePost={deletePost} handlePostClick={handlePostClick} />
@@ -100,14 +112,13 @@ function Blog({ isAuth }) {
           <Sidebar />
         </div>
       </div>
-
       <div className='ctn'>
         <CTN />
       </div>
       <div className='footer-blog'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 
