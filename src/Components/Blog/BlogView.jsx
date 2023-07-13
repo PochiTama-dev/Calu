@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { Header } from '../Header/header';
-
 import './BlogView.css';
 import './blog.css';
 import Footer from '../Footer/Footer';
@@ -11,9 +10,10 @@ import Sidebar from './Sidebar';
 import CTN from '../CTN/CTN';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
+import YouTube from 'react-youtube';
 
 function BlogView() {
-  const { id } = useParams(); // Obtiene el ID del parámetro de la URL
+  const { id } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
@@ -30,52 +30,47 @@ function BlogView() {
     getPost();
   }, [id]);
 
-  if (post) {
-    return <div>Loading...</div>; // Muestra un mensaje de carga mientras se obtienen los datos
+  if (!post) {
+    return <div>Loading...</div>;
+  }
+
+  function getYouTubeVideoId(url) {
+    if (!url) {
+      return null;
+    }
+    const regExp =
+      /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]+)/;
+    const match = url.match(regExp);
+    return match && match[1];
   }
 
   return (
     <>
-      <div className='blogView'>
+      <div className='BlogView'>
         <Header />
         <Contact_button />
-        {post && (
-          <>
-            <h1 className='blogTitle'>{post.title}</h1>
-            <div className='blogContainer'>
-              <div className='blogCard'>
-                <div>{post.postText}</div>
-                <div>{post.author.name}</div>
-              </div>
-            </div>
-          </>
-        )}
-        <h1 className='blogTitle'>Titulo del post</h1>
-        <div className='view'>
-          <div className='blogContainer'>
-            <div className='blogCard'>
-              <img
-                className='blogImg'
-                src='http://eguzkieco-jardin.com/wp-content/uploads/2016/05/bosque.'
-                alt=''
-              />
-              <div className='blogText'>
-                <p>{'post.postText'}</p>
-                <p style={{ margin: 0 }}>
-                  <h2>subtitulo</h2>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, nihil quae
-                  ex non velit exercitationem deleniti aspernatur quis ipsa ullam in delectus
-                  inventore, ratione laborum quaerat praesentium asperiores nam, aliquam
-                  necessitatibus. Pariatur, est odit reprehenderit eaque corrupti tempora et
-                  distinctio temporibus saepe adipisci minima dicta incidunt iste velit? Quas,
-                  nostrum?
-                </p>
-              </div>
-              <div>Autor: Facu</div>
+
+        <h1 className='blogTitle'>{post.title}</h1>
+        <div className='blogContainer'>
+          <div className='blogCard'>
+            <img className='blogImg' src={post.imageUrl} alt='' />
+            <div className='blogText'>
+              <p>{post.postText}</p>
+              {post.additionalContent && (
+                <div>
+                  <p>{post.additionalContent}</p>
+                </div>
+              )}
+              {post.youtubeLink && (
+                <div className='youtubePlayer'>
+                  <YouTube videoId={getYouTubeVideoId(post.youtubeLink)} />
+                </div>
+              )}
             </div>
             <Sidebar />
           </div>
         </div>
+
         <div className='date-tagContainer'>
           <div className='date-tags'>
             <p>11:50AM | Jul 5, 2023</p>
