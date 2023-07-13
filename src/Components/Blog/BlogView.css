@@ -5,6 +5,11 @@
 .blogContainer {
   display: flex;
 }
+.blogView-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .blogCard {
   background-color: rgba(255, 255, 255, 0.2);
@@ -18,10 +23,13 @@
 .blogView .contact_ctn .arrow_up {
   position: fixed;
 }
+.contact_ctn .arrow_up {
+  position: fixed;
+}
 @media (min-width: 375px) {
   .blogContainer {
     flex-wrap: wrap;
-    width: 95%;
+    width: 80%;
   }
   .blogCard {
     width: 100%;
@@ -61,6 +69,9 @@
   .blogImg {
     margin: 50px;
   }
+  .blogContainer {
+    width: 80%;
+  }
   .date-tagContainer {
     justify-content: flex-start;
     margin-left: 90px;
@@ -76,9 +87,7 @@
   }
   .blogContainer {
     flex-wrap: nowrap;
-  }
-  .blogCard {
-    width: 80%;
+    width: 65%;
   }
   .blogCard .blogText {
     display: flex;

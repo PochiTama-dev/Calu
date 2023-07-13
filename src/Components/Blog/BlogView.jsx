@@ -51,26 +51,27 @@ function BlogView() {
         <Contact_button />
 
         <h1 className='blogTitle'>{post.title}</h1>
-        <div className='blogContainer'>
-          <div className='blogCard'>
-            <img className='blogImg' src={post.imageUrl} alt='' />
-            <div className='blogText'>
-              <p>{post.postText}</p>
-              {post.additionalContent && (
-                <div>
-                  <p>{post.additionalContent}</p>
-                </div>
-              )}
-              {post.youtubeLink && (
-                <div className='youtubePlayer'>
-                  <YouTube videoId={getYouTubeVideoId(post.youtubeLink)} />
-                </div>
-              )}
+        <div className='blogView-sidebar'>
+          <div className='blogContainer'>
+            <div className='blogCard'>
+              <img className='blogImg' src={post.imageUrl} alt='' />
+              <div className='blogText'>
+                <p>{post.postText}</p>
+                {post.additionalContent && (
+                  <div>
+                    <p>{post.additionalContent}</p>
+                  </div>
+                )}
+                {post.youtubeLink && (
+                  <div className='youtubePlayer'>
+                    <YouTube videoId={getYouTubeVideoId(post.youtubeLink)} />
+                  </div>
+                )}
+              </div>
             </div>
-            <Sidebar />
           </div>
+          <Sidebar />
         </div>
-
         <div className='date-tagContainer'>
           <div className='date-tags'>
             <p>11:50AM | Jul 5, 2023</p>
