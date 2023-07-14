@@ -1,0 +1,66 @@
+.lateralBar {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 30%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  overflow: scroll;
+}
+.lateralBar .lateralContainer {
+  color: white;
+}
+.lateralBar .lateralContainer p {
+  font-size: 15px;
+}
+hr {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 5px;
+}
+
+@media (min-width: 375px) {
+  .lateralBar {
+    position: initial;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;
+    margin-top: 50px;
+  }
+  .lateralBar hr {
+    width: 50%;
+  }
+  .lateralBar .blogTitle {
+    margin-top: 0;
+  }
+  .lateralBar .lateralContainer {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lateralBar .lateralContainer .card_our {
+    max-width: 150px;
+    height: 150px;
+  }
+
+  .lateralBar .lateralContainer .card_our .card_btn .button_portfolio {
+    position: initial;
+  }
+}
+
+@media (min-width: 900px) {
+  .lateralBar .lateralContainer .card_our {
+    max-width: 250px;
+    height: 250px;
+  }
+}
+
+@media (win-width: 1920px) {
+  .lateralBar {
+    top: 15%;
+  }
+}

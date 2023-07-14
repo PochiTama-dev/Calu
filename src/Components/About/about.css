@@ -5,9 +5,14 @@
   margin: 0 15% 0% 7%;
   height: 100vh;
 }
+.about_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .title_about {
   color: #3af6ff;
-  padding: 0% 0% 2% 0%;
+
   text-align: left;
 }
 
@@ -20,7 +25,6 @@
 .sub_2 {
   color: white;
   text-align: left;
-  padding-bottom: 1%;
 }
 
 .about_container p {
@@ -30,19 +34,17 @@
 .text_last {
   color: white;
   text-align: left;
-  padding-bottom: 1%;
-  margin-top: 3%;
+
   font-weight: bold;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
+  .about_container {
+    margin: 0 7% 0% 7%;
+  }
 }
 
 @media (max-width: 480px) {
-  .title_about {
-    padding: 0 0% 2% 0%;
-  }
-
   .sub_1 {
     padding-top: 5%;
   }

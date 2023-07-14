@@ -1,4 +1,4 @@
-.adminLoginPage {
+.AdminLoginPage {
     width: 100vw;
     height: calc(100vh - 80px);
     display: flex;
@@ -7,12 +7,12 @@
     align-items: center;
   }
   
-  .adminLoginPage p {
+  .AdminLoginPage p {
     font-size: 30px;
   }
   
   /* GOOGLE BUTTOn */
-  .adminLogin-with-google-btn {
+  .AdminLogin-with-google-btn {
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
     padding: 5px 16px 12px 42px;
@@ -29,18 +29,18 @@
     background-repeat: no-repeat;
     background-position: 12px 11px;
   }
-  .adminLogin-with-google-btn:hover {
+  .AdminLogin-with-google-btn:hover {
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
   }
-  .adminLogin-with-google-btn:active {
+  .AdminLogin-with-google-btn:active {
     background-color: #eeeeee;
   }
-  .adminLogin-with-google-btn:focus {
+  .AdminLogin-with-google-btn:focus {
     outline: none;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25),
       0 0 0 3px #c8dafc;
   }
-  .adminLogin-with-google-btn:disabled {
+  .AdminLogin-with-google-btn:disabled {
     filter: grayscale(100%);
     background-color: #ebebeb;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);

@@ -7,6 +7,7 @@ import { auth } from "../../firebase-config";
 
 export const Header = () => {
   const [isAuth, setIsAuth] = useState(false);
+  const [showAdminMenu, setShowAdminMenu] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,47 +24,62 @@ export const Header = () => {
 
   const [showLinks, setShowLinks] = useState(true);
 
+  const handleAdminMenu = () => {
+    setShowAdminMenu(!showAdminMenu);
+  };
   const handleLinks = () => {
     setShowLinks(!showLinks);
   };
 
   return (
     <header className="navBar">
-      {!isAuth ? (
-        <Link to="/Admin-login"></Link>
-      ) : (
-        <>
-          <Link to="/Create-Post"> Create Post </Link>
-          <button onClick={signUserOut}> Log Out</button>
-        </>
-      )}
+      <div className="header_items">
+        {!isAuth ? (
+          <Link to="/Admin-login"></Link>
+        ) : (
+          <>
+            <div className="admin-menu">
+              <button className="admin-btn" onClick={handleAdminMenu}>
+                Admin
+              </button>
+              {showAdminMenu && (
+                <div className="admin-dropdown">
+                  <Link to="/Create-Post">Create Post</Link>
+                  <button onClick={signUserOut}>Log Out</button>
+                </div>
+              )}
+            </div>
+          </>
+        )}
 
-      <nav>
-        <Link to={"/"}>
-          <img className="logoCalu" src={miImagen} alt="Logo Calu" />
-        </Link>
-        <nav className={showLinks ? "links " : "link show "}>
-          <div className="links_ctn">
-            <Link to={"/"}> HOME </Link>
-            <div className="line"></div>
-            <Link to={"/services"}> SERVICIOS </Link>
-            <div className="line"></div>
-            <Link to={"/blog"}> BLOG </Link>
-            <div className="line"></div>
-            <Link to={"/Contact"}>CONTACTO </Link>
-          </div>
+
+        <nav>
+          <Link to={"/"}>
+            <img className="logoCalu" src={miImagen} alt="Logo Calu" />
+          </Link>
+          <nav className={showLinks ? "links " : "link show "}>
+            <div className="links_ctn">
+              <Link to={"/"}> HOME </Link>
+              <div className="line"></div>
+              <Link to={"/services"}> SERVICIOS </Link>
+              <div className="line"></div>
+              <Link to={"/blog"}> BLOG </Link>
+              <div className="line"></div>
+              <Link to={"/Contact"}>CONTACTO </Link>
+            </div>
+          </nav>
+          <span
+            onClick={handleLinks}
+            className={`btn ${showLinks ? "bar" : "cross"}`}
+          >
+            <div>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </span>
         </nav>
-        <span
-          onClick={handleLinks}
-          className={`btn ${showLinks ? "bar" : "cross"}`}
-        >
-          <div>
-            <i></i>
-            <i></i>
-            <i></i>
-          </div>
-        </span>
-      </nav>
+      </div>
     </header>
   );
 };

@@ -23,11 +23,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const db = getFirestore(app); // Actualiza esta línea
+const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const storage = getStorage(app); // Agrega esta línea
 
-const storage = getStorage();
 const storageRef = ref(storage, 'imagesServices');
 
 //                Ingresar nuevo servicio
