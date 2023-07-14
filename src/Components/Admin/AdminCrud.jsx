@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Header } from '../Header/header';
 import servicios from '../Services/constants';
 import './AdminCrud.css';
-import { db } from '../../firebase-config';
+import { addServicios } from '../../firebase-config';
 
 const AdminCrud = () => {
   const [services, setServices] = useState(servicios);
@@ -19,6 +19,8 @@ const AdminCrud = () => {
   });
   const [formEdit, setFormEdit] = useState(null);
   const [editItem, setEditItem] = useState(null);
+
+  addServicios();
 
   const closeModal = () => {
     setModal(false);
