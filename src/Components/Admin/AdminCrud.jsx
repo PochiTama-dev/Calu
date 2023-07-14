@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Header } from '../Header/header';
-import servicios from '../Services/constants';
 import './AdminCrud.css';
-import { addServicios } from '../../firebase-config';
+import { db, registerNewService, registerNewImage } from '../../firebase-config';
+import { collection, getDocs } from 'firebase/firestore';
+import * as imgServices from '../Services/icons';
 
 const AdminCrud = () => {
-  const [services, setServices] = useState(servicios);
+  const [servicesList, setServicesList] = useState([]);
   const [modal, setModal] = useState(false);
   const [modalEdit, setModalEdit] = useState(false);
   const [blur, setBlur] = useState(false);
@@ -20,7 +21,19 @@ const AdminCrud = () => {
   const [formEdit, setFormEdit] = useState(null);
   const [editItem, setEditItem] = useState(null);
 
-  addServicios();
+  const serviciesCollectionRef = collection(db, 'servicios');
+
+  useEffect(() => {
+    const getServices = async () => {
+      const data = await getDocs(serviciesCollectionRef);
+      setServicesList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getServices();
+  }, []);
+
+  imgServices.forEach((img) => {
+    registerNewImage(img);
+  });
 
   const closeModal = () => {
     setModal(false);
@@ -33,7 +46,7 @@ const AdminCrud = () => {
   };
 
   const handleEdit = (id) => {
-    const servicio = services.find((servicio) => servicio.id === id);
+    const servicio = servicesList.find((servicio) => servicio.id === id);
     if (servicio) {
       setFormEdit(servicio);
       setEditItem(id);
@@ -53,7 +66,7 @@ const AdminCrud = () => {
   const handleSubmitEdit = (event) => {
     event.preventDefault();
     if (editItem) {
-      const updatedServices = services.map((service) => {
+      const updatedServices = servicesList.map((service) => {
         if (service.id === editItem) {
           setFormEdit({
             title: service.title,
@@ -65,7 +78,7 @@ const AdminCrud = () => {
         }
         return formEdit;
       });
-      setServices(updatedServices);
+      setServicesList(updatedServices);
       setFormEdit(null);
       setEditItem(null);
     }
@@ -74,8 +87,8 @@ const AdminCrud = () => {
   };
 
   const handleDelete = (serviceId) => {
-    const updatedServices = services.filter((service) => service.id !== serviceId);
-    setServices(updatedServices);
+    const updatedServices = servicesList.filter((service) => service.id !== serviceId);
+    setServicesList(updatedServices);
   };
 
   const handleChange = (event) => {
@@ -113,7 +126,7 @@ const AdminCrud = () => {
             <li>Imagen</li>
           </ul>
           <ul className='crudItems'>
-            {servicios.map((servicio, index) => {
+            {servicesList.map((servicio, index) => {
               const fullDescription = `${servicio.des_1} ${servicio.des_2} ${servicio.des_3}`;
               const words = fullDescription.split(' ');
               const truncatedWords = words.slice(0, 7);
@@ -123,10 +136,12 @@ const AdminCrud = () => {
               return (
                 <li key={index}>
                   <div className='crudDescription'>
-                    <div> {servicio.id}</div>
+                    <div> {index + 1}</div>
                     <div className='crudTitle'>{servicio.title}</div>
                     <div className='crudText'>{description}</div>
-                    <div className='crudImage'>{servicio.img}</div>
+                    <div className='crudImage'>
+                      <img src={servicio.img} width='210px' alt={servicio.img} />
+                    </div>
                     <div>
                       <button onClick={() => handleEdit(servicio.id)}>Editar</button>
                       <button onClick={() => handleDelete(servicio.id)}>Borrar</button>

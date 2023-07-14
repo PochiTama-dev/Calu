@@ -2,9 +2,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore, doc, setDoc, collection, addDoc } from 'firebase/firestore'; // Agrega esta importación
-
-import servicios from './Components/Services/constants';
+import { collection, doc, getFirestore, setDoc } from 'firebase/firestore'; // Agrega esta importación
+import { getStorage, ref, uploadBytes } from 'firebase/storage';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,18 +27,25 @@ const db = getFirestore(app); // Actualiza esta línea
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-const serviciosCollectionRef = collection(db, 'Servicios');
+const storage = getStorage();
+const storageRef = ref(storage, 'imagesServices');
 
-export const addServicios = async () => {
-  for (const servicio of servicios) {
-    try {
-      // Agregar el objeto como un nuevo documento en la colección
-      await addDoc(serviciosCollectionRef, servicio);
-      console.log('Servicio agregado a la colección.');
-    } catch (error) {
-      console.error('Error al agregar el servicio:', error);
-    }
+//                Ingresar nuevo servicio
+export async function registerNewService(service) {
+  try {
+    const collectionRef = collection(db, 'servicios');
+    const docRef = doc(collectionRef);
+    await setDoc(docRef, service);
+  } catch (error) {
+    console.error(error);
   }
-};
+}
+
+export async function registerNewImage(img) {
+  uploadBytes(storageRef, img).then((snapshot) => {
+    console.log(snapshot);
+    console.log('Imagen subida');
+  });
+}
 
 export { db, auth, provider }; // Exporta las variables db, auth y provider
