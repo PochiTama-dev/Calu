@@ -12,10 +12,11 @@ import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
 import CardBlogDev from './CardBlogDev';
+import arrow_R from '../News/Card_news/icon_arrow_right.svg';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
-  const [hover, sethover] = useState(null);
+  const [hover, sethover] = useState(false);
 
   const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
@@ -73,6 +74,10 @@ function Blog({ isAuth }) {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className='blogImage'>
+                    <div className='arrow'>
+                      <img src={arrow_R} alt={arrow_R} />
+                      <img src={arrow_R} alt={arrow_R} />
+                    </div>
                     <img src={post.imageUrl} alt='' />
                   </div>
                   {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
