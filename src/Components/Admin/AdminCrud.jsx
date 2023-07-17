@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Header } from '../Header/header';
 import './AdminCrud.css';
-import { db, registerNewService, registerNewImage } from '../../firebase-config';
-import { collection, getDocs } from 'firebase/firestore';
-import * as imgServices from '../Services/icons';
+import { db, storage } from '../../firebase-config';
+import { collection, getDocs, deleteDoc, doc, addDoc, getDoc, updateDoc } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import CreateService from './CreateService';
+import logoCalu from '../../images/logocalu.png'; //TODO: ajustar handleChange en img para poner una imagen por defecto
+import EditService from './EditService';
+//import EditService from './EditService';
 
 const AdminCrud = () => {
   const [servicesList, setServicesList] = useState([]);
@@ -11,84 +15,72 @@ const AdminCrud = () => {
   const [modalEdit, setModalEdit] = useState(false);
   const [blur, setBlur] = useState(false);
   const [formData, setFormData] = useState({
-    id: 0,
     title: '',
     sub: '',
     des_1: '',
+    des_2: '',
     des_3: '',
     img: '',
   });
-  const [formEdit, setFormEdit] = useState(null);
-  const [editItem, setEditItem] = useState(null);
+  const [editItemId, setEditItemId] = useState({
+    id: '',
+    title: '',
+    sub: '',
+    des_1: '',
+    des_2: '',
+    des_3: '',
+    img: '',
+  });
 
-  const serviciesCollectionRef = collection(db, 'servicios');
+  const servicesCollectionRef = collection(db, 'servicios');
 
   useEffect(() => {
     const getServices = async () => {
-      const data = await getDocs(serviciesCollectionRef);
+      const data = await getDocs(servicesCollectionRef);
       setServicesList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getServices();
-  }, []);
-
-  imgServices.forEach((img) => {
-    registerNewImage(img);
-  });
+  }, [servicesList]);
 
   const closeModal = () => {
     setModal(false);
-    setBlur(false);
-  };
-
-  const handleAdd = () => {
-    setModal(true);
-    setBlur(true);
-  };
-
-  const handleEdit = (id) => {
-    const servicio = servicesList.find((servicio) => servicio.id === id);
-    if (servicio) {
-      setFormEdit(servicio);
-      setEditItem(id);
-      setModalEdit(true);
-      setBlur(true);
-    }
-  };
-
-  const handleChangeEdit = (event) => {
-    const { name, value } = event.target;
-    setFormEdit((prevFormEdit) => ({
-      ...prevFormEdit,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmitEdit = (event) => {
-    event.preventDefault();
-    if (editItem) {
-      const updatedServices = servicesList.map((service) => {
-        if (service.id === editItem) {
-          setFormEdit({
-            title: service.title,
-            sub: service.sub,
-            des_1: service.des_1,
-            des_3: service.des_3,
-            img: service.img,
-          });
-        }
-        return formEdit;
-      });
-      setServicesList(updatedServices);
-      setFormEdit(null);
-      setEditItem(null);
-    }
     setModalEdit(false);
     setBlur(false);
   };
 
-  const handleDelete = (serviceId) => {
-    const updatedServices = servicesList.filter((service) => service.id !== serviceId);
-    setServicesList(updatedServices);
+  const handleAddService = async () => {
+    setModal(true);
+    setBlur(true);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const imageFile = e.target.img.files[0];
+    const storageRef = ref(storage, 'images/' + imageFile.name);
+
+    await uploadBytes(storageRef, imageFile);
+    const imageUrl = await getDownloadURL(storageRef);
+
+    const newService = {
+      id: formData.id + 1,
+      title: formData.title,
+      sub: formData.sub,
+      des_1: formData.des_1,
+      des_2: formData.des_2,
+      des_3: formData.des_3,
+      img: imageUrl,
+    };
+    await addDoc(servicesCollectionRef, newService);
+
+    setFormData({
+      title: '',
+      sub: '',
+      des_1: '',
+      des_3: '',
+      img: '',
+    });
+    closeModal();
   };
 
   const handleChange = (event) => {
@@ -97,22 +89,69 @@ const AdminCrud = () => {
       [event.target.name]: event.target.value,
     });
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: LLEVAR LOS DATOS A COLECCION DE SERVICIOS
-    //db.ref('servicios').push(formData)
 
-    // Verifico los datos
-    //console.log(formData);
+  const handleDelete = async (serviceId) => {
+    await deleteDoc(doc(db, 'servicios', serviceId));
+  };
 
-    setFormData({
-      id: 0,
+  const handleChangeEdit = (event) => {
+    setEditItemId({
+      ...editItemId,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleEdit = async (serviceId) => {
+    const servicioRef = doc(db, 'servicios', serviceId);
+    const data = await getDoc(servicioRef);
+    /* if (data.exists()) {
+      const imgData = data.data();
+      const imgRef = ref(storage, 'images/' + imgData.img);
+      console.log('IMGREF ', imgRef.name);
+
+      const imgUrl = await getDownloadURL(imgRef);
+      console.log('IMGURL ', imgUrl); */
+    setEditItemId({
+      id: serviceId,
+      title: data.data().title,
+      sub: data.data().sub,
+      des_1: data.data().des_1,
+      des_2: data.data().des_2,
+      des_3: data.data().des_3,
+      //img: imgRef.name,
+    });
+    //}
+    setModalEdit(true);
+    setBlur(true);
+  };
+
+  const handleSubmitEdit = async (event) => {
+    event.preventDefault();
+    const serviceId = doc(db, 'servicios', editItemId.id);
+    const imageFile = event.target.img.files[0];
+    const storageRef = ref(storage, 'images/' + imageFile.name);
+
+    await uploadBytes(storageRef, imageFile);
+    const imageUrl = await getDownloadURL(storageRef);
+
+    const newData = {
+      title: editItemId.title,
+      sub: editItemId.sub,
+      des_1: editItemId.des_1,
+      des_2: editItemId.des_2,
+      des_3: editItemId.des_3,
+      img: imageUrl,
+    };
+    await updateDoc(serviceId, newData);
+
+    setEditItemId({
       title: '',
       sub: '',
       des_1: '',
       des_3: '',
       img: '',
     });
+    closeModal();
   };
   return (
     <div>
@@ -152,99 +191,25 @@ const AdminCrud = () => {
             })}
           </ul>
         </div>
-        <button onClick={handleAdd}>Agregar</button>
+        <button onClick={handleAddService}>Agregar</button>
       </div>
       {/* MODAL AGREGAR */}
       {modal && (
-        <div className='modal'>
-          <h2 onClick={closeModal}>X</h2>
-
-          <form action='//' method='POST' encType='multipart/form-data' onSubmit={handleSubmit}>
-            <label htmlFor='title'>Titulo </label>
-            <input
-              type='text'
-              name='title'
-              id='title'
-              value={formData.title}
-              onChange={handleChange}
-            />
-            <label htmlFor='sub'>Subtitulo </label>
-            <input type='text' name='sub' id='' value={formData.sub} onChange={handleChange} />
-            <label htmlFor='des_1'>Descripcion 1 </label>
-            <textarea
-              name='des_1'
-              id=''
-              cols='10'
-              rows='10'
-              value={formData.des_1}
-              onChange={handleChange}
-            ></textarea>
-            <label htmlFor='des_3'>Descripcion 3</label>
-            <textarea
-              name='des_3'
-              id=''
-              cols='10'
-              rows='10'
-              value={formData.des_3}
-              onChange={handleChange}
-            ></textarea>
-            <label htmlFor='img'>Imagen </label>
-            <input type='file' name='img' id='img' onChange={handleChange} />
-            <button type='submit' onClick={closeModal}>
-              Agregar nuevo Servicio
-            </button>
-            <button type='reset'>Reiniciar</button>
-          </form>
-        </div>
+        <CreateService
+          closeModal={closeModal}
+          handleSubmit={handleSubmit}
+          formData={formData}
+          handleChange={handleChange}
+        />
       )}
       {/* MODAL Editar */}
       {modalEdit && (
-        <div className='modal'>
-          <h2 onClick={closeModal}>X</h2>
-
-          <form action='//' method='POST' encType='multipart/form-data' onSubmit={handleSubmitEdit}>
-            <label htmlFor='title'>Titulo </label>
-            <input
-              type='text'
-              name='title'
-              id='title'
-              value={formEdit.title}
-              onChange={handleChangeEdit}
-            />
-            <label htmlFor='sub'>Subtitulo </label>
-            <input type='text' name='sub' id='' value={formEdit.sub} onChange={handleChangeEdit} />
-            <label htmlFor='des_1'>Descripcion 1 </label>
-            <textarea
-              name='des_1'
-              id=''
-              cols='10'
-              rows='10'
-              value={formEdit.des_1}
-              onChange={handleChangeEdit}
-            ></textarea>
-            <label htmlFor='des_3'>Descripcion 3</label>
-            <textarea
-              name='des_3'
-              id=''
-              cols='10'
-              rows='10'
-              value={formEdit.des_3}
-              onChange={handleChangeEdit}
-            ></textarea>
-            <label htmlFor='img'>Imagen </label>
-            <input
-              type='file'
-              name='img'
-              id='img'
-              value={formEdit.img}
-              onChange={handleChangeEdit}
-            />
-            <button type='submit' onClick={closeModal}>
-              Agregar nuevo Servicio
-            </button>
-            <button type='reset'>Reiniciar</button>
-          </form>
-        </div>
+        <EditService
+          serviceId={editItemId}
+          closeModal={closeModal}
+          handleChange={handleChangeEdit}
+          handleSubmit={handleSubmitEdit}
+        />
       )}
     </div>
   );

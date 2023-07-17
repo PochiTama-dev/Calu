@@ -2,8 +2,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { collection, doc, getFirestore, setDoc } from 'firebase/firestore'; // Agrega esta importación
-import { getStorage, ref, uploadBytes } from 'firebase/storage';
+import { getFirestore } from 'firebase/firestore'; // Agrega esta importación
+import { getStorage } from 'firebase/storage';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,24 +28,4 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const storage = getStorage(app); // Agrega esta línea
 
-const storageRef = ref(storage, 'imagesServices');
-
-//                Ingresar nuevo servicio
-export async function registerNewService(service) {
-  try {
-    const collectionRef = collection(db, 'servicios');
-    const docRef = doc(collectionRef);
-    await setDoc(docRef, service);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-export async function registerNewImage(img) {
-  uploadBytes(storageRef, img).then((snapshot) => {
-    console.log(snapshot);
-    console.log('Imagen subida');
-  });
-}
-
-export { db, auth, provider }; // Exporta las variables db, auth y provider
+export { db, auth, provider, storage }; // Exporta las variables db, auth y provider
