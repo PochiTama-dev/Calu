@@ -12,6 +12,7 @@ import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
 import CardBlogDev from './CardBlogDev';
+import arrow_R from '../News/Card_news/icon_arrow_right.svg';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
@@ -49,11 +50,11 @@ function Blog({ isAuth }) {
   }, []);
 
   const handleMouseEnter = (id) => {
-    sethover(true);
+    sethover(id);
   };
 
   const handleMouseLeave = () => {
-    sethover(false);
+    sethover(null);
   };
   return (
     <div className='blog'>
@@ -73,9 +74,13 @@ function Blog({ isAuth }) {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className='blogImage'>
+                    <div className='arrow'>
+                      <img src={arrow_R} alt={arrow_R} />
+                      <img src={arrow_R} alt={arrow_R} />
+                    </div>
                     <img src={post.imageUrl} alt='' />
                   </div>
-                  {hover && <p className='leerMas'>{'LEER MÁS>>'}</p>}
+                  {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
                   <div className='cardHeaderblog'>
                     <span>{time}</span>
                     <div className='titleblog'>
