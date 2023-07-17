@@ -1,12 +1,14 @@
 import './services.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '../Header/header';
-import servicios from './constants';
 import Slider from '../Services/Card_srv/Slider/Slider';
 import Card_srv_flip from './Card_srv/Card_srv_flip';
 import Footer from '../Footer/Footer';
 import CTN from '../CTN/CTN';
 import { Link } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
+import { db, storage } from '../../firebase-config';
+import { ref } from 'firebase/storage';
 
 const Services = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -18,6 +20,17 @@ const Services = () => {
     return () => {
       window.removeEventListener('resize', handleResizeWindow);
     };
+  }, []);
+
+  const [servicios, setServicios] = useState([]);
+  const serviciosRef = collection(db, 'servicios');
+  useEffect(() => {
+    const getPosts = async () => {
+      const data = await getDocs(serviciosRef);
+      setServicios(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    getPosts();
   }, []);
 
   const isAdmin = true;
@@ -37,7 +50,7 @@ const Services = () => {
           <div>
             {servicios.map((servicio, index) => {
               if (index % 2 === 0) {
-                const nextService = servicios[index + 1];
+                const nextService = index === servicios.length - 1 ? '' : servicios[index + 1];
                 return (
                   <section>
                     <div className='srv_cards' key={index}>
@@ -53,12 +66,16 @@ const Services = () => {
                           <div className='des_3d'>{servicio.des_3}</div>
                         </div>
                         <div className='srv_icon'>
-                          <div>{servicio.img}</div>
+                          <div>
+                            <img src={servicio.img} alt={servicio.img} width='210px' />
+                          </div>
                         </div>
                       </div>
                       <div className='card_srv_cont'>
                         <div className='srv_icon'>
-                          <div>{nextService.img}</div>
+                          <div>
+                            <img src={nextService.img} alt={nextService.img} width='210px' />
+                          </div>
                         </div>
                         <div className='card_srv_info'>
                           <div className='title_srv'>{nextService.title}</div>

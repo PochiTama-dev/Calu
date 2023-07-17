@@ -66,6 +66,7 @@
 }
 .card-blog .leerMas {
   color: #eb39d9;
+  position: relative;
 }
 
 .titleblog {
@@ -93,7 +94,7 @@
     justify-content: flex-start;
   }
   .card-blog .blogImage img {
-    width: 150px;
+    width: 120px;
   }
   .card-blog .cardTextblogContainer {
     font-size: 12px;
@@ -156,10 +157,10 @@
     font-size: 3rem;
     margin: 0;
   }
-  .card-blog h3 {
-    font-size: 3rem;
-    margin: 5px;
+  .card-blog h2 {
+    font-size: 18px !important;
   }
+
   .card-blog button {
     font-size: 32px;
   }

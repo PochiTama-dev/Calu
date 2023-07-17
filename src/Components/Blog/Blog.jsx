@@ -15,7 +15,7 @@ import CardBlogDev from './CardBlogDev';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
-  const [hover, sethover] = useState(false);
+  const [hover, sethover] = useState(null);
 
   const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
@@ -49,11 +49,11 @@ function Blog({ isAuth }) {
   }, []);
 
   const handleMouseEnter = (id) => {
-    sethover(true);
+    sethover(id);
   };
 
   const handleMouseLeave = () => {
-    sethover(false);
+    sethover(null);
   };
   return (
     <div className='blog'>
@@ -75,7 +75,7 @@ function Blog({ isAuth }) {
                   <div className='blogImage'>
                     <img src={post.imageUrl} alt='' />
                   </div>
-                  {hover && <p className='leerMas'>{'LEER MÁS>>'}</p>}
+                  {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
                   <div className='cardHeaderblog'>
                     <span>{time}</span>
                     <div className='titleblog'>
