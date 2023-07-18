@@ -27,6 +27,7 @@ export const Header = () => {
   const handleAdminMenu = () => {
     setShowAdminMenu(!showAdminMenu);
   };
+
   const handleLinks = () => {
     setShowLinks(!showLinks);
   };
@@ -44,14 +45,14 @@ export const Header = () => {
               </button>
               {showAdminMenu && (
                 <div className="admin-dropdown">
-                  <Link to="/Create-Post">Create Post</Link>
+                  <Link to="/product-form">Create Product</Link>
+                  <Link to="/create-post">Create Post</Link>
                   <button onClick={signUserOut}>Log Out</button>
                 </div>
               )}
             </div>
           </>
         )}
-
 
         <nav>
           <Link to={"/"}>
