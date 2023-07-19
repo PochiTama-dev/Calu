@@ -11,7 +11,6 @@ import CTN from '../CTN/CTN';
 import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
-import CardBlogDev from './CardBlogDev';
 import arrow_R from '../News/Card_news/icon_arrow_right.svg';
 
 function Blog({ isAuth }) {
@@ -20,8 +19,6 @@ function Blog({ isAuth }) {
 
   const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
-  const timestamp = new Date();
-  const time = `${timestamp.getDay()}/${timestamp.getMonth()}/${timestamp.getFullYear()}`;
 
   const deletePost = async (id, imageUrl) => {
     const postDoc = doc(db, 'posts', id);
@@ -82,10 +79,11 @@ function Blog({ isAuth }) {
                   </div>
                   {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
                   <div className='cardHeaderblog'>
-                    <span>{time}</span>
                     <div className='titleblog'>
                       <h2>{post.title}</h2>
                     </div>
+                    <span>{post.time}</span>
+                    <p>{post.postText}</p>
                     <div className='deleteblog'>
                       {isAuth && post.author && post.author.id === auth.currentUser?.uid && (
                         <>
@@ -111,7 +109,6 @@ function Blog({ isAuth }) {
                   </div>
                 </div>
               ))}
-              <CardBlogDev deletePost={deletePost} handlePostClick={handlePostClick} />
             </div>
           </div>
           <Sidebar />

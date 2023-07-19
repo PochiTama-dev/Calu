@@ -74,7 +74,7 @@ function BlogView() {
         </div>
         <div className='date-tagContainer'>
           <div className='date-tags'>
-            <p>11:50AM | Jul 5, 2023</p>
+            <p>{post.time}</p>
             <hr />
             <p>Tag #1, Tag #2, Tag #3</p>
           </div>
