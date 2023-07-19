@@ -1,16 +1,39 @@
-import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase-config";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { db, storage } from "../../firebase-config";
+import { Link, useNavigate } from "react-router-dom";
+import { ref, deleteObject } from "firebase/storage";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const isUserAuthenticated = localStorage.getItem("isAuth") === "true";
+  const navigate = useNavigate();
+
+  const productsCollectionRef = collection(db, "e-commerce");
+
+  const deleteProduct = async (id, thumbnail) => {
+    const productDoc = doc(db, "e-commerce", id);
+    await deleteDoc(productDoc);
+
+    if (thumbnail) {
+      const thumbnailRef = ref(storage, thumbnail);
+      await deleteObject(thumbnailRef);
+    }
+
+    // Update the product list after deleting
+    setProducts((prevList) => prevList.filter((product) => product.id !== id));
+  };
+
+  const handleEditProduct = (productId) => {
+    const productToEdit = products.find((product) => product.id === productId);
+    navigate(`/product-form`, { state: { productToEdit } });
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "e-commerce"));
+        const querySnapshot = await getDocs(productsCollectionRef);
         const productsData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
@@ -24,7 +47,7 @@ function ProductList() {
     };
 
     fetchProducts();
-  }, []);
+  }, [productsCollectionRef]);
 
   if (loading) {
     return <p>Cargando productos...</p>;
@@ -44,6 +67,12 @@ function ProductList() {
           <p>{product.detail}</p>
           <p>Precio: ${product.price}</p>
           <Link to={`/product/${product.id}`}>Ver detalles</Link>
+          {isUserAuthenticated && (
+            <>
+              <button onClick={() => handleEditProduct(product.id)}>Editar</button>
+              <button onClick={() => deleteProduct(product.id, product.thumbnail)}>Eliminar</button>
+            </>
+          )}
         </div>
       ))}
     </div>

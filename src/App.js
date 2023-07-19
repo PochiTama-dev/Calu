@@ -15,6 +15,7 @@ import AdminCrud from './Components/Admin/AdminCrud';
 import ProductForm from './Components/ProductForm/ProductForm';
 import ProductDetail from './Components/ProductForm/ProductDetail';
 import ProductList from './Components/ProductForm/ProductList';
+import PaymentGateway from './Components/Payment/Payment';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -35,6 +36,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogView />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/payment" element={<PaymentGateway />} />
         </Routes>
       </div>
     </Router>
