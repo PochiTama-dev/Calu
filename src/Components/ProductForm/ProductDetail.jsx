@@ -38,13 +38,36 @@ function ProductDetail() {
     return <p>No se encontró el producto.</p>;
   }
 
+  const handleDownload = () => {
+    // Lógica para descargar el e-book
+    if (product.pdf !== 0 && product.pdf !== null) {
+      const a = document.createElement("a");
+      a.href = product.pdf;
+      a.download = `${product.title}.pdf`;
+      a.target = "_blank"; // Agregar esta línea para abrir en nueva pestaña
+      a.click();
+    }
+  };
+
+  const handleBuy = () => {
+    // Lógica para comprar el e-book
+    console.log("Comprando el e-book:", product.title);
+  };
+
   return (
     <div>
       <h2>Detalle del Producto</h2>
       <h3>{product.title}</h3>
       <img src={product.thumbnail} alt={product.title} />
       <p>{product.detail}</p>
-      <p>Precio: ${product.price}</p>
+      {product.price !== 'Gratis' && product.price !== null ? (
+        <>
+          <p>Precio: ${product.price}</p>
+          <button onClick={handleBuy}>Comprar</button>
+        </>
+      ) : (
+        <button onClick={handleDownload}>Descargar</button>
+      )}
     </div>
   );
 }
