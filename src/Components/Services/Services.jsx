@@ -49,51 +49,29 @@ const Services = () => {
           </div>
           <div>
             {servicios.map((servicio, index) => {
-              if (index % 2 === 0) {
-                const nextService = index === servicios.length - 1 ? '' : servicios[index + 1];
-                return (
-                  <section>
-                    <div className='srv_cards' key={index}>
-                      <div className='card_srv_cont'>
-                        <div className='card_srv_info'>
-                          <div className='title_srv'>{servicio.title}</div>
-                          <div className='sub_d'>{servicio.sub}</div>
-                          <div className='des_1d'>
-                            <div>{servicio.des_1}</div>
-                            <br />
-                            <div>{servicio.des_2}</div>
-                          </div>
-                          <div className='des_3d'>{servicio.des_3}</div>
+              return (
+                <section>
+                  <div className='srv_cards' key={index}>
+                    <div className='card_srv_cont'>
+                      <div className='card_srv_info'>
+                        <div className='title_srv'>{servicio.title}</div>
+                        <div className='sub_d'>{servicio.sub}</div>
+                        <div className='des_1d'>
+                          <div>{servicio.des_1}</div>
+                          <br />
+                          <div>{servicio.des_2}</div>
                         </div>
-                        <div className='srv_icon'>
-                          <div>
-                            <img src={servicio.img} alt={servicio.img} width='210px' />
-                          </div>
-                        </div>
+                        <div className='des_3d'>{servicio.des_3}</div>
                       </div>
-                      <div className='card_srv_cont'>
-                        <div className='srv_icon'>
-                          <div>
-                            <img src={nextService.img} alt={nextService.img} width='210px' />
-                          </div>
-                        </div>
-                        <div className='card_srv_info'>
-                          <div className='title_srv'>{nextService.title}</div>
-                          <div className='sub_d'>{nextService.sub}</div>
-                          <div className='des_1d'>
-                            <div>{nextService.des_1}</div>
-                            <br />
-                            <div>{nextService.des_2}</div>
-                          </div>
-                          <div className='des_3d'>{nextService.des_3}</div>
+                      <div className='srv_icon'>
+                        <div>
+                          <img src={servicio.img} alt={servicio.img} width='210px' />
                         </div>
                       </div>
                     </div>
-                  </section>
-                );
-              } else {
-                return null;
-              }
+                  </div>
+                </section>
+              );
             })}
           </div>
         </div>

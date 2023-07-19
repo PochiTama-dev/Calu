@@ -165,8 +165,9 @@
     height: 50%;
   }
   .card-blog p {
-    font-size: 3rem;
+    font-size: 18px;
     margin: 0;
+    width: 80%;
   }
 
   .card-blog .deleteblog {
@@ -185,7 +186,7 @@
   .lateralBar {
     position: absolute;
     right: 0;
-    width: 30%;
+    width: 100%;
     margin-top: 0;
   }
   .ctn {
@@ -201,21 +202,25 @@
 }
 
 @media (min-width: 1920px) {
+  .postContainer {
+    width: 75%;
+  }
   .blog-sidebar {
     flex-wrap: nowrap;
   }
   .postContainer .cardContainerblog {
-    justify-content: center;
+    justify-content: flex-end;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 35%;
+    width: 30%;
   }
   .postContainer .cardContainerblog .card-blog .blogImage {
     width: 75%;
   }
   .blog-sidebar .lateralBar {
     position: initial;
-    margin: 0 0 0 50px;
+    margin: 0 50px;
+    width: 30%;
   }
   .lateralBar .blogTitle {
     margin: 0;

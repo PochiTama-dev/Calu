@@ -64,6 +64,10 @@
     position: relative;
     z-index: 0;
   }
+  .youtubePlayer iframe {
+    width: auto;
+    height: auto;
+  }
 }
 @media (min-width: 900px) {
   .blogImg {
@@ -80,6 +84,14 @@
     position: initial;
     width: auto;
   }
+  .youtubePlayer {
+    display: flex;
+    justify-content: center;
+  }
+  .youtubePlayer iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (min-width: 1920px) {
   .blog-sidebar {
@@ -89,18 +101,22 @@
     flex-wrap: nowrap;
     width: 65%;
   }
-  .blogCard .blogText {
-    display: flex;
-    justify-content: space-around;
-  }
-  .blogCard .blogText p {
-    width: 35%;
-    font-size: 3rem;
+  .blogImg {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
   }
   .blogCard .blogText h2 {
     text-align: center;
     margin: 0;
     font-size: larger;
+  }
+  .youtubePlayer {
+    height: 300px;
+  }
+  .youtubePlayer iframe {
+    width: 600px;
+    height: 300px;
   }
   .lateralBar {
     display: flex;
