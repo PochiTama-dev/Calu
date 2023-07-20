@@ -6,6 +6,7 @@ import insta_logo from "./icons/Instagram.png";
 import ld_logo from "./icons/Linkedin.png";
 import tk_logo from "./icons/TikTok.png";
 import sp_logo from "./icons/Spotify.png";
+import yt_logo from "./icons/youtube.png";
 
 const Footer = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -79,6 +80,9 @@ const Footer = () => {
               </a>
               <a href="">
                 <img src={sp_logo} alt="spotify" />
+              </a>
+              <a href="">
+                <img src={yt_logo} alt="youtube" />
               </a>
             </div>
           </div>

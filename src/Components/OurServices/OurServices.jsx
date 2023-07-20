@@ -7,19 +7,40 @@ import modelo from "../Services/icons/modelo_negocio.png";
 import creacion from "../Services/icons/creación_contenido.png";
 import desarrollo from "../Services/icons/desarrollo_web.png";
 import Slider from "../Portfolio/Slider/Slider";
-
 import "./OurServices.css";
 import Card_our from "./Card_OurService/Card_our";
+import { useState } from "react";
+import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../../firebase-config";
 
 const OurServices = () => {
+  const [ourServicesinfo, setOurServicesinfo] = useState([]);
+
+  useEffect(() => {
+    const getOurServices = async () => {
+      const OurDoc = doc(db, "home", "OurServices");
+      const docSnapshot = await getDoc(OurDoc);
+      if (docSnapshot.exists()) {
+        setOurServicesinfo(docSnapshot.data());
+      }
+    };
+    getOurServices();
+  }, []);
+
   return (
     <div className="ourServices">
-      <h1 className="title-first-nuestros-servicios">NUESTROS SERVICIOS</h1>
-      <p className="text-description">
-        Contamos con una amplia gama de servicios diseñados a la medida de cada
-        emprendimiento que quiera tener éxito en el mundo digital.
-      </p>
+      <div className="ourServices_text">
+        <div className="edit">
+          <h1 className="title-first-nuestros-servicios">
+            {ourServicesinfo.title}
+          </h1>
+        </div>
 
+        <div className="edit">
+          <p className="text-description">{ourServicesinfo.t1}</p>
+        </div>
+      </div>
       <div className="ctn-servicios">
         <div className="slider">
           <Slider>

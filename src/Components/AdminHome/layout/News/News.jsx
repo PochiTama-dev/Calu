@@ -1,0 +1,160 @@
+import React from "react";
+import "./news.css";
+import Card_news from "./Card_news/Card_news";
+import Slider from "./Slider/Slider";
+import { useState } from "react";
+import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../../../../firebase-config";
+import Modal from "../Modal/modal";
+const News = () => {
+  /*setDoc(doc(db, "home", "News"), {
+    title: "NOVEDADES",
+    t1: "   No te pierdas los úlimos contenidos de nuestro blog.",
+    
+  });*/
+
+  const [newsinfo, setNewsinfo] = useState([]);
+
+  const [title, setTitle] = useState("");
+  const [t1, setT1] = useState("");
+
+  const updateTitle = async () => {
+    const news_info = doc(db, "home", "News");
+    await updateDoc(news_info, {
+      title: title,
+    });
+  };
+
+  const updateT1 = async () => {
+    const news_info = doc(db, "home", "News");
+    await updateDoc(news_info, {
+      t1: t1,
+    });
+  };
+
+  //////////////////////////
+
+  useEffect(() => {
+    const getNews = async () => {
+      const NewsDoc = doc(db, "home", "News");
+      const docSnapshot = await getDoc(NewsDoc);
+      if (docSnapshot.exists()) {
+        setNewsinfo(docSnapshot.data());
+      }
+    };
+    getNews();
+  }, []);
+
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 1024;
+  React.useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
+  if (width > breakpoint) {
+    return (
+      <div className="novedades_container">
+        <div className="news_text">
+          <div className="edit">
+            <h1 className="title_novedades">{newsinfo.title}</h1>
+            <Modal>
+              <input
+                style={{ width: "400px", height: "30px" }}
+                type="text"
+                placeholder="Ingrese titulo"
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <button onClick={() => updateTitle()}>GUARDAR</button>
+            </Modal>
+          </div>
+
+          <div className="edit">
+            <p>{newsinfo.t1}</p>
+            <Modal>
+              <input
+                style={{ width: "400px", height: "30px" }}
+                type="text"
+                placeholder="Ingrese texto 1"
+                onChange={(e) => setT1(e.target.value)}
+              />
+              <button onClick={() => updateT1()}>GUARDAR</button>
+            </Modal>
+          </div>
+        </div>
+
+        <div className="cards_novedades">
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>
+          </a>
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>
+          </a>
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>{" "}
+          </a>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="novedades_container">
+      <h1 className="title_novedades">NOVEDADES</h1>
+      <p>No te pierdas los úlimos contenidos de nuestro blog.</p>
+      <div className="cards_novedades">
+        <Slider>
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>{" "}
+          </a>
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>
+          </a>
+          <a href="">
+            <Card_news
+              image={
+                <img className="icons_novedades" src={""} alt="" width="50%" />
+              }
+              title={"TENDENCIAS 2023"}
+            ></Card_news>
+          </a>
+        </Slider>
+      </div>
+      <div className="btn_cont">
+        <button className="news_btn">
+          <div>VER MAS </div>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default News;

@@ -11,6 +11,7 @@ import { getStorage } from 'firebase/storage';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
+
   apiKey: 'AIzaSyApKU1ShV8BSmIiT80A5R0j-nD9Uy1zosQ',
   authDomain: 'calu-f1f83.firebaseapp.com',
   projectId: 'calu-f1f83',
@@ -18,6 +19,7 @@ const firebaseConfig = {
   messagingSenderId: '438340692271',
   appId: '1:438340692271:web:2c2ac73c9ac1b57c3559da',
   measurementId: 'G-DQE7303QW7',
+
 };
 
 // Initialize Firebase
@@ -28,4 +30,6 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const storage = getStorage(app); // Agrega esta línea
 
+
 export { db, auth, provider, storage }; // Exporta las variables db, auth y provider
+
