@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "../../firebase-config";
-import { Header } from "../Header/header";
-import "./BlogView.css";
-import "./blog.css";
-import Footer from "../Footer/Footer";
-import Sidebar from "./Sidebar";
-import CTN from "../CTN/CTN";
-import Contact_button from "../Home/Contact_button/Contact_button";
-import "../Home/Contact_button/contact_button.css";
+
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../firebase-config';
+import { Header } from '../Header/header';
+import './BlogView.css';
+import './blog.css';
+import Footer from '../Footer/Footer';
+import Sidebar from './Sidebar';
+import CTN from '../CTN/CTN';
+import Contact_button from '../Home/Contact_button/Contact_button';
+import '../Home/Contact_button/contact_button.css';
+import YouTube from 'react-youtube';
+
 
 function BlogView() {
-  const { id } = useParams(); // Obtiene el ID del parámetro de la URL
+  const { id } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
@@ -30,7 +33,17 @@ function BlogView() {
   }, [id]);
 
   if (!post) {
-    return <div>Loading...</div>; // Muestra un mensaje de carga mientras se obtienen los datos
+    return <div>Loading...</div>;
+  }
+
+  function getYouTubeVideoId(url) {
+    if (!url) {
+      return null;
+    }
+    const regExp =
+      /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]+)/;
+    const match = url.match(regExp);
+    return match && match[1];
   }
 
   return (
@@ -39,37 +52,44 @@ function BlogView() {
         <Header />
         <Contact_button />
 
-        <h1 className="blogTitle">{post.title}</h1>
-        <div className="blogContainer">
-          <div className="blogCard">
-            <img className="blogImg" src={post.imageUrl} alt="" />
-            <div className="blogText">
-              <p>{post.postText}</p>
-              <p style={{ margin: 0 }}>
-                <h2>subtitulo</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptates, nihil quae ex non velit exercitationem deleniti
-                aspernatur quis ipsa ullam in delectus inventore, ratione
-                laborum quaerat praesentium asperiores nam, aliquam
-                necessitatibus. Pariatur, est odit reprehenderit eaque corrupti
-                tempora et distinctio temporibus saepe adipisci minima dicta
-                incidunt iste velit? Quas, nostrum?
-              </p>
+        <h1 className='blogTitle'>{post.title}</h1>
+        <div className='blogView-sidebar'>
+          <div className='blogContainer'>
+            <div className='blogCard'>
+              <img className='blogImg' src={post.imageUrl} alt='' />
+              <div className='blogText'>
+                <p>{post.postText}</p>
+                {post.additionalContent && (
+                  <div>
+                    <p>{post.additionalContent}</p>
+                  </div>
+                )}
+                {post.youtubeLink && (
+                  <div className='youtubePlayer'>
+                    <YouTube videoId={getYouTubeVideoId(post.youtubeLink)} />
+                  </div>
+                )}
+              </div>
+
             </div>
-            <div>Autor: {post.author.name}</div>
           </div>
           <Sidebar />
         </div>
-        <div className="date-tagContainer">
-          <div className="date-tags">
-            <p>11:50AM | Jul 5, 2023</p>
+
+        <div className='date-tagContainer'>
+          <div className='date-tags'>
+            <p>{post.time}</p>
+
             <hr />
             <p>Tag #1, Tag #2, Tag #3</p>
           </div>
         </div>
 
-        <CTN />
-        <div className="footer-blogView">
+        <div className='ctn'>
+          <CTN />
+        </div>
+        <div className='footer-blogView'>
+
           <Footer />
         </div>
       </div>

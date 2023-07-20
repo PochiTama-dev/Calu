@@ -1,3 +1,6 @@
+.blog .arrow_up {
+  position: fixed;
+}
 .blog-sidebar {
   display: flex;
   flex-wrap: wrap;
@@ -49,16 +52,32 @@
   width: 320px;
   height: 320px;
   padding: 20px;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
+.card-blog .cardHeaderblog span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
 .card-blog h2 {
   color: white;
   margin: 0;
+  font-size: 18px;
+}
+.card-blog .leerMas {
+  color: #eb39d9;
+  position: relative;
+  font-weight: bold;
 }
 
 .titleblog {
-  text-align: center;
+  text-align: left;
   margin: 0;
+}
+.footer-blog .footer_container {
+  position: relative;
+  z-index: 0;
 }
 
 @media (min-width: 375px) {
@@ -74,11 +93,23 @@
   }
   .card-blog .blogImage {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
   .card-blog .blogImage img {
-    width: 150px;
+    width: 120px;
   }
+  .card-blog .blogImage .arrow {
+    width: 60px;
+    height: 30px;
+    position: absolute;
+  }
+  .card-blog .blogImage .arrow img {
+    width: 20px;
+  }
+  .card-blog .leerMas {
+    position: initial;
+  }
+
   .card-blog .cardTextblogContainer {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.8);
@@ -90,6 +121,7 @@
     background: none;
     border: none;
     cursor: pointer;
+    text-align: start;
   }
 
   .ctn .CTN_ctn2 {
@@ -112,9 +144,15 @@
     margin-top: 12vh;
   }
   .card-blog .blogImage img {
-    width: 70%;
+    width: 100%;
   }
-
+  .card-blog .blogImage .arrow {
+    width: 120px;
+    height: 60px;
+  }
+  .card-blog .blogImage .arrow img {
+    width: 50px;
+  }
   .postContainer .cardContainerblog {
     justify-content: flex-start;
     overflow: scroll;
@@ -127,8 +165,9 @@
     height: 50%;
   }
   .card-blog p {
-    font-size: 3rem;
+    font-size: 18px;
     margin: 0;
+    width: 80%;
   }
 
   .card-blog .deleteblog {
@@ -139,10 +178,7 @@
     font-size: 3rem;
     margin: 0;
   }
-  .card-blog h3 {
-    font-size: 3rem;
-    margin: 5px;
-  }
+
   .card-blog button {
     font-size: 32px;
   }
@@ -150,27 +186,41 @@
   .lateralBar {
     position: absolute;
     right: 0;
-    width: 30%;
+    width: 100%;
     margin-top: 0;
   }
   .ctn {
     margin-top: 0;
   }
+  .ctn .CTN_ctn {
+    height: initial;
+  }
+  .blog .footer-blog .footer_container {
+    position: relative;
+    z-index: 0;
+  }
 }
 
 @media (min-width: 1920px) {
+  .postContainer {
+    width: 75%;
+  }
   .blog-sidebar {
     flex-wrap: nowrap;
   }
-  .postContainer .cardContainerblog .cards {
-    width: 35%;
+  .postContainer .cardContainerblog {
+    justify-content: flex-end;
   }
   .postContainer .cardContainerblog .card-blog {
     width: 30%;
   }
+  .postContainer .cardContainerblog .card-blog .blogImage {
+    width: 75%;
+  }
   .blog-sidebar .lateralBar {
     position: initial;
-    margin: 0 0 0 50px;
+    margin: 0 50px;
+    width: 30%;
   }
   .lateralBar .blogTitle {
     margin: 0;

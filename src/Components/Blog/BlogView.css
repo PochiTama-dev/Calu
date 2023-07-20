@@ -1,5 +1,14 @@
+.view {
+  display: flex;
+  justify-content: center;
+}
 .blogContainer {
   display: flex;
+}
+.blogView-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .blogCard {
@@ -11,7 +20,24 @@
 .blogImg {
   width: 90%;
 }
+.blogView .contact_ctn .arrow_up {
+  position: fixed;
+}
+.contact_ctn .arrow_up {
+  position: fixed;
+}
+.blogCard .blogText p {
+  font-size: 16px;
+}
+
 @media (min-width: 375px) {
+  .blogTitle {
+    font-size: 48px;
+  }
+  .blogContainer {
+    flex-wrap: wrap;
+    width: 80%;
+  }
   .blogCard {
     width: 100%;
   }
@@ -32,13 +58,31 @@
     width: 100%;
   }
 
+  .ctn .CTN_ctn {
+    height: initial;
+  }
+  .ctn .CTN_ctn .CTN_title {
+    margin: 25px 0 25px;
+  }
+  .ctn .CTN_ctn .CTN_ctn2 p {
+    margin: 0;
+  }
   .footer-blogView .footer_container {
     position: relative;
+    z-index: 0;
+  }
+  .youtubePlayer iframe {
+    width: auto;
+    height: auto;
   }
 }
 @media (min-width: 900px) {
   .blogImg {
-    margin: 50px;
+    margin: 0;
+    width: 100%;
+  }
+  .blogContainer {
+    width: 80%;
   }
   .date-tagContainer {
     justify-content: flex-start;
@@ -48,34 +92,43 @@
     position: initial;
     width: auto;
   }
+  .youtubePlayer {
+    display: flex;
+    justify-content: center;
+  }
+  .youtubePlayer iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (min-width: 1920px) {
   .blog-sidebar {
     display: flex;
   }
-  .blogCard {
-    width: 80%;
+  .blogContainer {
+    flex-wrap: nowrap;
+    width: 40%;
   }
-  .blogCard .blogText {
-    display: flex;
-    justify-content: space-around;
-  }
-  .blogCard .blogText p {
-    width: 35%;
-    font-size: 3rem;
+  .blogImg {
+    display: block;
+    margin: 0 auto;
   }
   .blogCard .blogText h2 {
     text-align: center;
     margin: 0;
     font-size: larger;
   }
+  .youtubePlayer {
+    height: 300px;
+  }
+  .youtubePlayer iframe {
+    width: 600px;
+    height: 300px;
+  }
   .lateralBar {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    margin: 0 0 0 20px;
-  }
-  .lateralBar .lateralContainer {
-    font-size: 24px;
+    max-width: 390px;
+    margin: 0 15px;
   }
 }

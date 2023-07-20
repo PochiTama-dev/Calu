@@ -12,6 +12,7 @@ const Sidebar = () => {
         </p>
         <Link to={'/blog/1'}>ver mas</Link>
       </div>
+      <hr />
       <div className='lateralContainer'>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
@@ -19,6 +20,7 @@ const Sidebar = () => {
         </p>
         <Link to={'/blog/1'}>ver mas</Link>
       </div>
+      <hr />
       <div className='lateralContainer'>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
@@ -26,6 +28,7 @@ const Sidebar = () => {
         </p>
         <Link to={'/blog/1'}>ver mas</Link>
       </div>
+      <hr />
       <div className='lateralContainer'>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id

@@ -11,10 +11,12 @@ import CTN from '../CTN/CTN';
 import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
-import CardBlogDev from './CardBlogDev';
+import arrow_R from '../News/Card_news/icon_arrow_right.svg';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
+  const [hover, sethover] = useState(false);
+
   const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
 
@@ -44,8 +46,15 @@ function Blog({ isAuth }) {
     getPosts();
   }, []);
 
+  const handleMouseEnter = (id) => {
+    sethover(id);
+  };
+
+  const handleMouseLeave = () => {
+    sethover(null);
+  };
   return (
-    <>
+    <div className='blog'>
       <Header />
       <Contact_button />
       <div className='BlogPage'>
@@ -54,60 +63,64 @@ function Blog({ isAuth }) {
           <div className='postContainer'>
             <div className='cardContainerblog'>
               {postList.map((post) => (
-                <div className='card-blog' key={post.id}>
+                <div
+                  className='card-blog'
+                  key={post.id}
+                  onClick={() => handlePostClick(post.id)}
+                  onMouseEnter={() => handleMouseEnter(post.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <div className='blogImage'>
+                    <div className='arrow'>
+                      <img src={arrow_R} alt={arrow_R} />
+                      <img src={arrow_R} alt={arrow_R} />
+                    </div>
                     <img src={post.imageUrl} alt='' />
                   </div>
+                  {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
                   <div className='cardHeaderblog'>
                     <div className='titleblog'>
                       <h2>{post.title}</h2>
                     </div>
+                    <span>{post.time}</span>
+                    <p>{post.postText}</p>
                     <div className='deleteblog'>
-                      {isAuth &&
-                        post.author &&
-                        post.author.id === auth.currentUser?.uid && (
-                          <>
-                            <button
-                              onClick={() => {
-                                deletePost(post.id, post.imageUrl);
-                              }}
-                              className='deleteblogButton'
-                            >
-                              &#128465; Delete
-                            </button>
-                            <button
-                              onClick={() => {
-                                // Lógica para editar el post
-                              }}
-                              className='editblogButton'
-                            >
-                              &#9998; Edit
-                            </button>
-                          </>
-                        )}
+                      {isAuth && post.author && post.author.id === auth.currentUser?.uid && (
+                        <>
+                          <button
+                            onClick={() => {
+                              deletePost(post.id, post.imageUrl);
+                            }}
+                            className='deleteblogButton'
+                          >
+                            &#128465; Delete
+                          </button>
+                          <button
+                            onClick={() => {
+                              // Lógica para editar el post
+                            }}
+                            className='editblogButton'
+                          >
+                            &#9998; Edit
+                          </button>
+                        </>
+                      )}
                     </div>
                   </div>
-                  <div className='cardTextblogContainer'>{post.postText}</div>
-
-                  <button className='viewButton' onClick={() => handlePostClick(post.id)}>
-                    {'Leer Más>>'}
-                  </button>
                 </div>
               ))}
-              <CardBlogDev deletePost={deletePost} handlePostClick={handlePostClick} />
             </div>
           </div>
           <Sidebar />
         </div>
       </div>
-
       <div className='ctn'>
         <CTN />
       </div>
       <div className='footer-blog'>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

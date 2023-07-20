@@ -4,7 +4,7 @@ import logo from '../../images/logocalu.png';
 
 const CardBlogDev = ({ deletePost, handlePostClick }) => {
   return (
-    <div className='card-blog'>
+    <div className='card-blog' onClick={() => handlePostClick(1)}>
       <div className='blogImage'>
         <img src={logo} alt='' />
       </div>
@@ -33,12 +33,6 @@ const CardBlogDev = ({ deletePost, handlePostClick }) => {
           </>
         </div>
       </div>
-      <div className='cardTextblogContainer'>
-        <p>Lorem ipsum dolor sit amet. </p>
-      </div>
-      <button className='viewButton' onClick={() => handlePostClick(1)}>
-        {'Leer Más >>'}
-      </button>
     </div>
   );
 };

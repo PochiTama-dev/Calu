@@ -9,7 +9,6 @@
   transform: rotateY(180deg);
 }
 .title {
-  font-size: 20px;
   color: rgba(185, 4, 139, 0.9154228855721394);
   font-weight: bold;
 }
@@ -53,10 +52,7 @@
 }
 
 .flip-card-front {
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 20px;
   transform: rotateX(0deg); /* para bug firefox */
 }
@@ -69,10 +65,7 @@
   flex-direction: column;
 
   justify-content: center;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 20px;
   color: white;
   font-size: 18px;

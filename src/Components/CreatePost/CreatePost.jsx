@@ -1,22 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db, auth, storage } from "../../firebase-config";
-import { useNavigate } from "react-router-dom";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import "./createPost.css";
+import React, { useState, useEffect } from 'react';
+import { addDoc, collection } from 'firebase/firestore';
+import { db, auth, storage } from '../../firebase-config';
+import { useNavigate } from 'react-router-dom';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import './createPost.css';
 
 function CreatePost() {
-  const [title, setTitle] = useState("");
-  const [postText, setPostText] = useState("");
+  const [title, setTitle] = useState('');
+  const [postText, setPostText] = useState('');
   const [image, setImage] = useState(null);
-  const postsCollectionRef = collection(db, "posts");
+  const [youtubeLink, setYoutubeLink] = useState('');
+  const [additionalContent, setAdditionalContent] = useState('');
+  const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
+  const timestamp = new Date();
+  const time = timestamp.toLocaleDateString();
 
   useEffect(() => {
     const checkAuthentication = () => {
       const user = auth.currentUser;
       if (!user) {
-        navigate("/admin-login"); // Redirige al usuario a la página de inicio de sesión si no está autenticado
+        navigate('/admin-login');
       }
     };
 
@@ -24,49 +28,74 @@ function CreatePost() {
   }, []);
 
   const createPost = async () => {
-    let imageUrl = "";
+    let imageUrl = '';
     if (image) {
       const storageRef = ref(storage, `images/${image.name}`);
       await uploadBytes(storageRef, image);
       imageUrl = await getDownloadURL(storageRef);
     }
 
-    await addDoc(postsCollectionRef, {
+    const newPost = {
       title,
       postText,
       imageUrl,
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
-    });
-    navigate("/blog");
+      youtubeLink,
+      additionalContent,
+      time,
+    };
+
+    await addDoc(postsCollectionRef, newPost);
+    navigate('/blog');
   };
 
   return (
-    <div className="createPostPage">
-      <div className="cpContainer">
+    <div className='createPostPage'>
+      <div className='cpContainer'>
         <h1>Create A Post</h1>
-        <div className="inputGp">
+        <div className='inputGp'>
           <label>Title:</label>
           <input
-            placeholder="Title..."
+            placeholder='Title...'
             value={title}
             onChange={(event) => {
               setTitle(event.target.value);
             }}
           />
         </div>
-        <div className="inputGp">
+        <div className='inputGp'>
           <label>Post:</label>
           <textarea
-            placeholder="Post..."
+            placeholder='Post...'
             value={postText}
             onChange={(event) => {
               setPostText(event.target.value);
             }}
           />
         </div>
-        <div className="inputGp">
+        <div className='inputGp'>
           <label>Image:</label>
-          <input type="file" onChange={(event) => setImage(event.target.files[0])} />
+          <input type='file' onChange={(event) => setImage(event.target.files[0])} />
+        </div>
+        <div className='inputGp'>
+          <label>YouTube Link:</label>
+          <input
+            placeholder='YouTube link...'
+            value={youtubeLink}
+            onChange={(event) => {
+              setYoutubeLink(event.target.value);
+            }}
+          />
+        </div>
+        <div className='inputGp'>
+          <label>Additional Content:</label>
+          <textarea
+            placeholder='Additional content...'
+            value={additionalContent}
+            onChange={(event) => {
+              setAdditionalContent(event.target.value);
+            }}
+          />
         </div>
         <button onClick={createPost}>Submit Post</button>
       </div>
