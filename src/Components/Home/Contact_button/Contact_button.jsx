@@ -2,7 +2,7 @@ import icono_contacto from "./icono_contacto.png";
 import "./contact_button.css";
 import { Link } from "react-router-dom";
 import arrow_L from "./icon_arrow_left.svg";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Hover = () => {
   return (
@@ -23,10 +23,16 @@ const Contact_button = () => {
     setIsHovering(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: aboutSection.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
   return (
     <div>
       <div className="contact_ctn">
-        <button>
+        <button onClick={scrollToTop}>
           <img className="arrow_up" src={arrow_L} />
         </button>
 

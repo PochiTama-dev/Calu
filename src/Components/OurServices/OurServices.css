@@ -1,3 +1,6 @@
+.ourServices_text {
+  margin: 0 15% 0% 7%;
+}
 @media (min-width: 375px) {
   .ctn-servicios {
     overflow: hidden;
@@ -37,14 +40,14 @@
 }
 .text-description {
   text-align: justify;
-  margin: 0% 15% 0% 7%;
+  margin: 0% 0 0% 0%;
   color: white;
 }
 .title-first-nuestros-servicios {
   color: #3af6ff;
   text-align: left;
 
-  margin: 3% 0% 25px 7%;
+  margin: 3% 0% 25px 0%;
 }
 
 .icono-servicios {

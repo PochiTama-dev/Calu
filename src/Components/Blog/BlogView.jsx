@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
@@ -12,18 +13,19 @@ import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
 import YouTube from 'react-youtube';
 
+
 function BlogView() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     const getPost = async () => {
-      const postDoc = doc(db, 'posts', id);
+      const postDoc = doc(db, "posts", id);
       const docSnapshot = await getDoc(postDoc);
       if (docSnapshot.exists()) {
         setPost(docSnapshot.data());
       } else {
-        console.log('El post no existe');
+        console.log("El post no existe");
       }
     };
 
@@ -46,7 +48,7 @@ function BlogView() {
 
   return (
     <>
-      <div className='BlogView'>
+      <div className="BlogView">
         <Header />
         <Contact_button />
 
@@ -68,21 +70,26 @@ function BlogView() {
                   </div>
                 )}
               </div>
+
             </div>
           </div>
           <Sidebar />
         </div>
+
         <div className='date-tagContainer'>
           <div className='date-tags'>
             <p>{post.time}</p>
+
             <hr />
             <p>Tag #1, Tag #2, Tag #3</p>
           </div>
         </div>
+
         <div className='ctn'>
           <CTN />
         </div>
         <div className='footer-blogView'>
+
           <Footer />
         </div>
       </div>

@@ -23,7 +23,7 @@
 }
 
 .arrow_up {
-  position: absolute;
+  position: fixed;
   z-index: 99;
   rotate: 90deg;
   bottom: 0;
