@@ -33,7 +33,6 @@ const Services = () => {
     getPosts();
   }, []);
 
-  const isAdmin = true;
   if (width > breakpoint) {
     return (
       <div className='scroll_ctn'>
@@ -41,11 +40,6 @@ const Services = () => {
         <div className='services_container'>
           <div className='srv_title'>
             <h1>Nuestros Servicios</h1>
-            {isAdmin && (
-              <h1>
-                <Link to={'/admin-crud'}>Admin</Link>
-              </h1>
-            )}
           </div>
           <div>
             {servicios.map((servicio, index) => {
