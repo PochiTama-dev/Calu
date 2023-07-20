@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "animate.css/animate.min.css";
 import "./home.css";
 import { Header } from "../Header/header";
@@ -41,7 +41,9 @@ const Home = () => {
     return (
       <div className="container">
         <Header />
+
         <Contact_button />
+
         <section style={sectionStyles} className={getSectionClassName(0)}>
           <Onboarding />
         </section>

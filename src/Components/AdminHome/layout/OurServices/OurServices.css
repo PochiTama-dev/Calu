@@ -1,0 +1,70 @@
+.edit {
+  display: flex;
+  flex-direction: row;
+}
+.ourServices_text {
+  margin: 0 15% 0% 7%;
+}
+@media (min-width: 375px) {
+  .ctn-servicios {
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+  .ourServices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .ctn-servicios .nuestros-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ctn-servicios .nuestros-servicios .paragraph {
+    font-size: 15px;
+  }
+
+  .ctn-servicios .nuestros-servicios .card_our .title {
+    font-size: 18px;
+  }
+  .ctn-servicios .nuestros-servicios .card_our .p {
+    font-size: 16px;
+  }
+  .ctn-servicios .nuestros-servicios .card_our .btn {
+    display: none;
+  }
+  .icono-servicios {
+    width: 100%;
+  }
+  .text-icono-servicios {
+    font-size: 14px;
+  }
+}
+.text-description {
+  text-align: justify;
+
+  color: white;
+}
+.title-first-nuestros-servicios {
+  color: #3af6ff;
+  text-align: left;
+}
+
+.icono-servicios {
+  width: 10vh;
+}
+.ourServices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.react-multi-carousel-dot-list {
+  display: none;
+}
+.text-icono-servicios {
+  font-weight: bold;
+}

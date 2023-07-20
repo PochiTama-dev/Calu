@@ -6,17 +6,41 @@ import don_logo from "./Logo_Don.png";
 import mc_logo from "./Logo_MC.jpg";
 import pochitama_logo from "./Logo_Pochitama.jpg";
 import sj_logo from "./Logo_SJ.png";
+import { useState } from "react";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../../firebase-config";
 
 const Portfolio = () => {
+  const [portfolioinfo, setPortfolioinfo] = useState([]);
+
+  useEffect(() => {
+    const getPortfolio = async () => {
+      const PortfolioDoc = doc(db, "home", "Portfolio");
+      const docSnapshot = await getDoc(PortfolioDoc);
+      if (docSnapshot.exists()) {
+        setPortfolioinfo(docSnapshot.data());
+      }
+    };
+    getPortfolio();
+  }, []);
+  ///////////////////CREATE CARD
+
   return (
     <div className="portfolio_container">
       <div>
-        <h1 className="title_portfolio"> NUESTROS TRABAJOS</h1>
-        <p className="text_description">
-          Ya son varias las personas que decidieron confiar en nuestros
-          servicios y sumarse a la transformación digital
-        </p>
+        <div className="portfolio_text">
+          <div className="edit">
+            <h1 className="title_portfolio">{portfolioinfo.title}</h1>
+          </div>
+
+          <div className="edit">
+            <p className="text_description">{portfolioinfo.t1}</p>
+          </div>
+        </div>
+
         <div className="slider">
+          <div className="card_modal_btn"></div>
           <Slider>
             <Card
               image={

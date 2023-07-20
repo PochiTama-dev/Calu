@@ -45,13 +45,13 @@ export const Header = () => {
               {showAdminMenu && (
                 <div className="admin-dropdown">
                   <Link to="/Create-Post">Create Post</Link>
+                  <Link to="/admin-home">Editar Home</Link>
                   <button onClick={signUserOut}>Log Out</button>
                 </div>
               )}
             </div>
           </>
         )}
-
 
         <nav>
           <Link to={"/"}>
