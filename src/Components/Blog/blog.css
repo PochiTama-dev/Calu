@@ -252,12 +252,15 @@
   }
   .postContainer .card-blog .cardHeaderblog {
     margin-left: 10px;
+    align-items: flex-start;
+    width: 75%;
   }
   .postContainer .card-blog .cardHeaderblog p {
-    width: 100%;
+    width: 65%;
   }
   .postContainer .cardContainerblog .card-blog .blogImage {
     width: 75%;
+    justify-content: flex-start;
   }
   .blog-sidebar .lateralBar {
     position: initial;
