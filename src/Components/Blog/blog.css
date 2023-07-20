@@ -177,6 +177,7 @@
   }
   .card-blog .blogImage img {
     width: 100%;
+    height: 90%;
   }
   .card-blog .blogImage .arrow {
     width: 120px;
@@ -245,6 +246,15 @@
   }
   .postContainer .cardContainerblog .card-blog {
     width: 30%;
+  }
+  .postContainer .card-blog .cardHeaderblog .titleblog {
+    justify-content: flex-start;
+  }
+  .postContainer .card-blog .cardHeaderblog {
+    margin-left: 10px;
+  }
+  .postContainer .card-blog .cardHeaderblog p {
+    width: 100%;
   }
   .postContainer .cardContainerblog .card-blog .blogImage {
     width: 75%;
