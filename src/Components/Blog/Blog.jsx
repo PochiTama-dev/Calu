@@ -12,6 +12,7 @@ import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
 import arrow_R from '../News/Card_news/icon_arrow_right.svg';
+import CardNews from '../News/Card_news/Card_news';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
@@ -71,11 +72,16 @@ function Blog({ isAuth }) {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className='blogImage'>
-                    <div className='arrow'>
-                      <img src={arrow_R} alt={arrow_R} />
-                      <img src={arrow_R} alt={arrow_R} />
-                    </div>
-                    <img src={post.imageUrl} alt='' />
+                    <CardNews
+                      image={
+                        <img
+                          className='icons_novedades'
+                          src={post.imageUrl}
+                          alt={post.imageUrl}
+                          width='50%'
+                        />
+                      }
+                    />
                   </div>
                   {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
                   <div className='cardHeaderblog'>
