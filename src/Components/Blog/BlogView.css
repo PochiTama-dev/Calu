@@ -26,7 +26,14 @@
 .contact_ctn .arrow_up {
   position: fixed;
 }
+.blogCard .blogText p {
+  font-size: 16px;
+}
+
 @media (min-width: 375px) {
+  .blogTitle {
+    font-size: 48px;
+  }
   .blogContainer {
     flex-wrap: wrap;
     width: 80%;
@@ -71,7 +78,8 @@
 }
 @media (min-width: 900px) {
   .blogImg {
-    margin: 50px;
+    margin: 0;
+    width: 100%;
   }
   .blogContainer {
     width: 80%;
@@ -99,10 +107,9 @@
   }
   .blogContainer {
     flex-wrap: nowrap;
-    width: 65%;
+    width: 40%;
   }
   .blogImg {
-    width: 60%;
     display: block;
     margin: 0 auto;
   }
@@ -121,7 +128,7 @@
   .lateralBar {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    margin: 0 0 0 20px;
+    max-width: 390px;
+    margin: 0 15px;
   }
 }
