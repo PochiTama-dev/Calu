@@ -5,10 +5,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
 import cart from '../../images/carrito.png';
+import Cart from '../Cart/Cart';
 
 export const Header = () => {
   const [isAuth, setIsAuth] = useState(false);
   const [showAdminMenu, setShowAdminMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -31,6 +33,10 @@ export const Header = () => {
 
   const handleLinks = () => {
     setShowLinks(!showLinks);
+  };
+
+  const handleClose = () => {
+    setShowCart(!showCart);
   };
 
   return (
@@ -72,10 +78,12 @@ export const Header = () => {
               <Link to={'/Contact'}>CONTACTO </Link>
             </div>
             <div className='line'></div>
-            <div className='carrito'>
-              <Link to={'/cart'}>
+            <div className='cart'>
+              <div className='carrito' onClick={() => setShowCart(true)}>
                 <img src={cart} alt={cart} />
-              </Link>
+                {!showCart && <p className='totalItems'>2</p>}
+              </div>
+              {showCart && <Cart close={handleClose} />}
             </div>
           </nav>
           <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>

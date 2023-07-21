@@ -101,6 +101,19 @@
   border: 4px solid;
   background-color: linear-gradient(top, #3af6ff, #eb39d9);
   border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+}
+
+.links .carrito .totalItems {
+  background-color: red;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 100px;
+  top: -20px;
+  width: 50px;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -212,5 +225,15 @@
   .carrito img {
     width: 50px;
     margin-right: 50px;
+    cursor: pointer;
+  }
+  .carrito .totalItems {
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 100px;
+    bottom: 0;
+    width: 25px;
+    text-align: center;
   }
 }
