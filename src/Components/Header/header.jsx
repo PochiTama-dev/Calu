@@ -4,6 +4,7 @@ import miImagen from '../../images/logocalu.png';
 import { Link, useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
+import cart from '../../images/carrito.png';
 
 export const Header = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -44,7 +45,6 @@ export const Header = () => {
                 Admin
               </button>
               {showAdminMenu && (
-
                 <div className='admin-dropdown'>
                   <Link to='/product-form'>Create Product</Link>
                   <Link to='/create-post'>Create Post</Link>
@@ -70,6 +70,12 @@ export const Header = () => {
               <Link to={'/blog'}> BLOG </Link>
               <div className='line'></div>
               <Link to={'/Contact'}>CONTACTO </Link>
+            </div>
+            <div className='line'></div>
+            <div className='carrito'>
+              <Link to={'/cart'}>
+                <img src={cart} alt={cart} />
+              </Link>
             </div>
           </nav>
           <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>

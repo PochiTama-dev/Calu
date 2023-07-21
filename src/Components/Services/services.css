@@ -62,26 +62,30 @@ section {
   flex-direction: column;
   justify-content: center;
 }
+.srv_icon img {
+  height: 100%;
+  width: 500px;
+}
 .title_srv {
   color: rgba(185, 4, 139, 0.9154228855721394);
-  font-size: 28px;
+  font-size: 38px;
   font-weight: bold;
 }
 .sub_d {
   color: white;
   font-weight: bold;
   margin: 10px 0px 0px 0px;
-  font-size: 20px;
+  font-size: 28px;
 }
 .des_1d,
 .des_2d {
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 20px;
   color: rgb(192, 192, 192);
 }
 .des_3d {
   color: #3af6ff;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   margin-top: 10px;
 }
