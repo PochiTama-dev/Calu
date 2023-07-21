@@ -4,10 +4,13 @@ import miImagen from '../../images/logocalu.png';
 import { Link, useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
+import cart from '../../images/carrito.png';
+import Cart from '../Cart/Cart';
 
 export const Header = () => {
   const [isAuth, setIsAuth] = useState(false);
   const [showAdminMenu, setShowAdminMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -32,6 +35,10 @@ export const Header = () => {
     setShowLinks(!showLinks);
   };
 
+  const handleClose = () => {
+    setShowCart(!showCart);
+  };
+
   return (
     <header className='navBar'>
       <div className='header_items'>
@@ -44,7 +51,6 @@ export const Header = () => {
                 Admin
               </button>
               {showAdminMenu && (
-
                 <div className='admin-dropdown'>
                   <Link to='/product-form'>Create Product</Link>
                   <Link to='/create-post'>Create Post</Link>
@@ -70,6 +76,14 @@ export const Header = () => {
               <Link to={'/blog'}> BLOG </Link>
               <div className='line'></div>
               <Link to={'/Contact'}>CONTACTO </Link>
+            </div>
+            <div className='line'></div>
+            <div className='cart'>
+              <div className='carrito' onClick={() => setShowCart(true)}>
+                <img src={cart} alt={cart} />
+                {!showCart && <p className='totalItems'>2</p>}
+              </div>
+              {showCart && <Cart close={handleClose} />}
             </div>
           </nav>
           <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>

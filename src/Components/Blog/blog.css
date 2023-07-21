@@ -62,11 +62,22 @@
 }
 .card-blog h2 {
   color: white;
-  margin: 0;
+  margin: 0 auto;
   font-size: 18px;
+  width: 70%;
 }
 .card-blog .blogImage img {
   border-radius: 30% 0;
+}
+.card-blog .blogImage .image {
+  height: 250px;
+  margin: 0;
+}
+.card-blog .blogImage .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 40px;
 }
 .card-blog .leerMas {
   color: #eb39d9;
@@ -102,7 +113,8 @@
 
   .card-blog .blogImage .title_news {
     font-size: 19px;
-    text-align: start;
+    text-align: center;
+    width: 100%;
   }
   .card-blog .cardHeaderblog {
     display: flex;
@@ -122,24 +134,27 @@
     width: 60%;
   }
   .card-blog .blogImage img {
-    width: 100%;
+    width: 90%;
     height: 160px;
+    margin: 15px;
   }
   .card-blog .blogImage .card_news {
     max-width: initial;
   }
   .card-blog .blogImage .arrow {
     width: 60px;
-    height: 30px;
-    display: block;
-    margin: 0 150px;
+    height: 0;
+    display: flex;
+    margin: 0 170px;
   }
   .card-blog .blogImage .arrow img {
     width: 30px;
     height: 60px;
+    margin: 0;
   }
   .card-blog .leerMas {
     position: initial;
+    text-align: center;
   }
 
   .card-blog .cardTextblogContainer {
@@ -177,11 +192,19 @@
   }
   .card-blog .blogImage img {
     width: 100%;
-    height: 90%;
+    height: 100%;
   }
   .card-blog .blogImage .arrow {
     width: 120px;
     height: 60px;
+    position: absolute;
+    margin-left: 130px;
+  }
+  .card-blog .leerMas {
+    position: absolute;
+    width: 100%;
+    text-align: end;
+    margin-top: 20px;
   }
   .card-blog .blogImage .arrow img {
     width: 50px;
@@ -247,6 +270,10 @@
   .postContainer .cardContainerblog .card-blog {
     width: 30%;
   }
+  .postContainer .cardContainerblog .card-blog .blogImage img {
+    width: 90%;
+    height: 90%;
+  }
   .postContainer .card-blog .cardHeaderblog .titleblog {
     justify-content: flex-start;
   }
@@ -254,6 +281,19 @@
     margin-left: 10px;
     align-items: flex-start;
     width: 75%;
+  }
+  .card-blog .blogImage .title_news {
+    text-align: start;
+  }
+  .card-blog .blogImage h2 {
+    margin: 0;
+    width: auto;
+  }
+  .card-blog .blogImage .arrow {
+    margin-left: 200px;
+  }
+  .card-blog .leerMas {
+    width: 430px;
   }
   .postContainer .card-blog .cardHeaderblog p {
     width: 65%;
