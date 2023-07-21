@@ -11,7 +11,6 @@ import CTN from '../CTN/CTN';
 import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
-import arrow_R from '../News/Card_news/icon_arrow_right.svg';
 import CardNews from '../News/Card_news/Card_news';
 
 function Blog({ isAuth }) {
@@ -81,15 +80,14 @@ function Blog({ isAuth }) {
                           width='50%'
                         />
                       }
+                      description={post.postText}
+                      title={<h2>{post.title}</h2>}
                     />
                   </div>
                   {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
                   <div className='cardHeaderblog'>
-                    <div className='titleblog'>
-                      <h2>{post.title}</h2>
-                    </div>
+                    <div className='titleblog'></div>
                     <span>{post.time}</span>
-                    <p>{post.postText}</p>
                     <div className='deleteblog'>
                       {isAuth && post.author && post.author.id === auth.currentUser?.uid && (
                         <>
