@@ -53,26 +53,26 @@ const Contact = () => {
 
         fetch(endpoint, {
           method: 'POST',
-          body: formData
+          body: formData,
         })
-        .then(response => {
-          // Aquí puedes agregar la lógica para manejar la respuesta del endpoint
-          if (response.ok) {
-            // El formulario se envió correctamente
-            alert('El formulario ha sido enviado con éxito');
-            setNombre('');
-            setEmail('');
-            setTelefono('');
-            setMensaje('');
-          } else {
-            // Ocurrió un error al enviar el formulario
-            alert('Hubo un error al enviar el formulario');
-          }
-        })
-        .catch(error => {
-          // Ocurrió un error en la comunicación con el servidor
-          alert('Hubo un error en la comunicación con el servidor');
-        });
+          .then((response) => {
+            // Aquí puedes agregar la lógica para manejar la respuesta del endpoint
+            if (response.ok) {
+              // El formulario se envió correctamente
+              alert('El formulario ha sido enviado con éxito');
+              setNombre('');
+              setEmail('');
+              setTelefono('');
+              setMensaje('');
+            } else {
+              // Ocurrió un error al enviar el formulario
+              alert('Hubo un error al enviar el formulario');
+            }
+          })
+          .catch((error) => {
+            // Ocurrió un error en la comunicación con el servidor
+            alert('Hubo un error en la comunicación con el servidor');
+          });
       });
     });
   };
@@ -128,11 +128,12 @@ const Contact = () => {
             onChange={(event) => setMensaje(event.target.value)}
             required
           ></textarea>
-
+        </form>
+        <div className='buttonContainer'>
           <button className='contact-button' type='submit'>
             Enviar
           </button>
-        </form>
+        </div>
       </div>
     </>
   );

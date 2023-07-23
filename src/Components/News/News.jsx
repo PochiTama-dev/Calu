@@ -2,7 +2,25 @@ import React from "react";
 import "./news.css";
 import Card_news from "./Card_news/Card_news";
 import Slider from "./Slider/Slider";
+import { useState } from "react";
+import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../../firebase-config";
+
 const News = () => {
+  const [newsinfo, setNewsinfo] = useState([]);
+
+  useEffect(() => {
+    const getNews = async () => {
+      const NewsDoc = doc(db, "home", "News");
+      const docSnapshot = await getDoc(NewsDoc);
+      if (docSnapshot.exists()) {
+        setNewsinfo(docSnapshot.data());
+      }
+    };
+    getNews();
+  }, []);
+
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
   React.useEffect(() => {
@@ -16,8 +34,16 @@ const News = () => {
   if (width > breakpoint) {
     return (
       <div className="novedades_container">
-        <h1 className="title_novedades">NOVEDADES</h1>
-        <p>No te pierdas los úlimos contenidos de nuestro blog.</p>
+        <div className="news_text">
+          <div className="edit">
+            <h1 className="title_novedades">{newsinfo.title}</h1>
+          </div>
+
+          <div className="edit">
+            <p>{newsinfo.t1}</p>
+          </div>
+        </div>
+
         <div className="cards_novedades">
           <a href="">
             <Card_news
@@ -49,8 +75,8 @@ const News = () => {
   }
   return (
     <div className="novedades_container">
-      <h1 className="title_novedades">NOVEDADES</h1>
-      <p>No te pierdas los úlimos contenidos de nuestro blog.</p>
+      <h1 className="title_novedades">{newsinfo.title}</h1>
+      <p>{newsinfo.t1}</p>
       <div className="cards_novedades">
         <Slider>
           <a href="">

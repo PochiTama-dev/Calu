@@ -18,7 +18,10 @@
 .onboarding .parrafo {
   color: white;
   text-align: left;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
   z-index: 2;
   margin-right: 7%;
 }

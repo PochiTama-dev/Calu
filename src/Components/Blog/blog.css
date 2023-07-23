@@ -1,3 +1,10 @@
+.blog .arrow_up {
+  position: fixed;
+}
+.blog-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+}
 .contact_button_ctn {
   position: fixed;
 }
@@ -14,10 +21,10 @@
 }
 
 .postContainer {
+  width: 100%;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -42,52 +49,117 @@
 .card-blog {
   display: flex;
   flex-direction: column;
-  border-radius: 30% 0% 30% 0%;
   width: 320px;
   height: 320px;
-  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   padding: 20px;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
-.card-blog p {
+.card-blog .cardHeaderblog span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.card-blog h2 {
   color: white;
+  margin: 0 auto;
   font-size: 18px;
+  width: 70%;
+}
+.card-blog .blogImage img {
+  border-radius: 30% 0;
+}
+.card-blog .blogImage .image {
+  height: 250px;
+  margin: 0;
+}
+.card-blog .blogImage .description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 40px;
+}
+.card-blog .leerMas {
+  color: #eb39d9;
+  position: relative;
+  font-weight: bold;
 }
 
 .titleblog {
-  text-align: center;
-  margin: 10px 0px 0px 0px;
+  margin: 0;
 }
-
-.lateralBar {
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  right: 0;
+.footer-blog .footer_container {
+  position: relative;
+  z-index: 0;
 }
-
-hr {
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 5px;
+.image {
+  overflow: hidden;
 }
-
 @media (min-width: 375px) {
   .postContainer {
     flex-wrap: wrap;
     align-items: flex-start;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 130px;
-    height: 150px;
+    width: 100%;
+    height: auto;
     padding: 0;
     margin-top: 10px;
   }
+  .card-blog .blogImage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-blog .blogImage .title_news {
+    font-size: 19px;
+    text-align: center;
+    width: 100%;
+  }
+  .card-blog .cardHeaderblog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-blog .cardHeaderblog p {
+    width: 60%;
+    font-size: 18px;
+  }
+  .card-blog .cardHeaderblog .titleblog {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .card-blog .cardHeaderblog h2 {
+    width: 60%;
+  }
+  .card-blog .blogImage img {
+    width: 90%;
+    height: 160px;
+    margin: 15px;
+  }
+  .card-blog .blogImage .card_news {
+    max-width: initial;
+  }
+  .card-blog .blogImage .arrow {
+    width: 60px;
+    height: 0;
+    display: flex;
+    margin: 0 170px;
+  }
+  .card-blog .blogImage .arrow img {
+    width: 30px;
+    height: 60px;
+    margin: 0;
+  }
+  .card-blog .leerMas {
+    position: initial;
+    text-align: center;
+  }
+
   .card-blog .cardTextblogContainer {
     font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
   }
   .card-blog h3 {
     font-size: 15px;
@@ -96,18 +168,9 @@ hr {
     background: none;
     border: none;
     cursor: pointer;
+    text-align: start;
   }
-  .lateralBar {
-    position: initial;
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .lateralBar .lateralContainer {
-    margin-top: 10px;
-  }
+
   .ctn .CTN_ctn2 {
     margin: 0;
   }
@@ -127,19 +190,40 @@ hr {
     align-items: center;
     margin-top: 12vh;
   }
+  .card-blog .blogImage img {
+    width: 100%;
+    height: 100%;
+  }
+  .card-blog .blogImage .arrow {
+    width: 120px;
+    height: 60px;
+    position: absolute;
+    margin-left: 130px;
+  }
+  .card-blog .leerMas {
+    position: absolute;
+    width: 100%;
+    text-align: end;
+    margin-top: 20px;
+  }
+  .card-blog .blogImage .arrow img {
+    width: 50px;
+  }
   .postContainer .cardContainerblog {
     justify-content: flex-start;
+    overflow: scroll;
   }
   .postContainer .cardContainerblog .cards {
     width: 45%;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 100%;
-    height: 100%;
+    width: 48%;
+    height: 50%;
   }
   .card-blog p {
-    font-size: 3rem;
+    font-size: 18px;
     margin: 0;
+    width: 80%;
   }
 
   .card-blog .deleteblog {
@@ -150,10 +234,7 @@ hr {
     font-size: 3rem;
     margin: 0;
   }
-  .card-blog h3 {
-    font-size: 3rem;
-    margin: 5px;
-  }
+
   .card-blog button {
     font-size: 32px;
   }
@@ -161,24 +242,70 @@ hr {
   .lateralBar {
     position: absolute;
     right: 0;
-    width: 30%;
+    width: 100%;
     margin-top: 0;
   }
   .ctn {
     margin-top: 0;
   }
+  .ctn .CTN_ctn {
+    height: initial;
+  }
+  .blog .footer-blog .footer_container {
+    position: relative;
+    z-index: 0;
+  }
 }
 
 @media (min-width: 1920px) {
-  .postContainer .cardContainerblog .cards {
-    width: 35%;
+  .postContainer {
+    width: 75%;
+  }
+  .blog-sidebar {
+    flex-wrap: nowrap;
+  }
+  .postContainer .cardContainerblog {
+    justify-content: flex-end;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 50%;
+    width: 30%;
   }
-  .lateralBar {
-    top: 25%;
-    width: 25%;
+  .postContainer .cardContainerblog .card-blog .blogImage img {
+    width: 90%;
+    height: 90%;
+  }
+  .postContainer .card-blog .cardHeaderblog .titleblog {
+    justify-content: flex-start;
+  }
+  .postContainer .card-blog .cardHeaderblog {
+    margin-left: 10px;
+    align-items: flex-start;
+    width: 75%;
+  }
+  .card-blog .blogImage .title_news {
+    text-align: start;
+  }
+  .card-blog .blogImage h2 {
+    margin: 0;
+    width: auto;
+  }
+  .card-blog .blogImage .arrow {
+    margin-left: 200px;
+  }
+  .card-blog .leerMas {
+    width: 430px;
+  }
+  .postContainer .card-blog .cardHeaderblog p {
+    width: 65%;
+  }
+  .postContainer .cardContainerblog .card-blog .blogImage {
+    width: 75%;
+    justify-content: flex-start;
+  }
+  .blog-sidebar .lateralBar {
+    position: initial;
+    margin: 0 50px;
+    width: 30%;
   }
   .lateralBar .blogTitle {
     margin: 0;

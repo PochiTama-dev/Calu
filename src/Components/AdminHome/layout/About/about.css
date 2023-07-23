@@ -1,0 +1,8 @@
+/*.title_about {
+  margin: 0;
+}
+*/
+.edit {
+  display: flex;
+  flex-direction: row;
+}

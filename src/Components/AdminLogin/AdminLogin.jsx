@@ -1,8 +1,9 @@
 import React from "react";
-import { auth, provider } from "../../firebase-config";
 import { signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../Header/header";
+import { auth, provider } from "../../firebase-config";
+import "./adminLogin.css";
 
 function AdminLogin({ setIsAuth }) {
   let navigate = useNavigate();
@@ -16,10 +17,10 @@ function AdminLogin({ setIsAuth }) {
   };
 
   return (
-    <div className="AdminloginPage">
-      <Header/>
+    <div className="AdminLoginPage">
+      <Header />
       <p>Sign In With Google to Continue</p>
-      <button className="Adminlogin-with-google-btn" onClick={signInWithGoogle}>
+      <button className="AdminLogin-with-google-btn" onClick={signInWithGoogle}>
         Sign in with Google
       </button>
     </div>

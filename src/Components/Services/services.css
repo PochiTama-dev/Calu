@@ -1,3 +1,6 @@
+.navBar {
+  height: initial;
+}
 .services_container {
   margin-bottom: 100px;
   margin-top: 100px;
@@ -23,13 +26,14 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 950px;
+  height: 100%;
 }
 
 .card_srv_cont {
   display: flex;
   justify-content: center;
   margin: 80px 10px 30px 10px;
+  height: 100%;
 }
 .card_srv_cont_inv {
   display: flex;
@@ -58,28 +62,35 @@ section {
   flex-direction: column;
   justify-content: center;
 }
+.srv_icon img {
+  height: 100%;
+  width: 500px;
+}
 .title_srv {
   color: rgba(185, 4, 139, 0.9154228855721394);
-  font-size: 28px;
+  font-size: 38px;
   font-weight: bold;
 }
 .sub_d {
   color: white;
   font-weight: bold;
   margin: 10px 0px 0px 0px;
-  font-size: 20px;
+  font-size: 28px;
 }
 .des_1d,
 .des_2d {
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 20px;
   color: rgb(192, 192, 192);
 }
 .des_3d {
   color: #3af6ff;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   margin-top: 10px;
+}
+section .CTN_ctn {
+  height: initial;
 }
 @media (max-width: 1024px) {
   .srv_cards {
