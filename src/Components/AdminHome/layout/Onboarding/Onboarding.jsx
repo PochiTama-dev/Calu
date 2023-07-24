@@ -77,7 +77,7 @@ const Onboarding = () => {
             <h1>{onboardinginfo.title}</h1>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese titulo"
                 onChange={(e) => setTitle(e.target.value)}
@@ -89,7 +89,7 @@ const Onboarding = () => {
             <p>{onboardinginfo.t1}</p>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 1"
                 onChange={(e) => setT1(e.target.value)}
@@ -102,7 +102,7 @@ const Onboarding = () => {
             <p>{onboardinginfo.t2}</p>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 2"
                 onChange={(e) => setT2(e.target.value)}
@@ -115,7 +115,7 @@ const Onboarding = () => {
             <p>{onboardinginfo.t3}</p>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 2"
                 onChange={(e) => setT3(e.target.value)}
@@ -127,7 +127,7 @@ const Onboarding = () => {
             <h2>{onboardinginfo.t4}</h2>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 3"
                 onChange={(e) => setT4(e.target.value)}

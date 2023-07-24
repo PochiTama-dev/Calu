@@ -16,17 +16,6 @@
   display: none;
 }
 
-.onboarding .parrafo {
-  color: white;
-  text-align: left;
-
-  z-index: 2;
-  margin-right: 7%;
-}
-.onboarding .parrafo p {
-  text-align: justify;
-}
-
 .onboarding h1 {
   color: #eb39d9;
   font-size: 36px;
@@ -85,11 +74,7 @@
   .onboarding .parrafo {
     position: static;
     z-index: initial;
-    margin-right: 100px;
-  }
-
-  .onboarding .parrafo h1 {
-    font-size: 38px;
+    margin-right: 150px;
   }
 
   .contactFlex {

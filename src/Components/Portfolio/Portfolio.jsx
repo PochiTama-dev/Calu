@@ -1,19 +1,25 @@
+import { doc, getDoc, getDocs, collection, query } from "firebase/firestore";
+
+import { db } from "../../firebase-config";
+
 import React from "react";
 import Card from "./Card/Card";
 import Slider from "./Slider/Slider";
 import "./portfolio.css";
-import don_logo from "./Logo_Don.png";
-import mc_logo from "./Logo_MC.jpg";
-import pochitama_logo from "./Logo_Pochitama.jpg";
-import sj_logo from "./Logo_SJ.png";
-import { useState } from "react";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
-import { useEffect } from "react";
-import { db } from "../../firebase-config";
+
+import { useEffect, useState } from "react";
 
 const Portfolio = () => {
   const [portfolioinfo, setPortfolioinfo] = useState([]);
+  const [card, setCard] = useState([]);
 
+  const [cardTitle, setCardTitle] = useState("");
+  const [title, setTitle] = useState("");
+  const [t1, setT1] = useState("");
+  const [image, setImage] = useState("");
+  const [link, setLink] = useState("");
+
+  ////////////////////////////////////
   useEffect(() => {
     const getPortfolio = async () => {
       const PortfolioDoc = doc(db, "home", "Portfolio");
@@ -24,8 +30,23 @@ const Portfolio = () => {
     };
     getPortfolio();
   }, []);
-  ///////////////////CREATE CARD
+  ////////////////////////////////////
 
+  const getCards = async () => {
+    const results = await getDocs(query(collection(db, "portfolio_cards")));
+    return results;
+  };
+  useEffect(() => {
+    getCardsData();
+  }, []);
+
+  const getCardsData = async () => {
+    const card = await getCards();
+    console.log(card.docs[0].data());
+    setCard(card.docs);
+  };
+
+  console.log(card.image);
   return (
     <div className="portfolio_container">
       <div>
@@ -40,95 +61,27 @@ const Portfolio = () => {
         </div>
 
         <div className="slider">
-          <div className="card_modal_btn"></div>
-          <Slider>
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={don_logo}
-                  alt="icono pay"
-                  width="50%"
-                />
-              }
-              title={<p>DON OFICIOS</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
+          <div>
+            <Slider>
+              {card &&
+                card.map((card) => (
+                  <Card
+                    image={<img src={card.data().imageUrl} width="150px" />}
+                    title={card.data().cardTitle}
+                    btn={
+                      <a
+                        target="_blank"
+                        className="
                 button_portfolio"
-                  href="https://www.instagram.com/don.oficios/  "
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
-
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={sj_logo}
-                  alt="icono ojo"
-                  width="50%"
-                />
-              }
-              title={<p>STILL JOBS</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
-                button_portfolio"
-                  href=" https://www.instagram.com/stilljobsok/ "
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
-
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={pochitama_logo}
-                  alt="icono llave"
-                  width="50%"
-                />
-              }
-              title={<p>POCHITAMA.DEV</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
-                button_portfolio"
-                  href=" https://www.instagram.com/pochitama.dev/"
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={mc_logo}
-                  alt="icono llave"
-                  width="50%"
-                />
-              }
-              title={<p>MC - ASISTENTE CONTABLE</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
-        button_portfolio"
-                  href="https://www.instagram.com/marielacattarelli/  "
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
-          </Slider>
+                        href={card.data().link}
+                      >
+                        Ver más
+                      </a>
+                    }
+                  ></Card>
+                ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </div>

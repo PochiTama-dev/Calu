@@ -8,12 +8,36 @@ import CTN from "./layout/CTN/CTN";
 import { Header } from "../Header/header";
 import Footer from "../Footer/Footer";
 import Contact_button from "../Home/Contact_button/Contact_button";
+import { useRef, useEffect } from "react";
+import arrow_L from "../Home/icon_arrow_left.svg";
+import { auth } from "../../firebase-config";
+import { useNavigate } from "react-router-dom";
 const AdminHome = () => {
+  const navigate = useNavigate();
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  useEffect(() => {
+    const checkAuthentication = () => {
+      const user = auth.currentUser;
+      if (!user) {
+        navigate("/admin-login");
+      }
+    };
+
+    checkAuthentication();
+  }, []);
+
   return (
     <div>
+      <button onClick={scrollToTop}>
+        <img className="arrow_up" src={arrow_L} />
+      </button>
       <Contact_button />
+
       <Header />
-      <section>
+      <section ref={firstSection}>
         <Onboarding />
       </section>
 

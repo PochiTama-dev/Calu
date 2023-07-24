@@ -1,28 +1,58 @@
+import {
+  doc,
+  getDoc,
+  updateDoc,
+  addDoc,
+  getDocs,
+  collection,
+  query,
+  deleteDoc,
+} from "firebase/firestore";
+
+import { db, storage, auth } from "../../../../firebase-config";
+
 import React from "react";
 import Card from "./Card/Card";
 import Slider from "./Slider/Slider";
 import "./portfolio.css";
-import don_logo from "./Logo_Don.png";
-import mc_logo from "./Logo_MC.jpg";
-import pochitama_logo from "./Logo_Pochitama.jpg";
-import sj_logo from "./Logo_SJ.png";
-import { useState } from "react";
-import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
-import { useEffect } from "react";
-import { db } from "../../../../firebase-config";
+import { Card_delete } from "./Card_Modal/Card_modal";
+import { useEffect, useState } from "react";
+
 import Modal from "../Modal/modal";
 import Card_modal from "./Card_Modal/Card_modal";
-
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+const cardCollectionRef = collection(db, "portfolio_cards");
 const Portfolio = () => {
   const [portfolioinfo, setPortfolioinfo] = useState([]);
+  const [card, setCard] = useState([]);
   /*setDoc(doc(db, "home", "Portfolio"), {
     title: "NUESTROS TRABAJOS",
     t1: "    Ya son varias las personas que decidieron confiar en nuestros servicios y sumarse a la transformación digital",
 
   });*/
 
+  const createCards = async () => {
+    let imageUrl = "";
+    if (image) {
+      const storageRef = ref(storage, `images/${image.name}`);
+      await uploadBytes(storageRef, image);
+      imageUrl = await getDownloadURL(storageRef);
+    }
+
+    const newCard = {
+      cardTitle,
+      imageUrl,
+      link,
+    };
+
+    await addDoc(cardCollectionRef, newCard);
+    alert("¡ Tarjeta creada correctamente !");
+  };
+  const [cardTitle, setCardTitle] = useState("");
   const [title, setTitle] = useState("");
   const [t1, setT1] = useState("");
+  const [image, setImage] = useState("");
+  const [link, setLink] = useState("");
 
   const updateTitle = async () => {
     const portfolio_info = doc(db, "home", "Portfolio");
@@ -49,26 +79,28 @@ const Portfolio = () => {
     };
     getPortfolio();
   }, []);
-  ///////////////////CREATE CARD
+  ////////////////////////////////////
 
-  const createCard = async () => {
-    /* let imageUrl = "";
-  if (image) {
-    const storageRef = ref(storage, `images/${image.name}`);
-    await uploadBytes(storageRef, image);
-    imageUrl = await getDownloadURL(storageRef);
-  }
-
-  await addDoc(doc(db, "home", "Portfolio"), {
-    title,
-  
- imageUrl,
-    
-  });
-*/
+  const getCards = async () => {
+    const results = await getDocs(query(collection(db, "portfolio_cards")));
+    return results;
   };
-  const [cardImage, setCardImage] = useState("");
-  const [cardTitle, setCardTitle] = useState("");
+  useEffect(() => {
+    getCardsData();
+  }, []);
+
+  const getCardsData = async () => {
+    const card = await getCards();
+    console.log(card.docs[0].data());
+    setCard(card.docs);
+  };
+
+  ////////// DELETE CARD
+
+  const deleteCard = async (card) => {
+    await deleteDoc(doc(db, "portfolio_cards", card.id));
+    alert("¡ Tarjeta eliminada con éxito !");
+  };
 
   return (
     <div className="portfolio_container">
@@ -78,10 +110,10 @@ const Portfolio = () => {
             <h1 className="title_portfolio">{portfolioinfo.title}</h1>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese titulo"
-                onChange={(e) => setCardTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value)}
               />
               <button onClick={() => updateTitle()}>GUARDAR</button>
             </Modal>
@@ -91,7 +123,7 @@ const Portfolio = () => {
             <p className="text_description">{portfolioinfo.t1}</p>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 1"
                 onChange={(e) => setT1(e.target.value)}
@@ -105,107 +137,63 @@ const Portfolio = () => {
           <div className="card_modal_btn">
             <Card_modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
+                value={cardTitle}
                 placeholder="Ingrese titulo"
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => setCardTitle(e.target.value)}
+              />
+              <input
+                style={{ width: "300px", height: "30px" }}
+                type="text"
+                value={link}
+                placeholder="Ingrese Link De Red Social"
+                onChange={(e) => setLink(e.target.value)}
               />
 
+              <p>Seleccione imagen</p>
               <input
+                className="img_btn"
                 type="file"
-                onChange={(event) => setCardImage(event.target.files[0])}
+                onChange={(event) => setImage(event.target.files[0])}
               />
-              <button onClick={() => createCard()}>GUARDAR</button>
+              <button onClick={() => createCards()}>GUARDAR</button>
             </Card_modal>
           </div>
-          <Slider>
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={don_logo}
-                  alt="icono pay"
-                  width="50%"
-                />
-              }
-              title={<p>DON OFICIOS</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
-                button_portfolio"
-                  href="https://www.instagram.com/don.oficios/  "
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
 
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={sj_logo}
-                  alt="icono ojo"
-                  width="50%"
-                />
-              }
-              title={<p>STILL JOBS</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
+          <div>
+            <Slider>
+              {card &&
+                card.map((card) => (
+                  <Card
+                    image={<img src={card.data().imageUrl} width="150px" />}
+                    title={card.data().cardTitle}
+                    btn={
+                      <a
+                        target="_blank"
+                        className="
                 button_portfolio"
-                  href=" https://www.instagram.com/stilljobsok/ "
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
+                        href={card.data().link}
+                      >
+                        Ver más
+                      </a>
+                    }
+                    btn_delete={
+                      <Card_delete>
+                        <p>¿Esta seguro que desea eliminar esta tarjeta?</p>
 
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={pochitama_logo}
-                  alt="icono llave"
-                  width="50%"
-                />
-              }
-              title={<p>POCHITAMA.DEV</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
-                button_portfolio"
-                  href=" https://www.instagram.com/pochitama.dev/"
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
-            <Card
-              image={
-                <img
-                  className="icon-portfolio"
-                  src={mc_logo}
-                  alt="icono llave"
-                  width="50%"
-                />
-              }
-              title={<p>MC - ASISTENTE CONTABLE</p>}
-              btn={
-                <a
-                  target="_blank"
-                  className="
-        button_portfolio"
-                  href="https://www.instagram.com/marielacattarelli/  "
-                >
-                  Ver más
-                </a>
-              }
-            ></Card>
-          </Slider>
+                        <button
+                          className="delete_btn"
+                          onClick={() => deleteCard(card)}
+                        >
+                          ELIMINAR
+                        </button>
+                      </Card_delete>
+                    }
+                  ></Card>
+                ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </div>
