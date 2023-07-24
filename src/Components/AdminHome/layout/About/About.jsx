@@ -85,7 +85,7 @@ const About = () => {
               <h1 className="title_about">{aboutinfo.title}</h1>
               <Modal>
                 <input
-                  style={{ width: "400px", height: "30px" }}
+                  style={{ width: "300px", height: "30px" }}
                   type="text"
                   placeholder="Ingrese titulo"
                   onChange={(e) => setTitle(e.target.value)}
@@ -100,7 +100,7 @@ const About = () => {
             <h2 className="sub_1">{aboutinfo.t1}</h2>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 1 "
                 onChange={(e) => setT1(e.target.value)}
@@ -112,7 +112,7 @@ const About = () => {
             <h2 className="sub_2">{aboutinfo.t2}</h2>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 2 "
                 onChange={(e) => setT2(e.target.value)}
@@ -126,7 +126,7 @@ const About = () => {
             <p>{aboutinfo.t3}</p>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 3 "
                 onChange={(e) => setT3(e.target.value)}
@@ -139,7 +139,7 @@ const About = () => {
 
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 4 "
                 onChange={(e) => setT4(e.target.value)}
@@ -154,7 +154,7 @@ const About = () => {
 
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 5 "
                 onChange={(e) => setT5(e.target.value)}

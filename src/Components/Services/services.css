@@ -89,9 +89,7 @@ section {
   font-weight: bold;
   margin-top: 10px;
 }
-section .CTN_ctn {
-  height: initial;
-}
+
 @media (max-width: 1024px) {
   .srv_cards {
     display: block;

@@ -24,23 +24,15 @@ const Onboarding = () => {
     <div>
       <div className="onboarding">
         <div className="parrafo">
-          <div className="edit">
-            <h1>{onboardinginfo.title}</h1>
-          </div>
-          <div className="edit">
-            <p>{onboardinginfo.t1}</p>
-          </div>
+          <h1>{onboardinginfo.title}</h1>
 
-          <div className="edit">
-            <p>{onboardinginfo.t2}</p>
-          </div>
+          <p>{onboardinginfo.t1}</p>
 
-          <div className="edit">
-            <p>{onboardinginfo.t3}</p>
-          </div>
-          <div className="edit">
-            <h2>{onboardinginfo.t4}</h2>
-          </div>
+          <p>{onboardinginfo.t2}</p>
+
+          <p>{onboardinginfo.t3}</p>
+
+          <h2>{onboardinginfo.t4}</h2>
 
           <div className="contact-btn">
             <Link to={"/contact"}>¡Contáctanos!</Link>

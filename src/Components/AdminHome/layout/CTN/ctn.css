@@ -32,13 +32,6 @@
   margin: 0px 0 20px 0;
 }
 
-.CTN_ctn p {
-  color: white;
-  font-weight: bold;
-  font-size: 34px;
-  margin-bottom: 90px;
-}
-
 @media (max-width: 1024px) {
   .CTN_ctn {
     display: flex;
