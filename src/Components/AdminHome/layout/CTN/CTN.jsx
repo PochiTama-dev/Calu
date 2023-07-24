@@ -22,6 +22,7 @@ const CTN = () => {
     await updateDoc(ctn_info, {
       title: title,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   const updateT1 = async () => {
@@ -29,6 +30,7 @@ const CTN = () => {
     await updateDoc(ctn_info, {
       t1: t1,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   /////////////////////// GET

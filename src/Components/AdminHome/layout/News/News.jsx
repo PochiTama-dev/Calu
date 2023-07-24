@@ -24,6 +24,7 @@ const News = () => {
     await updateDoc(news_info, {
       title: title,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   const updateT1 = async () => {
@@ -31,6 +32,7 @@ const News = () => {
     await updateDoc(news_info, {
       t1: t1,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   //////////////////////////
@@ -118,9 +120,33 @@ const News = () => {
   }
   return (
     <div className="novedades_container">
-      <h1 className="title_novedades">NOVEDADES</h1>
-      <p>No te pierdas los úlimos contenidos de nuestro blog.</p>
-      <div className="cards_novedades">
+      <div className="news_text">
+        <div className="edit">
+          <h1 className="title_novedades">{newsinfo.title}</h1>
+          <Modal>
+            <input
+              style={{ width: "300px", height: "30px" }}
+              type="text"
+              placeholder="Ingrese titulo"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <button onClick={() => updateTitle()}>GUARDAR</button>
+          </Modal>
+        </div>
+
+        <div className="edit">
+          <p>{newsinfo.t1}</p>
+          <Modal>
+            <input
+              style={{ width: "300px", height: "30px" }}
+              type="text"
+              placeholder="Ingrese texto 1"
+              onChange={(e) => setT1(e.target.value)}
+            />
+            <button onClick={() => updateT1()}>GUARDAR</button>
+          </Modal>
+        </div>
+        <div className="cards_novedades"></div>
         <Slider>
           <a href="">
             <Card_news
@@ -149,9 +175,7 @@ const News = () => {
         </Slider>
       </div>
       <div className="btn_cont">
-        <button className="news_btn">
-          <div>VER MAS </div>
-        </button>
+        <button className="news_btn"></button>
       </div>
     </div>
   );
