@@ -11,6 +11,7 @@ import OurServices from "../OurServices/OurServices";
 import CTN from "../CTN/CTN";
 import Contact_button from "./Contact_button/Contact_button";
 import React from "react";
+import arrow_L from "./icon_arrow_left.svg";
 const Home = () => {
   const numSections = 5;
   const [currentSection, setCurrentSection] = useState(0);
@@ -37,14 +38,26 @@ const Home = () => {
       window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
+  //////////// Scroll to top
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  //////////////
   if (width > breakpoint) {
     return (
       <div className="container">
         <Header />
-
+        <button onClick={scrollToTop}>
+          <img className="arrow_up" src={arrow_L} />
+        </button>
         <Contact_button />
 
-        <section style={sectionStyles} className={getSectionClassName(0)}>
+        <section
+          style={sectionStyles}
+          className={getSectionClassName(0)}
+          ref={firstSection}
+        >
           <Onboarding />
         </section>
         <section style={sectionStyles} className={getSectionClassName(1)}>

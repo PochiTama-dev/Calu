@@ -22,15 +22,6 @@
   flex-direction: column;
 }
 
-.arrow_up {
-  position: fixed;
-  z-index: 99;
-  rotate: 90deg;
-  bottom: 0;
-  right: 75px;
-  margin-bottom: 230px;
-  width: 40px;
-}
 .contact_ctn button {
   cursor: pointer;
 }

@@ -64,7 +64,7 @@ const News = () => {
             <h1 className="title_novedades">{newsinfo.title}</h1>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese titulo"
                 onChange={(e) => setTitle(e.target.value)}
@@ -77,7 +77,7 @@ const News = () => {
             <p>{newsinfo.t1}</p>
             <Modal>
               <input
-                style={{ width: "400px", height: "30px" }}
+                style={{ width: "300px", height: "30px" }}
                 type="text"
                 placeholder="Ingrese texto 1"
                 onChange={(e) => setT1(e.target.value)}

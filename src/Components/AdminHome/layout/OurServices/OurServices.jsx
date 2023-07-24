@@ -62,7 +62,7 @@ const OurServices = () => {
           </h1>
           <Modal>
             <input
-              style={{ width: "400px", height: "30px" }}
+              style={{ width: "300px", height: "30px" }}
               type="text"
               placeholder="Ingrese titulo"
               onChange={(e) => setTitle(e.target.value)}
@@ -75,7 +75,7 @@ const OurServices = () => {
           <p className="text-description">{ourServicesinfo.t1}</p>
           <Modal>
             <input
-              style={{ width: "400px", height: "30px" }}
+              style={{ width: "300px", height: "30px" }}
               type="text"
               placeholder="Ingrese texto 1"
               onChange={(e) => setT1(e.target.value)}

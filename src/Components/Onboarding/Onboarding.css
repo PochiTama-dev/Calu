@@ -92,8 +92,11 @@
 
   .onboarding .parrafo h1 {
     font-size: 38px;
+    margin-bottom: 0;
   }
-
+  .onboarding .parrafo p {
+    margin-bottom: 0;
+  }
   .contactFlex {
     position: relative;
     height: 8%;

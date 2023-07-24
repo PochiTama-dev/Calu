@@ -10,10 +10,16 @@ const Modal = ({ children }) => {
 
       {isOpened && (
         <>
-          <div className="super-awesome-shadow"></div>
-          <div className="super-awesome-modal">
-            <h1>{children}</h1>
-            <button onClick={() => setIsOpened(false)}>Cerrar</button>
+          <div className="modal_ctn">
+            <div className="super-awesome-modal">
+              <p
+                className="close_modal_btn_3"
+                onClick={() => setIsOpened(false)}
+              >
+                X
+              </p>
+              <h1>{children}</h1>
+            </div>
           </div>
         </>
       )}

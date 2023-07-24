@@ -51,7 +51,7 @@ const CTN = () => {
           <h1 className="CTN_title">{ctninfo.title}</h1>
           <Modal>
             <input
-              style={{ width: "400px", height: "30px" }}
+              style={{ width: "300px", height: "30px" }}
               type="text"
               placeholder="Ingrese titulo"
               onChange={(e) => setTitle(e.target.value)}
@@ -61,10 +61,12 @@ const CTN = () => {
         </div>
         <button className="ctn_button"> CONTACTANOS </button>
         <div className="edit">
-          <p>{ctninfo.t1}</p>
+          <div className="para">
+            <p>{ctninfo.t1}</p>
+          </div>
           <Modal>
             <input
-              style={{ width: "400px", height: "30px" }}
+              style={{ width: "300px", height: "30px" }}
               type="text"
               placeholder="Ingrese texto 1"
               onChange={(e) => setT1(e.target.value)}

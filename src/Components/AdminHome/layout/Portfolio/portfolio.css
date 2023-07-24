@@ -3,3 +3,22 @@
   justify-content: center;
   align-items: center;
 }
+.delete_btn {
+  position: relative;
+  left: 43%;
+}
+.card_modal_btn p {
+  color: aliceblue;
+  font-size: 18px;
+}
+.img_btn {
+  margin: 0 0 30px 162px;
+}
+.card_modal_btn p {
+  color: aliceblue;
+  font-size: 18px;
+}
+.card_modal_btn p {
+  color: aliceblue;
+  font-size: 18px;
+}

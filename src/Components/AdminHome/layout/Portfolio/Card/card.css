@@ -10,6 +10,10 @@
     rgba(185, 4, 139, 0.2) 60%
   );
 }
+.btn_delete {
+  display: flex;
+  justify-content: center;
+}
 .card p {
   color: white;
   font-weight: bold;
@@ -20,6 +24,7 @@
   margin: 20px 0px 5px 0px;
 }
 .title {
+  color: white;
   text-align: center;
   margin: 10px 0px 0px 0px;
 }

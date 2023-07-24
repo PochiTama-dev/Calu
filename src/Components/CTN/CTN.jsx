@@ -26,8 +26,8 @@ const CTN = () => {
           <h1 className="CTN_title">{ctninfo.title}</h1>
         </div>
         <button className="ctn_button"> CONTACTANOS </button>
-        <div className="edit">
-          <p>{ctninfo.t1}</p>
+        <div className="para">
+          <p> {ctninfo.t1}</p>
         </div>
       </div>
     </div>

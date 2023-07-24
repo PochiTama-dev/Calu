@@ -45,8 +45,6 @@ function Slider({ children }) {
         customLeftArrow={<CustomLeftArrow />}
         customRightArrow={<CustomRightArrow />}
         itemClass="carouselItem"
-        autoPlay={true}
-        autoPlaySpeed={"4500"}
       >
         {children.map((children, index) => {
           return <div key={index}>{children}</div>;
