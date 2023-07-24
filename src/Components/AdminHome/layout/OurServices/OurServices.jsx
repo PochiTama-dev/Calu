@@ -33,6 +33,7 @@ const OurServices = () => {
     await updateDoc(our_info, {
       title: title,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   const updateT1 = async () => {
@@ -40,6 +41,7 @@ const OurServices = () => {
     await updateDoc(our_info, {
       t1: t1,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   useEffect(() => {

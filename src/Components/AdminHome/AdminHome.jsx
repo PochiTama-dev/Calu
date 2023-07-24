@@ -29,6 +29,52 @@ const AdminHome = () => {
     checkAuthentication();
   }, []);
 
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 767;
+  React.useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResizeWindow);
+    return () => {
+      window.removeEventListener("resize", handleResizeWindow);
+    };
+  }, []);
+
+  if (width > breakpoint) {
+    return (
+      <div>
+        <button onClick={scrollToTop}>
+          <img className="arrow_up" src={arrow_L} />
+        </button>
+        <Contact_button />
+
+        <Header />
+        <section ref={firstSection}>
+          <Onboarding />
+        </section>
+
+        <section>
+          <About />
+        </section>
+
+        <section>
+          <OurServices />
+        </section>
+
+        <section>
+          <Portfolio />
+        </section>
+        <section>
+          <News />
+        </section>
+        <section>
+          <CTN />
+          <Footer />
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div>
       <button onClick={scrollToTop}>
@@ -57,6 +103,8 @@ const AdminHome = () => {
       </section>
       <section>
         <CTN />
+      </section>
+      <section>
         <Footer />
       </section>
     </div>

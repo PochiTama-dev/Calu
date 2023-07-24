@@ -32,36 +32,42 @@ const About = () => {
     await updateDoc(about_info, {
       title: title,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT1 = async () => {
     const about_info = doc(db, "home", "About");
     await updateDoc(about_info, {
       t1: t1,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT2 = async () => {
     const about_info = doc(db, "home", "About");
     await updateDoc(about_info, {
       t2: t2,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT3 = async () => {
     const about_info = doc(db, "home", "About");
     await updateDoc(about_info, {
       t3: t3,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT4 = async () => {
     const about_info = doc(db, "home", "About");
     await updateDoc(about_info, {
       t4: t4,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT5 = async () => {
     const about_info = doc(db, "home", "About");
     await updateDoc(about_info, {
       t5: t5,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   ///////////////////////

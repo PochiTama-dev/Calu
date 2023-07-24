@@ -75,9 +75,14 @@ const News = () => {
   }
   return (
     <div className="novedades_container">
-      <h1 className="title_novedades">{newsinfo.title}</h1>
-      <p>{newsinfo.t1}</p>
-      <div className="cards_novedades">
+      <div className="news_text">
+        <div className="edit">
+          <h1 className="title_novedades">{newsinfo.title}</h1>
+        </div>
+        <div className="edit">
+          <p>{newsinfo.t1}</p>
+        </div>
+        <div className="cards_novedades"></div>
         <Slider>
           <a href="">
             <Card_news

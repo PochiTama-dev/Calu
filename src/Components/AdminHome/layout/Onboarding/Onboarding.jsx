@@ -30,30 +30,35 @@ const Onboarding = () => {
     await updateDoc(onboarding_info, {
       title: title,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT1 = async () => {
     const onboarding_info = doc(db, "home", "Onboarding");
     await updateDoc(onboarding_info, {
       t1: t1,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT2 = async () => {
     const onboarding_info = doc(db, "home", "Onboarding");
     await updateDoc(onboarding_info, {
       t2: t2,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT3 = async () => {
     const onboarding_info = doc(db, "home", "Onboarding");
     await updateDoc(onboarding_info, {
       t3: t3,
     });
+    alert("¡ Texto modificado con exito !");
   };
   const updateT4 = async () => {
     const onboarding_info = doc(db, "home", "Onboarding");
     await updateDoc(onboarding_info, {
       t4: t4,
     });
+    alert("¡ Texto modificado con exito !");
   };
 
   ///////////////////////

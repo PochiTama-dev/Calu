@@ -69,6 +69,9 @@
 
     margin: 80px 0 15px 0;
   }
+  .news_text {
+    margin: 0 15% 0% 7%;
+  }
 }
 
 @media (max-width: 767px) {
