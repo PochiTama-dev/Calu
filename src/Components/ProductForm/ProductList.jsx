@@ -3,10 +3,13 @@ import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db, storage } from "../../firebase-config";
 import { Link, useNavigate } from "react-router-dom";
 import { ref, deleteObject } from "firebase/storage";
+import './product-list.css'
+
 
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [flippedProductId, setFlippedProductId] = useState(null);
   const isUserAuthenticated = localStorage.getItem("isAuth") === "true";
   const navigate = useNavigate();
 
@@ -57,24 +60,45 @@ function ProductList() {
     return <p>No se encontraron productos.</p>;
   }
 
+  const handleFlipCard = (productId) => {
+    setFlippedProductId(productId === flippedProductId ? null : productId);
+  };
+
+
   return (
-    <div>
+    <div className="main-container">
       <h2>Lista de Productos</h2>
-      {products.map((product) => (
-        <div key={product.id}>
-          <h3>{product.title}</h3>
-          <img src={product.thumbnail} alt={product.title} />
-          <p>{product.detail}</p>
-          <p>Precio: ${product.price}</p>
-          <Link to={`/product/${product.id}`}>Ver detalles</Link>
-          {isUserAuthenticated && (
-            <>
-              <button onClick={() => handleEditProduct(product.id)}>Editar</button>
-              <button onClick={() => deleteProduct(product.id, product.thumbnail)}>Eliminar</button>
-            </>
-          )}
-        </div>
-      ))}
+      <p className="our-products">Nuestro productos</p>
+    
+      <div className="products">
+        {products.map((product) => (
+          <div className='main-product' key={product.id}>
+            <div
+              className={`product-inner ${flippedProductId === product.id ? "flipped" : ""}`}
+              onClick={() => handleFlipCard(product.id)}
+            >
+              <div className={`product-front ${flippedProductId === product.id ? "hidden" : ""}`}>
+                <h3>{product.title}</h3>
+                <img src={product.thumbnail} alt={product.title} />
+              </div>
+              <div className={`product-back ${flippedProductId === product.id ? "" : "hidden"}`}>
+                <p>{product.detail}</p>
+              </div>
+            </div>
+            <div className="product-price">
+              <p className="price">Precio: ${product.price}</p>
+              <p className="carrito-price">Agregar al carrito</p>
+              <Link to={`/product/${product.id}`}>Ver detalles</Link>
+            </div>
+            {isUserAuthenticated && (
+              <>
+                <button onClick={() => handleEditProduct(product.id)}>Editar</button>
+                <button onClick={() => deleteProduct(product.id, product.thumbnail)}>Eliminar</button>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
