@@ -95,7 +95,7 @@
 .image {
   overflow: hidden;
 }
-@media (min-width: 375px) {
+@media (min-width: 360px) {
   .postContainer {
     flex-wrap: wrap;
     align-items: flex-start;
@@ -173,6 +173,7 @@
 
   .ctn .CTN_ctn2 {
     margin: 0;
+    height: 40vh;
   }
   .footer-blog {
     position: relative;
