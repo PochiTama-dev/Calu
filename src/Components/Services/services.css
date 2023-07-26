@@ -13,7 +13,7 @@
 }
 section {
   justify-content: center;
-  height: 100vh;
+  height: 120vh;
   scroll-snap-align: start;
 }
 .srv_title {
@@ -85,7 +85,7 @@ section {
 }
 .des_3d {
   color: #3af6ff;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: bold;
   margin-top: 10px;
 }
