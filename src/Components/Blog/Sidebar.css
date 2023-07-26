@@ -20,10 +20,10 @@ hr {
   margin-top: 5px;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 360px) {
   .lateralBar {
     position: initial;
-    width: auto;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
