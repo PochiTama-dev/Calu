@@ -4,6 +4,7 @@
 .blog-sidebar {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .contact_button_ctn {
   position: fixed;
@@ -95,7 +96,7 @@
 .image {
   overflow: hidden;
 }
-@media (min-width: 360px) {
+@media (min-width: 375px) {
   .postContainer {
     flex-wrap: wrap;
     align-items: flex-start;
@@ -264,6 +265,7 @@
   }
   .blog-sidebar {
     flex-wrap: nowrap;
+    justify-content: initial;
   }
   .postContainer .cardContainerblog {
     justify-content: flex-end;
