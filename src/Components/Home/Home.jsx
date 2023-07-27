@@ -84,8 +84,8 @@ const Home = () => {
       <button onClick={scrollToTop}>
         <img className="arrow_up" src={arrow_L} />
       </button>
-      <Header />
       <Contact_button />
+      <Header />
       <section
         ref={firstSection}
         style={sectionStyles}
