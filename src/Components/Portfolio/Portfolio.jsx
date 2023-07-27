@@ -42,11 +42,10 @@ const Portfolio = () => {
 
   const getCardsData = async () => {
     const card = await getCards();
-    console.log(card.docs[0].data());
+
     setCard(card.docs);
   };
 
-  console.log(card.image);
   return (
     <div className="portfolio_container">
       <div>

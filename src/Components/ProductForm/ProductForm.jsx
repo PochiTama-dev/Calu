@@ -3,8 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { db, storage } from "../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import './product-form.css'
-
+import "./product-form.css";
 
 function ProductForm() {
   const [title, setTitle] = useState("");
@@ -105,18 +104,31 @@ function ProductForm() {
 
   return (
     <div className="main-form-container">
-      <h2>{location.state && location.state.productToEdit ? "Editar Producto" : "Agregar Producto"}</h2>
+      <h2>
+        {location.state && location.state.productToEdit
+          ? "Editar Producto"
+          : "Agregar Producto"}
+      </h2>
       <form onSubmit={handleFormSubmit}>
         <div className="container-form">
-
           <div className="title-form">
             <label htmlFor="title">Título:</label>
-            <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Titulo..."/>
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Titulo..."
+            />
           </div>
 
           <div className="mini-form">
             <label htmlFor="thumbnail">Miniatura:</label>
-            <input type="file" id="thumbnail" onChange={handleThumbnailChange} />
+            <input
+              type="file"
+              id="thumbnail"
+              onChange={handleThumbnailChange}
+            />
             {thumbnailName && <p>Archivo seleccionado: {thumbnailName}</p>}
           </div>
           <div className="pdf-form">
@@ -127,12 +139,21 @@ function ProductForm() {
 
           <div className="price-form">
             <label htmlFor="price">Precio:</label>
-            <input type="number" id="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <input
+              type="number"
+              id="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
           </div>
 
           <div className="detail-form">
             <label htmlFor="detail">Detalle:</label>
-            <textarea id="detail" value={detail} onChange={(e) => setDetail(e.target.value)}></textarea>
+            <textarea
+              id="detail"
+              value={detail}
+              onChange={(e) => setDetail(e.target.value)}
+            ></textarea>
           </div>
 
           <button type="submit" disabled={uploading}>
