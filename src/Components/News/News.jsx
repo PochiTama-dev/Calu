@@ -111,9 +111,7 @@ const News = () => {
         </Slider>
       </div>
       <div className="btn_cont">
-        <button className="news_btn">
-          <div>VER MAS </div>
-        </button>
+        <button className="news_btn"></button>
       </div>
     </div>
   );
