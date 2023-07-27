@@ -40,21 +40,3 @@
   font-size: 25px;
   font-weight: bold;
 }
-
-@media (max-width: 1300px) {
-  .card_f_news {
-    max-width: 230px;
-    height: 230px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .card_f {
-    max-width: 250px;
-    height: 250px;
-  }
-
-  .title {
-    margin: 0px;
-  }
-}
