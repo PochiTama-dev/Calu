@@ -1,14 +1,16 @@
-import './services.css';
-import React, { useEffect, useState } from 'react';
-import { Header } from '../Header/header';
-import Slider from '../Services/Card_srv/Slider/Slider';
-import Card_srv_flip from './Card_srv/Card_srv_flip';
-import Footer from '../Footer/Footer';
-import CTN from '../CTN/CTN';
-import { Link } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
-import { db, storage } from '../../firebase-config';
-import { ref } from 'firebase/storage';
+import "./services.css";
+import React, { useEffect, useState, useRef } from "react";
+import { Header } from "../Header/header";
+import Slider from "../Services/Card_srv/Slider/Slider";
+import Card_srv_flip from "./Card_srv/Card_srv_flip";
+import Footer from "../Footer/Footer";
+import CTN from "../CTN/CTN";
+import { Link } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db, storage } from "../../firebase-config";
+import { ref } from "firebase/storage";
+import Contact_button from "../Home/Contact_button/Contact_button";
+import arrow_L from "../Home/icon_arrow_left.svg";
 
 const Services = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -16,14 +18,14 @@ const Services = () => {
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
-    window.addEventListener('resize', handleResizeWindow);
+    window.addEventListener("resize", handleResizeWindow);
     return () => {
-      window.removeEventListener('resize', handleResizeWindow);
+      window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
 
   const [servicios, setServicios] = useState([]);
-  const serviciosRef = collection(db, 'servicios');
+  const serviciosRef = collection(db, "servicios");
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(serviciosRef);
@@ -32,34 +34,47 @@ const Services = () => {
 
     getPosts();
   }, []);
-
+  //////////// Scroll to top
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  //////////////
   if (width > breakpoint) {
     return (
-      <div className='scroll_ctn'>
+      <div className="scroll_ctn" ref={firstSection}>
+        <button onClick={scrollToTop}>
+          <img className="arrow_up" src={arrow_L} />
+        </button>
+        <Contact_button />
         <Header />;
-        <div className='services_container'>
-          <div className='srv_title'>
+        <div className="services_container">
+          <div className="srv_title">
             <h1>Nuestros Servicios</h1>
           </div>
           <div>
             {servicios.map((servicio, index) => {
               return (
                 <section>
-                  <div className='srv_cards' key={index}>
-                    <div className='card_srv_cont'>
-                      <div className='card_srv_info'>
-                        <div className='title_srv'>{servicio.title}</div>
-                        <div className='sub_d'>{servicio.sub}</div>
-                        <div className='des_1d'>
+                  <div className="srv_cards" key={index}>
+                    <div className="card_srv_cont">
+                      <div className="card_srv_info">
+                        <div className="title_srv">{servicio.title}</div>
+                        <div className="sub_d">{servicio.sub}</div>
+                        <div className="des_1d">
                           <div>{servicio.des_1}</div>
                           <br />
                           <div>{servicio.des_2}</div>
                         </div>
-                        <div className='des_3d'>{servicio.des_3}</div>
+                        <div className="des_3d">{servicio.des_3}</div>
                       </div>
-                      <div className='srv_icon'>
+                      <div className="srv_icon">
                         <div>
-                          <img src={servicio.img} alt={servicio.img} width='210px' />
+                          <img
+                            src={servicio.img}
+                            alt={servicio.img}
+                            width="210px"
+                          />
                         </div>
                       </div>
                     </div>
@@ -81,16 +96,20 @@ const Services = () => {
 
   return (
     <>
+      <button onClick={scrollToTop}>
+        <img className="arrow_up" src={arrow_L} />
+      </button>
+      <Contact_button />
       <Header />
-      <div className='services_container'>
-        <div className='srv_cards'>
-          <div className='srv_title'>
+      <div className="services_container" ref={firstSection}>
+        <div className="srv_cards">
+          <div className="srv_title">
             <h1>Nuestros Servicios</h1>
           </div>
           <section>
             <Slider>
               {servicios.map((servicios) => (
-                <div className='slider_cards'>
+                <div className="slider_cards">
                   <Card_srv_flip
                     image={servicios.img}
                     title={servicios.title}
