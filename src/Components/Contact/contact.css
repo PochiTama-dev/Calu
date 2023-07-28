@@ -2,11 +2,15 @@
   .contact {
     margin-left: 5px;
     margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   .contact-title {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
   }
   .contact-title h2 {
     color: #3af6ff;
@@ -21,6 +25,7 @@
     flex-direction: column;
     background-color: rgba(217, 217, 217, 0.3);
     border-radius: 1rem;
+    box-shadow: 10px 5px 5px black;
   }
   .contact-form label {
     color: white;
