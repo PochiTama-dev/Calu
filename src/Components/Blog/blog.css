@@ -27,6 +27,7 @@
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
+  border-radius: 20px;
 }
 
 .sidebar {
@@ -104,7 +105,7 @@
   .postContainer .cardContainerblog .card-blog {
     width: 100%;
     height: auto;
-    padding: 0;
+    padding: 10px;
     margin-top: 10px;
   }
   .card-blog .blogImage {
@@ -135,8 +136,8 @@
     width: 60%;
   }
   .card-blog .blogImage img {
-    width: 90%;
-    height: 160px;
+    width: 85%;
+    height: 135px;
     margin: 15px;
   }
   .card-blog .blogImage .card_news {
@@ -171,7 +172,9 @@
     cursor: pointer;
     text-align: start;
   }
-
+  .card-blog .blogImage .card_news .card_cont .card_f_news {
+    width: 80%;
+  }
   .ctn .CTN_ctn2 {
     margin: 0;
     height: 40vh;
@@ -193,23 +196,30 @@
     margin-top: 12vh;
   }
   .card-blog .blogImage img {
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
   }
   .card-blog .blogImage .arrow {
-    width: 120px;
+    width: 100px;
     height: 60px;
     position: absolute;
     margin-left: 130px;
   }
   .card-blog .leerMas {
     position: absolute;
-    width: 100%;
+    width: 48%;
     text-align: end;
     margin-top: 20px;
+    font-size: 19px;
+  }
+  .card-blog h2 {
+    width: 65%;
   }
   .card-blog .blogImage .arrow img {
     width: 50px;
+  }
+  .card-blog .blogImage .card_news .card_cont .card_f_news {
+    width: initial;
   }
   .postContainer .cardContainerblog {
     justify-content: flex-start;
@@ -219,7 +229,7 @@
     width: 45%;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 48%;
+    width: 45%;
     height: 50%;
   }
   .card-blog p {
@@ -274,8 +284,8 @@
     width: 30%;
   }
   .postContainer .cardContainerblog .card-blog .blogImage img {
-    width: 90%;
-    height: 90%;
+    width: 75%;
+    height: 75%;
   }
   .postContainer .card-blog .cardHeaderblog .titleblog {
     justify-content: flex-start;
@@ -284,6 +294,9 @@
     margin-left: 10px;
     align-items: flex-start;
     width: 75%;
+  }
+  .card-blog .blogImage .card_news .card_cont .card_f_news {
+    width: 300px;
   }
   .card-blog .blogImage .title_news {
     text-align: start;
@@ -297,6 +310,7 @@
   }
   .card-blog .leerMas {
     width: 430px;
+    font-size: 24px;
   }
   .postContainer .card-blog .cardHeaderblog p {
     width: 65%;

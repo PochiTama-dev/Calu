@@ -84,7 +84,7 @@ function Blog({ isAuth }) {
                       title={<h2>{post.title}</h2>}
                     />
                   </div>
-                  {hover === post.id && <p className='leerMas'>{'LEER MÁS>>'}</p>}
+                  {hover === post.id && <p className='leerMas'>{'LEER MÁS'}</p>}
                   <div className='cardHeaderblog'>
                     <div className='titleblog'></div>
                     <span>{post.time}</span>

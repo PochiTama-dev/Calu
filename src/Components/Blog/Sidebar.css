@@ -19,28 +19,38 @@ hr {
   color: rgba(255, 255, 255, 0.8);
   margin-top: 5px;
 }
-
+.lastBlogs {
+  display: flex;
+}
+.lastBlogs .last {
+  cursor: pointer;
+}
+.lastBlogs img {
+  width: 200px;
+}
 @media (min-width: 375px) {
   .lateralBar {
     position: initial;
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid white;
+    border-radius: 15px;
     margin-top: 50px;
   }
   .lateralBar hr {
     width: 50%;
   }
   .lateralBar .blogTitle {
-    margin-top: 0;
+    margin: 0;
   }
   .lateralBar .lateralContainer {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
   }
   .lateralBar .lateralContainer .card_our {
     max-width: 150px;
@@ -53,6 +63,9 @@ hr {
 }
 
 @media (min-width: 900px) {
+  .lateralBar .lateralContainer {
+    padding: 5px;
+  }
   .lateralBar .lateralContainer .card_our {
     max-width: 250px;
     height: 250px;
