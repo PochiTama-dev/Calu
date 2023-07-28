@@ -85,7 +85,7 @@ section {
 }
 .des_3d {
   color: #3af6ff;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -99,6 +99,7 @@ section {
   }
   .slider_cards {
     margin-top: 100px;
+    width: 350px;
   }
 }
 

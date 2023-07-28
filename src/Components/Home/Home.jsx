@@ -81,9 +81,16 @@ const Home = () => {
   }
   return (
     <div className="container">
-      <Header />
+      <button onClick={scrollToTop}>
+        <img className="arrow_up" src={arrow_L} />
+      </button>
       <Contact_button />
-      <section style={sectionStyles} className={getSectionClassName(0)}>
+      <Header />
+      <section
+        ref={firstSection}
+        style={sectionStyles}
+        className={getSectionClassName(0)}
+      >
         <Onboarding />
       </section>
       <section style={sectionStyles} className={getSectionClassName(1)}>

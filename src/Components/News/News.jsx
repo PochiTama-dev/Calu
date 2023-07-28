@@ -1,12 +1,12 @@
 import React from "react";
 import "./news.css";
 import Card_news from "./Card_news/Card_news";
-import Slider from "./Slider/Slider";
+import Slider from "../Portfolio/Slider/Slider";
 import { useState } from "react";
-import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
+import { getDocs, getDoc, collection, doc, query } from "firebase/firestore";
 import { useEffect } from "react";
 import { db } from "../../firebase-config";
-
+import { useNavigate } from "react-router-dom";
 const News = () => {
   const [newsinfo, setNewsinfo] = useState([]);
 
@@ -20,6 +20,27 @@ const News = () => {
     };
     getNews();
   }, []);
+  //////////////////////////////// GET POSTS
+  const [posts, setPost] = useState([]);
+
+  const getPost = async () => {
+    const results = await getDocs(query(collection(db, "posts")));
+    return results;
+  };
+  useEffect(() => {
+    getPostData();
+  }, []);
+
+  const getPostData = async () => {
+    const post = await getPost();
+
+    setPost(post.docs.slice(-3));
+  };
+  /////////////////////////////////
+  const navigate = useNavigate();
+  const handlePostClick = (id) => {
+    navigate(`/blog/${id}`);
+  };
 
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
@@ -45,30 +66,15 @@ const News = () => {
         </div>
 
         <div className="cards_novedades">
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>{" "}
-          </a>
+          {posts &&
+            posts.map((post) => (
+              <a onClick={() => handlePostClick(post.id)}>
+                <Card_news
+                  image={<img src={post.data().imageUrl} width="150px" />}
+                  title={post.data().title}
+                ></Card_news>
+              </a>
+            ))}
         </div>
       </div>
     );
@@ -82,38 +88,22 @@ const News = () => {
         <div className="edit">
           <p>{newsinfo.t1}</p>
         </div>
-        <div className="cards_novedades"></div>
-        <Slider>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>{" "}
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
-        </Slider>
       </div>
+      <div className="cards_novedades"></div>
+      <Slider>
+        {posts &&
+          posts.map((post) => (
+            <a onClick={() => handlePostClick(post.id)}>
+              <Card_news
+                image={<img src={post.data().imageUrl} width="150px" />}
+                title={post.data().title}
+              ></Card_news>
+            </a>
+          ))}
+      </Slider>
+
       <div className="btn_cont">
-        <button className="news_btn">
-          <div>VER MAS </div>
-        </button>
+        <button className="news_btn"></button>
       </div>
     </div>
   );

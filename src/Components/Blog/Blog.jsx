@@ -1,5 +1,5 @@
 // Blog.js
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
 import { auth, db, storage } from '../../firebase-config';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +12,7 @@ import Sidebar from './Sidebar';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
 import CardNews from '../News/Card_news/Card_news';
-
+import arrow_L from '../Home/icon_arrow_left.svg';
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
   const [hover, sethover] = useState(false);
@@ -53,11 +53,21 @@ function Blog({ isAuth }) {
   const handleMouseLeave = () => {
     sethover(null);
   };
+  //////////// Scroll to top
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  //////////////
   return (
     <div className='blog'>
+      <button onClick={scrollToTop}>
+        <img className='arrow_up' src={arrow_L} />
+      </button>
+
       <Header />
       <Contact_button />
-      <div className='BlogPage'>
+      <div className='BlogPage' ref={firstSection}>
         <h1 className='blogTitle'>NUESTRO BLOG</h1>
         <div className='blog-sidebar'>
           <div className='postContainer'>
