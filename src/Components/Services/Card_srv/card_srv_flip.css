@@ -63,16 +63,15 @@
 .flip-card-back {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 20px;
   color: white;
-  font-size: 18px;
   transform: rotateY(180deg);
 }
 .flip-card-back p {
   margin: 5px;
+  font-size: 19px;
 }
 .des_3 {
   font-weight: bold;
