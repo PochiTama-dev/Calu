@@ -9,7 +9,8 @@
   .contact-title {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
   }
   .contact-title h2 {
     color: #3af6ff;
