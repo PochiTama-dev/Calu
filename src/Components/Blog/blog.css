@@ -219,7 +219,7 @@
     width: 50px;
   }
   .card-blog .blogImage .card_news .card_cont .card_f_news {
-    width: initial;
+    width: 100%;
   }
   .postContainer .cardContainerblog {
     justify-content: flex-start;
@@ -323,6 +323,7 @@
     position: initial;
     margin: 0 50px;
     width: 30%;
+    height: 100%;
   }
   .lateralBar .blogTitle {
     margin: 0;

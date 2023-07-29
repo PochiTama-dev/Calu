@@ -7,7 +7,7 @@ import { db } from '../../firebase-config';
 const Sidebar = () => {
   const [postList, setPostList] = useState([]);
   const navigate = useNavigate();
-  const queryDocs = query(collection(db, 'posts'), orderBy('__name__'), limitToLast(2));
+  const queryDocs = query(collection(db, 'posts'));
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(queryDocs);
@@ -48,12 +48,12 @@ const Sidebar = () => {
       <div className='lateralContainer'>
         <h2 className='blogTitle'>Blogs anteriores</h2>
         <div className='lastBlogs'>
-          {postList.map((post, index) => (
+          {/*  {postList.map((post, index) => (
             <div className='last' onClick={() => handlePostClick(post.id)} key={index}>
               <img src={post.imageUrl} alt={post.imageUrl} />
               <p>{post.title}</p>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </aside>
