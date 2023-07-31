@@ -73,7 +73,7 @@
 }
 .card-blog .blogImage .image {
   height: 250px;
-  margin: 0;
+  padding: 25px;
 }
 .card-blog .blogImage .description {
   overflow: hidden;
@@ -283,10 +283,7 @@
   .postContainer .cardContainerblog .card-blog {
     width: 30%;
   }
-  .postContainer .cardContainerblog .card-blog .blogImage img {
-    width: 75%;
-    height: 75%;
-  }
+
   .postContainer .card-blog .cardHeaderblog .titleblog {
     justify-content: flex-start;
   }
