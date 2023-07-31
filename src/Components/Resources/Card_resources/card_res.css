@@ -40,6 +40,13 @@
 .res_description {
   font-weight: bold;
   color: white;
+  margin: 25px auto 0 auto;
+}
+.res_img {
+  display: flex;
+  justify-content: center;
+  width: 180px;
+  height: 160px;
 }
 
 .arrow_res {
@@ -60,5 +67,14 @@
   }
   .res_cart {
     margin: 180px 0 0 -20px;
+  }
+  .res_img {
+    width: 150px;
+    height: 130px;
+  }
+  .res_description {
+    font-weight: bold;
+    color: white;
+    margin: 5px auto 0 auto;
   }
 }
