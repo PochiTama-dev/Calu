@@ -48,7 +48,7 @@ const Resources = () => {
           {cards &&
             cards.map((product) => (
               <Card_res
-                description={product.data().detail}
+                description={product.data().thumbnail}
                 title={product.data().title}
                 btn={
                   <a
