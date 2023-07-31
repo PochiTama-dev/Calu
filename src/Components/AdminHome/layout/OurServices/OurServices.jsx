@@ -7,7 +7,7 @@ import modelo from "../../../Services/icons/modelo_negocio.png";
 import creacion from "../../../Services/icons/creación_contenido.png";
 import desarrollo from "../../../Services/icons/desarrollo_web.png";
 import Slider from "../../../Portfolio/Slider/Slider";
-import "./OurServices.css";
+
 import Card_our from "./Card_OurService/Card_our";
 import { useState } from "react";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";

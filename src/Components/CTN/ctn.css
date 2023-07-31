@@ -15,6 +15,7 @@
 .CTN_title {
   color: #3af6ff;
   font-size: 55px;
+  text-align: center;
 }
 .ctn_button {
   font-weight: bold;
@@ -33,21 +34,20 @@
   margin: 0px 0 20px 0;
 }
 
-.para {
+.ctn_p {
   color: white;
   font-weight: bold;
   font-size: 34px;
   margin-bottom: 90px;
+  text-align: center;
+}
+@media (max-width: 1330px) {
+  .CTN_ctn2 {
+    margin-bottom: 80px;
+  }
 }
 
 @media (max-width: 1024px) {
-  .CTN_ctn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
   .ctn_button {
     width: 220px;
     height: 70px;
@@ -58,6 +58,16 @@
 
   .CTN_ctn p {
     font-size: 28px;
+  }
+}
+@media (max-width: 1330px) {
+  .CTN_ctn2 {
+    /*  margin-bottom: 180px*/
+  }
+}
+@media (max-width: 860px) {
+  .CTN_ctn2 {
+    margin-bottom: 230px;
   }
 }
 @media (max-width: 767px) {
@@ -71,7 +81,8 @@
     margin-top: 80px;
   }
   .CTN_ctn2 {
-    margin-top: 180px;
+    margin-top: 50px;
+    margin-bottom: 0px;
   }
 }
 @media (max-width: 513px) {
@@ -91,18 +102,20 @@
   .CTN_title {
     font-size: 26px;
   }
-  .CTN_ctn p {
+  .ctn_p {
     font-size: 20px;
-    margin: 0 7% 0% 7%;
+    margin: 0 15% 0% 7%;
   }
 }
 @media (max-width: 375px) {
   .CTN_title {
-    margin: 0 15% 0% 7%;
-    font-size: 24px;
+    margin: 0 0% 80px 0%;
   }
   .CTN_ctn p {
     font-size: 18px;
+  }
+  .ctn_p {
+    margin: -15px 5% 7% 7%;
   }
   .CTN_ctn2 {
     margin-top: 20px;

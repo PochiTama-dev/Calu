@@ -12,6 +12,7 @@ import CTN from "../CTN/CTN";
 import Contact_button from "./Contact_button/Contact_button";
 import React from "react";
 import arrow_L from "./icon_arrow_left.svg";
+import Resources from "../Resources/Resources";
 const Home = () => {
   const numSections = 5;
   const [currentSection, setCurrentSection] = useState(0);
@@ -72,7 +73,10 @@ const Home = () => {
         <section style={sectionStyles} className={getSectionClassName(4)}>
           <News />
         </section>
-        <section>
+        <section style={sectionStyles} className={getSectionClassName(5)}>
+          <Resources />
+        </section>
+        <section style={sectionStyles} className={getSectionClassName(6)}>
           <CTN />
           <Footer />
         </section>
@@ -105,10 +109,13 @@ const Home = () => {
       <section style={sectionStyles} className={getSectionClassName(4)}>
         <News />
       </section>
-      <section>
+      <section style={sectionStyles} className={getSectionClassName(5)}>
+        <Resources />
+      </section>
+      <section style={sectionStyles} className={getSectionClassName(5)}>
         <CTN />
       </section>
-      <section>
+      <section style={sectionStyles} className={getSectionClassName(6)}>
         <Footer />
       </section>
     </div>

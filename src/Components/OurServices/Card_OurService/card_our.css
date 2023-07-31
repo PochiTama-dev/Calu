@@ -34,8 +34,9 @@
 
 @media (max-width: 1024px) {
   .card_our {
-    max-width: 300px;
-    height: 300px;
+    margin: 0px 0px 30px 0px;
+    max-width: 280px;
+    height: 260px;
   }
 
   .title_our {

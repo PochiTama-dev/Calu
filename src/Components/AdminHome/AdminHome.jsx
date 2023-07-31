@@ -12,6 +12,7 @@ import { useRef, useEffect } from "react";
 import arrow_L from "../Home/icon_arrow_left.svg";
 import { auth } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
+import Resources from "./layout/Resources/Resources";
 const AdminHome = () => {
   const navigate = useNavigate();
   const firstSection = useRef(null);
@@ -68,6 +69,9 @@ const AdminHome = () => {
           <News />
         </section>
         <section>
+          <Resources />
+        </section>
+        <section>
           <CTN />
           <Footer />
         </section>
@@ -100,6 +104,9 @@ const AdminHome = () => {
       </section>
       <section>
         <News />
+      </section>
+      <section>
+        <Resources />
       </section>
       <section>
         <CTN />
