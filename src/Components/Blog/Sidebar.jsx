@@ -46,7 +46,6 @@ const Sidebar = () => {
       </div>
       <hr />
       <div className='lateralContainer'>
-        <h2 className='blogTitle'>Blogs anteriores</h2>
         <div className='lastBlogs'>
           {/*  {postList.map((post, index) => (
             <div className='last' onClick={() => handlePostClick(post.id)} key={index}>

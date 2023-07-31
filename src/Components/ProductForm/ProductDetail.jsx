@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { useParams } from "react-router-dom";
+import { Header } from "../Header/header";
 import './product-detail.css'
 import Star from './star.svg'
 import StarEmpty from './star-empty.svg'
@@ -67,7 +68,15 @@ function ProductDetail() {
 
   return (
     <div className="main-detail-container">
-      <h2>Detalle del Producto</h2>
+
+      <Header/>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h2>DETALLE DEL PRODUCTO</h2>
       <div className="main-detail">
 
         <div className="img-container">
@@ -86,14 +95,6 @@ function ProductDetail() {
           </div>
 
           <p className="price-detail">{product.detail}</p>
-          <div className="star-container">
-            <img src={Star} alt="" />
-            <img src={Star} alt="" />
-            <img src={Star} alt="" />
-            <img src={Star} alt="" />
-            <img src={StarEmpty} alt="" />
-            <p>(2 Reseñas)</p>
-          </div>
           <p className="e-book">E-book</p>
           {product.price !== 'Gratis' && product.price !== null ? (
             <div className="buying">
@@ -111,22 +112,6 @@ function ProductDetail() {
           <p className="disponibilidad">Disponible inmediatamente</p>
         </div>
         <hr />
-
-        <div className="interaction">
-          <div className="interaction-box">
-            <img src={Heart} alt="" />
-            <p>Me gusta</p>
-          </div>
-          <div className="interaction-box">
-            <img src={ShareNode} alt="" />
-            <p>Recomendar</p>
-          </div>
-          <div className="interaction-box">
-            <img src={StarEmpty} alt="" />
-            <p>Evaluar</p>
-          </div>
-
-        </div>
         <div className="book-description">
         <span>
           {isDescriptionExpanded

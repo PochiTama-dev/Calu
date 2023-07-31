@@ -7,10 +7,6 @@ const Card_news = ({ image, title, description, btn }) => {
     <div className="card_news">
       <div className="card_cont">
         <div className="card_f_news">
-          <div className="arrow">
-            <img src={arrow_R} alt=" " className="arrow_R" />
-            <img src={arrow_R} alt=" " className="arrow_R" />
-          </div>
           <div className="image">{image}</div>
           <p className="description">{description}</p>
         </div>

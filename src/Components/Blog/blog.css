@@ -1,20 +1,24 @@
 .blog .arrow_up {
   position: fixed;
 }
+
 .blog-sidebar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .contact_button_ctn {
   position: fixed;
 }
+
 .BlogPage {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
 }
+
 .blogTitle {
   text-align: center;
   margin-top: 120px;
@@ -52,7 +56,7 @@
   display: flex;
   flex-direction: column;
   width: 320px;
-  height: 320px;
+  height: 300px;
   padding: 20px;
   justify-content: flex-start;
   cursor: pointer;
@@ -62,25 +66,30 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
 }
+
 .card-blog h2 {
   color: white;
   margin: 0 auto;
   font-size: 18px;
   width: 70%;
 }
+
 .card-blog .blogImage img {
-  border-radius: 30% 0;
+  border-radius: 30% 30% 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  margin: 0;
 }
-.card-blog .blogImage .image {
-  height: 250px;
-  padding: 25px;
-}
+
 .card-blog .blogImage .description {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   height: 40px;
 }
+
 .card-blog .leerMas {
   color: #eb39d9;
   position: relative;
@@ -90,13 +99,7 @@
 .titleblog {
   margin: 0;
 }
-.footer-blog .footer_container {
-  position: relative;
-  z-index: 0;
-}
-.image {
-  overflow: hidden;
-}
+
 @media (min-width: 375px) {
   .postContainer {
     flex-wrap: wrap;
@@ -136,12 +139,8 @@
     width: 60%;
   }
   .card-blog .blogImage img {
-    width: 85%;
-    height: 135px;
-    margin: 15px;
-  }
-  .card-blog .blogImage .card_news {
-    max-width: initial;
+    width: 100%;
+    height: 50%;
   }
   .card-blog .blogImage .arrow {
     width: 60px;

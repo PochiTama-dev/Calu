@@ -34,13 +34,12 @@ function App() {
           <Route path='/product-form' element={<ProductForm />} />
           <Route path='/product-list' element={<ProductList />} />
           <Route path='/product/:id' element={<ProductDetail />} />
-
+          <Route path="/edit-post" element={<CreatePost />} />
           <Route path='/about' element={<About />} />
           <Route path='/blog' element={<Blog isAuth={isAuth} />} />
           <Route path='/blog/:id' element={<BlogView />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/services' element={<Services />} />
-
           <Route path='/payment' element={<PaymentGateway />} />
         </Routes>
       </div>

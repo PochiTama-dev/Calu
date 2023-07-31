@@ -4,6 +4,7 @@
 }
 .blogContainer {
   display: flex;
+  
 }
 .blogView-sidebar {
   display: flex;
@@ -11,10 +12,18 @@
   justify-content: center;
 }
 
+.mini-description{
+font-size: 24px;
+}
+
 .blogCard {
   background-color: rgba(255, 255, 255, 0.2);
   width: 80%;
   color: white;
+  padding: 2rem;
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .blogImg {
