@@ -70,7 +70,7 @@
   transform: rotateY(180deg);
 }
 .flip-card-back p {
-  margin: 5px;
+  margin: 5px 15px;
   font-size: 19px;
 }
 .des_3 {
@@ -79,7 +79,7 @@
 .sub {
   color: white;
   text-align: center;
-  margin: 10px 0px 0px 0px;
+  margin: 10px 0px 0px 10px;
 }
 
 @media (max-width: 830px) {

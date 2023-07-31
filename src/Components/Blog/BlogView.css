@@ -32,7 +32,7 @@
 
 @media (min-width: 375px) {
   .blogTitle {
-    font-size: 48px;
+    font-size: 44px;
   }
   .blogContainer {
     flex-wrap: wrap;
@@ -40,10 +40,12 @@
   }
   .blogCard {
     width: 100%;
+    border-radius: 15px;
   }
   .blogImg {
     width: 90%;
     margin: 15px;
+    border-radius: 15px;
   }
   .date-tagContainer {
     display: flex;
@@ -71,6 +73,9 @@
     position: relative;
     z-index: 0;
   }
+  .blogCard .youtubePlayer {
+    height: 200px;
+  }
   .youtubePlayer iframe {
     width: 100%;
     height: auto;
@@ -78,8 +83,8 @@
 }
 @media (min-width: 900px) {
   .blogImg {
-    margin: 0;
-    width: 100%;
+    margin: 10px 70px;
+    width: 80%;
   }
   .blogContainer {
     width: 80%;
@@ -117,7 +122,7 @@
     margin: 0;
     font-size: larger;
   }
-  .youtubePlayer {
+  .blogCard .youtubePlayer {
     height: 300px;
   }
   .youtubePlayer iframe {
