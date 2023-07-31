@@ -277,11 +277,9 @@
     flex-wrap: nowrap;
     justify-content: initial;
   }
-  .postContainer .cardContainerblog {
-    justify-content: flex-end;
-  }
   .postContainer .cardContainerblog .card-blog {
     width: 30%;
+    align-items: center;
   }
 
   .postContainer .card-blog .cardHeaderblog .titleblog {
