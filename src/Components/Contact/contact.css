@@ -19,6 +19,7 @@
   .contact-title p {
     color: white;
     margin: 0;
+    text-align: center;
   }
   .contact-form {
     display: flex;
@@ -26,11 +27,13 @@
     background-color: rgba(217, 217, 217, 0.3);
     border-radius: 1rem;
     box-shadow: 5.5px 5px 10px black;
+    row-gap: 5px;
   }
   .contact-form label {
     color: white;
     margin: 20px 0 0 50px;
     text-transform: uppercase;
+    text-align: center;
   }
   .contact-form .contact-inputs {
     margin-left: 50px;
@@ -61,6 +64,7 @@
     cursor: pointer;
     margin: 30px 0 65px 0;
     border-radius: 1rem;
+    box-shadow: 5.5px 5px 10px black;
   }
 }
 
@@ -80,5 +84,16 @@
     border-radius: 6px;
     padding: 12px 16px;
     border: 1px solid #ccc;
+  }
+  .contact-form label {
+    text-align: justify;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-form {
+    width: 55%;
+  }
+  .contact .buttonContainer {
+    width: 55%;
   }
 }
