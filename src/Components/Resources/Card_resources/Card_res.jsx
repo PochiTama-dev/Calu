@@ -19,7 +19,8 @@ const Card_res = ({ title, description, btn, btn_delete }) => {
           <img src={cart} alt=" " className="cart" />
         </div>
         <div className="res_description">
-          <img src={description} alt={title} /> {/* Render the thumbnail as an image */}
+          <img className="res_img" src={description} alt={title} />{" "}
+          {/* Render the thumbnail as an image */}
         </div>
       </div>
 
