@@ -1,4 +1,3 @@
-import "./Onboarding.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";

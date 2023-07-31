@@ -1,9 +1,17 @@
 import React from "react";
-import "./news.css";
-import Card_news from "./Card_news/Card_news";
+import "../../../News/news.css";
+import Card_news from "../../../News/Card_news/Card_news";
 import Slider from "./Slider/Slider";
 import { useState } from "react";
-import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  collection,
+  updateDoc,
+  setDoc,
+} from "firebase/firestore";
 import { useEffect } from "react";
 import { db } from "../../../../firebase-config";
 import Modal from "../Modal/modal";
@@ -35,7 +43,23 @@ const News = () => {
     alert("¡ Texto modificado con exito !");
   };
 
-  //////////////////////////
+  ////////////////////////// GET POST
+  const [posts, setPost] = useState([]);
+
+  const getPost = async () => {
+    const results = await getDocs(query(collection(db, "posts")));
+    return results;
+  };
+  useEffect(() => {
+    getPostData();
+  }, []);
+
+  const getPostData = async () => {
+    const post = await getPost();
+
+    setPost(post.docs.slice(-3));
+  };
+  /////////////////////
 
   useEffect(() => {
     const getNews = async () => {
@@ -90,30 +114,15 @@ const News = () => {
         </div>
 
         <div className="cards_novedades">
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>
-          </a>
-          <a href="">
-            <Card_news
-              image={
-                <img className="icons_novedades" src={""} alt="" width="50%" />
-              }
-              title={"TENDENCIAS 2023"}
-            ></Card_news>{" "}
-          </a>
+          {posts &&
+            posts.map((post) => (
+              <a href="">
+                <Card_news
+                  image={<img src={post.data().imageUrl} width="150px" />}
+                  title={post.data().title}
+                ></Card_news>
+              </a>
+            ))}
         </div>
       </div>
     );

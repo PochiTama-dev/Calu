@@ -20,15 +20,12 @@ const About = () => {
   }, []);
 
   return (
-    <div>
-      <div className="about_container">
-        <div className="about_items">
-          <div>
-            <div className="edit">
-              <h1 className="title_about">{aboutinfo.title}</h1>
-            </div>
-          </div>
+    <div className="about_container">
+      <div className="about_items">
+        <div className="edit">
+          <h1 className="title_about">{aboutinfo.title}</h1>
         </div>
+
         <div>
           <div className="edit">
             <h2 className="sub_1">{aboutinfo.t1}</h2>

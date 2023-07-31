@@ -54,8 +54,22 @@
 
   .about_container p {
     color: white;
+    margin-bottom: -5px;
+    font-size: 18px;
+  }
+  .about_container h2 {
+    margin-bottom: 0;
+    font-size: 20px;
   }
   .title_about {
-    margin-bottom: -25px;
+    margin-bottom: -30px;
+  }
+}
+@media (min-height: 767px) {
+  .title_about {
+    margin-bottom: 15px;
+  }
+  .about_container p {
+    margin-bottom: 15px;
   }
 }
