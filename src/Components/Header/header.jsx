@@ -77,9 +77,12 @@ export const Header = () => {
               <Link to={"/blog"}> BLOG </Link>
               <div className="line"></div>
               <Link to={"/Contact"}>CONTACTO </Link>
+              <div className="line">
+              <Link to={"/product-list"}>PRODUCTOS</Link>
             </div>
-            <div className="line"></div>
-            <div className="cart">
+            </div>
+            
+            <div className="cart-2">
               <div className="carrito" onClick={() => setShowCart(true)}>
                 <img src={cart} alt={cart} />
                 {!showCart && <p className="totalItems">2</p>}

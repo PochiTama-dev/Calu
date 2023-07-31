@@ -3,6 +3,7 @@ import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db, storage } from "../../firebase-config";
 import { Link, useNavigate } from "react-router-dom";
 import { ref, deleteObject } from "firebase/storage";
+import { Header } from "../Header/header";
 import './product-list.css'
 
 
@@ -67,8 +68,14 @@ function ProductList() {
 
   return (
     <div className="main-container">
-      <h2>Lista de Productos</h2>
-      <p className="our-products">Nuestro productos</p>
+      <Header/>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1>Lista de Productos</h1>
+      <h2 className="our-products">Nuestro productos</h2>
     
       <div className="products">
         {products.map((product) => (
@@ -78,7 +85,6 @@ function ProductList() {
               onClick={() => handleFlipCard(product.id)}
             >
               <div className={`product-front ${flippedProductId === product.id ? "hidden" : ""}`}>
-                <h3>{product.title}</h3>
                 <img src={product.thumbnail} alt={product.title} />
               </div>
               <div className={`product-back ${flippedProductId === product.id ? "" : "hidden"}`}>
@@ -86,7 +92,7 @@ function ProductList() {
               </div>
             </div>
             <div className="product-price">
-              <p className="price">Precio: ${product.price}</p>
+              <p className="price">${product.price}</p>
               <p className="carrito-price">Agregar al carrito</p>
               <Link to={`/product/${product.id}`}>Ver detalles</Link>
             </div>

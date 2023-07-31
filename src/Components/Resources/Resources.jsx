@@ -1,36 +1,32 @@
 import React from "react";
 import Card_res from "./Card_resources/Card_res";
-
 import { getDocs, collection, query } from "firebase/firestore";
-
-import { db, storage, auth } from "../../firebase-config";
+import { db } from "../../firebase-config";
 import "./resources.css";
 import { useState, useEffect } from "react";
 import Slider from "../Portfolio/Slider/Slider";
-const Resources = () => {
-  const [products, setProducts] = useState([]);
-  const productsCollectionRef = collection(db, "e-commerce");
-  const [cardTitle, setCardTitle] = useState("");
-  const [cardDescription, setCardDescription] = useState("");
 
+const Resources = () => {
   const [cards, setCard] = useState([]);
 
   const getCard = async () => {
     const results = await getDocs(query(collection(db, "e-commerce")));
     return results;
   };
+
   useEffect(() => {
     getCardData();
   }, []);
 
   const getCardData = async () => {
     const card = await getCard();
-
     setCard(card.docs.slice(-3));
   };
+
   ////////////////////////
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
+
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
@@ -39,6 +35,7 @@ const Resources = () => {
       window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
+
   if (width > breakpoint) {
     return (
       <div className="res_ctn">
@@ -48,13 +45,12 @@ const Resources = () => {
           {cards &&
             cards.map((product) => (
               <Card_res
-                description={product.data().detail}
+                description={product.data().thumbnail} // Pass the thumbnail URL as the description
                 title={product.data().title}
                 btn={
                   <a
                     target="_blank"
-                    className="
-                button_portfolio"
+                    className="button_portfolio"
                   >
                     Ver más
                   </a>
@@ -65,21 +61,21 @@ const Resources = () => {
       </div>
     );
   }
+
   return (
     <div className="res_ctn">
-      <h1 className="res_title_adm">RECUSOS PARA TU NEGOCIO</h1>
+      <h1 className="res_title_adm">RECURSOS PARA TU NEGOCIO</h1>
 
       <Slider>
         {cards &&
           cards.map((product) => (
             <Card_res
-              description={product.data().detail}
+              description={product.data().thumbnail} // Pass the thumbnail URL as the description
               title={product.data().title}
               btn={
                 <a
                   target="_blank"
-                  className="
-          button_portfolio"
+                  className="button_portfolio"
                 >
                   Ver más
                 </a>

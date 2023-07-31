@@ -17,7 +17,8 @@
 .cart {
   display: flex;
   position: absolute;
-  margin: 8px 0 0 10px;
+  margin: 20px 20px 20px 15px;
+  width: 60%;
 }
 .card_res_ctn {
   display: flex;

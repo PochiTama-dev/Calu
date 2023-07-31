@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc, serverTimestamp, getDoc } from "firebase/firestore";
 import { db, storage } from "../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import "./product-form.css";
 
-function ProductForm() {
+function ProductForm({ productId }) {
   const [title, setTitle] = useState("");
   const [thumbnailFile, setThumbnailFile] = useState(null);
   const [thumbnailName, setThumbnailName] = useState("");
@@ -46,12 +46,19 @@ function ProductForm() {
         pdf: pdfURL,
         price: price || "Gratis",
         detail,
+        createdAt: serverTimestamp(), // Add a createdAt field with the server timestamp
       };
 
-      // Agregar el producto a la colección "e-commerce" en Firebase Firestore
-      const docRef = await addDoc(collection(db, "e-commerce"), productData);
-
-      console.log("Producto agregado con ID:", docRef.id);
+      if (productId) {
+        // If productId is provided, it means we are updating the product
+        const productDoc = doc(db, "e-commerce", productId);
+        await updateDoc(productDoc, productData);
+        console.log("Producto actualizado con ID:", productId);
+      } else {
+        // If no productId, it means we are adding a new product
+        const docRef = await addDoc(collection(db, "e-commerce"), productData);
+        console.log("Producto agregado con ID:", docRef.id);
+      }
 
       setTitle("");
       setThumbnailFile(null);
@@ -62,10 +69,9 @@ function ProductForm() {
       setDetail("");
       setUploading(false);
 
-      // Navigate back to the ProductList after adding a new product
-      history("/"); // Changed history.push("/") to history("/")
+      history("/"); // Navigate back to the ProductList after adding/editing a product
     } catch (error) {
-      console.error("Error al agregar el producto:", error);
+      console.error("Error al agregar o editar el producto:", error);
       setUploading(false);
     }
   };
@@ -88,19 +94,29 @@ function ProductForm() {
 
   useEffect(() => {
     if (location.state && location.state.productToEdit) {
-      if (!thumbnailFile) {
-        setThumbnailName("Thumbnail already uploaded");
-      }
-      if (!pdfFile) {
-        setPdfName("PDF already uploaded");
-      }
-
       const { productToEdit } = location.state;
       setTitle(productToEdit.title);
       setPrice(productToEdit.price);
       setDetail(productToEdit.detail);
+    } else if (productId) {
+      const fetchProductData = async () => {
+        try {
+          const productDoc = doc(db, "e-commerce", productId);
+          const productSnapshot = await getDoc(productDoc);
+          if (productSnapshot.exists()) {
+            const productData = productSnapshot.data();
+            setTitle(productData.title);
+            setPrice(productData.price);
+            setDetail(productData.detail);
+          }
+        } catch (error) {
+          console.error("Error al obtener los datos del producto:", error);
+        }
+      };
+
+      fetchProductData();
     }
-  }, [location.state, thumbnailFile, pdfFile]);
+  }, [location.state, productId]);
 
   return (
     <div className="main-form-container">
