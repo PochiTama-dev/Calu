@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import "./createPost.css";
 
-function CreatePost({ editPost }) {
+function CreatePost({ location }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState(null);
@@ -17,6 +17,8 @@ function CreatePost({ editPost }) {
   const timestamp = new Date();
   const time = timestamp.toLocaleDateString();
 
+  const editPost = location?.state?.editPost || null;
+
   useEffect(() => {
     const checkAuthentication = () => {
       const user = auth.currentUser;
@@ -27,6 +29,16 @@ function CreatePost({ editPost }) {
 
     checkAuthentication();
   }, []);
+
+  useEffect(() => {
+    if (editPost) {
+      setTitle(editPost.title);
+      setPostText(editPost.postText);
+      setYoutubeLink(editPost.youtubeLink);
+      setAdditionalContent(editPost.additionalContent);
+      setCategory(editPost.category);
+    }
+  }, [editPost]);
 
   const createPost = async () => {
     let imageUrl = "";
@@ -44,7 +56,7 @@ function CreatePost({ editPost }) {
       youtubeLink,
       additionalContent,
       category,
-      time, // Adding the timestamp to the new post
+      time,
     };
 
     await addDoc(postsCollectionRef, newPost);
@@ -53,7 +65,6 @@ function CreatePost({ editPost }) {
 
   const updatePost = async () => {
     if (!image) {
-      // If image is not changed, update the post directly
       const updatedPost = {
         ...editPost,
         title,
@@ -64,9 +75,7 @@ function CreatePost({ editPost }) {
       };
 
       await setDoc(doc(db, "posts", editPost.id), updatedPost);
-      navigate("/blog");
     } else {
-      // If the image is changed, upload the new image first, then update the post
       const storageRef = ref(storage, `images/${image.name}`);
       await uploadBytes(storageRef, image);
       const imageUrl = await getDownloadURL(storageRef);
@@ -82,8 +91,8 @@ function CreatePost({ editPost }) {
       };
 
       await setDoc(doc(db, "posts", editPost.id), updatedPost);
-      navigate("/blog");
     }
+    navigate("/blog");
   };
 
   const handleSubmit = () => {

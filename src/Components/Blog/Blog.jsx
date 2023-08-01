@@ -16,13 +16,12 @@ import arrow_L from "../Home/icon_arrow_left.svg";
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [editingPost, setEditingPost] = useState(null);
-
   const postsCollectionRef = collection(db, "posts");
   const navigate = useNavigate();
 
   const deletePost = async (id, imageUrl) => {
     setIsLoading(true);
+
     const postDoc = doc(db, "posts", id);
 
     try {
@@ -33,11 +32,19 @@ function Blog({ isAuth }) {
       }
 
       await deleteDoc(postDoc);
+
+      // Remove the deleted post from the postList state without refreshing the page
+      setPostList((prevPostList) => prevPostList.filter((post) => post.id !== id));
     } catch (error) {
       console.error("Error deleting post:", error);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const editPost = (id) => {
+    const postToEdit = postList.find((post) => post.id === id);
+    navigate(`/edit-post/${id}`, { state: { editPost: postToEdit } });
   };
 
   const handlePostClick = (id) => {
@@ -56,11 +63,6 @@ function Blog({ isAuth }) {
   const firstSection = useRef(null);
   const scrollToTop = () => {
     firstSection.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // Función para manejar el evento de edición
-  const handleEditPost = (post) => {
-    navigate(`/edit-post`, { state: { editPost: post } });
   };
 
   return (
@@ -113,7 +115,7 @@ function Blog({ isAuth }) {
                           </button>
                           <button
                             onClick={() => {
-                              handleEditPost(post); // Llama a la función de edición con el post actual
+                              editPost(post.id);
                             }}
                             className="editblogButton"
                           >
