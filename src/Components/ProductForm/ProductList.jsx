@@ -7,6 +7,7 @@ import { Header } from '../Header/header';
 import './product-list.css';
 import CTN from '../CTN/CTN';
 import Footer from '../Footer/Footer';
+import CarritoForm from './CarritoForm.svg'
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -96,7 +97,8 @@ function ProductList() {
               onClick={() => handleFlipCard(product.id)}
             >
               <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
-                <img src={product.thumbnail} alt={product.title} />
+                <img className='product-img' src={product.thumbnail} alt={product.title} />
+                <img className='carrito-img' src={CarritoForm} alt="" />
               </div>
               <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
                 <p>{product.detail}</p>
