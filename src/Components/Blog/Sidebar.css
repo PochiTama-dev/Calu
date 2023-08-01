@@ -1,7 +1,7 @@
 .lateralBar {
   background-color: rgba(255, 255, 255, 0.2);
   width: 30%;
-  height: 600px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,8 +12,9 @@
 .lateralBar .lateralContainer {
   color: white;
 }
+
 .lateralBar .lateralContainer p {
-  font-size: 15px;
+  font-size: 25px;
 }
 hr {
   color: rgba(255, 255, 255, 0.8);
@@ -27,6 +28,15 @@ hr {
 }
 .lastBlogs img {
   width: 200px;
+}
+.sb_blog_title {
+  font-weight: bold;
+}
+
+.sb_blog_title a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 @media (min-width: 375px) {
   .lateralBar {

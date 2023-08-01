@@ -1,18 +1,16 @@
-
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../../firebase-config';
-import { Header } from '../Header/header';
-import './BlogView.css';
-import './blog.css';
-import Footer from '../Footer/Footer';
-import Sidebar from './Sidebar';
-import CTN from '../CTN/CTN';
-import Contact_button from '../Home/Contact_button/Contact_button';
-import '../Home/Contact_button/contact_button.css';
-import YouTube from 'react-youtube';
-
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase-config";
+import { Header } from "../Header/header";
+import "./BlogView.css";
+import "./blog.css";
+import Footer from "../Footer/Footer";
+import Sidebar from "./Sidebar";
+import CTN from "../CTN/CTN";
+import Contact_button from "../Home/Contact_button/Contact_button";
+import "../Home/Contact_button/contact_button.css";
+import YouTube from "react-youtube";
 
 function BlogView() {
   const { id } = useParams();
@@ -52,44 +50,43 @@ function BlogView() {
         <Header />
         <Contact_button />
 
-        <h1 className='blogTitle'>{post.title}</h1>
-        <div className='blogView-sidebar'>
-          <div className='blogContainer'>
-            <div className='blogCard'>
-              <img className='blogImg' src={post.imageUrl} alt='' />
-              <div className='blogText'>
-                <p>{post.postText}</p>
-                {post.additionalContent && (
-                  <div>
-                    <p>{post.additionalContent}</p>
-                  </div>
-                )}
+        <h1 className="blogTitle">{post.title}</h1>
+        <div className="blogView-sidebar">
+          <div className="blogContainer">
+            <div className="blogCard">
+              <img className="blogImg" src={post.imageUrl} alt="" />
+              <div className="blogText">
+                <h3 className="mini-description">{post.postText}</h3>
                 {post.youtubeLink && (
-                  <div className='youtubePlayer'>
+                  <div className="youtubePlayer">
                     <YouTube videoId={getYouTubeVideoId(post.youtubeLink)} />
                   </div>
                 )}
+                {post.additionalContent && (
+                  <div>
+                    <p className="aditional-content">
+                      {post.additionalContent}
+                    </p>
+                  </div>
+                )}
               </div>
-
             </div>
           </div>
+
           <Sidebar />
         </div>
 
-        <div className='date-tagContainer'>
-          <div className='date-tags'>
+        <div className="date-tagContainer">
+          <div className="date-tags">
             <p>{post.time}</p>
-
             <hr />
-            <p>Tag #1, Tag #2, Tag #3</p>
           </div>
         </div>
 
-        <div className='ctn'>
+        <div className="ctn">
           <CTN />
         </div>
-        <div className='footer-blogView'>
-
+        <div className="footer-blogView">
           <Footer />
         </div>
       </div>

@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ref, deleteObject } from 'firebase/storage';
 import { Header } from '../Header/header';
 import './product-list.css';
+import CTN from '../CTN/CTN';
+import Footer from '../Footer/Footer';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -117,6 +119,12 @@ function ProductList() {
             )}
           </div>
         ))}
+      </div>
+      <div className='ctn'>
+        <CTN />
+      </div>
+      <div className='footer-blog'>
+        <Footer />
       </div>
     </div>
   );

@@ -1,13 +1,39 @@
-import { Link, useNavigate } from 'react-router-dom';
-import './Sidebar.css';
-import { useEffect, useState } from 'react';
-import { collection, getDocs, limitToLast, orderBy, query } from 'firebase/firestore';
-import { db } from '../../firebase-config';
+import { Link, useNavigate } from "react-router-dom";
+import "./Sidebar.css";
+import { useEffect, useState } from "react";
+import {
+  collection,
+  getDocs,
+  limitToLast,
+  orderBy,
+  query,
+} from "firebase/firestore";
+import { db } from "../../firebase-config";
 
 const Sidebar = () => {
   const [postList, setPostList] = useState([]);
   const navigate = useNavigate();
-  const queryDocs = query(collection(db, 'posts'));
+  const queryDocs = query(collection(db, "posts"));
+
+  ///////GET BLOGS
+  const [posts, setPost] = useState([]);
+
+  const getPost = async () => {
+    const results = await getDocs(query(collection(db, "posts")));
+    return results;
+  };
+  useEffect(() => {
+    getPostData();
+  }, []);
+
+  const getPostData = async () => {
+    const post = await getPost();
+
+    setPost(post.docs.slice(-3));
+  };
+
+  ///////////////////////////
+
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(queryDocs);
@@ -19,35 +45,21 @@ const Sidebar = () => {
     navigate(`/blog/${id}`);
   };
   return (
-    <aside className='lateralBar'>
-      <h2 className='blogTitle'>Novedades</h2>
-      <div className='lateralContainer'>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
-          exercitationem quis!
-        </p>
-        <Link to={'/blog/1'}>ver mas</Link>
+    <aside className="lateralBar">
+      <h2 className="blogTitle_">Novedades</h2>
+      <div className="lateralContainer">
+        {posts &&
+          posts.map((post) => (
+            <div className="sb_blog_title">
+              <p>{post.data().title}</p>
+              <hr />
+              <Link to={post.id}>Ver más</Link>
+            </div>
+          ))}
       </div>
-      <hr />
-      <div className='lateralContainer'>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
-          exercitationem quis!
-        </p>
-        <Link to={'/blog/1'}>ver mas</Link>
-      </div>
-      <hr />
-      <div className='lateralContainer'>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam sunt ab id
-          exercitationem quis!
-        </p>
-        <Link to={'/blog/1'}>ver mas</Link>
-      </div>
-      <hr />
-      <div className='lateralContainer'>
-        <h2 className='blogTitle'>Blogs anteriores</h2>
-        <div className='lastBlogs'>
+
+      <div className="lateralContainer">
+        <div className="lastBlogs">
           {/*  {postList.map((post, index) => (
             <div className='last' onClick={() => handlePostClick(post.id)} key={index}>
               <img src={post.imageUrl} alt={post.imageUrl} />

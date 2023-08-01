@@ -1,8 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore'; // Agrega esta importación
+import { getAuth, GoogleAuthProvider, setPersistence, browserLocalPersistence } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -25,11 +24,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const db = getFirestore(app);
 const auth = getAuth(app);
+
+// Configura la persistencia de autenticación a 'LOCAL'
+setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    console.log('Persistencia de autenticación configurada correctamente.');
+  })
+  .catch((error) => {
+    console.error('Error al configurar la persistencia de autenticación:', error);
+  });
+
+const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
-const storage = getStorage(app); // Agrega esta línea
+const storage = getStorage(app);
 
-
-export { db, auth, provider, storage }; // Exporta las variables db, auth y provider
-
+export { db, auth, provider, storage };

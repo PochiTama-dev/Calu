@@ -13,6 +13,7 @@ function ProductForm({ productId }) {
   const [pdfName, setPdfName] = useState("");
   const [price, setPrice] = useState("");
   const [detail, setDetail] = useState("");
+  const [category, setCategory] = useState(""); // New category state
   const [uploading, setUploading] = useState(false);
 
   let history = useNavigate();
@@ -46,7 +47,8 @@ function ProductForm({ productId }) {
         pdf: pdfURL,
         price: price || "Gratis",
         detail,
-        createdAt: serverTimestamp(), // Add a createdAt field with the server timestamp
+        category, // Include the category field
+        createdAt: serverTimestamp(),
       };
 
       if (productId) {
@@ -67,6 +69,7 @@ function ProductForm({ productId }) {
       setPdfName("");
       setPrice("");
       setDetail("");
+      setCategory(""); // Clear the category field
       setUploading(false);
 
       history("/"); // Navigate back to the ProductList after adding/editing a product
@@ -98,6 +101,7 @@ function ProductForm({ productId }) {
       setTitle(productToEdit.title);
       setPrice(productToEdit.price);
       setDetail(productToEdit.detail);
+      setCategory(productToEdit.category); // Set the category field for editing
     } else if (productId) {
       const fetchProductData = async () => {
         try {
@@ -108,6 +112,7 @@ function ProductForm({ productId }) {
             setTitle(productData.title);
             setPrice(productData.price);
             setDetail(productData.detail);
+            setCategory(productData.category); // Set the category field for editing
           }
         } catch (error) {
           console.error("Error al obtener los datos del producto:", error);
@@ -147,10 +152,22 @@ function ProductForm({ productId }) {
             />
             {thumbnailName && <p>Archivo seleccionado: {thumbnailName}</p>}
           </div>
+
           <div className="pdf-form">
             <label htmlFor="pdf">PDF:</label>
             <input type="file" id="pdf" onChange={handlePdfChange} />
             {pdfName && <p>Archivo seleccionado: {pdfName}</p>}
+          </div>
+
+          <div className="category-form">
+            <label htmlFor="category">Categoría:</label>
+            <input
+              type="text"
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              placeholder="Categoría..."
+            />
           </div>
 
           <div className="price-form">
