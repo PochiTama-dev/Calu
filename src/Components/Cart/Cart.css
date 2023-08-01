@@ -19,6 +19,7 @@
 
 .cartContainer h2 {
   text-align: center;
+  margin: 0;
 }
 
 .cartContainer .closeCart {
@@ -36,12 +37,13 @@
   justify-content: space-between;
 }
 .cartItem img {
-  width: 20%;
+  width: 50%;
 }
 .cartItem p {
   display: flex;
   width: 400px;
   justify-content: space-around;
+  align-items: center;
 }
 
 .cartContainer button {
@@ -68,6 +70,11 @@
   .cartItem p,
   .cartContainer .total {
     font-size: 10px;
+    align-items: center;
+    margin: 5px auto;
+    width: 100%;
+  }
+  .cartContainer .total {
   }
   .cartItem .deleteItem button {
     height: 20px;
