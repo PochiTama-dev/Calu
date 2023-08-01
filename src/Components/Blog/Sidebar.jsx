@@ -14,6 +14,26 @@ const Sidebar = () => {
   const [postList, setPostList] = useState([]);
   const navigate = useNavigate();
   const queryDocs = query(collection(db, "posts"));
+
+  ///////GET BLOGS
+  const [posts, setPost] = useState([]);
+
+  const getPost = async () => {
+    const results = await getDocs(query(collection(db, "posts")));
+    return results;
+  };
+  useEffect(() => {
+    getPostData();
+  }, []);
+
+  const getPostData = async () => {
+    const post = await getPost();
+
+    setPost(post.docs.slice(-3));
+  };
+
+  ///////////////////////////
+
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(queryDocs);
@@ -28,29 +48,16 @@ const Sidebar = () => {
     <aside className="lateralBar">
       <h2 className="blogTitle_">Novedades</h2>
       <div className="lateralContainer">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam
-          sunt ab id exercitationem quis!
-        </p>
-        <Link to={"/blog/1"}>ver mas</Link>
+        {posts &&
+          posts.map((post) => (
+            <div className="sb_blog_title">
+              <p>{post.data().title}</p>
+              <hr />
+              <Link to={post.id}>Ver más</Link>
+            </div>
+          ))}
       </div>
-      <hr />
-      <div className="lateralContainer">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam
-          sunt ab id exercitationem quis!
-        </p>
-        <Link to={"/blog/1"}>ver mas</Link>
-      </div>
-      <hr />
-      <div className="lateralContainer">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ullam
-          sunt ab id exercitationem quis!
-        </p>
-        <Link to={"/blog/1"}>ver mas</Link>
-      </div>
-      <hr />
+
       <div className="lateralContainer">
         <div className="lastBlogs">
           {/*  {postList.map((post, index) => (
