@@ -9,6 +9,8 @@ import StarEmpty from './star-empty.svg'
 import Heart from './heart.svg'
 import ShareNode from './shared-node.svg'
 import Carrito from './carrito.svg'
+import CTN from '../CTN/CTN';
+import Footer from '../Footer/Footer';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -190,6 +192,12 @@ function ProductDetail() {
 
           </div>
         </div>
+      </div>
+      <div className="ctn">
+        <CTN />
+      </div>
+      <div className="footer-blog">
+        <Footer />
       </div>
     </div>
   );

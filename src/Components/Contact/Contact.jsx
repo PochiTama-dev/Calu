@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './contact.css';
 import { Header } from '../Header/header';
+import CTN from '../CTN/CTN';
+import Footer from '../Footer/Footer';
 
 const Contact = () => {
   const [nombre, setNombre] = useState('');
@@ -134,6 +136,12 @@ const Contact = () => {
             Enviar
           </button>
         </div>
+        <div className="ctn">
+        <CTN />
+      </div>
+      <div className="footer-blog">
+        <Footer />
+      </div>
       </div>
     </>
   );
