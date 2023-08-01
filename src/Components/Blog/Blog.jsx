@@ -129,6 +129,7 @@ function Blog({ isAuth }) {
               ))}
             </div>
           </div>
+
           <Sidebar />
         </div>
       </div>

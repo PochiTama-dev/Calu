@@ -47,6 +47,10 @@
   .blogTitle {
     font-size: 44px;
     margin-top: 200px;
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .blogContainer {
     flex-wrap: wrap;
@@ -123,9 +127,6 @@
   }
 }
 @media (min-width: 1920px) {
-  .blog-sidebar {
-    display: flex;
-  }
   .blogContainer {
     flex-wrap: nowrap;
     width: 40%;
@@ -150,6 +151,10 @@
     display: flex;
     flex-direction: column;
     max-width: 390px;
+    height: fit-content;
     margin: 0 15px;
+  }
+  .blogTitle {
+    margin-right: 400px;
   }
 }
