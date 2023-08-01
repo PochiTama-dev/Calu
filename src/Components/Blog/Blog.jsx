@@ -74,7 +74,7 @@ function Blog({ isAuth }) {
       <Header />
       <Contact_button />
       <div className="BlogPage" ref={firstSection}>
-        <h1 className="blogTitle">NUESTRO BLOG</h1>
+        <h1 className="blogTitle_">NUESTRO BLOG</h1>
         <div className="blog-sidebar">
           <div className="postContainer">
             <div className="cardContainerblog">
@@ -99,7 +99,6 @@ function Blog({ isAuth }) {
                     />
                   </div>
                   <div className="cardHeaderblog">
-                    <div className="titleblog"></div>
                     <span>{post.time}</span>
                     <div className="deleteblog">
                       {isAuth && post.author && post.author.id === auth.currentUser?.uid && (

@@ -71,7 +71,7 @@ const News = () => {
               posts.map((post) => (
                 <a onClick={() => handlePostClick(post.id)}>
                   <Card_news
-                    image={<img src={post.data().imageUrl} width="150px" />}
+                    image={<img src={post.data().imageUrl} width="180px" />}
                     title={post.data().title}
                   ></Card_news>
                 </a>
