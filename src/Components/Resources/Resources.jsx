@@ -5,6 +5,9 @@ import { db } from "../../firebase-config";
 import "./resources.css";
 import { useState, useEffect } from "react";
 import Slider from "../Portfolio/Slider/Slider";
+import { Link, useNavigate } from "react-router-dom";
+import elipse from "./Card_resources/elipse.svg";
+import cart from "./Card_resources/cart.svg";
 
 const Resources = () => {
   const [cards, setCard] = useState([]);
@@ -35,7 +38,9 @@ const Resources = () => {
       window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
-
+  const handleClick = () => {
+    "caca";
+  };
   if (width > breakpoint) {
     return (
       <div className="res_ctn">
@@ -47,13 +52,13 @@ const Resources = () => {
               <Card_res
                 description={product.data().thumbnail} // Pass the thumbnail URL as the description
                 title={product.data().title}
-                btn={
-                  <a
-                    target="_blank"
-                    className="button_portfolio"
-                  >
-                    Ver más
-                  </a>
+                button={
+                  <Link to={`/product/${product.id}`}>
+                    <div className="res_cart">
+                      <img src={elipse} alt=" " className="elipse" />
+                      <img src={cart} alt=" " className="cart" />
+                    </div>
+                  </Link>
                 }
               ></Card_res>
             ))}
@@ -72,14 +77,6 @@ const Resources = () => {
             <Card_res
               description={product.data().thumbnail} // Pass the thumbnail URL as the description
               title={product.data().title}
-              btn={
-                <a
-                  target="_blank"
-                  className="button_portfolio"
-                >
-                  Ver más
-                </a>
-              }
             ></Card_res>
           ))}
       </Slider>
