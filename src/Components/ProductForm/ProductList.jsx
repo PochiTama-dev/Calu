@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react";
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  getDoc,
-} from "firebase/firestore";
-import { db, storage } from "../../firebase-config";
-import { Link, useNavigate } from "react-router-dom";
-import { ref, deleteObject } from "firebase/storage";
-import { Header } from "../Header/header";
-import "./product-list.css";
-import CTN from "../CTN/CTN";
-import Footer from "../Footer/Footer";
+
+import { useEffect, useState } from 'react';
+import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { db, storage } from '../../firebase-config';
+import { Link, useNavigate } from 'react-router-dom';
+import { ref, deleteObject } from 'firebase/storage';
+import { Header } from '../Header/header';
+import './product-list.css';
+import CTN from '../CTN/CTN';
+import Footer from '../Footer/Footer';
+import CarritoForm from './CarritoForm.svg'
+
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -97,29 +94,17 @@ function ProductList() {
         <h1>Lista de Productos</h1>
         <h2 className="our-products">Nuestro productos</h2>
 
-        <div className="products">
-          {products.map((product) => (
-            <div className="main-product" key={product.id}>
-              <div
-                className={`product-inner ${
-                  flippedProductId === product.id ? "flipped" : ""
-                }`}
-                onClick={() => handleFlipCard(product.id)}
-              >
-                <div
-                  className={`product-front ${
-                    flippedProductId === product.id ? "hidden" : ""
-                  }`}
-                >
-                  <img src={product.thumbnail} alt={product.title} />
-                </div>
-                <div
-                  className={`product-back ${
-                    flippedProductId === product.id ? "" : "hidden"
-                  }`}
-                >
-                  <p>{product.detail}</p>
-                </div>
+      <div className='products'>
+        {products.map((product) => (
+          <div className='main-product' key={product.id}>
+            <div
+              className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}
+              onClick={() => handleFlipCard(product.id)}
+            >
+              <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
+                <img className='product-img' src={product.thumbnail} alt={product.title} />
+                <img className='carrito-img' src={CarritoForm} alt="" />
+
               </div>
               <div className="product-price">
                 <p className="price">${product.price}</p>
