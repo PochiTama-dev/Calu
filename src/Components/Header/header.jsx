@@ -56,6 +56,7 @@ export const Header = () => {
                   <Link to="/create-post">Create Post</Link>
                   <Link to="/admin-crud">Create Services</Link>
                   <Link to="/admin-home">Edit Home</Link>
+                  <Link to="/email-list">Email List</Link>
 
                   <button onClick={signUserOut}>Log Out</button>
                 </div>

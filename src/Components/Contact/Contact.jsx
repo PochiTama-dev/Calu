@@ -3,12 +3,28 @@ import './contact.css';
 import { Header } from '../Header/header';
 import CTN from '../CTN/CTN';
 import Footer from '../Footer/Footer';
+import { db } from '../../firebase-config';
+import { collection, addDoc } from 'firebase/firestore';
 
 const Contact = () => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [telefono, setTelefono] = useState('');
   const [mensaje, setMensaje] = useState('');
+
+ 
+  const saveEmailToFirebase = async (email) => {
+    try {
+      const emailsCollectionRef = collection(db, 'email');
+      await addDoc(emailsCollectionRef, {
+        email,
+        timestamp: new Date(),
+      });
+      console.log('Email saved to Firebase successfully');
+    } catch (error) {
+      console.error('Error saving email to Firebase:', error);
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -66,6 +82,9 @@ const Contact = () => {
               setEmail('');
               setTelefono('');
               setMensaje('');
+
+              // Save the email to the "email" collection in Firebase
+              saveEmailToFirebase(email);
             } else {
               // Ocurrió un error al enviar el formulario
               alert('Hubo un error al enviar el formulario');
@@ -130,18 +149,18 @@ const Contact = () => {
             onChange={(event) => setMensaje(event.target.value)}
             required
           ></textarea>
+          <div className='buttonContainer'>
+            <button className='contact-button' type='submit'>
+              Enviar
+            </button>
+          </div>
         </form>
-        <div className='buttonContainer'>
-          <button className='contact-button' type='submit'>
-            Enviar
-          </button>
-        </div>
-        <div className="ctn">
+      </div>
+      <div className='ctn'>
         <CTN />
       </div>
-      <div className="footer-blog">
+      <div className='footer-blog'>
         <Footer />
-      </div>
       </div>
     </>
   );

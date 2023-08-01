@@ -19,6 +19,7 @@ import ProductList from './Components/ProductForm/ProductList';
 import PaymentGateway from './Components/Payment/Payment';
 import Cart from './Components/Cart/Cart';
 import { auth } from './firebase-config';
+import EmailList from './Components/Contact/EmailList';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -55,6 +56,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/services' element={<Services />} />
           <Route path='/payment' element={<PaymentGateway />} />
+          <Route path='/email-list' element={<EmailList />} />
         </Routes>
       </div>
     </Router>
