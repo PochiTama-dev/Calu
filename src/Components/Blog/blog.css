@@ -26,7 +26,8 @@
 }
 
 .postContainer {
-  width: fit-content;
+  min-width: 1000px;
+  min-height: 800px;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
