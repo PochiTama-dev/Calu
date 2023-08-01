@@ -25,7 +25,7 @@ iframe[src^="https://www.google.com/recaptcha/"] {
 }
 
 .grecaptcha-badge{
-  display: none;
+  display: none !important;
 }
 /* Estilos para dispositivos móviles */
 

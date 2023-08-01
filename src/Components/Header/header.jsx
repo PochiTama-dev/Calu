@@ -84,12 +84,12 @@ export const Header = ({ cartItem, handleDelete }) => {
             </div>
 
             <div className='cart-2'>
-              <div className='carrito' onClick={() => setShowCart(true)}>
-                <img src={cart} alt={cart} />
-                {!showCart && <p className='totalItems'>{cartItem.length}</p>}
-              </div>
-              {showCart && <Cart close={handleClose} cart={cartItem} handleDelete={handleDelete} />}
-            </div>
+  <div className='carrito' onClick={() => setShowCart(true)}>
+    <img src={cart} alt={cart} />
+    {Array.isArray(cartItem) && !showCart && <p className='totalItems'>{cartItem.length}</p>}
+  </div>
+  {showCart && <Cart close={handleClose} cart={cartItem} handleDelete={handleDelete} />}
+</div>
           </nav>
           <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
             <div>
