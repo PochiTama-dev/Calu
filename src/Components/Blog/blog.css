@@ -26,8 +26,6 @@
 }
 
 .postContainer {
-  min-width: 1000px;
-  min-height: 800px;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
@@ -197,6 +195,10 @@
     align-items: center;
     margin-top: 12vh;
   }
+  .postContainer {
+    min-width: 700px;
+    min-height: 400px;
+  }
 
   .card-blog .blogImage .arrow {
     width: 100px;
@@ -267,6 +269,11 @@
   .postContainer {
     width: fit-content;
   }
+  .postContainer {
+    min-width: 1000px;
+    min-height: 800px;
+  }
+
   .blog-sidebar {
     flex-wrap: nowrap;
     justify-content: initial;

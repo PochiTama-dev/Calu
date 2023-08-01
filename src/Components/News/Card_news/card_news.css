@@ -38,8 +38,9 @@
   width: 35px;
 }
 
-.image {
+.image_ {
   text-align: center;
+  margin-top: 15px;
 }
 
 .title_news {
@@ -52,8 +53,8 @@
 
 @media (max-width: 1024px) {
   .card_f_news {
-    width: 280px;
-    height: 260px;
+    width: 260px;
+    height: 250px;
   }
   .arrow_R {
     position: relative;

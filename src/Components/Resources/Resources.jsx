@@ -77,6 +77,14 @@ const Resources = () => {
             <Card_res
               description={product.data().thumbnail} // Pass the thumbnail URL as the description
               title={product.data().title}
+              button={
+                <Link to={`/product/${product.id}`}>
+                  <div className="res_cart">
+                    <img src={elipse} alt=" " className="elipse" />
+                    <img src={cart} alt=" " className="cart" />
+                  </div>
+                </Link>
+              }
             ></Card_res>
           ))}
       </Slider>
