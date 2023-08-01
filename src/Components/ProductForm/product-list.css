@@ -6,14 +6,12 @@
   position: relative;
 }
 
-.main-container h1{
+.main-container h1 {
   color: aqua;
 }
-.our-products{
-  color:#eb39d9
+.our-products {
+  color: #eb39d9;
 }
-
-
 
 .main-product {
   display: flex;
@@ -23,7 +21,6 @@
   width: 100%;
   position: relative;
   transition: transform 0.5s ease;
-  
 }
 
 .product-inner {
@@ -51,9 +48,7 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%,
-      rgba(185, 4, 139, 0.2) 60%);
-
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
 }
 
 .product-back {
@@ -65,10 +60,8 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%,
-      rgba(185, 4, 139, 0.2) 60%);
-      color: white;
-
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  color: white;
 }
 
 .hidden {
@@ -96,11 +89,12 @@
 }
 
 .product-price .carrito-price {
-  color: #3294BC;
+  color: #3294bc;
   font-weight: 700;
+  cursor: pointer;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
   .main-product {
     width: 50%;
   }
@@ -113,13 +107,12 @@
   }
 }
 
-@media(min-width:992px) {
+@media (min-width: 992px) {
   .main-product {
     width: 30%;
     display: block;
   }
 }
-
 
 @keyframes rotateFlip {
   0% {
@@ -133,11 +126,9 @@
   }
 }
 
-
 .product-inner.flipped {
   animation: rotateFlip 0.5s;
 }
-
 
 @keyframes rotateFlipReturn {
   0% {
@@ -150,7 +141,6 @@
     transform: rotateY(0deg) scaleX(1);
   }
 }
-
 
 .product-inner:not(.flipped) {
   animation: rotateFlipReturn 0.5s;
