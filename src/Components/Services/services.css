@@ -98,8 +98,7 @@ section {
     justify-content: center;
   }
   .slider_cards {
-    margin-top: 100px;
-    width: 350px;
+    margin-top: 50px;
   }
 }
 
@@ -107,8 +106,13 @@ section {
   .srv_title h1 {
     display: flex;
     justify-content: center;
-    font-size: 40px;
+
     margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services_container {
+    margin-top: 20px;
   }
 }
 
