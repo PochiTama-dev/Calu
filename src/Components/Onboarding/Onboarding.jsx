@@ -19,10 +19,15 @@ const Onboarding = () => {
     };
     getOnboarding();
   }, []);
-
+  const documentHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+  };
+  window.addEventListener("resize", documentHeight);
+  documentHeight();
   return (
-    <div>
-      <div className="onboarding">
+    <div className="onboarding">
+      <div className="onb_items">
         <div className="parrafo">
           <h1>{onboardinginfo.title}</h1>
 

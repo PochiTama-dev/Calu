@@ -1,9 +1,10 @@
 .about_container {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 15% 0% 7%;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 .about_items {
   display: flex;
