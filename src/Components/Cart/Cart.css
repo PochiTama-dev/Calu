@@ -1,25 +1,22 @@
-.cartPage {
-  width: 100%;
-  height: calc(100vh - 80px);
-  display: grid;
-  place-items: center;
-  margin-top: 500px;
-}
-
 .cartContainer {
-  width: 600px;
-  height: auto;
   padding: 20px;
   background-color: black;
   border-radius: 12px;
   color: white;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 200px;
 }
 
 .cartContainer h2 {
   text-align: center;
   margin: 0;
+  font-size: 24px;
 }
 
 .cartContainer .closeCart {
@@ -41,44 +38,29 @@
 }
 .cartItem p {
   display: flex;
-  width: 400px;
   justify-content: space-around;
   align-items: center;
+  font-size: 14px;
 }
 
 .cartContainer button {
-  margin-top: 20px;
+  margin-top: 0px;
   height: 40px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
 }
-@media (max-width: 900px) {
+.cartContainer .cartItem,
+.cartContainer .cartItem p,
+.cartContainer .total {
+  align-items: center;
+  margin: 5px auto;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
   .cartContainer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    max-width: 300px;
-    height: 200px;
-    overflow: scroll;
-  }
-  .cartContainer h2 {
-    font-size: 18px;
-  }
-  .cartItem,
-  .cartItem p,
-  .cartContainer .total {
-    font-size: 10px;
-    align-items: center;
-    margin: 5px auto;
-    width: 100%;
-  }
-  .cartContainer .total {
-  }
-  .cartItem .deleteItem button {
-    height: 20px;
-    font-size: 10px;
-    margin: 2px;
+    height: 600px;
   }
 }
