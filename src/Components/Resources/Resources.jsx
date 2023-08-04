@@ -63,6 +63,9 @@ const Resources = () => {
               ></Card_res>
             ))}
         </div>
+        <Link className="btn_news" to={"/product-list"}>
+          VER MAS
+        </Link>
       </div>
     );
   }
@@ -88,6 +91,9 @@ const Resources = () => {
             ></Card_res>
           ))}
       </Slider>
+      <button className="btn_news" onClick={() => ""}>
+        VER MAS
+      </button>
     </div>
   );
 };

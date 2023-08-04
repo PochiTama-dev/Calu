@@ -4,10 +4,19 @@
   position: fixed;
   top: 0;
   z-index: 99;
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 0%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 60%, transparent) bottom,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+  background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px),
+    100% calc(50% - 5px), 100% 100%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(1px);
 }
 
 .header_items {
   margin: 0 2% 0 5.5%;
+  height: 130px;
 }
 
 ::-webkit-scrollbar {
@@ -15,7 +24,7 @@
 }
 
 .logoCalu {
-  height: 11rem;
+  height: 9rem;
   margin: 10px 100px 0 0;
 }
 
@@ -69,6 +78,8 @@
   color: #ffffff;
   border: none;
   cursor: pointer;
+  font-size: 18px;
+  margin-left: -60px;
 }
 
 .admin-dropdown {
@@ -127,7 +138,7 @@
     width: 90%;
     height: 90%;
     display: flex;
-    margin: 8px 0 0 0;
+    margin: 15px 0 0 0;
     flex-direction: column;
     justify-content: space-around;
   }
@@ -201,7 +212,8 @@
       linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
+    background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px),
+      100% calc(50% - 5px), 100% 100%;
     background-repeat: no-repeat;
     backdrop-filter: blur(1px);
   }

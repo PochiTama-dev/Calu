@@ -34,7 +34,9 @@ function Blog({ isAuth }) {
       await deleteDoc(postDoc);
 
       // Remove the deleted post from the postList state without refreshing the page
-      setPostList((prevPostList) => prevPostList.filter((post) => post.id !== id));
+      setPostList((prevPostList) =>
+        prevPostList.filter((post) => post.id !== id)
+      );
     } catch (error) {
       console.error("Error deleting post:", error);
     } finally {
@@ -101,27 +103,29 @@ function Blog({ isAuth }) {
                   <div className="cardHeaderblog">
                     <span>{post.time}</span>
                     <div className="deleteblog">
-                      {isAuth && post.author && post.author.id === auth.currentUser?.uid && (
-                        <>
-                          <button
-                            onClick={() => {
-                              deletePost(post.id, post.imageUrl);
-                            }}
-                            className="deleteblogButton"
-                            disabled={isLoading}
-                          >
-                            {isLoading ? "Deleting..." : "Delete"}
-                          </button>
-                          <button
-                            onClick={() => {
-                              editPost(post.id);
-                            }}
-                            className="editblogButton"
-                          >
-                            Edit
-                          </button>
-                        </>
-                      )}
+                      {isAuth &&
+                        post.author &&
+                        post.author.id === auth.currentUser?.uid && (
+                          <>
+                            <button
+                              onClick={() => {
+                                deletePost(post.id, post.imageUrl);
+                              }}
+                              className="deleteblogButton"
+                              disabled={isLoading}
+                            >
+                              {isLoading ? "Deleting..." : "Delete"}
+                            </button>
+                            <button
+                              onClick={() => {
+                                editPost(post.id);
+                              }}
+                              className="editblogButton"
+                            >
+                              Edit
+                            </button>
+                          </>
+                        )}
                     </div>
                   </div>
                   <div className="cardFooterblog"></div>
@@ -132,12 +136,6 @@ function Blog({ isAuth }) {
 
           <Sidebar />
         </div>
-      </div>
-      <div className="ctn">
-        <CTN />
-      </div>
-      <div className="footer-blog">
-        <Footer />
       </div>
     </div>
   );

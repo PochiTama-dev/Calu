@@ -59,14 +59,23 @@ const Services = () => {
                   <div className="srv_cards" key={index}>
                     <div className="card_srv_cont">
                       <div className="card_srv_info">
-                        <div className="title_srv">{servicio.title}</div>
-                        <div className="sub_d">{servicio.sub}</div>
-                        <div className="des_1d">
-                          <div>{servicio.des_1}</div>
-                          <br />
-                          <div>{servicio.des_2}</div>
+                        <div className="title_srv">
+                          <h1>{servicio.title}</h1>
                         </div>
-                        <div className="des_3d">{servicio.des_3}</div>
+                        <div className="sub_d">
+                          <h2>{servicio.sub}</h2>
+                        </div>
+                        <div className="des_1d">
+                          <p>{servicio.des_1}</p>
+                        </div>
+                        <br />
+                        <div className="des_2d">
+                          <p>{servicio.des_2}</p>
+                        </div>
+
+                        <div className="des_3d">
+                          <p>{servicio.des_3}</p>
+                        </div>
                       </div>
                       <div className="srv_icon">
                         <div>
