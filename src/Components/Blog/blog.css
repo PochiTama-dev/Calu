@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
 }
 
 .contact_button_ctn {
@@ -26,6 +27,7 @@
 }
 
 .postContainer {
+  -webkit-backdrop-filter: blur(10px);
 
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
@@ -34,15 +36,8 @@
   border-radius: 20px;
 }
 
-.sidebar {
-  width: 20%;
-  height: 100%;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.blog-sidebar .lateralBar {
+  width: initial;
 }
 
 .cardContainerblog {
@@ -191,10 +186,7 @@
   }
 }
 
-@media (min-width: 900px) {
-  .postContainer {
-    min-width: 900px;
-  }
+@media (min-width: 768px) {
   .postContainer .cardContainerblog {
     justify-content: flex-start;
     overflow: scroll;
@@ -208,7 +200,7 @@
     margin-top: 12vh;
   }
   .postContainer {
-    min-width: 700px;
+    width: 400px;
     min-height: 400px;
   }
 
@@ -251,10 +243,8 @@
     font-size: 32px;
   }
 
-  .lateralBar {
-    position: absolute;
-    right: 0;
-    width: 100%;
+  .blog-sidebar .lateralBar {
+    width: 35%;
     margin-top: 0;
   }
   .ctn {
@@ -272,6 +262,8 @@
 @media (min-width: 1920px) {
   .postContainer {
     min-width: 1000px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .postContainer {
