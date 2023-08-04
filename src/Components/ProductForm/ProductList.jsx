@@ -7,14 +7,15 @@ import { Header } from '../Header/header';
 import './product-list.css';
 import CTN from '../CTN/CTN';
 import Footer from '../Footer/Footer';
+import { useCustomContext } from '../../Hooks/Context/Context';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [flippedProductId, setFlippedProductId] = useState(null);
-  const [cart, setCart] = useState([]);
   const isUserAuthenticated = localStorage.getItem('isAuth') === 'true';
   const navigate = useNavigate();
+  const { cart, addToCart, removeFromCart } = useCustomContext();
 
   const productsCollectionRef = collection(db, 'e-commerce');
 
@@ -71,16 +72,13 @@ function ProductList() {
     const querySnapshot = doc(db, 'e-commerce', id);
     const docSnapshot = await getDoc(querySnapshot);
     const productToAdd = docSnapshot.data();
-    setCart((prevCart) => [...prevCart, productToAdd]);
-  };
-  const handleDelete = (productTitle) => {
-    setCart((prevCart) => prevCart.filter((product) => product.title !== productTitle));
+    addToCart(productToAdd);
   };
 
   return (
     <div>
       <div className='main-container'>
-        <Header cartItem={cart} handleDelete={handleDelete} />
+        <Header cartItem={cart} handleDelete={removeFromCart} />
 
         <br />
         <br />
@@ -91,8 +89,8 @@ function ProductList() {
         <h2 className='our-products'>Nuestro productos</h2>
 
         <div className='products'>
-          {products.map((product) => (
-            <div className='main-product' key={product.id}>
+          {products.map((product, index) => (
+            <div className='main-product' key={index}>
               <div
                 className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}
                 onClick={() => handleFlipCard(product.id)}
