@@ -69,12 +69,18 @@ const News = () => {
           <div className="cards_novedades">
             {posts &&
               posts.map((post) => (
-                <a onClick={() => handlePostClick(post.id)}>
+                <div>
                   <Card_news
                     image={<img src={post.data().imageUrl} width="180px" />}
                     title={post.data().title}
                   ></Card_news>
-                </a>
+                  <button
+                    className="btn_news"
+                    onClick={() => handlePostClick(post.id)}
+                  >
+                    VER MAS
+                  </button>
+                </div>
               ))}
           </div>
         </div>
@@ -95,12 +101,18 @@ const News = () => {
       <Slider>
         {posts &&
           posts.map((post) => (
-            <a onClick={() => handlePostClick(post.id)}>
+            <div>
               <Card_news
                 image={<img src={post.data().imageUrl} width="150px" />}
                 title={post.data().title}
               ></Card_news>
-            </a>
+              <button
+                className="btn_news"
+                onClick={() => handlePostClick(post.id)}
+              >
+                VER MAS
+              </button>
+            </div>
           ))}
       </Slider>
 

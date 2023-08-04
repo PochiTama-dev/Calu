@@ -1,9 +1,8 @@
 .footer_container {
-  position: absolute;
   z-index: 2;
   width: 100%;
-  bottom: 0;
   position: absolute;
+  bottom: 0;
   background: linear-gradient(transparent, rgba(4, 25, 88, 1) 60%) top,
     linear-gradient(rgba(4, 25, 88, 1) 100%, transparent) bottom;
   background-size: 100% 50%, 100% 51%;
@@ -129,13 +128,5 @@ li span {
   }
   li {
     font-size: 18px;
-  }
-}
-@media (max-height: 700px) {
-  .logo_calu img {
-    display: none;
-  }
-  .logo_calu p {
-    display: none;
   }
 }

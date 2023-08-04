@@ -1,7 +1,7 @@
 .res_ctn {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
 }
 .res_title {
@@ -16,4 +16,7 @@
   margin-top: 20px;
   margin-right: 110px;
   margin-left: 110px;
+}
+.btn_news {
+  text-decoration: none;
 }
