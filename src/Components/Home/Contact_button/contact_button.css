@@ -15,6 +15,7 @@
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
   background-size: 100% 49.05%, 100% 51%;
   background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
 }
 .contact_ctn {
@@ -31,6 +32,7 @@
 
   background-size: 100% 49.05%, 100% 51%;
   background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur (3px);
   backdrop-filter: blur(3px);
   border-radius: 50px;
   position: relative;
