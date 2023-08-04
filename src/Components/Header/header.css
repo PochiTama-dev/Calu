@@ -11,10 +11,19 @@
   position: fixed;
   top: 0;
   z-index: 99;
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 0%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 60%, transparent) bottom,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+  background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
 }
 
 .header_items {
   margin: 0 2% 0 5.5%;
+  height: 130px;
 }
 
 ::-webkit-scrollbar {
@@ -22,19 +31,14 @@
 }
 
 .logoCalu {
-  height: 11rem;
+  height: 9rem;
   margin: 10px 100px 0 0;
 }
 
 .navBar nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-right: 35px;
-  -ms-flex-pack: distribute;
   justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-right: 10px;
   width: 90%;
@@ -42,11 +46,7 @@
 }
 
 .links_ctn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
   margin-right: 100px;
@@ -85,6 +85,8 @@
   color: #ffffff;
   border: none;
   cursor: pointer;
+  font-size: 18px;
+  margin-left: -60px;
 }
 
 .admin-dropdown {
@@ -93,15 +95,9 @@
   right: -60px;
   background-color: #f9f9f9;
   min-width: 160px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -124,8 +120,6 @@
 }
 .links .carrito {
   height: initial;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   cursor: pointer;
   width: 20px;
@@ -150,15 +144,9 @@
     border: solid 2px rgb(206, 206, 206);
     width: 90%;
     height: 90%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    margin: 8px 0 0 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
+    margin: 15px 0 0 0;
     flex-direction: column;
-    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
 
@@ -178,20 +166,12 @@
     height: 5vh;
     margin: 15px;
     cursor: pointer;
-    -webkit-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
   }
 
   .navBar nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -200,8 +180,6 @@
     width: 4vh;
     height: 5px;
     margin: 6px;
-    -webkit-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     display: block;
     border-radius: 5px;
@@ -209,7 +187,6 @@
 
   .btn.cross i:nth-child(1) {
     -webkit-transform: translateY(200%) rotate(-135deg);
-    -ms-transform: translateY(200%) rotate(-135deg);
     transform: translateY(200%) rotate(-135deg);
   }
 
@@ -219,7 +196,6 @@
 
   .btn.cross i:nth-child(3) {
     -webkit-transform: translateY(-200%) rotate(135deg);
-    -ms-transform: translateY(-200%) rotate(135deg);
     transform: translateY(-200%) rotate(135deg);
     position: relative;
     bottom: 2px;
@@ -231,48 +207,17 @@
     left: 0;
     top: 0;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     margin-top: 25px;
     height: 250px;
     -webkit-transform: translateY(40%);
-    -ms-transform: translateY(40%);
     transform: translateY(40%);
     opacity: 0.9;
     z-index: 99;
     overflow-y: auto;
-    -webkit-transition: opacity 0.3s ease-in;
-    -o-transition: opacity 0.3s ease-in;
     transition: opacity 0.3s ease-in;
-    background: -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          from(transparent),
-          color-stop(10%, rgba(4, 25, 88, 0.8))
-        )
-        top,
-      -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          color-stop(95%, rgba(4, 25, 88, 0.8)),
-          to(transparent)
-        ) bottom,
-      -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))) top,
-      -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))) bottom;
-    background: -o-linear-gradient(transparent, rgba(4, 25, 88, 0.8) 10%) top,
-      -o-linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
-      -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
-      -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
     background: linear-gradient(transparent, rgba(4, 25, 88, 0.8) 10%) top,
       linear-gradient(rgba(4, 25, 88, 0.8) 95%, transparent) bottom,
       linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
@@ -285,7 +230,6 @@
 
   .links {
     -webkit-transform: translateY(-200%);
-    -ms-transform: translateY(-200%);
     transform: translateY(-200%);
   }
 
@@ -463,6 +407,7 @@
       }
 
       .btn.cross i:nth-child(1) {
+        -webkit-transform: translateY(200%) rotate(-135deg);
         transform: translateY(200%) rotate(-135deg);
       }
 
@@ -471,6 +416,7 @@
       }
 
       .btn.cross i:nth-child(3) {
+        -webkit-transform: translateY(-200%) rotate(135deg);
         transform: translateY(-200%) rotate(135deg);
         position: relative;
         bottom: 2px;
@@ -487,6 +433,7 @@
         align-items: center;
         margin-top: 25px;
         height: 250px;
+        -webkit-transform: translateY(40%);
         transform: translateY(40%);
         opacity: 0.9;
         z-index: 99;
@@ -499,10 +446,12 @@
         background-size: 100% 49.05%, 100% 51%, 100% calc(50% - 5px), 100% calc(50% - 5px),
           100% 100%;
         background-repeat: no-repeat;
+        -webkit-backdrop-filter: blur(1px);
         backdrop-filter: blur(1px);
       }
 
       .links {
+        -webkit-transform: translateY(-200%);
         transform: translateY(-200%);
       }
 
@@ -543,11 +492,7 @@
   }
   .carrito {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: flex-end;
   }
   .carrito img {

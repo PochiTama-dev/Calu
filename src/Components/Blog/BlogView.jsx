@@ -82,13 +82,6 @@ function BlogView() {
             <hr />
           </div>
         </div>
-
-        <div className="ctn">
-          <CTN />
-        </div>
-        <div className="footer-blogView">
-          <Footer />
-        </div>
       </div>
     </>
   );

@@ -1,7 +1,8 @@
 .footer_container {
-  position: absolute;
   z-index: 2;
   width: 100%;
+  position: absolute;
+  bottom: 0;
   background: linear-gradient(transparent, rgba(4, 25, 88, 1) 60%) top,
     linear-gradient(rgba(4, 25, 88, 1) 100%, transparent) bottom;
   background-size: 100% 50%, 100% 51%;
@@ -82,5 +83,52 @@ li span {
       linear-gradient(rgba(4, 25, 88, 1) 100%, transparent) bottom;
     background-size: 100% 80%, 100% 51%;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer_container {
+    flex-direction: column;
+  }
+  .logo_calu {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo_calu img {
+    width: 50%;
+  }
+  .logo_calu p {
+    margin-top: -20px;
+  }
+
+  ul {
+    margin-top: -20px;
+  }
+
+  .servicios {
+    margin-top: -10px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .servicios h1 {
+    font-weight: 100;
+    margin-bottom: 40px;
+    font-size: 24px;
+  }
+  .redes {
+    font-size: 20px;
+    color: rgb(250, 249, 249);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .redes h1 {
+    font-weight: 100;
+    font-size: 24px;
+  }
+  li {
+    font-size: 18px;
   }
 }

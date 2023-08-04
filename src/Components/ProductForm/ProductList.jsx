@@ -7,7 +7,6 @@ import { Header } from '../Header/header';
 import './product-list.css';
 import CTN from '../CTN/CTN';
 import Footer from '../Footer/Footer';
-import CarritoForm from './CarritoForm.svg';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -82,12 +81,13 @@ function ProductList() {
     <div>
       <div className='main-container'>
         <Header cartItem={cart} handleDelete={handleDelete} />
+
         <br />
         <br />
         <br />
         <br />
         <br />
-        <h1>Lista de Productos</h1>
+        <h1 className='products_title'>Lista de Productos</h1>
         <h2 className='our-products'>Nuestro productos</h2>
 
         <div className='products'>
@@ -98,33 +98,26 @@ function ProductList() {
                 onClick={() => handleFlipCard(product.id)}
               >
                 <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
-                  <img className='product-img' src={product.thumbnail} alt={product.title} />
-                  <img className='carrito-img' src={CarritoForm} alt='' />
+                  <img src={product.thumbnail} alt={product.title} width='180px' />
                 </div>
-                <div className='product-price'>
-                  <p className='price'>${product.price}</p>
-                  <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
-                    Agregar al carrito
-                  </p>
-                  <Link to={`/product/${product.id}`}>Ver detalles</Link>
+                <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
+                  <p>{product.detail}</p>
                 </div>
-                {isUserAuthenticated && (
-                  <>
-                    <button onClick={() => handleEditProduct(product.id)}>Editar</button>
-                    <button onClick={() => deleteProduct(product.id, product.thumbnail)}>
-                      Eliminar
-                    </button>
-                  </>
-                )}
+              </div>
+              <div className='product-price'>
+                <p className='price'>${product.price}</p>
+                <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
+                  Agregar al carrito
+                </p>
+                <Link className='link_' to={`/product/${product.id}`}>
+                  Ver Detalles
+                </Link>
               </div>
             </div>
           ))}
           <div className='ctn'>
             <CTN />
           </div>
-        </div>
-        <div className='footer-blog'>
-          <Footer />
         </div>
       </div>
     </div>

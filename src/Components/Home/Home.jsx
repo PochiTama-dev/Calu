@@ -18,7 +18,6 @@ const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
   const sectionStyles = {
-    height: "100vh",
     transition: "transform 0.5s ease-in-out",
   };
 

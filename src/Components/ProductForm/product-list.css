@@ -6,14 +6,20 @@
   position: relative;
   margin-top: 200px;
 }
-
+.products_title {
+  margin-top: -20px;
+}
 .main-container h1 {
   color: aqua;
 }
 .our-products {
   color: #eb39d9;
 }
-
+.link_ {
+  color: azure;
+  text-decoration: none;
+  font-weight: bold;
+}
 .main-product {
   display: flex;
   flex-direction: column;
@@ -56,12 +62,11 @@
 }
 
 .carrito-img {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
 
 .product-back {
@@ -129,8 +134,7 @@
     position: absolute;
     bottom: 0px;
     left: 100px;
-
-}
+  }
 }
 
 @media (min-width: 992px) {
@@ -144,8 +148,7 @@
     position: absolute;
     bottom: 0px;
     left: 160px;
-
-}
+  }
 }
 
 @keyframes rotateFlip {
