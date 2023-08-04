@@ -89,8 +89,8 @@ function ProductList() {
         <h2 className='our-products'>Nuestro productos</h2>
 
         <div className='products'>
-          {products.map((product, index) => (
-            <div className='main-product' key={index}>
+          {products.map((product) => (
+            <div className='main-product' key={product.id}>
               <div
                 className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}
                 onClick={() => handleFlipCard(product.id)}

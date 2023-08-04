@@ -23,10 +23,7 @@
   width: 250px;
   height: 60px;
   text-decoration: none;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 50px;
   border: none;
   cursor: pointer;
@@ -40,7 +37,6 @@
 .ctn_p {
   color: white;
   font-weight: bold;
-  margin-bottom: 90px;
   text-align: center;
 }
 .ctn_p p {
