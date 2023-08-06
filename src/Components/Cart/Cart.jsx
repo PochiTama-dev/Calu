@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 import { useEffect, useState } from 'react';
 
 function Cart({ close, cart, handleDelete }) {
   const [total, setTotal] = useState(0);
+  const navigate = useNavigate();
   useEffect(() => {
     const calculateTotal = () => {
       let newTotal = 0;
@@ -18,6 +20,9 @@ function Cart({ close, cart, handleDelete }) {
     calculateTotal();
   }, [cart]);
 
+  const handlePay = () => {
+    navigate('/payment');
+  };
   return (
     <div className='cartPage'>
       <div className='cartContainer'>
@@ -46,7 +51,7 @@ function Cart({ close, cart, handleDelete }) {
           <span>Total</span>
           <span>${total}</span>
         </p>
-        <button>Iniciar compra</button>
+        <button onClick={handlePay}>Iniciar compra</button>
       </div>
     </div>
   );

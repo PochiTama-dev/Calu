@@ -13,12 +13,14 @@ import '../Home/Contact_button/contact_button.css';
 import CardNews from '../News/Card_news/Card_news';
 import arrow_L from '../Home/icon_arrow_left.svg';
 import CardBlogDev from './CardBlogDev';
+import { useCustomContext } from '../../Hooks/Context/Context';
 
 function Blog({ isAuth }) {
   const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
+  const { cart, removeFromCart } = useCustomContext();
 
   const deletePost = async (id, imageUrl) => {
     setIsLoading(true);
@@ -72,7 +74,7 @@ function Blog({ isAuth }) {
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
       </button>
 
-      <Header />
+      <Header cartItem={cart} handleDelete={removeFromCart} />
       <Contact_button />
       <div className='BlogPage' ref={firstSection}>
         <h1 className='blogTitle_'>NUESTRO BLOG</h1>
