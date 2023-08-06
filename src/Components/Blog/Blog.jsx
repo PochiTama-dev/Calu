@@ -12,6 +12,7 @@ import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
 import CardNews from '../News/Card_news/Card_news';
 import arrow_L from '../Home/icon_arrow_left.svg';
+import CardBlogDev from './CardBlogDev';
 import { useCustomContext } from '../../Hooks/Context/Context';
 
 function Blog({ isAuth }) {
@@ -125,6 +126,9 @@ function Blog({ isAuth }) {
                   <div className='cardFooterblog'></div>
                 </div>
               ))}
+              {/* <CardBlogDev /> */}
+              {/* <CardBlogDev /> */}
+              {/* <CardBlogDev /> */}
             </div>
           </div>
 
