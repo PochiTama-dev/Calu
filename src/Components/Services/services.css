@@ -47,8 +47,8 @@
   -ms-flex-pack: center;
   justify-content: center;
   margin: 130px 10px 30px 10px;
-  height: 100%;
 }
+
 .card_srv_cont_inv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,15 +61,14 @@
   -ms-flex-pack: center;
   justify-content: center;
   margin: 30px 10px 30px 10px;
-  height: 450px;
 }
 .card_srv_info {
   max-width: 1600px;
-  margin: -130px 50px 0 20px;
+  margin: -100px 50px 0 20px;
   display: flex;
-
   flex-direction: column;
 }
+
 .card_srv_info_inv {
   max-width: 1600px;
   display: -webkit-box;
@@ -83,7 +82,8 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0 20px 5px 5px;
+
+  margin: -90px 50px 0 110px;
 }
 .srv_icon {
   display: -webkit-box;
@@ -96,6 +96,7 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-top: -50px;
 }
 .srv_icon img {
   height: 100%;
