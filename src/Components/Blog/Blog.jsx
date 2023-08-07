@@ -126,9 +126,6 @@ function Blog({ isAuth }) {
                   <div className='cardFooterblog'></div>
                 </div>
               ))}
-              {/* <CardBlogDev /> */}
-              {/* <CardBlogDev /> */}
-              {/* <CardBlogDev /> */}
             </div>
           </div>
 
