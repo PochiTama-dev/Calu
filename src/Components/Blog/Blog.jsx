@@ -16,6 +16,7 @@ import CardBlogDev from './CardBlogDev';
 import { useCustomContext } from '../../Hooks/Context/Context';
 
 function Blog({ isAuth }) {
+  const [hover, sethover] = useState(true);
   const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const postsCollectionRef = collection(db, 'posts');
@@ -68,6 +69,13 @@ function Blog({ isAuth }) {
     firstSection.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleMouseEnter = (id) => {
+    sethover(id);
+  };
+
+  const handleMouseLeave = () => {
+    sethover(false);
+  };
   return (
     <div className='blog'>
       <button onClick={scrollToTop}>
@@ -82,7 +90,13 @@ function Blog({ isAuth }) {
           <div className='postContainer'>
             <div className='cardContainerblog'>
               {postList.map((post) => (
-                <div className='card-blog' key={post.id} onClick={() => handlePostClick(post.id)}>
+                <div
+                  className='card-blog'
+                  key={post.id}
+                  onClick={() => handlePostClick(post.id)}
+                  onMouseEnter={() => handleMouseEnter(post.id)}
+                  onMouseLeave={() => handleMouseLeave}
+                >
                   <div className='blogImage'>
                     <CardNews
                       image={
@@ -96,6 +110,9 @@ function Blog({ isAuth }) {
                       description={post.postText}
                       title={<h2>{post.title}</h2>}
                     />
+                  </div>
+                  <div className='container-leermas'>
+                    {hover === post.id && <p className='leerMas'>{'Ver más'}</p>}
                   </div>
                   <div className='cardHeaderblog'>
                     <span>{post.time}</span>
@@ -126,9 +143,6 @@ function Blog({ isAuth }) {
                   <div className='cardFooterblog'></div>
                 </div>
               ))}
-              {/* <CardBlogDev /> */}
-              {/* <CardBlogDev /> */}
-              {/* <CardBlogDev /> */}
             </div>
           </div>
 

@@ -74,10 +74,17 @@
   font-size: 18px;
   width: 70%;
 }
-
+.card-blog .container-leermas .leerMas {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.card-blog .leerMas {
+  color: #eb39d9;
+  position: relative;
+  font-weight: bold;
+}
 .card-blog .blogImage img {
-  /*  border-radius: 30% 30% 0 0;*/
-
   object-fit: cover;
   object-position: top;
   margin: 0;
@@ -89,13 +96,6 @@
   white-space: nowrap;
   height: 40px;
   margin-top: -2px;
-  margin-left: 30px;
-}
-
-.card-blog .leerMas {
-  color: #eb39d9;
-  position: relative;
-  font-weight: bold;
 }
 
 .titleblog {
@@ -151,10 +151,6 @@
   width: 30px;
   height: 60px;
   margin: 0;
-}
-.card-blog .leerMas {
-  position: initial;
-  text-align: center;
 }
 
 .card-blog .cardTextblogContainer {
@@ -213,11 +209,7 @@
     position: absolute;
     margin-left: 130px;
   }
-  .card-blog .leerMas {
-    position: absolute;
-    width: 48%;
-    text-align: end;
-    margin-top: 20px;
+  .card-blog .container-leermas .leerMas {
     font-size: 19px;
   }
   .card-blog h2 {
@@ -226,12 +218,6 @@
   }
   .card-blog .blogImage .arrow img {
     width: 50px;
-  }
-
-  .card-blog p {
-    font-size: 18px;
-    margin: 0;
-    width: 80%;
   }
 
   .card-blog .cardHeaderblog .deleteblog {
@@ -268,7 +254,7 @@
 
 @media (min-width: 1025px) {
   .postContainer {
-    width: 1000px;
+    width: 75%;
     min-height: 800px;
   }
 
@@ -276,10 +262,13 @@
     flex-wrap: nowrap;
   }
   .postContainer .cardContainerblog {
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 250px;
+    width: 100%;
   }
   .postContainer .cardContainerblog .card-blog .cardHeaderblog {
     margin-left: auto;
@@ -291,7 +280,8 @@
     justify-content: flex-start;
   }
   .card-blog .blogImage .card_news .card_cont .card_f_news {
-    width: 300px;
+    width: 70%;
+    height: 70%;
   }
 
   .card-blog .blogImage h2 {
@@ -304,9 +294,8 @@
   .card-blog button {
     width: initial;
   }
-  .card-blog .leerMas {
-    width: 430px;
-    font-size: 24px;
+  .card-blog .container-leermas {
+    width: initial;
   }
   .postContainer .card-blog .cardHeaderblog p {
     width: 65%;
