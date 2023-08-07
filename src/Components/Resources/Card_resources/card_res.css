@@ -63,7 +63,22 @@
   position: relative;
   width: 25px;
 }
-
+@media (max-width: 1024px) {
+  .card_res {
+    width: 260px;
+    height: 240px;
+  }
+  .res_img {
+    width: 140px;
+    height: 120px;
+  }
+  .res_description {
+    margin: 5px auto 0 auto;
+  }
+  .res_cart {
+    margin: 200px 0 0 -290px;
+  }
+}
 @media (max-width: 450px) {
   .card_res {
     width: 240px;
@@ -72,10 +87,7 @@
   .res_cart {
     margin: 180px 0 0 -260px;
   }
-  .res_img {
-    width: 150px;
-    height: 130px;
-  }
+
   .res_description {
     font-weight: bold;
     color: white;

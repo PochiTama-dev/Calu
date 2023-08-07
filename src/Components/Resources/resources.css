@@ -20,3 +20,8 @@
 .btn_news {
   text-decoration: none;
 }
+@media (max-height: 600px) {
+  .res_items {
+    margin-top: 150px;
+  }
+}
