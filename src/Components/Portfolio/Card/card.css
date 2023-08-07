@@ -34,8 +34,8 @@
 }
 @media (max-width: 1024px) {
   .card {
-    max-width: 280px;
-    height: 260px;
+    max-width: 260px;
+    height: 240px;
   }
 
   .title {

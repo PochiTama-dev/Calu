@@ -8,7 +8,8 @@ import Star from "./star.svg";
 import StarEmpty from "./star-empty.svg";
 import Heart from "./heart.svg";
 import ShareNode from "./shared-node.svg";
-import Carrito from "./carrito.svg";
+import cart from "../Resources/Card_resources/cart.svg";
+import elipse from "../Resources/Card_resources/elipse.svg";
 import CTN from "../CTN/CTN";
 import Footer from "../Footer/Footer";
 
@@ -138,8 +139,9 @@ function ProductDetail() {
                 <p>Tipo de libro</p>
                 <p>$0000</p>
               </div>
-              <div className="carrito-button">
-                <img src={Carrito} alt="" />
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
               </div>
             </div>
 
@@ -153,8 +155,9 @@ function ProductDetail() {
                 <p>Tipo de libro</p>
                 <p>$0000</p>
               </div>
-              <div className="carrito-button">
-                <img src={Carrito} alt="" />
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
               </div>
             </div>
             <div className="book">
@@ -167,18 +170,13 @@ function ProductDetail() {
                 <p>Tipo de libro</p>
                 <p>$0000</p>
               </div>
-              <div className="carrito-button">
-                <img src={Carrito} alt="" />
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="ctn">
-        <CTN />
-      </div>
-      <div className="footer-blog">
-        <Footer />
       </div>
     </div>
   );

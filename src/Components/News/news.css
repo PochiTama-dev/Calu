@@ -67,6 +67,11 @@
   font-weight: bold;
   cursor: pointer;
 }
+@media (max-height: 600px) {
+  .novedades_items {
+    margin-top: 150px;
+  }
+}
 @media (max-width: 1330px) {
   .cards_novedades a {
     margin-right: 20px;

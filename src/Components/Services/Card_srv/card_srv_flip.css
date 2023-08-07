@@ -1,7 +1,7 @@
 .flip-card {
   display: flex;
   margin: 30px 10px 30px 10px;
-
+  width: 350px;
   height: 360px;
   perspective: 1000px; /* efecto 3d*/
 }

@@ -89,35 +89,37 @@ const News = () => {
   }
   return (
     <div className="novedades_container">
-      <div className="news_text">
-        <div className="edit">
-          <h1 className="title_novedades">{newsinfo.title}</h1>
+      <div className="novedades_items">
+        <div className="news_text">
+          <div className="edit">
+            <h1 className="title_novedades">{newsinfo.title}</h1>
+          </div>
+          <div className="edit">
+            <p>{newsinfo.t1}</p>
+          </div>
         </div>
-        <div className="edit">
-          <p>{newsinfo.t1}</p>
-        </div>
-      </div>
-      <div className="cards_novedades"></div>
-      <Slider>
-        {posts &&
-          posts.map((post) => (
-            <div>
-              <Card_news
-                image={<img src={post.data().imageUrl} width="150px" />}
-                title={post.data().title}
-              ></Card_news>
-              <button
-                className="btn_news"
-                onClick={() => handlePostClick(post.id)}
-              >
-                VER MAS
-              </button>
-            </div>
-          ))}
-      </Slider>
+        <div className="cards_novedades"></div>
+        <Slider>
+          {posts &&
+            posts.map((post) => (
+              <div>
+                <Card_news
+                  image={<img src={post.data().imageUrl} width="150px" />}
+                  title={post.data().title}
+                ></Card_news>
+                <button
+                  className="btn_news"
+                  onClick={() => handlePostClick(post.id)}
+                >
+                  VER MAS
+                </button>
+              </div>
+            ))}
+        </Slider>
 
-      <div className="btn_cont">
-        <button className="news_btn"></button>
+        <div className="btn_cont">
+          <button className="news_btn"></button>
+        </div>
       </div>
     </div>
   );
