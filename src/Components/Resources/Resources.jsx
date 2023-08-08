@@ -65,7 +65,7 @@ const Resources = () => {
               ))}
           </div>
           <Link className="btn_news" to={"/product-list"}>
-            VER MAS
+            Ver Más
           </Link>
         </div>
       </div>
@@ -95,7 +95,7 @@ const Resources = () => {
             ))}
         </Slider>
         <button className="btn_news" onClick={() => ""}>
-          VER MAS
+          Ver Más
         </button>
       </div>
     </div>

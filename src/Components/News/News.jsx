@@ -78,7 +78,7 @@ const News = () => {
                     className="btn_news"
                     onClick={() => handlePostClick(post.id)}
                   >
-                    VER MAS
+                    Ver Más
                   </button>
                 </div>
               ))}
@@ -111,7 +111,7 @@ const News = () => {
                   className="btn_news"
                   onClick={() => handlePostClick(post.id)}
                 >
-                  VER MAS
+                  Ver Más
                 </button>
               </div>
             ))}
