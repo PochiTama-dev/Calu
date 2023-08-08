@@ -1,36 +1,30 @@
-import { useEffect, useState, useRef } from "react";
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  getDoc,
-} from "firebase/firestore";
-import { db, storage } from "../../firebase-config";
-import { Link, useNavigate } from "react-router-dom";
-import { ref, deleteObject } from "firebase/storage";
-import { Header } from "../Header/header";
-import "./product-list.css";
-import CTN from "../CTN/CTN";
-import Footer from "../Footer/Footer";
-import { useCustomContext } from "../../Hooks/Context/Context";
-import Contact_button from "../Home/Contact_button/Contact_button";
-import arrow_L from "../Home/icon_arrow_left.svg";
+import { useEffect, useState, useRef } from 'react';
+import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
+import { db, storage } from '../../firebase-config';
+import { Link, useNavigate } from 'react-router-dom';
+import { ref, deleteObject } from 'firebase/storage';
+import { Header } from '../Header/header';
+import './product-list.css';
+import CTN from '../CTN/CTN';
+import Footer from '../Footer/Footer';
+import { useCustomContext } from '../../Hooks/Context/Context';
+import Contact_button from '../Home/Contact_button/Contact_button';
+import arrow_L from '../Home/icon_arrow_left.svg';
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [flippedProductId, setFlippedProductId] = useState(null);
-  const isUserAuthenticated = localStorage.getItem("isAuth") === "true";
+  const isUserAuthenticated = localStorage.getItem('isAuth') === 'true';
   const navigate = useNavigate();
   const { cart, addToCart, removeFromCart } = useCustomContext();
 
-  const productsCollectionRef = collection(db, "e-commerce");
+  const productsCollectionRef = collection(db, 'e-commerce');
   const firstSection = useRef(null);
   const scrollToTop = () => {
-    firstSection.current?.scrollIntoView({ behavior: "smooth" });
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
   };
   const deleteProduct = async (id, thumbnail) => {
-    const productDoc = doc(db, "e-commerce", id);
+    const productDoc = doc(db, 'e-commerce', id);
     await deleteDoc(productDoc);
 
     if (thumbnail) {
@@ -58,7 +52,7 @@ function ProductList() {
         setProducts(productsData);
         setLoading(false);
       } catch (error) {
-        console.error("Error al obtener los productos:", error);
+        console.error('Error al obtener los productos:', error);
         setLoading(false);
       }
     };
@@ -79,7 +73,7 @@ function ProductList() {
   };
 
   const handleAddToCart = async (id) => {
-    const querySnapshot = doc(db, "e-commerce", id);
+    const querySnapshot = doc(db, 'e-commerce', id);
     const docSnapshot = await getDoc(querySnapshot);
     const productToAdd = docSnapshot.data();
     addToCart(productToAdd);
@@ -87,9 +81,9 @@ function ProductList() {
 
   return (
     <div>
-      <div className="main-container" ref={firstSection}>
+      <div className='main-container' ref={firstSection}>
         <button onClick={scrollToTop}>
-          <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+          <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
         </button>
         <Contact_button />
         <Header cartItem={cart} handleDelete={removeFromCart} />
@@ -99,46 +93,29 @@ function ProductList() {
         <br />
         <br />
         <br />
-        <h1 className="products_title">Lista de Productos</h1>
-        <h2 className="our-products">Nuestro productos</h2>
+        <h1 className='products_title'>Lista de Productos</h1>
+        <h2 className='our-products'>Nuestro productos</h2>
 
-        <div className="products">
+        <div className='products'>
           {products.map((product) => (
-            <div className="main-product" key={product.id}>
+            <div className='main-product' key={product.id}>
               <div
-                className={`product-inner ${
-                  flippedProductId === product.id ? "flipped" : ""
-                }`}
+                className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}
                 onClick={() => handleFlipCard(product.id)}
               >
-                <div
-                  className={`product-front ${
-                    flippedProductId === product.id ? "hidden" : ""
-                  }`}
-                >
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    width="150px"
-                  />
+                <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
+                  <img src={product.thumbnail} alt={product.title} width='150px' />
                 </div>
-                <div
-                  className={`product-back ${
-                    flippedProductId === product.id ? "" : "hidden"
-                  }`}
-                >
+                <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
                   <p>{product.detail}</p>
                 </div>
               </div>
-              <div className="product-price">
-                <p className="price">${product.price}</p>
-                <p
-                  className="carrito-price"
-                  onClick={() => handleAddToCart(product.id)}
-                >
+              <div className='product-price'>
+                <p className='price'>${product.price}</p>
+                <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
                   Agregar al carrito
                 </p>
-                <Link className="link_" to={`/product/${product.id}`}>
+                <Link className='link_' to={`/product/${product.id}`}>
                   Ver Detalles
                 </Link>
               </div>
