@@ -1,17 +1,17 @@
-import './services.css';
-import React, { useEffect, useState, useRef } from 'react';
-import { Header } from '../Header/header';
-import Slider from '../Services/Card_srv/Slider/Slider';
-import Card_srv_flip from './Card_srv/Card_srv_flip';
-import Footer from '../Footer/Footer';
-import CTN from '../CTN/CTN';
-import { Link } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
-import { db, storage } from '../../firebase-config';
-import { ref } from 'firebase/storage';
-import Contact_button from '../Home/Contact_button/Contact_button';
-import arrow_L from '../Home/icon_arrow_left.svg';
-import { useCustomContext } from '../../Hooks/Context/Context';
+import "./services.css";
+import React, { useEffect, useState, useRef } from "react";
+import { Header } from "../Header/header";
+import Slider from "../Services/Card_srv/Slider/Slider";
+import Card_srv_flip from "./Card_srv/Card_srv_flip";
+import Footer from "../Footer/Footer";
+import CTN from "../CTN/CTN";
+import { Link } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db, storage } from "../../firebase-config";
+import { ref } from "firebase/storage";
+import Contact_button from "../Home/Contact_button/Contact_button";
+import arrow_L from "../Home/icon_arrow_left.svg";
+import { useCustomContext } from "../../Hooks/Context/Context";
 
 const Services = () => {
   const { cart, removeFromCart } = useCustomContext();
@@ -20,14 +20,14 @@ const Services = () => {
   React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
 
-    window.addEventListener('resize', handleResizeWindow);
+    window.addEventListener("resize", handleResizeWindow);
     return () => {
-      window.removeEventListener('resize', handleResizeWindow);
+      window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
 
   const [servicios, setServicios] = useState([]);
-  const serviciosRef = collection(db, 'servicios');
+  const serviciosRef = collection(db, "servicios");
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(serviciosRef);
@@ -39,49 +39,69 @@ const Services = () => {
   //////////// Scroll to top
   const firstSection = useRef(null);
   const scrollToTop = () => {
-    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
+    firstSection.current?.scrollIntoView({ behavior: "smooth" });
   };
   //////////////
   if (width > breakpoint) {
     return (
-      <div className='scroll_ctn' ref={firstSection}>
+      <div className="scroll_ctn" ref={firstSection}>
         <button onClick={scrollToTop}>
-          <img className='arrow_up' src={arrow_L} />
+          <img className="arrow_up" src={arrow_L} />
         </button>
         <Contact_button />
         <Header cartItem={cart} handleDelete={removeFromCart} />;
-        <div className='services_container'>
-          <div className='srv_title'>
+        <div className="services_container">
+          <div className="srv_title">
             <h1>Nuestros Servicios</h1>
           </div>
           <div>
             {servicios.map((servicio, index) => {
               return (
                 <section>
-                  <div className='srv_cards' key={index}>
-                    <div className='card_srv_cont'>
-                      <div className='card_srv_info'>
-                        <div className='title_srv'>
-                          <h1>{servicio.title}</h1>
-                        </div>
-                        <div className='sub_d'>
-                          <h2>{servicio.sub}</h2>
-                        </div>
-                        <div className='des_1d'>
-                          <p>{servicio.des_1}</p>
-                        </div>
-                        <br />
-                        <div className='des_2d'>
-                          <p>{servicio.des_2}</p>
-                        </div>
+                  <div className="srv_cards" key={index}>
+                    <div className="card_srv_cont">
+                      <div className="card_srv_info">
+                        <div
+                          className={
+                            index % 2 == 0
+                              ? "card_srv_cont"
+                              : "card_srv_cont_inv"
+                          }
+                        >
+                          <div
+                            className={
+                              index % 2 == 0
+                                ? "card_srv_info"
+                                : "card_srv_info_inv"
+                            }
+                          >
+                            <div className="title_srv">
+                              <h1>{servicio.title}</h1>
+                            </div>
+                            <div className="sub_d">
+                              <h2>{servicio.sub}</h2>
+                            </div>
+                            <div className="des_1d">
+                              <p>{servicio.des_1}</p>
+                            </div>
+                            <br />
+                            <div className="des_2d">
+                              <p>{servicio.des_2}</p>
+                            </div>
 
-                        <div className='des_3d'>
-                          <p>{servicio.des_3}</p>
-                        </div>
-                      </div>
-                      <div className='srv_icon'>
-                        <div>
-                          <img src={servicio.img} alt={servicio.img} width='210px' />
+                            <div className="des_3d">
+                              <p>{servicio.des_3}</p>
+                            </div>
+                          </div>
+                          <div className="srv_icon">
+                            <div>
+                              <img
+                                src={servicio.img}
+                                alt={servicio.img}
+                                width="210px"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -104,19 +124,19 @@ const Services = () => {
   return (
     <>
       <button onClick={scrollToTop}>
-        <img className='arrow_up' src={arrow_L} />
+        <img className="arrow_up" src={arrow_L} />
       </button>
       <Contact_button />
       <Header cartItem={cart} handleDelete={removeFromCart} />
-      <div className='services_container' ref={firstSection}>
-        <div className='srv_cards'>
-          <div className='srv_title'>
+      <div className="services_container" ref={firstSection}>
+        <div className="srv_cards">
+          <div className="srv_title">
             <h1>Nuestros Servicios</h1>
           </div>
           <section>
             <Slider>
               {servicios.map((servicios) => (
-                <div className='slider_cards'>
+                <div className="slider_cards">
                   <Card_srv_flip
                     image={servicios.img}
                     title={servicios.title}

@@ -35,6 +35,14 @@
   left: 50px;
   right: 50px;
 }
+.card_slider_port img {
+  width: 150px;
+}
+@media (max-width: 1024px) {
+  .card_slider_port img {
+    width: 120px;
+  }
+}
 
 @media (max-width: 900px) {
   .portfolio_text {
@@ -56,5 +64,11 @@
 
   .slider {
     margin-top: 10px;
+  }
+}
+
+@media (max-height: 600px) {
+  .portfolio_items {
+    margin-top: 150px;
   }
 }

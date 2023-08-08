@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
@@ -12,11 +12,15 @@ import Contact_button from '../Home/Contact_button/Contact_button';
 import '../Home/Contact_button/contact_button.css';
 import YouTube from 'react-youtube';
 import { useCustomContext } from '../../Hooks/Context/Context';
-
+import arrow_L from '../Home/icon_arrow_left.svg';
 function BlogView() {
   const { cart, removeFromCart } = useCustomContext();
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const getPost = async () => {
@@ -48,8 +52,11 @@ function BlogView() {
 
   return (
     <>
-      <div className='BlogView'>
+      <div className='BlogView' ref={firstSection}>
         <Header cartItem={cart} handleDelete={removeFromCart} />
+        <button onClick={scrollToTop}>
+          <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
+        </button>
         <Contact_button />
 
         <h1 className='blogTitle'>{post.title}</h1>

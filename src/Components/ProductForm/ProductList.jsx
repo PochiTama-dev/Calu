@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { db, storage } from '../../firebase-config';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,7 +8,8 @@ import './product-list.css';
 import CTN from '../CTN/CTN';
 import Footer from '../Footer/Footer';
 import { useCustomContext } from '../../Hooks/Context/Context';
-
+import Contact_button from '../Home/Contact_button/Contact_button';
+import arrow_L from '../Home/icon_arrow_left.svg';
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,10 @@ function ProductList() {
   const { cart, addToCart, removeFromCart } = useCustomContext();
 
   const productsCollectionRef = collection(db, 'e-commerce');
-
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   const deleteProduct = async (id, thumbnail) => {
     const productDoc = doc(db, 'e-commerce', id);
     await deleteDoc(productDoc);
@@ -77,7 +81,11 @@ function ProductList() {
 
   return (
     <div>
-      <div className='main-container'>
+      <div className='main-container' ref={firstSection}>
+        <button onClick={scrollToTop}>
+          <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
+        </button>
+        <Contact_button />
         <Header cartItem={cart} handleDelete={removeFromCart} />
 
         <br />
@@ -96,7 +104,7 @@ function ProductList() {
                 onClick={() => handleFlipCard(product.id)}
               >
                 <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
-                  <img src={product.thumbnail} alt={product.title} width='180px' />
+                  <img src={product.thumbnail} alt={product.title} width='150px' />
                 </div>
                 <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
                   <p>{product.detail}</p>
@@ -113,9 +121,6 @@ function ProductList() {
               </div>
             </div>
           ))}
-        </div>
-        <div className='ctn'>
-          <CTN />
         </div>
       </div>
     </div>

@@ -46,9 +46,9 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 80px 10px 30px 10px;
-  height: 100%;
+  margin: 130px 10px 30px 10px;
 }
+
 .card_srv_cont_inv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,17 +61,16 @@
   -ms-flex-pack: center;
   justify-content: center;
   margin: 30px 10px 30px 10px;
-  height: 450px;
 }
 .card_srv_info {
-  max-width: 1200px;
-  margin: -150px 50px 0 20px;
+  max-width: 1600px;
+  margin: -100px 50px 0 20px;
   display: flex;
-
   flex-direction: column;
 }
+
 .card_srv_info_inv {
-  max-width: 1000px;
+  max-width: 1600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,7 +82,8 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0 20px 5px 5px;
+
+  margin: -90px 50px 0 110px;
 }
 .srv_icon {
   display: -webkit-box;
@@ -96,8 +96,7 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: -110px;
-  margin-left: 110px;
+  margin-top: -50px;
 }
 .srv_icon img {
   height: 100%;
@@ -110,7 +109,7 @@
   font-size: 30px;
 }
 .title_srv h1 {
-  font-size: 40px;
+  font-size: 38px;
 }
 .sub_d {
   color: white;
@@ -138,9 +137,9 @@
   margin-top: 10px;
 }
 @media only screen and (max-height: 767px) {
-  .srv_cards h1 {
+  /*.srv_cards h1 {
     margin-top: 180px;
-  }
+  }*/
 }
 @media (max-width: 1024px) {
   .srv_cards {
@@ -181,5 +180,10 @@
 @media (max-width: 386px) {
   .srv_title h1 {
     font-size: 30px;
+  }
+}
+@media (max-height: 750px) {
+  .card_srv_cont {
+    margin-top: 250px;
   }
 }

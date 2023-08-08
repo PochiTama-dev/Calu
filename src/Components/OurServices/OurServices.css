@@ -68,3 +68,8 @@
     align-items: center;
   }
 }
+@media (max-height: 600px) {
+  .ourServices_text {
+    margin-top: 150px;
+  }
+}
