@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
-import { db, auth, storage } from "../../firebase-config";
-import { useNavigate } from "react-router-dom";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import "./createPost.css";
+import React, { useState, useEffect } from 'react';
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { db, auth, storage } from '../../firebase-config';
+import { useNavigate } from 'react-router-dom';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import './createPost.css';
 
 function CreatePost({ location }) {
-  const [title, setTitle] = useState("");
-  const [postText, setPostText] = useState("");
+  const [title, setTitle] = useState('');
+  const [postText, setPostText] = useState('');
+  const [cover, setCover] = useState(null);
   const [image, setImage] = useState(null);
-  const [youtubeLink, setYoutubeLink] = useState("");
-  const [additionalContent, setAdditionalContent] = useState("");
-  const [category, setCategory] = useState("");
-  const postsCollectionRef = collection(db, "posts");
+  const [youtubeLink, setYoutubeLink] = useState('');
+  const [additionalContent, setAdditionalContent] = useState('');
+  const [category, setCategory] = useState('');
+  const postsCollectionRef = collection(db, 'posts');
   const navigate = useNavigate();
   const timestamp = new Date();
   const time = timestamp.toLocaleDateString();
@@ -23,7 +24,7 @@ function CreatePost({ location }) {
     const checkAuthentication = () => {
       const user = auth.currentUser;
       if (!user) {
-        navigate("/admin-login");
+        navigate('/admin-login');
       }
     };
 
@@ -41,16 +42,23 @@ function CreatePost({ location }) {
   }, [editPost]);
 
   const createPost = async () => {
-    let imageUrl = "";
+    let imageUrl = '';
+    let coverUrl = '';
     if (image) {
       const storageRef = ref(storage, `images/${image.name}`);
       await uploadBytes(storageRef, image);
       imageUrl = await getDownloadURL(storageRef);
     }
+    if (cover) {
+      const storageRef = ref(storage, `images/${cover.name}`);
+      await uploadBytes(storageRef, cover);
+      coverUrl = await getDownloadURL(storageRef);
+    }
 
     const newPost = {
       title,
       postText,
+      coverUrl,
       imageUrl,
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
       youtubeLink,
@@ -60,7 +68,7 @@ function CreatePost({ location }) {
     };
 
     await addDoc(postsCollectionRef, newPost);
-    navigate("/blog");
+    navigate('/blog');
   };
 
   const updatePost = async () => {
@@ -74,7 +82,7 @@ function CreatePost({ location }) {
         category,
       };
 
-      await setDoc(doc(db, "posts", editPost.id), updatedPost);
+      await setDoc(doc(db, 'posts', editPost.id), updatedPost);
     } else {
       const storageRef = ref(storage, `images/${image.name}`);
       await uploadBytes(storageRef, image);
@@ -90,9 +98,9 @@ function CreatePost({ location }) {
         category,
       };
 
-      await setDoc(doc(db, "posts", editPost.id), updatedPost);
+      await setDoc(doc(db, 'posts', editPost.id), updatedPost);
     }
-    navigate("/blog");
+    navigate('/blog');
   };
 
   const handleSubmit = () => {
@@ -104,61 +112,60 @@ function CreatePost({ location }) {
   };
 
   return (
-    <div className="createPostPage">
-      <div className="cpContainer">
-        <h1>{editPost ? "Edit Post" : "Create A Post"}</h1>
-        <div className="inputGp">
+    <div className='createPostPage'>
+      <div className='cpContainer'>
+        <h1>{editPost ? 'Edit Post' : 'Create A Post'}</h1>
+        <div className='inputGp'>
           <label>Title:</label>
           <input
-            placeholder="Title..."
+            placeholder='Title...'
             value={title}
             onChange={(event) => setTitle(event.target.value)}
           />
         </div>
-        <div className="inputGp">
+        <div className='inputGp'>
           <label>Post:</label>
           <textarea
-            placeholder="Post..."
+            placeholder='Post...'
             value={postText}
             onChange={(event) => setPostText(event.target.value)}
           />
         </div>
-        <div className="inputGp">
-          <label>Image:</label>
-          <input
-            type="file"
-            onChange={(event) => setImage(event.target.files[0])}
-          />
+        <div className='inputGp'>
+          <label>Portada:</label>
+          <input type='file' onChange={(event) => setCover(event.target.files[0])} />
         </div>
-        <div className="inputGp">
+        <div className='inputGp'>
+          <label>Imagen Miniatura:</label>
+          <input type='file' onChange={(event) => setImage(event.target.files[0])} />
+        </div>
+        <div className='inputGp'>
           <label>YouTube Link:</label>
           <input
-            placeholder="YouTube link..."
+            placeholder='YouTube link...'
             value={youtubeLink}
             onChange={(event) => setYoutubeLink(event.target.value)}
           />
         </div>
-        <div className="inputGp">
+        <div className='inputGp'>
           <label>Additional Content:</label>
           <textarea
-            placeholder="Additional content..."
+            placeholder='Additional content...'
             value={additionalContent}
             onChange={(event) => setAdditionalContent(event.target.value)}
           />
         </div>
-        <div className="inputGp">
+        <div className='inputGp'>
           <label>Category:</label>
           <select value={category} onChange={(event) => setCategory(event.target.value)}>
-            <option value="">Select a category</option>
-            <option value="technology">Tecnologia</option>
-            <option value="social media">Redes Sociales</option>
-            <option value="community management">Manejo de comunidad</option>
+            <option value=''>Select a category</option>
+            <option value='technology'>Tecnologia</option>
+            <option value='social media'>Redes Sociales</option>
+            <option value='community management'>Manejo de comunidad</option>
             {/* Add more categories as needed */}
           </select>
         </div>
-        <button onClick={handleSubmit}>
-          {editPost ? "Update Post" : "Submit Post"}
-        </button>
+        <button onClick={handleSubmit}>{editPost ? 'Update Post' : 'Submit Post'}</button>
       </div>
     </div>
   );

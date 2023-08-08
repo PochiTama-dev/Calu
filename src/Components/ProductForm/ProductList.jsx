@@ -113,9 +113,9 @@ function ProductList() {
               </div>
             </div>
           ))}
-          <div className='ctn'>
-            <CTN />
-          </div>
+        </div>
+        <div className='ctn'>
+          <CTN />
         </div>
       </div>
     </div>

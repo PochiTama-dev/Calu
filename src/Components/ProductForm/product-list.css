@@ -6,6 +6,10 @@
   position: relative;
   margin-top: 200px;
 }
+.main-container .products {
+  background-color: rgba(0, 0, 255, 0.2);
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+}
 .products_title {
   margin-top: -20px;
 }
@@ -27,7 +31,9 @@
   border-radius: 30% 0% 30% 0%;
   width: 100%;
   position: relative;
+  transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .product-inner {
@@ -37,11 +43,15 @@
   align-items: center;
   text-align: center;
   position: relative;
+  -webkit-perspective: 1000px;
   perspective: 1000px;
+  transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .flipped .product-inner {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   /* Rotar la tarjeta 180 grados en el eje Y cuando esté volteada */
 }
@@ -55,10 +65,7 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
 }
 
 .carrito-img {
@@ -78,10 +85,7 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   color: white;
 }
 
@@ -100,6 +104,7 @@
 }
 
 .main-product.flipped {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   /* Gira toda la tarjeta cuando está volteada */
 }
@@ -151,34 +156,72 @@
   }
 }
 
-@keyframes rotateFlip {
+@-webkit-keyframes rotateFlip {
   0% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
     transform: rotateY(0deg) scaleX(1);
   }
   50% {
+    -webkit-transform: rotateY(90deg) scaleX(0.8);
     transform: rotateY(90deg) scaleX(0.8);
   }
   100% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
+    transform: rotateY(0deg) scaleX(1);
+  }
+}
+
+@keyframes rotateFlip {
+  0% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
+    transform: rotateY(0deg) scaleX(1);
+  }
+  50% {
+    -webkit-transform: rotateY(90deg) scaleX(0.8);
+    transform: rotateY(90deg) scaleX(0.8);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
     transform: rotateY(0deg) scaleX(1);
   }
 }
 
 .product-inner.flipped {
+  -webkit-animation: rotateFlip 0.5s;
   animation: rotateFlip 0.5s;
+}
+
+@-webkit-keyframes rotateFlipReturn {
+  0% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
+    transform: rotateY(0deg) scaleX(1);
+  }
+  50% {
+    -webkit-transform: rotateY(90deg) scaleX(0.8);
+    transform: rotateY(90deg) scaleX(0.8);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
+    transform: rotateY(0deg) scaleX(1);
+  }
 }
 
 @keyframes rotateFlipReturn {
   0% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
     transform: rotateY(0deg) scaleX(1);
   }
   50% {
+    -webkit-transform: rotateY(90deg) scaleX(0.8);
     transform: rotateY(90deg) scaleX(0.8);
   }
   100% {
+    -webkit-transform: rotateY(0deg) scaleX(1);
     transform: rotateY(0deg) scaleX(1);
   }
 }
 
 .product-inner:not(.flipped) {
+  -webkit-animation: rotateFlipReturn 0.5s;
   animation: rotateFlipReturn 0.5s;
 }

@@ -53,6 +53,9 @@ function BlogView() {
         <Contact_button />
 
         <h1 className='blogTitle'>{post.title}</h1>
+        <div className='banner'>
+          <img src={post.coverUrl} alt={post.coverUrl} />
+        </div>
         <div className='blogView-sidebar'>
           <div className='blogContainer'>
             <div className='blogCard'>
