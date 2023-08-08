@@ -74,8 +74,8 @@
   .onboarding .logoOnboard {
     display: block;
     position: relative;
-    right: -50px;
-    width: 600px;
+    right: -110px;
+    width: 750px;
   }
 
   .onboarding .parrafo {
@@ -98,7 +98,7 @@
     margin-bottom: 0;
   }
 }
-@media (max-width: 1120px) {
+@media (max-width: 1314px) {
   .onboarding .logoOnboard {
     display: block;
     position: relative;
@@ -107,6 +107,11 @@
   }
   .onboarding .parrafo {
     margin-top: 20px;
+  }
+}
+@media (max-width: 1218px) {
+  .onboarding .logoOnboard {
+    display: none;
   }
 }
 @media (max-width: 900px) {

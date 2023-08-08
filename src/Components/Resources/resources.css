@@ -12,14 +12,21 @@
 }
 .res_card {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 20px;
-  margin-right: 110px;
-  margin-left: 110px;
+  margin-right: 90px;
+  margin-left: 90px;
 }
 .btn_news {
   text-decoration: none;
 }
+@media (max-width: 1300px) {
+  .card_ctn {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
 @media (max-height: 600px) {
   .res_items {
     margin-top: 150px;

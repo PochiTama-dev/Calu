@@ -3,6 +3,8 @@
   flex-direction: column;
   max-width: 320px;
   justify-content: center;
+  margin-left: 90px;
+  margin-right: 90px;
 }
 
 .card_cont {
@@ -60,5 +62,11 @@
   .arrow_R {
     position: relative;
     width: 25px;
+  }
+}
+@media (max-width: 1300px) {
+  .card_news {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }

@@ -3,6 +3,8 @@
   flex-direction: column;
   max-width: 320px;
   justify-content: center;
+  margin-right: 92px;
+  margin-left: 92px;
 }
 .res_cart {
   margin: 260px 0 0 -330px;
