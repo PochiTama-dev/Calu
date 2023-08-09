@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useRef } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db, storage } from "../../firebase-config";
@@ -14,6 +15,7 @@ import { useCustomContext } from "../../Hooks/Context/Context";
 
 function Blog() {
   const [isAuth, setIsAuth] = useState(false);
+
   const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const postsCollectionRef = collection(db, "posts");
@@ -72,6 +74,7 @@ function Blog() {
     firstSection.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+
   return (
     <div className="blog">
       <button onClick={scrollToTop}>
@@ -87,11 +90,13 @@ function Blog() {
             <div className="cardContainerblog">
               {postList.map((post) => (
                 <div
-                  className="card-blog"
+
+                  className='card-blog'
                   key={post.id}
                   onClick={() => handlePostClick(post.id)}
                 >
-                  <div className="blogImage">
+                  <div className='blogImage'>
+
                     <CardNews
                       image={
                         <img
@@ -105,7 +110,11 @@ function Blog() {
                       title={<h2>{post.title}</h2>}
                     />
                   </div>
-                  <div className="cardHeaderblog">
+
+                  <div className='container-leermas'>
+                  </div>
+                  <div className='cardHeaderblog'>
+
                     <span>{post.time}</span>
                     <div className="deleteblog">
                       {isAuth && post.author && (
@@ -134,9 +143,6 @@ function Blog() {
                   <div className="cardFooterblog"></div>
                 </div>
               ))}
-              {/* <CardBlogDev /> */}
-              {/* <CardBlogDev /> */}
-              {/* <CardBlogDev /> */}
             </div>
           </div>
 
