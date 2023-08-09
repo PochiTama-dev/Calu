@@ -97,6 +97,9 @@
   .flip-card {
     width: 320px;
   }
+  .front_items img {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -112,7 +115,7 @@
   }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 434px) {
   .flip-card {
     width: 280px;
     height: 350px;
@@ -124,5 +127,9 @@
   .flip-card-back p {
     font-size: 15px;
     font-weight: bold;
+  }
+  .front_items img {
+    width: 150px;
+    margin-bottom: 10px;
   }
 }

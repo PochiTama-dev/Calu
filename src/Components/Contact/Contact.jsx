@@ -105,13 +105,14 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <div>
       <Header cartItem={cart} handleDelete={removeFromCart} />
       <div className="contact">
         <div className="contact-title">
           <h2>¡CONTÁCTANOS!</h2>
           <p>Te damos el servicio que nos gustaría recibir</p>
         </div>
+
         <form className="contact-form" action="post" onSubmit={handleSubmit}>
           <label htmlFor="nombre">Nombre</label>
           <input
@@ -162,7 +163,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

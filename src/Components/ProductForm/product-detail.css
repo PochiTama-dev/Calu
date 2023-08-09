@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   color: white;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 .main-detail-container h2 {
@@ -95,7 +95,7 @@
   background-color: rgba(4, 25, 88, 0.6);
   outline: none;
   border: none;
-  margin-left: 30px;
+
   margin-top: 10px;
   font-weight: 700;
 }
@@ -103,6 +103,7 @@
 .detail-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   padding-left: 20px;

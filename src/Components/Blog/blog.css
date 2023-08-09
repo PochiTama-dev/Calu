@@ -54,8 +54,6 @@
 .card-blog {
   display: flex;
   flex-direction: column;
-  width: 320px;
-  height: 300px;
   padding: 20px;
   justify-content: flex-start;
   cursor: pointer;
@@ -193,7 +191,7 @@
 @media (min-width: 768px) {
   .postContainer .cardContainerblog {
     justify-content: flex-start;
-    overflow: scroll;
+    /* overflow: scroll;*/
   }
   .postContainer .cardContainerblog .cards {
     width: 45%;
@@ -261,8 +259,11 @@
 
 @media (min-width: 1025px) {
   .postContainer {
+
+    width: 1020px;
+
     width: 75%;
-    min-height: 800px;
+
   }
 
   .blog-sidebar {
@@ -286,10 +287,9 @@
   .postContainer .cardContainerblog .card-blog .cardHeaderblog .titleblog {
     justify-content: flex-start;
   }
-  .card-blog .blogImage .card_news .card_cont .card_f_news {
-    width: 250px;
-    height: 250px;
-  }
+
+
+
 
   .card-blog .blogImage h2 {
     margin: 0;
@@ -320,5 +320,9 @@
   }
   .lateralBar .lateralContainer {
     margin-top: 60px;
+  }
+  .card-blog {
+    margin-left: 25px;
+    margin-right: 15px;
   }
 }

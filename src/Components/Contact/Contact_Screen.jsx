@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import CTN from "../CTN/CTN";
 import Contact from "./Contact";
+import "./contact.css";
 
 const Contact_Screen = () => {
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -18,19 +19,16 @@ const Contact_Screen = () => {
     return (
       <div>
         <Contact />
-        <section>
-          <CTN />
+        <div className="footer_contact">
           <Footer />
-        </section>
+        </div>
       </div>
     );
   }
   return (
     <div>
       <Contact />
-      <section>
-        <CTN />
-      </section>
+
       <section>
         <Footer />
       </section>
