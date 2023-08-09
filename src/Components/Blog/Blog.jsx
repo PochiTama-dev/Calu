@@ -74,13 +74,7 @@ function Blog() {
     firstSection.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleMouseEnter = (id) => {
-    sethover(id);
-  };
 
-  const handleMouseLeave = () => {
-    sethover(false);
-  };
   return (
     <div className="blog">
       <button onClick={scrollToTop}>
@@ -100,8 +94,6 @@ function Blog() {
                   className='card-blog'
                   key={post.id}
                   onClick={() => handlePostClick(post.id)}
-                  onMouseEnter={() => handleMouseEnter(post.id)}
-                  onMouseLeave={() => handleMouseLeave}
                 >
                   <div className='blogImage'>
 
@@ -120,7 +112,6 @@ function Blog() {
                   </div>
 
                   <div className='container-leermas'>
-                    {hover === post.id && <p className='leerMas'>{'Ver más'}</p>}
                   </div>
                   <div className='cardHeaderblog'>
 

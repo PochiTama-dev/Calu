@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";  // Cambio de BrowserRouter a HashRouter
 import { onAuthStateChanged } from "firebase/auth";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -43,7 +43,7 @@ function App() {
         <div>
           <VideoBackgroundComponent />
           <Routes>
-            <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
             <Route path="/admin-home" element={<AdminHome />} />
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/admin-crud" element={<AdminCrud />} />
