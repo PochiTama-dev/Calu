@@ -30,8 +30,7 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
+
   border-radius: 20px;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -268,6 +267,7 @@
   .postContainer {
     width: 1020px;
     min-height: 800px;
+    margin-left: 50px;
   }
 
   .blog-sidebar {
@@ -309,7 +309,7 @@
     align-items: center;
   }
   .blog-sidebar .lateralBar {
-    width: 200px;
+    width: 350px;
   }
   .lateralBar .blogTitle_ {
     margin: 0;

@@ -29,6 +29,15 @@
   display: flex;
   justify-content: center;
 }
+.title_res {
+  position: relative;
+  color: white;
+  text-align: center;
+  margin: 10px 0 0 70px;
+  font-size: 25px;
+  font-weight: bold;
+  width: 150px;
+}
 .card_res {
   display: flex;
   flex-direction: column;

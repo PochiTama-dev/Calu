@@ -19,6 +19,7 @@
 hr {
   color: rgba(255, 255, 255, 0.8);
   margin-top: 5px;
+  max-width: 100px;
 }
 .lastBlogs {
   display: flex;
@@ -38,8 +39,9 @@ hr {
   text-decoration: none;
   display: flex;
   justify-content: center;
+  margin: 0 10px 0 10px;
 }
-@media (min-width: 375px) {
+@media (min-width: 340px) {
   .lateralBar {
     position: initial;
     width: 70%;
@@ -50,9 +52,7 @@ hr {
     border-radius: 15px;
     margin-top: 50px;
   }
-  .lateralBar hr {
-    width: 50%;
-  }
+
   .lateralBar .blogTitle {
     margin: 15px 0;
   }

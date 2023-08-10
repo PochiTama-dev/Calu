@@ -64,7 +64,7 @@ const Resources = () => {
                 ></Card_res>
               ))}
           </div>
-          <Link className="btn_news" to={"/product-list"}>
+          <Link className="btn_res_more" to={"/product-list"}>
             Ver Más
           </Link>
         </div>
