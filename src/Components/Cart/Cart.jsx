@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase-config';
 import { collection, addDoc } from 'firebase/firestore';
 import './Cart.css';
+import ModalBuy from './ModalBuy';
 
 function Cart({ close, cart, handleDelete }) {
   const [total, setTotal] = useState(0);
@@ -84,20 +85,12 @@ function Cart({ close, cart, handleDelete }) {
         <button onClick={handlePay}>Iniciar compra</button>
       </div>
       {isModalOpen && (
-        <div className='emailModal'>
-          <form onSubmit={handleSubmit}>
-            <h3>Ingrese su correo electrónico:</h3>
-            <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <div className='email_btn_ctn'>
-              <button className='email_btn' type='submit'>
-                Continuar
-              </button>
-              <button className='email_btn' onClick={() => setIsModalOpen(false)}>
-                Cancelar
-              </button>
-            </div>
-          </form>
-        </div>
+        <ModalBuy
+          email={email}
+          setEmail={setEmail}
+          handleSubmit={handleSubmit}
+          setIsModalOpen={setIsModalOpen}
+        />
       )}
     </div>
   );

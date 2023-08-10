@@ -116,6 +116,11 @@
   justify-content: center;
 }
 
+.detail-content .modalBuy .emailModal {
+  position: absolute;
+  top: initial;
+}
+
 .price-detail {
   font-size: 14px;
   font-weight: 700;

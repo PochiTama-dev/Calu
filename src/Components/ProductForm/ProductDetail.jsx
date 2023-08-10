@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../Header/header';
 import './product-detail.css';
 import cart from '../Resources/Card_resources/cart.svg';
 import elipse from '../Resources/Card_resources/elipse.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
+import ModalBuy from '../Cart/ModalBuy';
 
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isDescriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [email, setEmail] = useState('');
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const navigate = useNavigate();
+
   const { cart, addToCart, removeFromCart } = useCustomContext();
 
   useEffect(() => {
@@ -72,9 +78,32 @@ function ProductDetail() {
     addToCart(productToAdd);
   };
 
-  const handleDownloadAndCart = (id) => {
+  const handleDownloadAndBuy = (id) => {
     handleAddToCart(id);
-    handleDownload();
+    setModal(true);
+    //handleDownload();
+  };
+  const saveEmailToFirebase = async (email) => {
+    try {
+      const emailsCollectionRef = collection(db, 'email'); // Change to the correct collection name
+      await addDoc(emailsCollectionRef, {
+        email,
+        timestamp: new Date(),
+      });
+      console.log('Email saved to Firebase successfully');
+    } catch (error) {
+      console.error('Error saving email to Firebase:', error);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (email.match(emailRegex)) {
+      await saveEmailToFirebase(email); // Save the email to Firebase
+      navigate('/payment');
+    } else {
+      alert('Invalid email format. Please enter a valid email.');
+    }
   };
 
   return (
@@ -109,9 +138,19 @@ function ProductDetail() {
             </div>
           ) : (
             <>
-              <button className='download-button' onClick={() => handleDownloadAndCart(product.id)}>
-                Descargar Archivo y agregar al carrito
+              <button className='download-button' onClick={() => handleDownloadAndBuy(product.id)}>
+                Descargar Archivo
               </button>
+              <div className='modalBuy'>
+                {modal && (
+                  <ModalBuy
+                    setIsModalOpen={setModal}
+                    email={email}
+                    setEmail={setEmail}
+                    handleSubmit={handleSubmit}
+                  />
+                )}
+              </div>
             </>
           )}
         </div>
