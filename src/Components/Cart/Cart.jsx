@@ -1,10 +1,17 @@
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { db } from '../../firebase-config';
+import { collection, addDoc } from "firebase/firestore";
 import './Cart.css';
-import { useEffect, useState } from 'react';
 
 function Cart({ close, cart, handleDelete }) {
   const [total, setTotal] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+
   useEffect(() => {
     const calculateTotal = () => {
       let newTotal = 0;
@@ -21,8 +28,32 @@ function Cart({ close, cart, handleDelete }) {
   }, [cart]);
 
   const handlePay = () => {
-    navigate('/payment');
+    setIsModalOpen(true);
   };
+
+  const saveEmailToFirebase = async (email) => {
+    try {
+      const emailsCollectionRef = collection(db, 'email'); // Change to the correct collection name
+      await addDoc(emailsCollectionRef, {
+        email,
+        timestamp: new Date(),
+      });
+      console.log('Email saved to Firebase successfully');
+    } catch (error) {
+      console.error('Error saving email to Firebase:', error);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (email.match(emailRegex)) {
+      await saveEmailToFirebase(email); // Save the email to Firebase
+      navigate('/payment');
+    } else {
+      alert('Invalid email format. Please enter a valid email.');
+    }
+  };
+
   return (
     <div className='cartPage'>
       <div className='cartContainer'>
@@ -53,6 +84,21 @@ function Cart({ close, cart, handleDelete }) {
         </p>
         <button onClick={handlePay}>Iniciar compra</button>
       </div>
+      {isModalOpen && (
+        <div className='emailModal'>
+          <form onSubmit={handleSubmit}>
+            <h3>Ingrese su correo electrónico:</h3>
+            <input
+              type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type='submit'>Continuar</button>
+          </form>
+          <button onClick={() => setIsModalOpen(false)}>Cancelar</button>
+        </div>
+      )}
     </div>
   );
 }
