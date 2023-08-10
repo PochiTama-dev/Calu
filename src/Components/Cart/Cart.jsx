@@ -54,57 +54,68 @@ function Cart({ close, cart, handleDelete }) {
   };
 
   return (
-    <div className="cartPage">
-      <div className="cartContainer">
-        <p className="closeCart" onClick={close}>
-          X
-        </p>
-        <h2>Carrito de compras</h2>
-        <div className="cartItems">
-          {cart &&
-            cart.map((product, index) => (
-              <div className="cartItem" key={index}>
-                <img src={product.thumbnail} alt={product.title} />
-                <p>
-                  <span>{product.title}</span>
-                  <span>${product.price}</span>
-                </p>
-                <div className="deleteItem">
-                  <button onClick={() => handleDelete(product.title)}>
-                    <img src="" alt="Borrar" />
-                  </button>
+    <div>
+      <div className="cartPage">
+        <div className="cartContainer">
+          <p className="closeCart" onClick={close}>
+            X
+          </p>
+          <h2>Carrito de compras</h2>
+          <div className="cartItems">
+            {cart &&
+              cart.map((product, index) => (
+                <div className="cartItem" key={index}>
+                  <img src={product.thumbnail} alt={product.title} />
+                  <p>
+                    <span>{product.title}</span>
+                    <span>${product.price}</span>
+                  </p>
+                  <div className="deleteItem">
+                    <button onClick={() => handleDelete(product.title)}>
+                      <img src="" alt="Borrar" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
+          <p className="total">
+            <span>Total</span>
+            <span>${total}</span>
+          </p>
+          <button
+            onClick={() => {
+              handlePay();
+            }}
+          >
+            Iniciar compra
+          </button>
         </div>
-        <p className="total">
-          <span>Total</span>
-          <span>${total}</span>
-        </p>
-        <button onClick={handlePay}>Iniciar compra</button>
       </div>
       {isModalOpen && (
-        <div className="emailModal">
-          <form onSubmit={handleSubmit}>
-            <h3>Ingrese su correo electrónico:</h3>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <div className="email_btn_ctn">
-              <button className="email_btn" type="submit">
-                Continuar
-              </button>
-              <button
-                className="email_btn"
-                onClick={() => setIsModalOpen(false)}
-              >
-                Cancelar
-              </button>
-            </div>
-          </form>
+        <div>
+          <div className="emailModal">
+            <form onSubmit={handleSubmit}>
+              <h3>Ingrese su correo electrónico:</h3>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <div className="email_btn_ctn">
+                <button className="email_btn" type="submit">
+                  Continuar
+                </button>
+                <button
+                  className="email_btn"
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  Cancelar
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-background"></div>
         </div>
       )}
     </div>
