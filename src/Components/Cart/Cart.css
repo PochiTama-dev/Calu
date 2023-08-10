@@ -58,23 +58,48 @@
   margin: 5px auto;
   width: 100%;
 }
-
+.email_btn_ctn {
+}
 .emailModal {
   position: fixed;
-  background: rgba(0, 0, 255, 0.3);
-  top: 170%;
+  background: rgba(0, 0, 255, 0.7);
+  top: 190%;
   left: 50%;
+  width: 350px;
   transform: translate(-50%, -50%);
   border: solid 1px white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.email_btn {
+  color: white;
+  width: 220px;
+  height: 50px;
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+  border-radius: 3rem 0 3rem 0;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 55px;
 
+  border-radius: 50px;
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  font-weight: bold;
+  font-size: 14px;
+}
 .emailModal form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.emailModal input {
+  border-radius: 6px;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
 }
 
 .emailModal button {
