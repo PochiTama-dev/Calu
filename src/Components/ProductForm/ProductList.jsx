@@ -82,12 +82,12 @@ function ProductList() {
   return (
     <div>
       <div className='main-container' ref={firstSection}>
-        <button onClick={scrollToTop}>
+        <button className='arrow_up12' onClick={scrollToTop}>
           <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
         </button>
         <Contact_button />
         <Header cartItem={cart} handleDelete={removeFromCart} />
-
+  
         <br />
         <br />
         <br />
@@ -95,7 +95,7 @@ function ProductList() {
         <br />
         <h1 className='products_title'>Lista de Productos</h1>
         <h2 className='our-products'>Nuestro productos</h2>
-
+  
         <div className='products'>
           {products.map((product) => (
             <div className='main-product' key={product.id}>
@@ -118,6 +118,13 @@ function ProductList() {
                 <Link className='link_' to={`/product/${product.id}`}>
                   Ver Detalles
                 </Link>
+                {/* Botones de editar y eliminar */}
+                <button className='edit-button' onClick={() => handleEditProduct(product.id)}>
+                  Editar
+                </button>
+                <button className='delete-button' onClick={() => deleteProduct(product.id, product.thumbnail)}>
+                  Eliminar
+                </button>
               </div>
             </div>
           ))}
@@ -125,6 +132,6 @@ function ProductList() {
       </div>
     </div>
   );
-}
+          }  
 
 export default ProductList;

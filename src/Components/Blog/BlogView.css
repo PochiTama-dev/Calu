@@ -49,8 +49,8 @@
   justify-content: center;
 }
 .BlogView .banner img {
-  width: inherit;
-  height: 250px;
+  width: 90%;
+  height: 90%;
 }
 
 @media (min-width: 375px) {
@@ -113,8 +113,8 @@
 }
 @media (min-width: 900px) {
   .BlogView .banner img {
-    width: 680px;
-    height: 250px;
+    width: 90%;
+    height: 90%;
     border-radius: 15px;
   }
   .blogImg {
