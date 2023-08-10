@@ -59,6 +59,28 @@
   width: 100%;
 }
 
+.emailModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.emailModal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.emailModal button {
+  margin-top: 10px;
+}
+
+
 @media (min-width: 1024px) {
   .cartContainer {
     height: 400px;
