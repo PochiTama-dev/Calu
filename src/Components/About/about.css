@@ -4,7 +4,6 @@
   margin: 0 15% 0% 7%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
 }
 .about_items {
   display: flex;

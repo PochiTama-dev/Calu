@@ -87,12 +87,11 @@ function BlogView() {
           </div>
 
           <Sidebar />
-        </div>
 
-        <div className="date-tagContainer">
-          <div className="date-tags">
-            <p>{post.time}</p>
-            <hr />
+          <div className="date-tagContainer">
+            <div className="date-tags">
+              <p>{post.time}</p>
+            </div>
           </div>
         </div>
       </div>
