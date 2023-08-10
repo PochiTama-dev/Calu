@@ -1,28 +1,29 @@
 import { useEffect, useState, useRef } from 'react';
 import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
-import { db, storage } from '../../firebase-config';
+import { db, storage, auth } from '../../firebase-config';
 import { Link, useNavigate } from 'react-router-dom';
 import { ref, deleteObject } from 'firebase/storage';
 import { Header } from '../Header/header';
 import './product-list.css';
-import CTN from '../CTN/CTN';
-import Footer from '../Footer/Footer';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import arrow_L from '../Home/icon_arrow_left.svg';
+
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [flippedProductId, setFlippedProductId] = useState(null);
-  const isUserAuthenticated = localStorage.getItem('isAuth') === 'true';
+  const [user, setUser] = useState(null); // Add user state
   const navigate = useNavigate();
   const { cart, addToCart, removeFromCart } = useCustomContext();
 
   const productsCollectionRef = collection(db, 'e-commerce');
   const firstSection = useRef(null);
+
   const scrollToTop = () => {
     firstSection.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
   const deleteProduct = async (id, thumbnail) => {
     const productDoc = doc(db, 'e-commerce', id);
     await deleteDoc(productDoc);
@@ -58,15 +59,15 @@ function ProductList() {
     };
 
     fetchProducts();
+
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+
+    return () => {
+      unsubscribe();
+    };
   }, [cart]);
-
-  if (loading) {
-    return <p>Cargando productos...</p>;
-  }
-
-  if (products.length === 0) {
-    return <p>No se encontraron productos.</p>;
-  }
 
   const handleFlipCard = (productId) => {
     setFlippedProductId(productId === flippedProductId ? null : productId);
@@ -87,7 +88,7 @@ function ProductList() {
         </button>
         <Contact_button />
         <Header cartItem={cart} handleDelete={removeFromCart} />
-  
+
         <br />
         <br />
         <br />
@@ -95,7 +96,7 @@ function ProductList() {
         <br />
         <h1 className='products_title'>Lista de Productos</h1>
         <h2 className='our-products'>Nuestro productos</h2>
-  
+
         <div className='products'>
           {products.map((product) => (
             <div className='main-product' key={product.id}>
@@ -119,12 +120,16 @@ function ProductList() {
                   Ver Detalles
                 </Link>
                 {/* Botones de editar y eliminar */}
-                <button className='edit-button' onClick={() => handleEditProduct(product.id)}>
-                  Editar
-                </button>
-                <button className='delete-button' onClick={() => deleteProduct(product.id, product.thumbnail)}>
-                  Eliminar
-                </button>
+                {user && (
+                  <div>
+                    <button className='edit-button' onClick={() => handleEditProduct(product.id)}>
+                      Editar
+                    </button>
+                    <button className='delete-button' onClick={() => deleteProduct(product.id, product.thumbnail)}>
+                      Eliminar
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -132,6 +137,6 @@ function ProductList() {
       </div>
     </div>
   );
-          }  
+}
 
 export default ProductList;

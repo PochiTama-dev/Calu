@@ -28,18 +28,18 @@ function Blog() {
 
   const deletePost = async (id, imageUrl) => {
     setIsLoading(true);
-
+  
     const postDoc = doc(db, "posts", id);
-
+  
     try {
       if (imageUrl) {
         const imageRef = ref(storage, imageUrl);
         await getDownloadURL(imageRef);
         await deleteObject(imageRef);
       }
-
+  
       await deleteDoc(postDoc);
-
+  
       // Remove the deleted post from the postList state without refreshing the page
       setPostList((prevPostList) =>
         prevPostList.filter((post) => post.id !== id)
@@ -50,6 +50,8 @@ function Blog() {
       setIsLoading(false);
     }
   };
+  
+  
 
   const editPost = (id) => {
     const postToEdit = postList.find((post) => post.id === id);
@@ -57,7 +59,6 @@ function Blog() {
   };
 
   const handlePostClick = (id) => {
-    navigate(`/blog/${id}`);
   };
 
   useEffect(() => {
@@ -88,13 +89,12 @@ function Blog() {
         <div className="blog-sidebar">
           <div className="postContainer">
             <div className="cardContainerblog">
-              {postList.map((post) => (
-                <div
-
-                  className='card-blog'
-                  key={post.id}
-                  onClick={() => handlePostClick(post.id)}
-                >
+            {postList.map((post) => (
+  <div
+    className='card-blog'
+    key={post.id}
+    onClick={() => handlePostClick(post.id)}
+  >
                   <div className='blogImage'>
 
                     <CardNews
@@ -117,28 +117,28 @@ function Blog() {
 
                     <span>{post.time}</span>
                     <div className="deleteblog">
-                      {isAuth && post.author && (
-                        <>
-                          <button
-                            onClick={() => {
-                              deletePost(post.id, post.imageUrl);
-                            }}
-                            className="deleteblogButton"
-                            disabled={isLoading}
-                          >
-                            {isLoading ? "Deleting..." : "Delete"}
-                          </button>
-                          <button
-                            onClick={() => {
-                              editPost(post.id);
-                            }}
-                            className="editblogButton"
-                          >
-                            Edit
-                          </button>
-                        </>
-                      )}
-                    </div>
+      {isAuth && post.author && (
+        <>
+          <button
+            onClick={() => {
+              deletePost(post.id, post.imageUrl);
+            }}
+            className="deleteblogButton"
+            disabled={isLoading}
+          >
+            {isLoading ? "Deleting..." : "Delete"}
+          </button>
+          <button
+            onClick={() => {
+              editPost(post.id); // Aquí pasamos el id del post al editar
+            }}
+            className="editblogButton"
+          >
+            Edit
+          </button>
+        </>
+      )}
+    </div>
                   </div>
                   <div className="cardFooterblog"></div>
                 </div>
