@@ -113,13 +113,15 @@
 }
 @media (min-width: 900px) {
   .BlogView .banner img {
-    width: 85%;
+    width: 680px;
     height: 250px;
+    border-radius: 15px;
   }
   .blogImg {
     margin-left: auto;
     margin-right: auto;
-    width: 350px;
+    width: 95%;
+    height: 320px;
   }
   .blogContainer {
     width: 80%;
