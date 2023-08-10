@@ -28,6 +28,7 @@
   row-gap: 20px;
   display: flex;
   flex-direction: column;
+  border: solid 1px white;
 }
 
 .blogImg {

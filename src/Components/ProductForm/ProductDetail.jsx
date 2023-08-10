@@ -72,7 +72,7 @@ function ProductDetail() {
       <br />
       <br />
       <br />
-      <h2>DETALLE DEL PRODUCTO</h2>
+      <h1>DETALLE DEL PRODUCTO</h1>
       <div className="main-detail">
         <div className="img-container">
           <div className="title-mobile">

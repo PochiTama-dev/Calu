@@ -9,6 +9,9 @@
 .main-container .products {
   background-color: rgba(0, 0, 255, 0.2);
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  width: 90%;
+  border-radius: 15px;
+  border: solid 1px white;
 }
 .products_title {
   margin-top: -20px;
@@ -70,7 +73,10 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
 }
 
 .carrito-img {
@@ -90,7 +96,10 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
   color: white;
 }
 

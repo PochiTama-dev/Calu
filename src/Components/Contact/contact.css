@@ -25,6 +25,7 @@
     margin-bottom: 50px;
   }
   .contact-form {
+    border: solid 1px white;
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 255, 0.2);
@@ -60,7 +61,10 @@
     color: white;
     width: 220px;
     height: 50px;
-    background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+    background: linear-gradient(
+      rgba(58, 246, 255, 0.2) 30%,
+      rgba(185, 4, 139, 0.2) 60%
+    );
     border-radius: 3rem 0 3rem 0;
     text-decoration: none;
     border: none;
