@@ -97,7 +97,7 @@
   background-color: rgba(4, 25, 88, 0.6);
   outline: none;
   border: none;
-
+  cursor: pointer;
   margin-top: 10px;
   font-weight: 700;
 }
