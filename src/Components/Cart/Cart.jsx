@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { db } from '../../firebase-config';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { db } from "../../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
-import './Cart.css';
+import "./Cart.css";
 
 function Cart({ close, cart, handleDelete }) {
   const [total, setTotal] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
 
   useEffect(() => {
     const calculateTotal = () => {
@@ -33,14 +32,14 @@ function Cart({ close, cart, handleDelete }) {
 
   const saveEmailToFirebase = async (email) => {
     try {
-      const emailsCollectionRef = collection(db, 'email'); // Change to the correct collection name
+      const emailsCollectionRef = collection(db, "email"); // Change to the correct collection name
       await addDoc(emailsCollectionRef, {
         email,
         timestamp: new Date(),
       });
-      console.log('Email saved to Firebase successfully');
+      console.log("Email saved to Firebase successfully");
     } catch (error) {
-      console.error('Error saving email to Firebase:', error);
+      console.error("Error saving email to Firebase:", error);
     }
   };
 
@@ -48,55 +47,64 @@ function Cart({ close, cart, handleDelete }) {
     event.preventDefault();
     if (email.match(emailRegex)) {
       await saveEmailToFirebase(email); // Save the email to Firebase
-      navigate('/payment');
+      navigate("/payment");
     } else {
-      alert('Invalid email format. Please enter a valid email.');
+      alert("Invalid email format. Please enter a valid email.");
     }
   };
 
   return (
-    <div className='cartPage'>
-      <div className='cartContainer'>
-        <p className='closeCart' onClick={close}>
+    <div className="cartPage">
+      <div className="cartContainer">
+        <p className="closeCart" onClick={close}>
           X
         </p>
         <h2>Carrito de compras</h2>
-        <div className='cartItems'>
+        <div className="cartItems">
           {cart &&
             cart.map((product, index) => (
-              <div className='cartItem' key={index}>
+              <div className="cartItem" key={index}>
                 <img src={product.thumbnail} alt={product.title} />
                 <p>
                   <span>{product.title}</span>
                   <span>${product.price}</span>
                 </p>
-                <div className='deleteItem'>
+                <div className="deleteItem">
                   <button onClick={() => handleDelete(product.title)}>
-                    <img src='' alt='Borrar' />
+                    <img src="" alt="Borrar" />
                   </button>
                 </div>
               </div>
             ))}
         </div>
-        <p className='total'>
+        <p className="total">
           <span>Total</span>
           <span>${total}</span>
         </p>
         <button onClick={handlePay}>Iniciar compra</button>
       </div>
       {isModalOpen && (
-        <div className='emailModal'>
+        <div className="emailModal">
           <form onSubmit={handleSubmit}>
             <h3>Ingrese su correo electrónico:</h3>
             <input
-              type='email'
+              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button type='submit'>Continuar</button>
+            <div className="email_btn_ctn">
+              <button className="email_btn" type="submit">
+                Continuar
+              </button>
+              <button
+                className="email_btn"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Cancelar
+              </button>
+            </div>
           </form>
-          <button onClick={() => setIsModalOpen(false)}>Cancelar</button>
         </div>
       )}
     </div>
