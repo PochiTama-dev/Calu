@@ -4,14 +4,8 @@ import { db } from "../../firebase-config";
 import { useParams } from "react-router-dom";
 import { Header } from "../Header/header";
 import "./product-detail.css";
-import Star from "./star.svg";
-import StarEmpty from "./star-empty.svg";
-import Heart from "./heart.svg";
-import ShareNode from "./shared-node.svg";
 import cart from "../Resources/Card_resources/cart.svg";
 import elipse from "../Resources/Card_resources/elipse.svg";
-import CTN from "../CTN/CTN";
-import Footer from "../Footer/Footer";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -50,11 +44,11 @@ function ProductDetail() {
   }
 
   const handleDownload = () => {
-    // Lógica para descargar el e-book
-    if (product.pdf !== 0 && product.pdf !== null) {
+    // Lógica para descargar el archivo .rar
+    if (product.compressed !== 0 && product.compressed !== null) {
       const a = document.createElement("a");
-      a.href = product.pdf;
-      a.download = `${product.title}.pdf`;
+      a.href = product.compressed;
+      a.download = `${product.title}.rar`;
       a.target = "_blank"; // Agregar esta línea para abrir en nueva pestaña
       a.click();
     }
@@ -101,7 +95,7 @@ function ProductDetail() {
             </div>
           ) : (
             <button className="download-button" onClick={handleDownload}>
-              Agregar al carrito
+              Descargar Archivo
             </button>
           )}
         </div>
@@ -127,55 +121,7 @@ function ProductDetail() {
         </div>
 
         <div className="recomendation">
-          <h3>Mas de esta serie</h3>
-          <div className="book-recomendation">
-            <div className="book">
-              <div className="book-content"></div>
-              <div className="title-autor">
-                <h4>Titulo</h4>
-                <h6>Autor</h6>
-              </div>
-              <div className="type-price">
-                <p>Tipo de libro</p>
-                <p>$0000</p>
-              </div>
-              <div className="product_cart">
-                <img src={elipse} alt=" " className="elipse_product" />
-                <img src={cart} alt=" " className="cart_product" />
-              </div>
-            </div>
-
-            <div className="book">
-              <div className="book-content"></div>
-              <div className="title-autor">
-                <h4>Titulo</h4>
-                <h6>Autor</h6>
-              </div>
-              <div className="type-price">
-                <p>Tipo de libro</p>
-                <p>$0000</p>
-              </div>
-              <div className="product_cart">
-                <img src={elipse} alt=" " className="elipse_product" />
-                <img src={cart} alt=" " className="cart_product" />
-              </div>
-            </div>
-            <div className="book">
-              <div className="book-content"></div>
-              <div className="title-autor">
-                <h4>Titulo</h4>
-                <h6>Autor</h6>
-              </div>
-              <div className="type-price">
-                <p>Tipo de libro</p>
-                <p>$0000</p>
-              </div>
-              <div className="product_cart">
-                <img src={elipse} alt=" " className="elipse_product" />
-                <img src={cart} alt=" " className="cart_product" />
-              </div>
-            </div>
-          </div>
+          {/* Resto del contenido de recomendación */}
         </div>
       </div>
     </div>
