@@ -42,28 +42,32 @@ export const Header = ({ cartItem, handleDelete }) => {
   return (
     <header className="navBar">
       <div className="header_items">
-        <div className="admin-menu">
-          <button className="admin-btn" onClick={handleAdminMenu}>
-            ADMIN
-          </button>
-          {showAdminMenu && (
-            <div className="admin-dropdown">
-              <Link to="/product-form">Create Product</Link>
-              <Link to="/create-post">Create Post</Link>
-              <Link to="/admin-crud">Create Services</Link>
-              <Link to="/admin-home">Edit Home</Link>
-              <Link to="/email-list">Email List</Link>
-
-              <button onClick={signUserOut}>Log Out</button>
-            </div>
-          )}
-        </div>
         <nav>
           <Link to={"/"}>
             <img className="logoCalu" src={miImagen} alt="Logo Calu" />
           </Link>
+          {!isAuth ? (
+            <Link to="/Admin-login"></Link>
+          ) : (
+            <>
+              <div className="admin-menu">
+                <button className="admin-btn" onClick={handleAdminMenu}>
+                  ADMIN
+                </button>
+                {showAdminMenu && (
+                  <div className="admin-dropdown">
+                    <Link to="/product-form">Create Product</Link>
+                    <Link to="/create-post">Create Post</Link>
+                    <Link to="/admin-crud">Create Services</Link>
+                    <Link to="/admin-home">Edit Home</Link>
+                    <Link to="/email-list">Email List</Link>
 
-          {!isAuth ? <Link to="/Admin-login"></Link> : <></>}
+                    <button onClick={signUserOut}>Log Out</button>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
           <nav className={showLinks ? "links " : "link show "}>
             <div className="links_ctn">
               <Link to={"/"}> HOME </Link>
@@ -76,22 +80,23 @@ export const Header = ({ cartItem, handleDelete }) => {
               <div className="line"></div>
               <Link to={"/Contact"}>CONTACTO </Link>
             </div>
-          </nav>
-          <div className="cart-2">
-            <div className="carrito" onClick={() => setShowCart(true)}>
-              <img src={cart} alt={cart} />
-              {Array.isArray(cartItem) && !showCart && (
-                <p className="totalItems">{cartItem.length}</p>
+
+            <div className="cart-2">
+              <div className="carrito" onClick={() => setShowCart(true)}>
+                <img src={cart} alt={cart} />
+                {Array.isArray(cartItem) && !showCart && (
+                  <p className="totalItems">{cartItem.length}</p>
+                )}
+              </div>
+              {showCart && (
+                <Cart
+                  close={handleClose}
+                  cart={cartItem}
+                  handleDelete={handleDelete}
+                />
               )}
             </div>
-            {showCart && (
-              <Cart
-                close={handleClose}
-                cart={cartItem}
-                handleDelete={handleDelete}
-              />
-            )}
-          </div>
+          </nav>
           <span
             onClick={handleLinks}
             className={`btn ${showLinks ? "bar" : "cross"}`}

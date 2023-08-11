@@ -11,8 +11,6 @@
   right: 0;
   width: 300px;
   height: 200px;
-  box-shadow: 5.5px 5px 10px rgb(78, 77, 77);
-  margin-right: 50px;
 }
 
 .cartContainer h2 {
@@ -60,19 +58,19 @@
   margin: 5px auto;
   width: 100%;
 }
-
+.email_btn_ctn {
+}
 .emailModal {
   position: fixed;
-  top: 300%;
+  background: rgba(0, 0, 255, 0.7);
+  top: 190%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 255, 0.3);
   width: 350px;
+  transform: translate(-50%, -50%);
   border: solid 1px white;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 5.5px 5px 10px rgb(78, 77, 77);
-  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .email_btn {
   color: white;
@@ -86,27 +84,16 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  margin-left: 50px;
+  margin-left: 55px;
 
   border-radius: 50px;
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   font-weight: bold;
   font-size: 14px;
 }
-.modal-background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: -1;
-}
 .emailModal form {
   display: flex;
   flex-direction: column;
-  margin-left: 15px;
   gap: 10px;
 }
 .emailModal input {
@@ -121,18 +108,6 @@
 .emailModal h3 {
   color: white;
 }
-@media (max-width: 767px) {
-  .emailModal {
-    width: 300px;
-  }
-  .email_btn {
-    margin-left: 25px;
-  }
-  .cartContainer {
-    margin-right: 10px;
-  }
-}
-
 @media (min-width: 1024px) {
   .cartContainer {
     height: 400px;
