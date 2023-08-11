@@ -70,7 +70,10 @@
 }
 @media (max-height: 600px) {
   .novedades_items {
-    margin-top: 150px;
+    margin-top: 50px;
+  }
+  .cards_novedades {
+    margin-top: 30px;
   }
 }
 @media (max-width: 1330px) {
@@ -90,14 +93,19 @@
 }
 
 @media (max-width: 767px) {
+  .news_text {
+    margin: 90px 7% 0% 7%;
+  }
   .cards_novedades {
     justify-content: center;
+    margin-top: 60px;
   }
 }
 
 @media (max-width: 480px) {
   .cards_novedades {
     justify-content: center;
+    margin-top: 60px;
   }
   .novedades_container p {
     margin: 0 0 -15px 0%;

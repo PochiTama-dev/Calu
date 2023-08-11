@@ -40,6 +40,11 @@
   }
 }
 
+@media (max-width: 767px) {
+  .res_items {
+    margin-top: 50px;
+  }
+}
 @media (max-height: 600px) {
   .res_items {
     margin-top: 150px;

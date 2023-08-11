@@ -11,8 +11,8 @@
   color: aqua;
 }
 .img-container img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
 }
 .main-detail {
   display: flex;
@@ -169,7 +169,7 @@
 }
 
 .book-description {
-  text-align: left;
+  text-align: justify;
   width: 90%;
 }
 
@@ -183,6 +183,8 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+  margin-top: 25px;
 }
 
 .book-description .dropdown-button p {
@@ -391,8 +393,12 @@
 
   .book-description span {
     font-size: 20px;
+    text-align: justify;
   }
 
+  .book-description {
+    text-align: justify;
+  }
   .book-recomendation .book-content {
     width: 75%;
     min-height: 300px;

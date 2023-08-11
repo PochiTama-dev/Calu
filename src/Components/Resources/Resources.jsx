@@ -94,9 +94,9 @@ const Resources = () => {
               ></Card_res>
             ))}
         </Slider>
-        <button className="btn_news" onClick={() => ""}>
+        <Link className="btn_res_more" to={"/product-list"}>
           Ver Más
-        </button>
+        </Link>
       </div>
     </div>
   );

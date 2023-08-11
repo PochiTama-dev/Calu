@@ -69,7 +69,7 @@
 
   .CTN_ctn p {
     font-size: 24px;
-    margin-top: 80px;
+    margin-top: 65px;
   }
   .CTN_ctn2 {
     margin-top: 50px;
@@ -95,7 +95,7 @@
   }
   .ctn_p {
     font-size: 20px;
-    margin: 0 15% 0% 7%;
+    margin: 0 7% 0% 7%;
   }
 }
 @media (max-width: 375px) {
@@ -115,6 +115,6 @@
 
 @media (max-height: 650px) {
   .CTN_ctn2 {
-    margin-top: 150px;
+    margin-top: 220px;
   }
 }
