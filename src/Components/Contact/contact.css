@@ -39,15 +39,15 @@
     text-transform: uppercase;
   }
   .contact-form .contact-inputs {
-    margin-left: 25px;
-    width: 74%;
+    margin-left: 30px;
+    margin-right: 30px;
     border-radius: 6px;
     padding: 12px 16px;
     border: 1px solid #ccc;
   }
   .contact-form textarea {
-    margin: 0 0 20px 25px;
-    width: 80%;
+    margin: 0 30px 20px 30px;
+
     border-radius: 6px;
     border: 1px solid #ccc;
   }
@@ -108,7 +108,7 @@
   }
   .contact-form textarea {
     margin: 0 0 20px 50px;
-
+    width: 75%;
     border-radius: 6px;
     border: 1px solid #ccc;
   }
