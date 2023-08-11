@@ -81,7 +81,7 @@ function ProductList() {
   };
 
   return (
-    <>
+    <div>
       <div className='main-container' ref={firstSection}>
         <button className='arrow_up12' onClick={scrollToTop}>
           <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
@@ -125,10 +125,7 @@ function ProductList() {
                     <button className='edit-button' onClick={() => handleEditProduct(product.id)}>
                       Editar
                     </button>
-                    <button
-                      className='delete-button'
-                      onClick={() => deleteProduct(product.id, product.thumbnail)}
-                    >
+                    <button className='delete-button' onClick={() => deleteProduct(product.id, product.thumbnail)}>
                       Eliminar
                     </button>
                   </div>
@@ -138,7 +135,7 @@ function ProductList() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
