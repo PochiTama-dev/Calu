@@ -1,3 +1,4 @@
+
 const ModalBuy = ({ handleSubmit, setIsModalOpen, email, setEmail }) => {
   return (
     <div>
@@ -15,12 +16,15 @@ const ModalBuy = ({ handleSubmit, setIsModalOpen, email, setEmail }) => {
               Continuar
             </button>
             <button className="email_btn" onClick={() => setIsModalOpen(false)}>
+
               Cancelar
             </button>
           </div>
         </form>
       </div>
+
       <div class="modal-background"></div>
+
     </div>
   );
 };
