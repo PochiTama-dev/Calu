@@ -59,6 +59,8 @@ const Resources = () => {
                       <div className='res_cart'>
                         <img src={elipse} alt=' ' className='elipse' />
                         <img src={cart} alt=' ' className='cart' />
+                        <p className='price'>${product.data().price}</p>
+                        <p className='detalles'> {'>>'}Más Detalles</p>
                       </div>
                     </Link>
                   }

@@ -138,7 +138,7 @@ function ProductDetail() {
           ) : (
             <>
               <button className='download-button' onClick={() => handleDownloadAndBuy(product.id)}>
-                Descargar Archivo
+                Agregar al carrito
               </button>
               <div className='modalBuy'>
                 {modal && (
