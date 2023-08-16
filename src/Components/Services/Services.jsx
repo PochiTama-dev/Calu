@@ -16,34 +16,34 @@ const Services = () => {
   const { cart, removeFromCart } = useCustomContext();
   const [width, setWidth] = useState(window.innerWidth);
   const breakpoint = 1024;
-  useEffect(() => {
-    const handleResizeWindow = () => setWidth(window.innerWidth);
-
-    window.addEventListener('resize', handleResizeWindow);
-    return () => {
-      window.removeEventListener('resize', handleResizeWindow);
-    };
-  }, []);
-
   const [servicios, setServicios] = useState([]);
   const serviciosRef = collection(db, 'servicios');
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const serviceName = queryParams.get('serviceName');
   const scrollRef = useRef(null);
-
   useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResizeWindow);
     const getPosts = async () => {
       const data = await getDocs(serviciosRef);
       setServicios(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      if (scrollRef.current) {
-        console.log(scrollRef);
-        scrollRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
+
+      setTimeout(() => {
+        if (scrollRef.current) {
+          console.log(scrollRef);
+          scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1000);
     };
 
     getPosts();
+    return () => {
+      window.removeEventListener('resize', handleResizeWindow);
+    };
   }, [serviceName]);
+
   //////////// Scroll to top
   const firstSection = useRef(null);
   const scrollToTop = () => {
