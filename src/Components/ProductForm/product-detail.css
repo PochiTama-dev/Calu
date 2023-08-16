@@ -77,29 +77,20 @@
   font-weight: 700;
 }
 
+.download-button,
 .buying button {
-  width: 200px;
-  height: 34px;
+  width: 220px;
+  height: 50px;
   border-radius: 20px;
-  background-color: rgba(4, 25, 88, 0.6);
-  color: white;
-  outline: none;
-  border: none;
-
-  margin-top: 10px;
-  font-weight: 700;
-}
-
-.download-button {
-  width: 200px;
-  height: 34px;
-  border-radius: 20px;
-  background-color: rgba(4, 25, 88, 0.6);
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   outline: none;
   border: none;
   cursor: pointer;
   margin-top: 10px;
   font-weight: 700;
+  box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
+  color: white;
+  font-weight: bold;
 }
 
 .detail-content {
@@ -387,7 +378,7 @@
   }
 
   .disponibilidad {
-    margin-left: -220px;
+    margin-left: -215px;
     font-size: 16px;
     font-weight: 600;
   }
@@ -403,6 +394,7 @@
 
   .book-description {
     text-align: justify;
+    width: 90%;
   }
   .book-recomendation .book-content {
     width: 75%;

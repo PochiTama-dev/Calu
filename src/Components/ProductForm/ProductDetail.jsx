@@ -133,7 +133,9 @@ function ProductDetail() {
           {product.price !== 'Gratis' && product.price !== null ? (
             <div className='buying'>
               <p className='price-p'>Precio: ${product.price}</p>
-              <button onClick={handleBuy}>Comprar</button>
+              <button className='download-button' onClick={handleBuy}>
+                Comprar
+              </button>
             </div>
           ) : (
             <>
