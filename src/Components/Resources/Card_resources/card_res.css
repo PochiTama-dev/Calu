@@ -10,11 +10,24 @@
   margin: 222px 0 0 -285px;
   display: flex;
   position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
   background: none;
   border: none;
   text-decoration: none;
+}
+.res_cart .price {
+  color: white;
+}
+.res_cart .detalles {
+  color: white;
+  margin-left: 10px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .res_description {
   margin-left: 30px;
@@ -22,11 +35,13 @@
 .cart {
   display: flex;
   position: absolute;
+
   margin: 10px 20px 20px 10px;
   width: 50%;
 }
 .elipse{
   width: 75%;
+
 }
 .card_res_ctn {
   display: flex;
@@ -47,12 +62,14 @@
   /*border-radius: 30% 0% 30% 0%;*/
   border-radius: 30% 0% 30% 0%;
   min-width: 150px;
+
   width: 250px;
   height: 250px;
   background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
   );
+
 }
 
 .res_description {

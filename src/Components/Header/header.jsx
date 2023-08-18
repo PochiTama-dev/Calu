@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import "./header.css";
 import miImagen from "../../images/logocalu.png";
@@ -10,24 +11,27 @@ import ModalBuy from "../Cart/ModalBuy";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
+
 export const Header = ({ cartItem, handleDelete }) => {
   const [isAuth, setIsAuth] = useState(false);
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [email, setEmail] = useState("");
+
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
   useEffect(() => {
-    setIsAuth(localStorage.getItem("isAuth") === "true");
+    setIsAuth(localStorage.getItem('isAuth') === 'true');
   }, [location]);
 
   const signUserOut = () => {
     signOut(auth).then(() => {
-      localStorage.removeItem("isAuth");
+      localStorage.removeItem('isAuth');
       setIsAuth(false);
-      window.location.pathname = "/Admin-login";
+      window.location.pathname = '/Admin-login';
     });
   };
 
@@ -49,21 +53,27 @@ export const Header = ({ cartItem, handleDelete }) => {
     event.preventDefault();
     if (email.match(emailRegex)) {
       await saveEmailToFirebase(email); // Save the email to Firebase
+
       navigate("/payment");
     } else {
       alert("Invalid email format. Please enter a valid email.");
+
     }
   };
   const saveEmailToFirebase = async (email) => {
     try {
+
       const emailsCollectionRef = collection(db, "email"); // Change to the correct collection name
+
       await addDoc(emailsCollectionRef, {
         email,
         timestamp: new Date(),
       });
+
       console.log("Email saved to Firebase successfully");
     } catch (error) {
       console.error("Error saving email to Firebase:", error);
+
     }
   };
   const handlePay = () => {
@@ -72,48 +82,70 @@ export const Header = ({ cartItem, handleDelete }) => {
   };
 
   return (
-    <header className="navBar">
-      <div className="header_items">
-        <div className="admin-menu">
-          <button className="admin-btn" onClick={handleAdminMenu}>
+    <header className='navBar'>
+      <div className='header_items'>
+        <div className='admin-menu'>
+          <button className='admin-btn' onClick={handleAdminMenu}>
             ADMIN
           </button>
           {showAdminMenu && (
-            <div className="admin-dropdown">
-              <Link to="/product-form">Create Product</Link>
-              <Link to="/create-post">Create Post</Link>
-              <Link to="/admin-crud">Create Services</Link>
-              <Link to="/admin-home">Edit Home</Link>
-              <Link to="/email-list">Email List</Link>
+            <div className='admin-dropdown'>
+              <Link to='/product-form'>Create Product</Link>
+              <Link to='/create-post'>Create Post</Link>
+              <Link to='/admin-crud'>Create Services</Link>
+              <Link to='/admin-home'>Edit Home</Link>
+              <Link to='/email-list'>Email List</Link>
 
               <button onClick={signUserOut}>Log Out</button>
             </div>
           )}
         </div>
         <nav>
-          <Link to={"/"}>
-            <img className="logoCalu" src={miImagen} alt="Logo Calu" />
+          <Link to={'/'}>
+            <img className='logoCalu' src={miImagen} alt='Logo Calu' />
           </Link>
 
-          {!isAuth ? <Link to="/Admin-login"></Link> : <></>}
-          <nav className={showLinks ? "links " : "link show "}>
-            <div className="links_ctn">
-              <Link to={"/"}> HOME </Link>
-              <div className="line"></div>
-              <Link to={"/services"}> SERVICIOS </Link>
-              <div className="line"></div>
-              <Link to={"/product-list"}>PRODUCTOS</Link>
-              <div className="line"></div>
-              <Link to={"/blog"}> BLOG </Link>
-              <div className="line"></div>
-              <Link to={"/Contact"}>CONTACTO </Link>
+          {!isAuth ? <Link to='/Admin-login'></Link> : <></>}
+          <nav className={showLinks ? 'links ' : 'link show '}>
+            <div className='links_ctn'>
+              <Link className={location.pathname === '/' ? 'headerLinks' : ''} to={'/'}>
+                {' '}
+                HOME{' '}
+              </Link>
+              <div className='line'></div>
+              <Link
+                className={location.pathname === '/services' ? 'headerLinks' : ''}
+                to={'/services'}
+              >
+                {' '}
+                SERVICIOS{' '}
+              </Link>
+              <div className='line'></div>
+              <Link
+                className={location.pathname === '/product-list' ? 'headerLinks' : ''}
+                to={'/product-list'}
+              >
+                PRODUCTOS
+              </Link>
+              <div className='line'></div>
+              <Link className={location.pathname === '/blog' ? 'headerLinks' : ''} to={'/blog'}>
+                {' '}
+                BLOG{' '}
+              </Link>
+              <div className='line'></div>
+              <Link
+                className={location.pathname === '/Contact' ? 'headerLinks' : ''}
+                to={'/Contact'}
+              >
+                CONTACTO{' '}
+              </Link>
             </div>
           </nav>
-          <div className="cart-2">
-            <div className="carrito" onClick={() => setShowCart(true)}>
+          <div className='cart-2'>
+            <div className='carrito' onClick={() => setShowCart(true)}>
               <img src={cart} alt={cart} />
               {Array.isArray(cartItem) && !showCart && (
-                <p className="totalItems">{cartItem.length}</p>
+                <p className='totalItems'>{cartItem.length}</p>
               )}
             </div>
             {showCart && (
@@ -125,10 +157,7 @@ export const Header = ({ cartItem, handleDelete }) => {
               />
             )}
           </div>
-          <span
-            onClick={handleLinks}
-            className={`btn ${showLinks ? "bar" : "cross"}`}
-          >
+          <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
             <div>
               <i></i>
               <i></i>

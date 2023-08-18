@@ -1,5 +1,6 @@
 
 const ModalBuy = ({ handleSubmit, setIsModalOpen, email, setEmail }) => {
+
     return (
       <div>
         <div className="emailModal">
@@ -29,3 +30,4 @@ const ModalBuy = ({ handleSubmit, setIsModalOpen, email, setEmail }) => {
     );
   };
   export default ModalBuy;
+
