@@ -6,13 +6,19 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import cart from "../../images/carrito.png";
 import Cart from "../Cart/Cart";
-
+import ModalBuy from "../Cart/ModalBuy";
+import { useNavigate } from "react-router-dom";
+import { db } from "../../firebase-config";
+import { collection, addDoc } from "firebase/firestore";
 export const Header = ({ cartItem, handleDelete }) => {
   const [isAuth, setIsAuth] = useState(false);
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const navigate = useNavigate();
   useEffect(() => {
     setIsAuth(localStorage.getItem("isAuth") === "true");
   }, [location]);
@@ -37,6 +43,32 @@ export const Header = ({ cartItem, handleDelete }) => {
 
   const handleClose = () => {
     setShowCart(!showCart);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (email.match(emailRegex)) {
+      await saveEmailToFirebase(email); // Save the email to Firebase
+      navigate("/payment");
+    } else {
+      alert("Invalid email format. Please enter a valid email.");
+    }
+  };
+  const saveEmailToFirebase = async (email) => {
+    try {
+      const emailsCollectionRef = collection(db, "email"); // Change to the correct collection name
+      await addDoc(emailsCollectionRef, {
+        email,
+        timestamp: new Date(),
+      });
+      console.log("Email saved to Firebase successfully");
+    } catch (error) {
+      console.error("Error saving email to Firebase:", error);
+    }
+  };
+  const handlePay = () => {
+    setIsModalOpen(true);
+    setShowCart(false);
   };
 
   return (
@@ -89,6 +121,7 @@ export const Header = ({ cartItem, handleDelete }) => {
                 close={handleClose}
                 cart={cartItem}
                 handleDelete={handleDelete}
+                buy={handlePay}
               />
             )}
           </div>
@@ -104,6 +137,14 @@ export const Header = ({ cartItem, handleDelete }) => {
           </span>
         </nav>
       </div>
+      {isModalOpen && (
+        <ModalBuy
+          email={email}
+          setEmail={setEmail}
+          handleSubmit={handleSubmit}
+          setIsModalOpen={setIsModalOpen}
+        />
+      )}
     </header>
   );
 };

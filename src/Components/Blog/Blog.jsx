@@ -59,6 +59,7 @@ function Blog() {
   };
 
   const handlePostClick = (id) => {
+    navigate(`/blog/${id}`);
   };
 
   useEffect(() => {

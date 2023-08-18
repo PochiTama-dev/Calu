@@ -18,7 +18,7 @@ section {
     100% calc(50% - 5px), 100% 100%;
   background-repeat: no-repeat;
   backdrop-filter: blur(1px);
-  min-height: 800px;
+  min-height: 700px;
 }
 iframe[src^="https://www.google.com/recaptcha/"]
 {
@@ -37,20 +37,33 @@ iframe[src^="https://www.google.com/recaptcha/"]
 
 @media only screen and (max-width: 767px) {
   h1 {
-    font-size: 36px;
+    font-size: 24px;
     font-family: "Archive", Arial, sans-serif;
   }
   h2 {
-    font-size: 26px;
+    font-size: 18px;
   }
   p {
-    font-size: 20px;
+    font-size: 14px;
   }
 }
 
 @media only screen and (max-width: 390px) {
   h1 {
-    font-size: 26px;
+    font-size: 24px;
+    font-family: "Archive", Arial, sans-serif;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+/* Estilos para tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 30px;
     font-family: "Archive", Arial, sans-serif;
   }
   h2 {
@@ -60,30 +73,17 @@ iframe[src^="https://www.google.com/recaptcha/"]
     font-size: 16px;
   }
 }
-/* Estilos para tablet */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  h1 {
-    font-size: 36px;
-    font-family: "Archive", Arial, sans-serif;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  p {
-    font-size: 20px;
-  }
-}
 
 /* Estilos para escritorio */
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: 46px;
+    font-size: 32px;
     font-family: "Archive", Arial, sans-serif;
   }
   h2 {
-    font-size: 28px;
+    font-size: 22px;
   }
   p {
-    font-size: 24px;
+    font-size: 18px;
   }
 }

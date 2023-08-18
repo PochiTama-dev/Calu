@@ -32,14 +32,15 @@
   background-color: rgba(0, 0, 255, 0.2);
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   border-radius: 20px;
-  border: 1px solid white;
+ 
   flex-wrap: wrap;
   align-items: flex-start;
   min-width: initial;
 }
 
 .blog-sidebar .lateralBar {
-  width: 340px;
+  width: 100%;
+  
 }
 
 .cardContainerblog {
@@ -319,6 +320,7 @@
   }
   .blog-sidebar .lateralBar {
     width: 350px;
+    margin-left: 25px
   }
   .lateralBar .blogTitle_ {
     margin: 0;

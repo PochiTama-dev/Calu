@@ -63,14 +63,26 @@
   margin: 30px -20px 30px 00px;
 }
 .card_srv_info {
-  max-width: 1600px;
   margin: -100px 50px 0 20px;
+  min-height: 100vh;
+  max-width: 1600px;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+ 
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .card_srv_info_inv {
   max-width: 1600px;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,7 +112,7 @@
 }
 .srv_icon img {
   height: 100%;
-  width: 280px;
+  width: 220px;
 }
 .title_srv {
   color: rgba(185, 4, 139, 0.9154228855721394);
@@ -109,7 +121,7 @@
   font-size: 30px;
 }
 .title_srv h1 {
-  font-size: 38px;
+  
 }
 .sub_d {
   color: white;
@@ -185,6 +197,6 @@
 
 @media (max-height: 750px) {
   .card_srv_cont {
-    margin-top: 250px;
+    margin-top: 150px;
   }
 }

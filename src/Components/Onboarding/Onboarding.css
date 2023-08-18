@@ -3,11 +3,12 @@
   overflow: hidden;
   margin-left: 7%;
   display: flex;
-  min-height: 100vh;
+  min-height: 110vh;
 }
 
 .onb_items {
   display: flex;
+  flex-direction: row;
   margin-top: -50px;
 }
 .onboarding .logoOnboard {
@@ -67,15 +68,13 @@
 }
 
 @media (min-width: 900px) {
-  .logo_ctn {
-    width: 1000px;
-  }
+
 
   .onboarding .logoOnboard {
     display: block;
     position: relative;
     right: -110px;
-    width: 750px;
+    max-width: 45%;
   }
 
   .onboarding .parrafo {
@@ -84,7 +83,7 @@
   }
 
   .onboarding .parrafo h1 {
-    font-size: 38px;
+
     margin-bottom: 0;
   }
   .onboarding .parrafo p {
@@ -94,26 +93,12 @@
 
 @media (max-width: 360px) {
   .onboarding .parrafo h1 {
-    font-size: 26px;
+   
     margin-bottom: 0;
   }
 }
-@media (max-width: 1314px) {
-  .onboarding .logoOnboard {
-    display: block;
-    position: relative;
-    right: -50px;
-    width: 500px;
-  }
-  .onboarding .parrafo {
-    margin-top: 20px;
-  }
-}
-@media (max-width: 1218px) {
-  .onboarding .logoOnboard {
-    display: none;
-  }
-}
+
+
 @media (max-width: 900px) {
   .onboarding {
     align-items: center;
@@ -167,7 +152,7 @@
     );
     border-radius: 50px;
     width: 15rem;
-    height: 6vh;
+    height:40px;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -181,8 +166,8 @@
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 650px) {
   .onb_items {
-    margin-top: 150px;
+    margin-top: 80px;
   }
 }

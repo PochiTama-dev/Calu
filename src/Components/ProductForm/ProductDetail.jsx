@@ -1,20 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, query, doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { useParams } from "react-router-dom";
 import { Header } from "../Header/header";
 import "./product-detail.css";
 import cart from "../Resources/Card_resources/cart.svg";
 import elipse from "../Resources/Card_resources/elipse.svg";
+import ProductList from "./ProductList";
 
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isDescriptionExpanded, setDescriptionExpanded] = useState(false);
+  const productsCollectionRef = collection(db, 'e-commerce');
+  const [products, setProducts] = useState([]);
+  
+
+
+
+    const getProducts = async () => {
+      const results = await getDocs(query(collection(db, "e-commerce")));
+      return results;
+    };
+    useEffect(() => {
+      getProductsData();
+    }, []);
+  //////// get productos 
+    const getProductsData = async () => {
+      const products = await getProducts();
+      setProducts(products.docs);
+      console.log(products.docs[1].data().category);
+    };
 
   useEffect(() => {
-    const fetchProduct = async () => {
+     const fetchProduct = async () => {
       try {
         const productDoc = doc(db, "e-commerce", id);
         const productSnapshot = await getDoc(productDoc);
@@ -34,6 +54,7 @@ function ProductDetail() {
 
     fetchProduct();
   }, [id]);
+
 
   if (loading) {
     return <p>Cargando producto...</p>;
@@ -72,7 +93,7 @@ function ProductDetail() {
       <br />
       <br />
       <br />
-      <h1>DETALLE DEL PRODUCTO</h1>
+      <h2>DETALLE DEL PRODUCTO</h2>
       <div className="main-detail">
         <div className="img-container">
           <div className="title-mobile">
@@ -95,7 +116,7 @@ function ProductDetail() {
             </div>
           ) : (
             <button className="download-button" onClick={handleDownload}>
-              Descargar Archivo
+              Agregar al carrito
             </button>
           )}
         </div>
@@ -103,8 +124,10 @@ function ProductDetail() {
         <div className="extra"></div>
         <div className="disponibilty">
           <p className="disponibilidad">Disponible inmediatamente</p>
-        </div>
         <hr />
+        
+        </div>
+
         <div className="book-description">
           <span>
             {isDescriptionExpanded
@@ -121,11 +144,58 @@ function ProductDetail() {
         </div>
 
         <div className="recomendation">
-          {/* Resto del contenido de recomendación */}
+          <h3>Mas de esta serie</h3>
+          <div className="book-recomendation">
+            <div className="book">
+              <div className="book-content"></div>
+              <div className="title-autor">
+                <h4>Titulo</h4>
+                <h6>Autor</h6>
+              </div>
+              <div className="type-price">
+                <p>Tipo de libro</p>
+                <p>$0000</p>
+              </div>
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
+              </div>
+            </div>
+           
+            <div className="book">
+              <div className="book-content"></div>
+              <div className="title-autor">
+                <h4>Titulo</h4>
+                <h6>Autor</h6>
+              </div>
+              <div className="type-price">
+                <p>Tipo de libro</p>
+                <p>$0000</p>
+              </div>
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
+              </div>
+            </div>
+            <div className="book">
+              <div className="book-content"></div>
+              <div className="title-autor">
+                <h4>Titulo</h4>
+                <h6>Autor</h6>
+              </div>
+              <div className="type-price">
+                <p>Tipo de libro</p>
+                <p>$0000</p>
+              </div>
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
 export default ProductDetail;
