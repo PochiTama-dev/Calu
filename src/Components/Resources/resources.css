@@ -22,7 +22,7 @@
   background: none;
   cursor: pointer;
   color: rgba(185, 4, 139, 0.9154228855721394);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   display: flex;
   margin-left: auto;
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 @media (max-width: 1300px) {
@@ -43,6 +43,9 @@
 @media (max-width: 767px) {
   .res_items {
     margin-top: 50px;
+  }
+  .card_ctn {
+ margin-top: 20px;
   }
 }
 @media (max-height: 600px) {

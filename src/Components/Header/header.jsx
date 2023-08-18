@@ -1,22 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import './header.css';
-import miImagen from '../../images/logocalu.png';
-import { Link, useLocation } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
-import { auth } from '../../firebase-config';
-import cart from '../../images/carrito.png';
-import Cart from '../Cart/Cart';
-import ModalBuy from '../Cart/ModalBuy';
-import { useNavigate } from 'react-router-dom';
-import { db } from '../../firebase-config';
-import { collection, addDoc } from 'firebase/firestore';
+
+import React, { useState, useEffect } from "react";
+import "./header.css";
+import miImagen from "../../images/logocalu.png";
+import { Link, useLocation } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase-config";
+import cart from "../../images/carrito.png";
+import Cart from "../Cart/Cart";
+import ModalBuy from "../Cart/ModalBuy";
+import { useNavigate } from "react-router-dom";
+import { db } from "../../firebase-config";
+import { collection, addDoc } from "firebase/firestore";
+
 export const Header = ({ cartItem, handleDelete }) => {
   const [isAuth, setIsAuth] = useState(false);
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
+
+  const [email, setEmail] = useState("");
+
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
   useEffect(() => {
@@ -49,21 +53,27 @@ export const Header = ({ cartItem, handleDelete }) => {
     event.preventDefault();
     if (email.match(emailRegex)) {
       await saveEmailToFirebase(email); // Save the email to Firebase
-      navigate('/payment');
+
+      navigate("/payment");
     } else {
-      alert('Invalid email format. Please enter a valid email.');
+      alert("Invalid email format. Please enter a valid email.");
+
     }
   };
   const saveEmailToFirebase = async (email) => {
     try {
-      const emailsCollectionRef = collection(db, 'email'); // Change to the correct collection name
+
+      const emailsCollectionRef = collection(db, "email"); // Change to the correct collection name
+
       await addDoc(emailsCollectionRef, {
         email,
         timestamp: new Date(),
       });
-      console.log('Email saved to Firebase successfully');
+
+      console.log("Email saved to Firebase successfully");
     } catch (error) {
-      console.error('Error saving email to Firebase:', error);
+      console.error("Error saving email to Firebase:", error);
+
     }
   };
   const handlePay = () => {

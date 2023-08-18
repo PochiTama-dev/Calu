@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { addDoc, collection, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
@@ -9,11 +10,13 @@ import elipse from '../Resources/Card_resources/elipse.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import ModalBuy from '../Cart/ModalBuy';
 
+
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isDescriptionExpanded, setDescriptionExpanded] = useState(false);
+
   const [modal, setModal] = useState(false);
   const [email, setEmail] = useState('');
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -21,8 +24,9 @@ function ProductDetail() {
 
   const { cart, addToCart, removeFromCart } = useCustomContext();
 
+
   useEffect(() => {
-    const fetchProduct = async () => {
+     const fetchProduct = async () => {
       try {
         const productDoc = doc(db, 'e-commerce', id);
         const productSnapshot = await getDoc(productDoc);
@@ -42,6 +46,7 @@ function ProductDetail() {
 
     fetchProduct();
   }, [id]);
+
 
   if (loading) {
     return <p>Cargando producto...</p>;
@@ -114,11 +119,13 @@ function ProductDetail() {
       <br />
       <br />
       <br />
-      <h1>DETALLE DEL PRODUCTO</h1>
-      <div className='main-detail'>
-        <div className='img-container'>
-          <div className='title-mobile'>
-            <h3 clasName='title-mobile'>{product.title}</h3>
+
+      <h2>DETALLE DEL PRODUCTO</h2>
+      <div className="main-detail">
+        <div className="img-container">
+          <div className="title-mobile">
+            <h3 title-mobile>{product.title}</h3>
+
           </div>
           <img src={product.thumbnail} alt={product.title} />
         </div>
@@ -138,6 +145,7 @@ function ProductDetail() {
               </button>
             </div>
           ) : (
+
             <>
               <button className='download-button' onClick={() => handleDownloadAndBuy(product.id)}>
                 Agregar al carrito
@@ -162,6 +170,7 @@ function ProductDetail() {
         </div>
         <hr />
         <div className='book-description'>
+
           <span>
             {isDescriptionExpanded
               ? 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corporis repellat deleniti? Similique autem eius dolore totam ratione harum obcaecati voluptatem enim quo ipsum accusamus nobis suscipit animi, quod laboriosam, assumenda tempora, magnam eveniet reprehenderit ea! Rem maiores explicabo dolorum. Optio ratione veritatis in obcaecati? Cupiditate dignissimos vel exercitationem enim.'
@@ -176,10 +185,61 @@ function ProductDetail() {
           </div>
         </div>
 
-        <div className='recomendation'>{/* Resto del contenido de recomendación */}</div>
+
+        <div className="recomendation">
+          <h3>Mas de esta serie</h3>
+          <div className="book-recomendation">
+            <div className="book">
+              <div className="book-content"></div>
+              <div className="title-autor">
+                <h4>Titulo</h4>
+                <h6>Autor</h6>
+              </div>
+              <div className="type-price">
+                <p>Tipo de libro</p>
+                <p>$0000</p>
+              </div>
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
+              </div>
+            </div>
+           
+            <div className="book">
+              <div className="book-content"></div>
+              <div className="title-autor">
+                <h4>Titulo</h4>
+                <h6>Autor</h6>
+              </div>
+              <div className="type-price">
+                <p>Tipo de libro</p>
+                <p>$0000</p>
+              </div>
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
+              </div>
+            </div>
+            <div className="book">
+              <div className="book-content"></div>
+              <div className="title-autor">
+                <h4>Titulo</h4>
+                <h6>Autor</h6>
+              </div>
+              <div className="type-price">
+                <p>Tipo de libro</p>
+                <p>$0000</p>
+              </div>
+              <div className="product_cart">
+                <img src={elipse} alt=" " className="elipse_product" />
+                <img src={cart} alt=" " className="cart_product" />
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
 }
-
 export default ProductDetail;

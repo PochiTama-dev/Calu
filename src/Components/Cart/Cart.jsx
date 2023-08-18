@@ -38,8 +38,8 @@ function Cart({ close, cart, handleDelete, buy }) {
                 <div className="cartItem" key={index}>
                   <img src={product.thumbnail} alt={product.title} />
                   <p>
-                    <span>{product.title}</span>
-                    <span>${product.price}</span>
+                    <span >{product.title}</span>
+                    <span > ${product.price}</span>
                   </p>
                   <div className="deleteItem">
                     <button onClick={() => handleDelete(product.title)}>

@@ -6,7 +6,12 @@
   color: white;
   margin-top: 150px;
 }
-
+.main_first{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-around;
+}
 .main-detail-container h1 {
   color: aqua;
 }
@@ -23,7 +28,7 @@
   text-align: center;
   padding: 20px;
   width: 75%;
-  border: solid 1px white;
+ 
   row-gap: 20px;
   /*  background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
@@ -85,7 +90,23 @@
   background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   outline: none;
   border: none;
-  cursor: pointer;
+
+
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.download-button {
+ 
+  width: 200px;
+  height: 34px;
+  border-radius: 20px;
+  background-color: rgba(4, 25, 88, 0.6);
+  outline: none;
+  border: none;
+color: white;
+cursor: pointer;
+
   margin-top: 10px;
   font-weight: 700;
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
@@ -99,7 +120,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding-left: 20px;
+  
 }
 
 .detail-content p {
@@ -138,8 +159,12 @@
 }
 
 .disponibilidad {
-  font-size: 14px;
-  margin-bottom: 0;
+margin: 0 auto 20px auto;
+    font-size: 16px;
+    font-weight: 600;
+  font-weight: 600;
+ 
+ 
 }
 
 .interaction {
@@ -169,8 +194,7 @@
   width: 90%;
 }
 
-.book-description span {
-}
+
 
 .book-description .dropdown-button {
   width: 100%;
@@ -216,16 +240,15 @@
   width: 100%;
 }
 .cart_product {
-  margin-left: -53px;
+  margin-left: -43px;
   margin-bottom: 4px;
-  width: 45px;
+  width:35px;
 }
 .elipse_product {
-  width: 60px;
+  width: 50px;
 }
 
-.title-autor {
-}
+
 
 .title-autor h4 {
   font-size: 14px;
@@ -300,7 +323,8 @@
   }
 
   .disponibilidad {
-    margin-left: 35px;
+    margin: 0 auto 20px auto;
+    font-weight: 600
   }
 
   .book-description {
@@ -311,8 +335,6 @@
     gap: 30px;
   }
 
-  .interaction-box {
-  }
 
   .interaction-box img {
     width: 30px;
@@ -324,7 +346,7 @@
   }
 
   .book-description {
-    width: 75%;
+    width: 80%;
   }
 
   .book-recomendation .book-content {
@@ -341,12 +363,14 @@
   }
 
   .img-container img {
-    width: 300px;
-    height: 300px;
+ margin-top: 10px;
+    width: 280px;
+    height: 280px;
   }
 
   .detail-content {
     row-gap: 20px;
+    margin-top: -15px;
   }
 
   .title-tablet h3 {
@@ -378,7 +402,9 @@
   }
 
   .disponibilidad {
-    margin-left: -215px;
+
+    margin: 0 auto 20px auto;
+
     font-size: 16px;
     font-weight: 600;
   }
@@ -420,4 +446,5 @@
   .type-price p:nth-child(2) {
     font-size: 14px;
   }
+
 }

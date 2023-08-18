@@ -68,6 +68,7 @@ function ProductList() {
       unsubscribe();
     };
   }, [cart]);
+ 
 
   const handleFlipCard = (productId) => {
     setFlippedProductId(productId === flippedProductId ? null : productId);
@@ -82,12 +83,13 @@ function ProductList() {
 
   return (
     <div>
+          <Header cartItem={cart} handleDelete={removeFromCart} />
       <div className='main-container' ref={firstSection}>
         <button className='arrow_up12' onClick={scrollToTop}>
           <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
         </button>
         <Contact_button />
-        <Header cartItem={cart} handleDelete={removeFromCart} />
+    
 
         <br />
         <br />
@@ -105,7 +107,7 @@ function ProductList() {
                 onClick={() => handleFlipCard(product.id)}
               >
                 <div className={`product-front ${flippedProductId === product.id ? 'hidden' : ''}`}>
-                  <img src={product.thumbnail} alt={product.title} width='150px' />
+                  <img src={product.thumbnail} alt={product.title} width='140px' height="140px" />
                 </div>
                 <div className={`product-back ${flippedProductId === product.id ? '' : 'hidden'}`}>
                   <p>{product.detail}</p>

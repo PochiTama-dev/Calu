@@ -1,12 +1,15 @@
-import React from 'react';
-import './news.css';
-import Card_news from './Card_news/Card_news';
-import Slider from '../Portfolio/Slider/Slider';
-import { useState } from 'react';
-import { getDocs, getDoc, collection, doc, query } from 'firebase/firestore';
-import { useEffect } from 'react';
-import { db } from '../../firebase-config';
-import { useNavigate } from 'react-router-dom';
+
+import React from "react";
+import "./news.css";
+import Card_news from "./Card_news/Card_news";
+import Slider from "../Portfolio/Slider/Slider";
+import { useState } from "react";
+import { getDocs, getDoc, collection, doc, query } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../../firebase-config";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const News = () => {
   const [newsinfo, setNewsinfo] = useState([]);
 
@@ -66,20 +69,26 @@ const News = () => {
             </div>
           </div>
 
-          <div className='cards_novedades'>
+
+          <div className="cards_novedades" >
             {posts &&
-              posts.map((post, index) => (
-                <div key={index}>
+              posts.map((post) => (
+                <div   onClick={() => handlePostClick(post.id)}>
                   <Card_news
-                    image={<img src={post.data().imageUrl} width='180px' />}
+                   
+                    image={<img src={post.data().imageUrl} width="140px" />}
                     title={post.data().title}
                   ></Card_news>
-                  <button className='btn_news' onClick={() => handlePostClick(post.id)}>
-                    Ver Más
-                  </button>
                 </div>
               ))}
           </div>
+                  <button
+                    className="btn_news"
+                    
+                  >
+                    <Link    className="btn_news" to={"/blog"}>Ver Más</Link>
+
+                  </button>
         </div>
       </div>
     );
@@ -99,20 +108,27 @@ const News = () => {
         <Slider>
           {posts &&
             posts.map((post) => (
-              <div>
+              <div  onClick={() => handlePostClick(post.id)}>
                 <Card_news
-                  image={<img src={post.data().imageUrl} width='150px' />}
+
+                  image={<img src={post.data().imageUrl} width="110px" />}
                   title={post.data().title}
                 ></Card_news>
-                <button className='btn_news' onClick={() => handlePostClick(post.id)}>
-                  Ver Más
-                </button>
+            
+
               </div>
             ))}
         </Slider>
 
-        <div className='btn_cont'>
-          <button className='news_btn'></button>
+
+        <div className="btn_cont">
+        <button
+                    className="btn_news"
+                    onClick={() => ""}
+                  >
+                    <Link  className="btn_news" to={"/blog"}>Ver Más</Link>
+                  </button>
+
         </div>
       </div>
     </div>

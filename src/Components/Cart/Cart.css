@@ -36,14 +36,18 @@
   justify-content: space-between;
 }
 .cartItem img {
-  width: 50%;
+  width: 70px;
+  height: 70px;
 }
+
 .cartItem p {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 14px;
+  width: fit-content;
 }
+
 
 .cartContainer button {
   margin-top: 0px;

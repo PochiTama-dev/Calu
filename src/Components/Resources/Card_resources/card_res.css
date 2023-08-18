@@ -1,5 +1,5 @@
 .card_ctn {
-  display: flex;
+  
   flex-direction: column;
   max-width: 320px;
   justify-content: center;
@@ -7,7 +7,7 @@
   margin-left: 92px;
 }
 .res_cart {
-  margin: 260px 0 0 -330px;
+  margin: 222px 0 0 -285px;
   display: flex;
   position: absolute;
   width: -webkit-fit-content;
@@ -35,8 +35,13 @@
 .cart {
   display: flex;
   position: absolute;
-  margin: 13px 20px 20px 12px;
-  width: 20%;
+
+  margin: 10px 20px 20px 10px;
+  width: 50%;
+}
+.elipse{
+  width: 75%;
+
 }
 .card_res_ctn {
   display: flex;
@@ -47,9 +52,9 @@
   color: white;
   text-align: center;
   margin: 25px auto 0 auto;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
-  width: 150px;
+  max-width: 150px;
 }
 .card_res {
   display: flex;
@@ -57,21 +62,26 @@
   /*border-radius: 30% 0% 30% 0%;*/
   border-radius: 30% 0% 30% 0%;
   min-width: 150px;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
+
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(
+    rgba(58, 246, 255, 0.2) 30%,
+    rgba(185, 4, 139, 0.2) 60%
+  );
+
 }
 
 .res_description {
   font-weight: bold;
   color: white;
-  margin: 25px auto 0 auto;
+  margin: 15px auto 0 auto;
 }
 .res_img {
   display: flex;
   justify-content: center;
-  width: 180px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
 }
 
 .arrow_res {
@@ -85,37 +95,38 @@
   width: 25px;
 }
 @media (max-width: 1024px) {
+  .arrow_r {
+   
+    width: 20px;
+  }
   .card_res {
-    width: 260px;
-    height: 240px;
+    width: 210px;
+    height: 210px;
   }
   .res_img {
-    width: 140px;
-    height: 120px;
+    margin-top: 15px;
+    width: 110px;
+    height: 100px;
   }
   .res_description {
     margin: 5px auto 0 auto;
   }
   .res_cart {
-    margin: 200px 0 0 -290px;
+    margin: 185px 0 0 -240px;
   }
   .title_res {
     margin: 25px auto 0 auto;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 450px) {
   .title_res {
     margin: 15px auto 0 auto;
-    font-size: 18px;
+    font-size: 16px;
   }
-  .card_res {
-    width: 240px;
-    height: 240px;
-  }
-  .res_cart {
-    margin: 180px 0 0 -260px;
-  }
+
+
 
   .res_description {
     font-weight: bold;
