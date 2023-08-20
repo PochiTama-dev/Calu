@@ -1,16 +1,15 @@
-
-import React, { useState, useEffect } from "react";
-import "./header.css";
-import miImagen from "../../images/logocalu.png";
-import { Link, useLocation } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase-config";
-import cart from "../../images/carrito.png";
-import Cart from "../Cart/Cart";
-import ModalBuy from "../Cart/ModalBuy";
-import { useNavigate } from "react-router-dom";
-import { db } from "../../firebase-config";
-import { collection, addDoc } from "firebase/firestore";
+import React, { useState, useEffect, useRef } from 'react';
+import './header.css';
+import miImagen from '../../images/logocalu.png';
+import { Link, useLocation } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase-config';
+import cart from '../../images/carrito.png';
+import Cart from '../Cart/Cart';
+import ModalBuy from '../Cart/ModalBuy';
+import { useNavigate } from 'react-router-dom';
+import { db } from '../../firebase-config';
+import { collection, addDoc } from 'firebase/firestore';
 
 export const Header = ({ cartItem, handleDelete }) => {
   const [isAuth, setIsAuth] = useState(false);
@@ -18,14 +17,15 @@ export const Header = ({ cartItem, handleDelete }) => {
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
+  const checkRef = useRef(null);
+  const [check, setCheck] = useState(true);
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
   useEffect(() => {
     setIsAuth(localStorage.getItem('isAuth') === 'true');
-  }, [location]);
+  }, [location, check]);
 
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -51,29 +51,35 @@ export const Header = ({ cartItem, handleDelete }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (email.match(emailRegex)) {
-      await saveEmailToFirebase(email); // Save the email to Firebase
 
-      navigate("/payment");
+    if (checkRef.current.checked) {
+      if (email.match(emailRegex)) {
+        await saveEmailToFirebase(email); // Save the email to Firebase
+        navigate('/payment');
+      } else {
+        alert('Invalid email format. Please enter a valid email.');
+      }
     } else {
-      alert("Invalid email format. Please enter a valid email.");
-
+      console.log('NOPE');
+      setCheck(false);
     }
   };
+  const handleCheck = () => {
+    setCheck(checkRef.current.checked);
+  };
+
   const saveEmailToFirebase = async (email) => {
     try {
-
-      const emailsCollectionRef = collection(db, "email"); // Change to the correct collection name
+      const emailsCollectionRef = collection(db, 'email'); // Change to the correct collection name
 
       await addDoc(emailsCollectionRef, {
         email,
         timestamp: new Date(),
       });
 
-      console.log("Email saved to Firebase successfully");
+      console.log('Email saved to Firebase successfully');
     } catch (error) {
-      console.error("Error saving email to Firebase:", error);
-
+      console.error('Error saving email to Firebase:', error);
     }
   };
   const handlePay = () => {
@@ -172,6 +178,9 @@ export const Header = ({ cartItem, handleDelete }) => {
           setEmail={setEmail}
           handleSubmit={handleSubmit}
           setIsModalOpen={setIsModalOpen}
+          checkRef={checkRef}
+          check={check}
+          handleCheck={handleCheck}
         />
       )}
     </header>
