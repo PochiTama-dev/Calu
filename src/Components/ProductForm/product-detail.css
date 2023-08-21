@@ -6,7 +6,7 @@
   color: white;
   margin-top: 150px;
 }
-.main_first{
+.main_first {
   display: flex;
   flex-direction: row;
   width: 90%;
@@ -28,7 +28,7 @@
   text-align: center;
   padding: 20px;
   width: 75%;
- 
+
   row-gap: 20px;
   /*  background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
@@ -91,21 +91,19 @@
   outline: none;
   border: none;
 
-
   margin-top: 10px;
   font-weight: 700;
 }
 
 .download-button {
- 
   width: 200px;
   height: 34px;
   border-radius: 20px;
   background-color: rgba(4, 25, 88, 0.6);
   outline: none;
   border: none;
-color: white;
-cursor: pointer;
+  color: white;
+  cursor: pointer;
 
   margin-top: 10px;
   font-weight: 700;
@@ -120,7 +118,6 @@ cursor: pointer;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  
 }
 
 .detail-content p {
@@ -159,12 +156,10 @@ cursor: pointer;
 }
 
 .disponibilidad {
-margin: 0 auto 20px auto;
-    font-size: 16px;
-    font-weight: 600;
+  margin: 0 auto 20px auto;
+  font-size: 16px;
   font-weight: 600;
- 
- 
+  font-weight: 600;
 }
 
 .interaction {
@@ -193,8 +188,6 @@ margin: 0 auto 20px auto;
   text-align: justify;
   width: 90%;
 }
-
-
 
 .book-description .dropdown-button {
   width: 100%;
@@ -242,13 +235,11 @@ margin: 0 auto 20px auto;
 .cart_product {
   margin-left: -43px;
   margin-bottom: 4px;
-  width:35px;
+  width: 35px;
 }
 .elipse_product {
   width: 50px;
 }
-
-
 
 .title-autor h4 {
   font-size: 14px;
@@ -324,7 +315,7 @@ margin: 0 auto 20px auto;
 
   .disponibilidad {
     margin: 0 auto 20px auto;
-    font-weight: 600
+    font-weight: 600;
   }
 
   .book-description {
@@ -334,7 +325,6 @@ margin: 0 auto 20px auto;
   .interaction {
     gap: 30px;
   }
-
 
   .interaction-box img {
     width: 30px;
@@ -363,7 +353,7 @@ margin: 0 auto 20px auto;
   }
 
   .img-container img {
- margin-top: 10px;
+    margin-top: 10px;
     width: 280px;
     height: 280px;
   }
@@ -402,7 +392,6 @@ margin: 0 auto 20px auto;
   }
 
   .disponibilidad {
-
     margin: 0 auto 20px auto;
 
     font-size: 16px;
@@ -422,9 +411,13 @@ margin: 0 auto 20px auto;
     text-align: justify;
     width: 90%;
   }
-  .book-recomendation .book-content {
+  .book-recomendation .book .book-content {
     width: 75%;
     min-height: 300px;
+  }
+  .book-recomendation .book .book-content img {
+    width: 100px;
+    height: 100px;
   }
 
   .title-autor h4 {
@@ -446,5 +439,4 @@ margin: 0 auto 20px auto;
   .type-price p:nth-child(2) {
     font-size: 14px;
   }
-
 }
