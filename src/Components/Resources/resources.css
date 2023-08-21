@@ -17,6 +17,9 @@
   margin-right: 90px;
   margin-left: 90px;
 }
+.res_cart {
+  cursor: pointer;
+}
 .btn_res_more {
   border: none;
   background: none;
@@ -45,7 +48,7 @@
     margin-top: 50px;
   }
   .card_ctn {
- margin-top: 20px;
+    margin-top: 20px;
   }
 }
 @media (max-height: 600px) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card_res from './Card_resources/Card_res';
+import CardRes from './Card_resources/Card_res';
 import { getDocs, collection, query, getDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import './resources.css';
@@ -7,10 +7,10 @@ import { useState, useEffect } from 'react';
 import Slider from '../Portfolio/Slider/Slider';
 import { Link, useNavigate } from 'react-router-dom';
 import elipse from './Card_resources/elipse.svg';
-import cart from './Card_resources/cart.svg';
+import cartImage from './Card_resources/cart.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
 const Resources = () => {
-  const {  addToCart, removeFromCart } = useCustomContext();
+  const { cart, addToCart } = useCustomContext();
   const [cards, setCard] = useState([]);
 
   const getCard = async () => {
@@ -47,7 +47,6 @@ const Resources = () => {
     addToCart(productToAdd);
   };
 
- 
   if (width > breakpoint) {
     return (
       <div className='res_ctn'>
@@ -57,28 +56,25 @@ const Resources = () => {
           <div className='res_card'>
             {cards &&
               cards.map((product, index) => (
-                <Card_res
+                <CardRes
                   key={index}
                   description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                  title={product.data().title}
-                  price={  <p className='price'>${product.data().price}</p>}
+                  title={<Link to={`/product/${product.id}`}>{product.data().title}</Link>}
+                  price={<p className='price'>${product.data().price}</p>}
                   button={
-                    <Link to={`/product/${product.id}`}>
-                      <div className='res_cart'>
-                      
-                        <img src={elipse} alt=' ' className='elipse' />
-                        <img src={cart} alt=' ' className='cart' />
-                    
-                      </div>
+                    <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
+                      <img src={elipse} alt=' ' className='elipse' />
+                      <img src={cart} alt=' ' className='cart' />
+                    </div>
+                  }
+                  more={
+                    <Link className='btn_res_more' to={`/product/${product.id}`}>
+                      Ver Más
                     </Link>
                   }
-                  more={   <Link className='btn_res_more' to={`/product/${product.id}`}>
-                  Ver Más
-                </Link>}
-                  ></Card_res>
+                ></CardRes>
               ))}
           </div>
-     
         </div>
       </div>
     );
@@ -92,32 +88,30 @@ const Resources = () => {
         <Slider>
           {cards &&
             cards.map((product, index) => (
-              <Card_res
-                  key={index}
-                  description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                  title={product.data().title}
-                  price={  <p className='price'>${product.data().price}</p>}
-                  button={
-                    <Link to={`/product/${product.id}`}>
-                      <div className='res_cart'>
-                      
-                        <img src={elipse} alt=' ' className='elipse' />
-                        <img src={cart} alt=' ' className='cart' />
-                    
-                      </div>
-                    </Link>
-                  }
-                  more={   <Link className='btn_res_more' to={`/product/${product.id}`}>
-                  Ver Más
-                </Link>}
-                  ></Card_res>
+              <CardRes
+                key={index}
+                description={product.data().thumbnail} // Pass the thumbnail URL as the description
+                title={product.data().title}
+                price={<p className='price'>${product.data().price}</p>}
+                button={
+                  <Link to={`/product/${product.id}`}>
+                    <div className='res_cart'>
+                      <img src={elipse} alt=' ' className='elipse' />
+                      <img src={cartImage} alt=' ' className='cart' />
+                    </div>
+                  </Link>
+                }
+                more={
+                  <Link className='btn_res_more' to={`/product/${product.id}`}>
+                    Ver Más
+                  </Link>
+                }
+              ></CardRes>
             ))}
         </Slider>
-   
       </div>
     </div>
   );
 };
 
 export default Resources;
-
