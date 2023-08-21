@@ -4,7 +4,11 @@
   align-items: center;
   width: 100%;
   color: white;
-  margin-top: 150px;
+  margin-top: 50px;
+}
+.disponibilty{
+  display: flex;
+  justify-content: center;
 }
 .main_first {
   display: flex;
@@ -215,9 +219,11 @@
 }
 
 .book-recomendation {
-  width: 100%;
+  width:80%;
   display: flex;
-  justify-content: center;
+ overflow: scroll;
+
+ 
 }
 
 .book-recomendation .book-content {
@@ -230,7 +236,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  min-width: 190px;
+
 }
 .cart_product {
   margin-left: -43px;
@@ -266,6 +273,8 @@
   width: 90%;
   height: 120px;
   background-color: beige;
+  display: flex;
+
 }
 
 .book p {
@@ -421,7 +430,7 @@
   }
 
   .title-autor h4 {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .title-autor h6 {

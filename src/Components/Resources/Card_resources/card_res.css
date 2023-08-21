@@ -1,3 +1,4 @@
+
 .card_ctn {
   
   flex-direction: column;
@@ -18,8 +19,19 @@
   border: none;
   text-decoration: none;
 }
-.res_cart .price {
-  color: white;
+.price {
+
+  
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 15px;
 }
 .res_cart .detalles {
   color: white;
@@ -35,12 +47,13 @@
 .cart {
   display: flex;
   position: absolute;
-
-  margin: 10px 20px 20px 10px;
-  width: 50%;
+width:35px;
+  margin: 12px 20px 20px 22px;
+ 
 }
 .elipse{
-  width: 75%;
+  width:45px;
+  margin: 8px 20px 20px 18px;
 
 }
 .card_res_ctn {
@@ -54,7 +67,7 @@
   margin: 25px auto 0 auto;
   font-size: 18px;
   font-weight: bold;
-  max-width: 150px;
+  max-width: 165px;
 }
 .card_res {
   display: flex;

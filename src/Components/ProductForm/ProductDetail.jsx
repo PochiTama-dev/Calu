@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../Header/header';
 import './product-detail.css';
-import cart from '../Resources/Card_resources/cart.svg';
+import cart_ from '../Resources/Card_resources/cart.svg';
 import elipse from '../Resources/Card_resources/elipse.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import ModalBuy from '../Cart/ModalBuy';
-
+import { Link} from 'react-router-dom';
+import Contact_button from '../Home/Contact_button/Contact_button';
+import arrow_L from '../Home/icon_arrow_left.svg';
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -22,7 +24,10 @@ function ProductDetail() {
 
   const { cart, addToCart, removeFromCart } = useCustomContext();
   const [similarProducts, setSimilarProducts] = useState([]);
-
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -121,8 +126,12 @@ function ProductDetail() {
   };
 
   return (
-    <div className='main-detail-container'>
-      <Header cartItem={cart} handleDelete={removeFromCart} />
+    <div className='main-detail-container'  ref={firstSection}>
+      <Header cartItem={cart} handleDelete={removeFromCart}  />
+      <button className='arrow_up12' onClick={scrollToTop}>
+          <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
+        </button>
+      <Contact_button />
       <br />
       <br />
       <br />
@@ -130,7 +139,7 @@ function ProductDetail() {
       <br />
       <br />
 
-      <h2>DETALLE DEL PRODUCTO</h2>
+      <h2 >DETALLE DEL PRODUCTO</h2>
       <div className='main-detail'>
         <div className='img-container'>
           <div className='title-mobile'>
@@ -173,11 +182,11 @@ function ProductDetail() {
         </div>
 
         <div className='extra'></div>
+        <div className='book-description'>
         <div className='disponibilty'>
           <p className='disponibilidad'>Disponible inmediatamente</p>
         </div>
         <hr />
-        <div className='book-description'>
           <span>
             {isDescriptionExpanded
               ? 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corporis repellat deleniti? Similique autem eius dolore totam ratione harum obcaecati voluptatem enim quo ipsum accusamus nobis suscipit animi, quod laboriosam, assumenda tempora, magnam eveniet reprehenderit ea! Rem maiores explicabo dolorum. Optio ratione veritatis in obcaecati? Cupiditate dignissimos vel exercitationem enim.'
@@ -199,21 +208,25 @@ function ProductDetail() {
               <div className='book-recomendation'>
                 {similarProducts.map((product, index) => (
                   <div className='book' key={index}>
-                    <div className='book-content'>
-                      <img src={product.thumbnail} alt='' />
+                         <Link className='link_' to={`/product/${product.id}`} onClick={scrollToTop}>
+               
+                    <div >
+                      <img src={product.thumbnail} alt='' width="150px" height="150px" />
                     </div>
                     <div className='title-autor'>
                       <h4>{product.title}</h4>
                       <h6>Autor</h6>
                     </div>
+                </Link>
                     <div className='type-price'>
                       <p>Tipo de libro</p>
                       <p>${product.price}</p>
                     </div>
                     <div className='product_cart'>
                       <img src={elipse} alt=' ' className='elipse_product' />
-                      <img src={cart} alt=' ' className='cart_product' />
+                      <img src={cart_} alt=' ' className='cart_product' />
                     </div>
+               
                   </div>
                 ))}
               </div>
