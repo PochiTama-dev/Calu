@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import Slider from '../Portfolio/Slider/Slider';
 import { Link, useNavigate } from 'react-router-dom';
 import elipse from './Card_resources/elipse.svg';
-import cartImage from './Card_resources/cart.svg';
+import cart_ from './Card_resources/cart.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
 const Resources = () => {
   const { cart, addToCart } = useCustomContext();
@@ -59,16 +59,24 @@ const Resources = () => {
                 <CardRes
                   key={index}
                   description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                  title={<Link to={`/product/${product.id}`}>{product.data().title}</Link>}
+                  title={<Link className="link_res" to={`/product/${product.id}`} onClick={() => {
+                    window.scroll({
+                      top: 0,
+                    });
+                  }}>{product.data().title}</Link>}
                   price={<p className='price'>${product.data().price}</p>}
                   button={
                     <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
                       <img src={elipse} alt=' ' className='elipse' />
-                      <img src={cart} alt=' ' className='cart' />
+                      <img src={cart_} alt=' ' className='cart' />
                     </div>
                   }
                   more={
-                    <Link className='btn_res_more' to={`/product/${product.id}`}>
+                    <Link className='btn_res_more' to={`/product/${product.id}`} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }} >
                       Ver Más
                     </Link>
                   }
@@ -88,25 +96,31 @@ const Resources = () => {
         <Slider>
           {cards &&
             cards.map((product, index) => (
-              <CardRes
-                key={index}
-                description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                title={product.data().title}
-                price={<p className='price'>${product.data().price}</p>}
-                button={
-                  <Link to={`/product/${product.id}`}>
-                    <div className='res_cart'>
+                  <CardRes
+                  key={index}
+                  description={product.data().thumbnail} // Pass the thumbnail URL as the description
+                  title={<Link className='link_' to={`/product/${product.id}`} onClick={() => {
+                    window.scroll({
+                      top: 0,
+                    });
+                  }}>{product.data().title}</Link> }
+                  price={<p className='price'>${product.data().price}</p>}
+                  button={
+                    <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
                       <img src={elipse} alt=' ' className='elipse' />
-                      <img src={cartImage} alt=' ' className='cart' />
+                      <img src={cart_} alt=' ' className='cart' />
                     </div>
-                  </Link>
-                }
-                more={
-                  <Link className='btn_res_more' to={`/product/${product.id}`}>
-                    Ver Más
-                  </Link>
-                }
-              ></CardRes>
+                  }
+                  more={
+                    <Link className='btn_res_more' to={`/product/${product.id}`} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}>
+                      Ver Más
+                    </Link>
+                  }
+                ></CardRes>
             ))}
         </Slider>
       </div>

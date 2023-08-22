@@ -41,9 +41,9 @@ function Cart({ close, cart, handleDelete, buy }) {
                     <span >{product.title}</span>
                     <span > ${product.price}</span>
                   </p>
-                  <div className="deleteItem">
-                    <button onClick={() => handleDelete(product.title)}>
-                      <img src="" alt="Borrar" />
+                  <div >
+                    <button className="deleteItem" onClick={() => handleDelete(product.title)}>
+                    X
                     </button>
                   </div>
 

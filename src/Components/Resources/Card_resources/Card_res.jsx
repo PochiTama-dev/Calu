@@ -25,7 +25,7 @@ const Card_res = ({ title, description, button, price, more }) => {
     setCard(card.docs.slice(-3));
   };
   const handleClick = () => {
-    return <Link to={cards.id}></Link>;
+    return <Link to={cards.id} ></Link>;
   };
 
   return (

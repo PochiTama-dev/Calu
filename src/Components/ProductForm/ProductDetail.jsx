@@ -4,7 +4,7 @@ import { db } from '../../firebase-config';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../Header/header';
 import './product-detail.css';
-import cart_ from '../Resources/Card_resources/cart.svg';
+import cart_img from '../Resources/Card_resources/cart.svg';
 import elipse from '../Resources/Card_resources/elipse.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import ModalBuy from '../Cart/ModalBuy';
@@ -224,7 +224,7 @@ function ProductDetail() {
                     </div>
                     <div className='product_cart' onClick={() => handleAddToCart(product.id)}>
                       <img src={elipse} alt=' ' className='elipse_product' />
-                      <img src={cart_} alt=' ' className='cart_product' />
+                      <img src={cart_img} alt=' ' className='cart_product' />
                     </div>
                   </div>
                 ))}

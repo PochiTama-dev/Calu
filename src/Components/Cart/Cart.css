@@ -14,7 +14,12 @@
   box-shadow: 5.5px 5px 10px rgb(78, 77, 77);
   margin-right: 50px;
 }
-
+.deleteItem{
+  border:none;
+  background: none;
+  color:grey;
+  font-weight: bold;
+}
 .cartContainer h2 {
   text-align: center;
   margin: 0;

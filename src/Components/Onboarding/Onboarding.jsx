@@ -44,7 +44,11 @@ const Onboarding = () => {
           <h2>{onboardinginfo.t4}</h2>
 
           <div className="contact-btn">
-            <Link to={"/contact"}>¡Contáctanos!</Link>
+            <Link to={"/contact"} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}>¡Contáctanos!</Link>
           </div>
         </div>
 

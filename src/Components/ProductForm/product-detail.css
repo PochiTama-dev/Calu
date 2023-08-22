@@ -10,6 +10,9 @@
   display: flex;
   justify-content: center;
 }
+.link_{
+  color: rgba(185, 4, 139, 0.9)
+}
 .main_first {
   display: flex;
   flex-direction: row;
