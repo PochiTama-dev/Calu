@@ -1,16 +1,16 @@
-
-import React, { useEffect, useState } from 'react';
-import { addDoc, collection, doc, getDoc } from 'firebase/firestore';
+import React, { useEffect, useState, useRef } from 'react';
+import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../Header/header';
 import './product-detail.css';
-import cart from '../Resources/Card_resources/cart.svg';
+import cart_img from '../Resources/Card_resources/cart.svg';
 import elipse from '../Resources/Card_resources/elipse.svg';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import ModalBuy from '../Cart/ModalBuy';
-
-
+import { Link } from 'react-router-dom';
+import Contact_button from '../Home/Contact_button/Contact_button';
+import arrow_L from '../Home/icon_arrow_left.svg';
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -23,20 +23,25 @@ function ProductDetail() {
   const navigate = useNavigate();
 
   const { cart, addToCart, removeFromCart } = useCustomContext();
-
+  const [similarProducts, setSimilarProducts] = useState([]);
+  const firstSection = useRef(null);
+  const scrollToTop = () => {
+    firstSection.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
-     const fetchProduct = async () => {
+    const fetchProduct = async () => {
       try {
         const productDoc = doc(db, 'e-commerce', id);
         const productSnapshot = await getDoc(productDoc);
 
         if (productSnapshot.exists()) {
-          setProduct({ id: productSnapshot.id, ...productSnapshot.data() });
+          const fetched = { id: productSnapshot.id, ...productSnapshot.data() };
+          setProduct(fetched);
+          similars(fetched);
         } else {
           console.log('No se encontró el producto');
         }
-
         setLoading(false);
       } catch (error) {
         console.error('Error al obtener el producto:', error);
@@ -47,7 +52,18 @@ function ProductDetail() {
     fetchProduct();
   }, [id]);
 
-
+  const similars = async (fetched) => {
+    const productsSimilars = collection(db, 'e-commerce');
+    const similarsSnapshot = await getDocs(productsSimilars);
+    if (similarsSnapshot) {
+      const products = similarsSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      const similars = products.filter((category) => category.category === fetched.category);
+      setSimilarProducts(similars);
+    }
+  };
   if (loading) {
     return <p>Cargando producto...</p>;
   }
@@ -111,8 +127,12 @@ function ProductDetail() {
   };
 
   return (
-    <div className='main-detail-container'>
+    <div className='main-detail-container' ref={firstSection}>
       <Header cartItem={cart} handleDelete={removeFromCart} />
+      <button className='arrow_up12' onClick={scrollToTop}>
+        <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
+      </button>
+      <Contact_button />
       <br />
       <br />
       <br />
@@ -121,11 +141,10 @@ function ProductDetail() {
       <br />
 
       <h2>DETALLE DEL PRODUCTO</h2>
-      <div className="main-detail">
-        <div className="img-container">
-          <div className="title-mobile">
-            <h3 title-mobile>{product.title}</h3>
-
+      <div className='main-detail'>
+        <div className='img-container'>
+          <div className='title-mobile'>
+            <h3 className='title-mobile>'>{product.title}</h3>
           </div>
           <img src={product.thumbnail} alt={product.title} />
         </div>
@@ -145,7 +164,6 @@ function ProductDetail() {
               </button>
             </div>
           ) : (
-
             <>
               <button className='download-button' onClick={() => handleDownloadAndBuy(product.id)}>
                 Agregar al carrito
@@ -165,12 +183,11 @@ function ProductDetail() {
         </div>
 
         <div className='extra'></div>
-        <div className='disponibilty'>
-          <p className='disponibilidad'>Disponible inmediatamente</p>
-        </div>
-        <hr />
         <div className='book-description'>
-
+          <div className='disponibilty'>
+            <p className='disponibilidad'>Disponible inmediatamente</p>
+          </div>
+          <hr />
           <span>
             {isDescriptionExpanded
               ? 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias corporis repellat deleniti? Similique autem eius dolore totam ratione harum obcaecati voluptatem enim quo ipsum accusamus nobis suscipit animi, quod laboriosam, assumenda tempora, magnam eveniet reprehenderit ea! Rem maiores explicabo dolorum. Optio ratione veritatis in obcaecati? Cupiditate dignissimos vel exercitationem enim.'
@@ -185,59 +202,38 @@ function ProductDetail() {
           </div>
         </div>
 
-
-        <div className="recomendation">
-          <h3>Mas de esta serie</h3>
-          <div className="book-recomendation">
-            <div className="book">
-              <div className="book-content"></div>
-              <div className="title-autor">
-                <h4>Titulo</h4>
-                <h6>Autor</h6>
+        <div className='recomendation'>
+          {similarProducts.length >= 1 ? (
+            <>
+              <h3>Mas de esta serie</h3>
+              <div className='book-recomendation'>
+                {similarProducts.map((product, index) => (
+                  <div className='book' key={index}>
+                    <Link className='link_' to={`/product/${product.id}`} onClick={scrollToTop}>
+                      <div>
+                        <img src={product.thumbnail} alt='' width='150px' height='150px' />
+                      </div>
+                      <div className='title-autor'>
+                        <h4>{product.title}</h4>
+                        <h6>Autor</h6>
+                      </div>
+                    </Link>
+                    <div className='type-price'>
+                      <p>Tipo de libro</p>
+                      <p>${product.price}</p>
+                    </div>
+                    <div className='product_cart' onClick={() => handleAddToCart(product.id)}>
+                      <img src={elipse} alt=' ' className='elipse_product' />
+                      <img src={cart_img} alt=' ' className='cart_product' />
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="type-price">
-                <p>Tipo de libro</p>
-                <p>$0000</p>
-              </div>
-              <div className="product_cart">
-                <img src={elipse} alt=" " className="elipse_product" />
-                <img src={cart} alt=" " className="cart_product" />
-              </div>
-            </div>
-           
-            <div className="book">
-              <div className="book-content"></div>
-              <div className="title-autor">
-                <h4>Titulo</h4>
-                <h6>Autor</h6>
-              </div>
-              <div className="type-price">
-                <p>Tipo de libro</p>
-                <p>$0000</p>
-              </div>
-              <div className="product_cart">
-                <img src={elipse} alt=" " className="elipse_product" />
-                <img src={cart} alt=" " className="cart_product" />
-              </div>
-            </div>
-            <div className="book">
-              <div className="book-content"></div>
-              <div className="title-autor">
-                <h4>Titulo</h4>
-                <h6>Autor</h6>
-              </div>
-              <div className="type-price">
-                <p>Tipo de libro</p>
-                <p>$0000</p>
-              </div>
-              <div className="product_cart">
-                <img src={elipse} alt=" " className="elipse_product" />
-                <img src={cart} alt=" " className="cart_product" />
-              </div>
-            </div>
-          </div>
+            </>
+          ) : (
+            <h3>Por el momento no hay productos similares</h3>
+          )}
         </div>
-
       </div>
     </div>
   );

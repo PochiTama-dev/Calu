@@ -17,7 +17,7 @@
 }
 
 .logoCalu {
-  height: 11rem;
+  height: 9rem;
   margin: 10px 100px 0 0;
 }
 
@@ -43,13 +43,13 @@
   text-decoration: none;
   color: white;
   height: 31px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-right: 5%;
 }
 
 .links a:hover,
 .links .headerLinks {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   color: #3af6ff;
 }

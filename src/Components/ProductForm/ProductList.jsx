@@ -118,7 +118,11 @@ function ProductList() {
                 <p className='carrito-price' onClick={() => handleAddToCart(product.id)}>
                   Agregar al carrito
                 </p>
-                <Link className='link_' to={`/product/${product.id}`}>
+                <Link className='link_' to={`/product/${product.id}`} onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}>
                   Ver Detalles
                 </Link>
                 {/* Botones de editar y eliminar */}
