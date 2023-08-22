@@ -100,7 +100,7 @@
 
 @media (max-width: 767px) {
   .news_text {
-    margin: 90px 7% 0% 7%;
+    margin: 0 7% 0% 7%;
   }
   .cards_novedades {
     justify-content: center;

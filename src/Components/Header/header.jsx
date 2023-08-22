@@ -86,7 +86,13 @@ export const Header = ({ cartItem, handleDelete }) => {
     setIsModalOpen(true);
     setShowCart(false);
   };
+const scroll_top=()=>{
 
+    window.scroll({
+      top: 0,
+    });
+
+}
   return (
     <header className='navBar'>
       <div className='header_items'>
@@ -96,7 +102,7 @@ export const Header = ({ cartItem, handleDelete }) => {
           </button>
           {showAdminMenu && (
             <div className='admin-dropdown'>
-              <Link to='/product-form'>Create Product</Link>
+              <Link to='/product-form' >Create Product</Link>
               <Link to='/create-post'>Create Post</Link>
               <Link to='/admin-crud'>Create Services</Link>
               <Link to='/admin-home'>Edit Home</Link>
@@ -114,12 +120,12 @@ export const Header = ({ cartItem, handleDelete }) => {
           {!isAuth ? <Link to='/Admin-login'></Link> : <></>}
           <nav className={showLinks ? 'links ' : 'link show '}>
             <div className='links_ctn'>
-              <Link className={location.pathname === '/' ? 'headerLinks' : ''} to={'/'}>
-                {' '}
-                HOME{' '}
+              <Link onClick={scroll_top} className={location.pathname === '/' ? 'headerLinks' : '' } to={'/'}>
+               
+                HOME
               </Link>
               <div className='line'></div>
-              <Link
+              <Link onClick={scroll_top}
                 className={location.pathname === '/services' ? 'headerLinks' : ''}
                 to={'/services'}
               >
@@ -127,19 +133,19 @@ export const Header = ({ cartItem, handleDelete }) => {
                 SERVICIOS{' '}
               </Link>
               <div className='line'></div>
-              <Link
+              <Link onClick={scroll_top}
                 className={location.pathname === '/product-list' ? 'headerLinks' : ''}
                 to={'/product-list'}
               >
                 PRODUCTOS
               </Link>
               <div className='line'></div>
-              <Link className={location.pathname === '/blog' ? 'headerLinks' : ''} to={'/blog'}>
+              <Link onClick={scroll_top} className={location.pathname === '/blog' ? 'headerLinks' : ''} to={'/blog'}>
                 {' '}
                 BLOG{' '}
               </Link>
               <div className='line'></div>
-              <Link
+              <Link onClick={scroll_top}
                 className={location.pathname === '/Contact' ? 'headerLinks' : ''}
                 to={'/Contact'}
               >

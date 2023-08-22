@@ -99,7 +99,7 @@ const Resources = () => {
                   <CardRes
                   key={index}
                   description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                  title={<Link className='link_' to={`/product/${product.id}`} onClick={() => {
+                  title={<Link className='link_res' to={`/product/${product.id}`} onClick={() => {
                     window.scroll({
                       top: 0,
                     });
