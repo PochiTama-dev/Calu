@@ -227,6 +227,7 @@
   .carrito {
     display: flex;
     justify-content: flex-end;
+    width: initial;
   }
   .carrito img {
     width: 50px;
