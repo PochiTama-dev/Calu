@@ -59,11 +59,19 @@ const Resources = () => {
                 <CardRes
                   key={index}
                   description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                  title={<Link className="link_res" to={`/product/${product.id}`} onClick={() => {
-                    window.scroll({
-                      top: 0,
-                    });
-                  }}>{product.data().title}</Link>}
+                  title={
+                    <Link
+                      className='link_res'
+                      to={`/product/${product.id}`}
+                      onClick={() => {
+                        window.scroll({
+                          top: 0,
+                        });
+                      }}
+                    >
+                      {product.data().title}
+                    </Link>
+                  }
                   price={<p className='price'>${product.data().price}</p>}
                   button={
                     <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
@@ -71,18 +79,20 @@ const Resources = () => {
                       <img src={cart_} alt=' ' className='cart' />
                     </div>
                   }
-                  more={
-                    <Link className='btn_res_more' to={`/product/${product.id}`} onClick={() => {
-                      window.scroll({
-                        top: 0,
-                      });
-                    }} >
-                      Ver Más
-                    </Link>
-                  }
                 ></CardRes>
               ))}
           </div>
+          <Link
+            className='btn_res_more'
+            to={'/product-list/'}
+            onClick={() => {
+              window.scroll({
+                top: 0,
+              });
+            }}
+          >
+            Ver Más
+          </Link>
         </div>
       </div>
     );
@@ -96,31 +106,43 @@ const Resources = () => {
         <Slider>
           {cards &&
             cards.map((product, index) => (
-                  <CardRes
-                  key={index}
-                  description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                  title={<Link className='link_res' to={`/product/${product.id}`} onClick={() => {
-                    window.scroll({
-                      top: 0,
-                    });
-                  }}>{product.data().title}</Link> }
-                  price={<p className='price'>${product.data().price}</p>}
-                  button={
-                    <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
-                      <img src={elipse} alt=' ' className='elipse' />
-                      <img src={cart_} alt=' ' className='cart' />
-                    </div>
-                  }
-                  more={
-                    <Link className='btn_res_more' to={`/product/${product.id}`} onClick={() => {
+              <CardRes
+                key={index}
+                description={product.data().thumbnail} // Pass the thumbnail URL as the description
+                title={
+                  <Link
+                    className='link_res'
+                    to={`/product/${product.id}`}
+                    onClick={() => {
                       window.scroll({
                         top: 0,
                       });
-                    }}>
-                      Ver Más
-                    </Link>
-                  }
-                ></CardRes>
+                    }}
+                  >
+                    {product.data().title}
+                  </Link>
+                }
+                price={<p className='price'>${product.data().price}</p>}
+                button={
+                  <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
+                    <img src={elipse} alt=' ' className='elipse' />
+                    <img src={cart_} alt=' ' className='cart' />
+                  </div>
+                }
+                more={
+                  <Link
+                    className='btn_res_more'
+                    to={`/product/${product.id}`}
+                    onClick={() => {
+                      window.scroll({
+                        top: 0,
+                      });
+                    }}
+                  >
+                    Ver Más
+                  </Link>
+                }
+              ></CardRes>
             ))}
         </Slider>
       </div>

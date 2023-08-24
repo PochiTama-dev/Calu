@@ -10,9 +10,10 @@ import ModalBuy from '../Cart/ModalBuy';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase-config';
 import { collection, addDoc } from 'firebase/firestore';
+import { useCustomContext } from '../../Hooks/Context/Context';
 
 export const Header = ({ cartItem, handleDelete }) => {
-  const [isAuth, setIsAuth] = useState(false);
+  const { isAuth, logoutGoogle } = useCustomContext();
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
@@ -24,14 +25,14 @@ export const Header = ({ cartItem, handleDelete }) => {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
   useEffect(() => {
-    setIsAuth(localStorage.getItem('isAuth') === 'true');
-  }, [location, check]);
+    console.log(isAuth);
+  }, [location, check, isAuth]);
 
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.removeItem('isAuth');
-      setIsAuth(false);
-      window.location.pathname = '/Admin-login';
+      logoutGoogle();
+      navigate('/');
     });
   };
 
@@ -86,66 +87,75 @@ export const Header = ({ cartItem, handleDelete }) => {
     setIsModalOpen(true);
     setShowCart(false);
   };
-const scroll_top=()=>{
-
+  const scroll_top = () => {
     window.scroll({
       top: 0,
     });
-
-}
+  };
   return (
     <header className='navBar'>
       <div className='header_items'>
-        <div className='admin-menu'>
-          <button className='admin-btn' onClick={handleAdminMenu}>
-            ADMIN
-          </button>
-          {showAdminMenu && (
-            <div className='admin-dropdown'>
-              <Link to='/product-form' >Create Product</Link>
-              <Link to='/create-post'>Create Post</Link>
-              <Link to='/admin-crud'>Create Services</Link>
-              <Link to='/admin-home'>Edit Home</Link>
-              <Link to='/email-list'>Email List</Link>
+        {isAuth && (
+          <div className='admin-menu'>
+            <button className='admin-btn' onClick={handleAdminMenu}>
+              ADMIN
+            </button>
+            {showAdminMenu && (
+              <div className='admin-dropdown'>
+                <Link to='/product-form'>Create Product</Link>
+                <Link to='/create-post'>Create Post</Link>
+                <Link to='/admin-crud'>Create Services</Link>
+                <Link to='/admin-home'>Edit Home</Link>
+                <Link to='/email-list'>Email List</Link>
 
-              <button onClick={signUserOut}>Log Out</button>
-            </div>
-          )}
-        </div>
+                <button onClick={signUserOut}>Log Out</button>
+              </div>
+            )}
+          </div>
+        )}
         <nav>
           <Link to={'/'}>
             <img className='logoCalu' src={miImagen} alt='Logo Calu' />
           </Link>
 
-          {!isAuth ? <Link to='/Admin-login'></Link> : <></>}
+          {!isAuth && <Link to='/admin-login'></Link>}
           <nav className={showLinks ? 'links ' : 'link show '}>
             <div className='links_ctn'>
-              <Link onClick={scroll_top} className={location.pathname === '/' ? 'headerLinks' : '' } to={'/'}>
-               
+              <Link
+                onClick={scroll_top}
+                className={location.pathname === '/' ? 'headerLinks' : ''}
+                to={'/'}
+              >
                 HOME
               </Link>
               <div className='line'></div>
-              <Link onClick={scroll_top}
+              <Link
+                onClick={scroll_top}
                 className={location.pathname === '/services' ? 'headerLinks' : ''}
                 to={'/services'}
               >
-                {' '}
-                SERVICIOS{' '}
+                SERVICIOS
               </Link>
               <div className='line'></div>
-              <Link onClick={scroll_top}
+              <Link
+                onClick={scroll_top}
                 className={location.pathname === '/product-list' ? 'headerLinks' : ''}
                 to={'/product-list'}
               >
                 PRODUCTOS
               </Link>
               <div className='line'></div>
-              <Link onClick={scroll_top} className={location.pathname === '/blog' ? 'headerLinks' : ''} to={'/blog'}>
+              <Link
+                onClick={scroll_top}
+                className={location.pathname === '/blog' ? 'headerLinks' : ''}
+                to={'/blog'}
+              >
                 {' '}
                 BLOG{' '}
               </Link>
               <div className='line'></div>
-              <Link onClick={scroll_top}
+              <Link
+                onClick={scroll_top}
                 className={location.pathname === '/Contact' ? 'headerLinks' : ''}
                 to={'/Contact'}
               >
@@ -153,6 +163,13 @@ const scroll_top=()=>{
               </Link>
             </div>
           </nav>
+          <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
+            <div>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </span>
           <div className='cart-2'>
             <div className='carrito' onClick={() => setShowCart(true)}>
               <img src={cart} alt={cart} />
@@ -169,13 +186,6 @@ const scroll_top=()=>{
               />
             )}
           </div>
-          <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
-            <div>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-          </span>
         </nav>
       </div>
       {isModalOpen && (

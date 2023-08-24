@@ -14,9 +14,6 @@
 }
 
 .lateralBar .lateralContainer p {
-
- 
-
 }
 hr {
   color: rgba(255, 255, 255, 0.8);
@@ -46,11 +43,11 @@ hr {
 @media (min-width: 340px) {
   .lateralBar {
     position: initial;
-    width: 100%;
+    width: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
     border-radius: 15px;
     margin-top: 50px;
   }
@@ -84,9 +81,7 @@ hr {
     height: 250px;
   }
   .lateralBar {
-
     width: 80%;
-
   }
 }
 
