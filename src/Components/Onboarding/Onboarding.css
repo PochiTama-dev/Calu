@@ -2,14 +2,15 @@
   align-items: center;
   overflow: hidden;
   margin-left: 7%;
-  display: flex;
-  min-height: 110vh;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .onb_items {
   display: flex;
   flex-direction: row;
-  margin-top: -50px;
 }
 .onboarding .logoOnboard {
   display: none;
@@ -71,8 +72,8 @@
   .onboarding .logoOnboard {
     display: block;
     position: relative;
-    right: -110px;
-    max-width: 40%;
+
+    max-width: 35%;
   }
 
   .onboarding .parrafo {
@@ -102,7 +103,7 @@
   }
   .onb_items {
     display: flex;
-    /*margin-top: 30px;*/
+    margin-top: 30px;
   }
   .onboarding .logoOnboard {
     display: none;
@@ -158,11 +159,5 @@
     color: white;
     font-weight: bold;
     font-size: 18px;
-  }
-}
-
-@media (max-height: 520px) {
-  .onb_items {
-    margin-top: 80px;
   }
 }
