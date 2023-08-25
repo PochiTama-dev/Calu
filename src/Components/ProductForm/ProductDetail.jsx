@@ -131,18 +131,18 @@ function ProductDetail() {
   return (
     <div>
       <Header cartItem={cart} handleDelete={removeFromCart} />
-      <div className="main-detail-container" ref={firstSection}>
-        <button className="arrow_up12" onClick={scrollToTop}>
-          <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
-        </button>
-        <Contact_button />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+      <button className="arrow_up12" onClick={scrollToTop}>
+        <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+      </button>
+      <Contact_button />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
+      <div className="main-detail-container" ref={firstSection}>
         <h2>DETALLE DEL PRODUCTO</h2>
         <div className="main-detail">
           <div className="img-container">

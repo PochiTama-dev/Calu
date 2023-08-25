@@ -6,12 +6,6 @@
   margin-top: 100px;
 }
 
-.scroll_ctn {
-  -ms-scroll-snap-type: y mandatory;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
 .srv_title {
   display: -webkit-box;
   display: -ms-flexbox;

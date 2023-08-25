@@ -89,18 +89,18 @@ function ProductList() {
   return (
     <div>
       <Header cartItem={cart} handleDelete={removeFromCart} />
-      <div className="main-container" ref={firstSection}>
-        <button className="arrow_up12" onClick={scrollToTop}>
-          <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
-        </button>
-        <Contact_button />
+      <button className="arrow_up12" onClick={scrollToTop}>
+        <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+      </button>
+      <Contact_button />
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+      <br ref={firstSection} />
+      <br />
+      <br />
+      <br />
+      <br />
 
+      <div className="main-container">
         <h1 className="products_title">Lista de Productos</h1>
         <h2 className="our-products">Nuestro productos</h2>
         <div className="products">

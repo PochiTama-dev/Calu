@@ -4,7 +4,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  margin-top: 100px;
+  margin-top: 65px;
 }
 .main-container .products {
   background-color: rgba(0, 0, 255, 0.2);
@@ -13,9 +13,7 @@
   backdrop-filter: blur(10px);
   border-radius: 15px;
 }
-.products_title {
-  margin-top: -20px;
-}
+
 .main-container h1 {
   color: aqua;
 }

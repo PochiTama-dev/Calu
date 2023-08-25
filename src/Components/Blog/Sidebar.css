@@ -10,6 +10,9 @@
   right: 0;
   overflow: scroll;
 }
+.lateralBar::-webkit-scrollbar {
+  display: none;
+}
 .lateralBar .lateralContainer {
   color: white;
 }
