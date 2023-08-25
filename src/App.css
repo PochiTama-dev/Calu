@@ -20,6 +20,7 @@ section {
   backdrop-filter: blur(1px);
   min-height: 700px;
 }
+
 iframe[src^="https://www.google.com/recaptcha/"]
 {
   display: none;

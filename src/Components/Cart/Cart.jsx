@@ -1,12 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 
 import "./Cart.css";
 
-
 function Cart({ close, cart, handleDelete, buy }) {
   const [total, setTotal] = useState(0);
-
 
   useEffect(() => {
     const calculateTotal = () => {
@@ -23,7 +20,6 @@ function Cart({ close, cart, handleDelete, buy }) {
     calculateTotal();
   }, [cart]);
 
-
   return (
     <div>
       <div className="cartPage">
@@ -38,15 +34,17 @@ function Cart({ close, cart, handleDelete, buy }) {
                 <div className="cartItem" key={index}>
                   <img src={product.thumbnail} alt={product.title} />
                   <p>
-                    <span >{product.title}</span>
-                    <span > ${product.price}</span>
+                    <span className="product_title">{product.title}</span>
+                    <span className="product_price"> ${product.price}</span>
                   </p>
-                  <div >
-                    <button className="deleteItem" onClick={() => handleDelete(product.title)}>
-                    X
+                  <div>
+                    <button
+                      className="deleteItem"
+                      onClick={() => handleDelete(product.title)}
+                    >
+                      X
                     </button>
                   </div>
-
                 </div>
               ))}
           </div>
@@ -59,10 +57,8 @@ function Cart({ close, cart, handleDelete, buy }) {
           <button onClick={buy}>Iniciar compra</button>
         </div>
 
-
         <div class="modal-background"></div>
       </div>
-
     </div>
   );
 }

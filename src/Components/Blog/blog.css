@@ -23,6 +23,7 @@
 .blogTitle_ {
   text-align: center;
   margin-top: 80px;
+  margin-bottom: 50px;
   color: aqua;
 }
 
@@ -32,7 +33,7 @@
   background-color: rgba(0, 0, 255, 0.2);
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   border-radius: 20px;
-
+  width: 90%;
   flex-wrap: wrap;
   align-items: flex-start;
   min-width: initial;

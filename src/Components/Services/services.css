@@ -63,7 +63,7 @@
   margin: 30px -20px 30px 00px;
 }
 .card_srv_info {
-  margin: -100px 50px 0 20px;
+  margin: -120px 50px 0 20px;
   min-height: 100vh;
   max-width: 1600px;
   min-height: 100vh;
@@ -73,7 +73,7 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
- 
+
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -121,7 +121,6 @@
   font-size: 30px;
 }
 .title_srv h1 {
-  
 }
 .sub_d {
   color: white;
@@ -186,12 +185,6 @@
   }
   .services_container {
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 386px) {
-  .srv_title h1 {
-    font-size: 30px;
   }
 }
 

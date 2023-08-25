@@ -53,22 +53,18 @@
     height: 70px;
   }
   .CTN_title {
-
   }
 
   .CTN_ctn p {
-    font-size: 28px;
   }
 }
 
 @media (max-width: 767px) {
   .CTN_title {
-
     margin-bottom: 80px;
   }
 
   .CTN_ctn p {
-    font-size: 24px;
     margin-top: 65px;
   }
   .CTN_ctn2 {
@@ -78,7 +74,6 @@
 }
 @media (max-width: 513px) {
   .CTN_title {
-
   }
   .CTN_ctn p {
     font-size: 22px;
@@ -91,7 +86,6 @@
     font-size: 20px;
   }
   .CTN_title {
-
   }
   .ctn_p {
     font-size: 20px;

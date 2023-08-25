@@ -10,8 +10,8 @@
   background-color: rgba(0, 0, 255, 0.2);
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   width: 90%;
+  backdrop-filter: blur(10px);
   border-radius: 15px;
- 
 }
 .products_title {
   margin-top: -20px;
@@ -23,7 +23,7 @@
   color: #eb39d9;
 }
 
-.arrow_up12{
+.arrow_up12 {
   background-color: transparent;
   border: none;
 }
