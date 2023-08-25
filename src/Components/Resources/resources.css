@@ -1,9 +1,7 @@
 .res_ctn {
   display: flex;
   justify-content: center;
-
-  transform: translateY(22%);
-
+  min-height: 100vh;
   flex-direction: column;
 }
 .res_title {
@@ -46,16 +44,6 @@
   .card_ctn {
     margin-left: 20px;
     margin-right: 20px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .card_ctn {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .res_ctn {
-    transform: translateY(30%);
   }
 }
 
