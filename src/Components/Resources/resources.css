@@ -9,9 +9,8 @@
   display: flex;
   text-align: left;
   margin: 0 15% 0 7%;
-
 }
-.link_res{
+.link_res {
   color: white;
   text-decoration: none;
 }
@@ -58,6 +57,6 @@
 }
 @media (max-height: 600px) {
   .res_items {
-    margin-top: 150px;
+    margin-top: 100px;
   }
 }

@@ -17,18 +17,17 @@
 }
 
 .mini-description {
- 
 }
 
 .blogCard {
   background-color: rgba(0, 0, 255, 0.2);
+  backdrop-filter: blur(10px);
   width: 80%;
   color: white;
   padding: 2rem;
   row-gap: 20px;
   display: flex;
   flex-direction: column;
- 
 }
 
 .blogImg {
@@ -56,7 +55,6 @@
 
 @media (min-width: 375px) {
   .blogTitle {
-
     margin-top: 200px;
     color: aqua;
     display: flex;
@@ -65,7 +63,6 @@
   }
   .blogContainer {
     flex-wrap: wrap;
-    
   }
   .blogCard {
     width: 100%;

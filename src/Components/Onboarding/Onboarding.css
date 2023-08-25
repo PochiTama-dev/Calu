@@ -68,13 +68,11 @@
 }
 
 @media (min-width: 900px) {
-
-
   .onboarding .logoOnboard {
     display: block;
     position: relative;
     right: -110px;
-    max-width: 45%;
+    max-width: 40%;
   }
 
   .onboarding .parrafo {
@@ -83,7 +81,6 @@
   }
 
   .onboarding .parrafo h1 {
-
     margin-bottom: 0;
   }
   .onboarding .parrafo p {
@@ -93,11 +90,9 @@
 
 @media (max-width: 360px) {
   .onboarding .parrafo h1 {
-   
     margin-bottom: 0;
   }
 }
-
 
 @media (max-width: 900px) {
   .onboarding {
@@ -152,7 +147,7 @@
     );
     border-radius: 50px;
     width: 15rem;
-    height:40px;
+    height: 40px;
     align-items: center;
     display: flex;
     justify-content: center;

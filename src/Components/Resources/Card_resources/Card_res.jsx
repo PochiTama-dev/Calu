@@ -24,9 +24,6 @@ const Card_res = ({ title, description, button, price, more }) => {
     const card = await getCard();
     setCard(card.docs.slice(-3));
   };
-  const handleClick = () => {
-    return <Link to={cards.id} ></Link>;
-  };
 
   return (
     <div className="card_ctn">
@@ -37,22 +34,15 @@ const Card_res = ({ title, description, button, price, more }) => {
           {button}
         </div>
         <div className="res_description">
-          <img className="res_img" src={description} alt={title} />{" "}
-          {/* Render the thumbnail as an image */}
+          <img className="res_img" src={description} alt={title} />
         </div>
       </div>
 
       <div className="title_res">{title}</div>
-<div>
-{price}
-</div>
-<div>{more}</div>
+      <div>{price}</div>
+      <div>{more}</div>
     </div>
   );
 };
 
 export default Card_res;
-
-
-
-
