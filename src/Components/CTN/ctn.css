@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+
+  transform: translateY(25%);
 }
 .CTN_ctn2 {
   display: flex;
@@ -44,7 +45,7 @@
   text-align: center;
 }
 .ctn_p p {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 @media (max-width: 1024px) {
@@ -52,16 +53,18 @@
     width: 220px;
     height: 70px;
   }
-  .CTN_title {
-  }
 
-  .CTN_ctn p {
+  .CTN_ctn {
+    transform: translateY(50%);
   }
 }
 
 @media (max-width: 767px) {
   .CTN_title {
     margin-bottom: 80px;
+  }
+  .CTN_ctn {
+    transform: translateY(30%);
   }
 
   .CTN_ctn p {
@@ -103,12 +106,5 @@
     margin: -15px 5% 7% 7%;
   }
   .CTN_ctn2 {
-    margin-top: 20px;
-  }
-}
-
-@media (max-height: 650px) {
-  .CTN_ctn2 {
-    margin-top: 150px;
   }
 }

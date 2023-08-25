@@ -9,7 +9,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+
+  transform: translateY(25%);
 }
 
 .title_portfolio {
@@ -42,6 +43,9 @@
   .card_slider_port img {
     width: 100px;
   }
+  .portfolio_container {
+    transform: translateY(40%);
+  }
 }
 
 @media (max-width: 900px) {
@@ -64,11 +68,5 @@
 
   .slider {
     margin-top: 10px;
-  }
-}
-
-@media (max-height: 600px) {
-  .portfolio_items {
-    margin-top: 150px;
   }
 }
