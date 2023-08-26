@@ -23,7 +23,7 @@
   justify-content: center;
   flex-direction: column;
 
-  transform: translateY(30%);
+  transform: translateY(35%);
 }
 .cards_novedades {
   text-decoration: none;

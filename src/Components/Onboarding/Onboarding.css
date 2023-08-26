@@ -72,7 +72,7 @@
   .onboarding .logoOnboard {
     display: block;
     position: relative;
-
+    margin-left: 150px;
     max-width: 35%;
   }
 
@@ -97,6 +97,7 @@
 
 @media (max-width: 900px) {
   .onboarding {
+    transform: translateY(-60%);
     align-items: center;
     overflow: hidden;
     margin-left: 7%;

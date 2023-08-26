@@ -15,7 +15,7 @@
   justify-content: center;
   color: #3af6ff;
   margin-top: 150px;
-  margin-bottom: -20px;
+  margin-bottom: -130px;
 }
 
 .srv_cards {
@@ -52,12 +52,11 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 30px -20px 30px 00px;
 }
 .card_srv_info {
-  margin: 0 50px 0 20px;
-  transform: translateY(25%);
-  max-width: 1600px;
+  margin: 0 50px 0 0;
+  transform: translateY(220px);
+  max-width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,8 +70,8 @@
 }
 
 .card_srv_info_inv {
-  max-width: 1600px;
-  transform: translateY(25%);
+  max-width: 70%;
+  transform: translateY(240px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,7 +84,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
 
-  margin: 0 50px 0 110px;
+  margin: 0 3% 0 3%;
 }
 .srv_icon {
   display: -webkit-box;
@@ -98,7 +97,7 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  transform: translateY(25%);
+  transform: translateY(250px);
 }
 .srv_icon img {
   height: 100%;
@@ -139,10 +138,12 @@
 }
 @media (max-width: 1200px) {
   .card_srv_info {
-    transform: translateY(15%);
   }
 }
 @media (max-width: 1024px) {
+  .srv_title {
+    margin-bottom: -40px;
+  }
   .srv_cards {
     display: block;
     -webkit-box-orient: horizontal;
@@ -175,5 +176,8 @@
   }
   .services_container {
     margin-top: 20px;
+  }
+  .srv_title {
+    margin-bottom: -40px;
   }
 }

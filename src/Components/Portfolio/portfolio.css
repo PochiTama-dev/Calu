@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
 
-  transform: translateY(25%);
+  transform: translateY(30%);
 }
 
 .title_portfolio {
@@ -65,7 +65,9 @@
     text-align: left;
     margin-bottom: 10px;
   }
-
+  .portfolio_container {
+    transform: translateY(55%);
+  }
   .slider {
     margin-top: 10px;
   }

@@ -35,7 +35,7 @@
 .ourServices {
   flex-direction: column;
   justify-content: center;
-  transform: translateY(22%);
+  transform: translateY(30%);
 }
 
 .ctn-servicios .nuestros-servicios {
@@ -43,11 +43,16 @@
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  .ourServices {
+    transform: translateY(40%);
+  }
+}
 @media (max-width: 767px) {
   .ourServices {
     flex-direction: column;
     justify-content: center;
-    transform: translateY(40%);
+    transform: translateY(55%);
   }
 }
 @media (max-width: 360px) {
