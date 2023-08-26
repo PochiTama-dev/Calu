@@ -1,7 +1,8 @@
 .news_text {
   margin: 0 15% 0% 7%;
 }
-.novedades_items {
+.novedades_items{
+
 }
 
 .btn_news {
@@ -23,7 +24,9 @@
   justify-content: center;
   flex-direction: column;
 
+
   transform: translateY(35%);
+
 }
 .cards_novedades {
   text-decoration: none;
@@ -73,7 +76,14 @@
   font-weight: bold;
   cursor: pointer;
 }
-
+@media (max-height: 600px) {
+  .novedades_items {
+  margin-top: 150px;
+  }
+  .cards_novedades {
+    margin-top: 30px;
+  }
+}
 @media (max-width: 1330px) {
   .cards_novedades a {
     margin-right: 20px;
@@ -101,12 +111,13 @@
     justify-content: center;
     margin-top: 60px;
   }
-  .btn_news {
+  .btn_news{
     margin-top: -5px;
   }
-  .novedades_items {
-    margin-top: 20px;
-  }
+  .novedades_items{
+    margin-top: 50px;
+      
+    }
 }
 
 @media (max-width: 480px) {
