@@ -41,6 +41,7 @@ function Slider({ children }) {
         removeArrowOnDeviceType={["mobile"]}
         infinite={true}
         responsive={responsive}
+        showDots={true}
         customLeftArrow={<CustomLeftArrow />}
         customRightArrow={<CustomRightArrow />}
         itemClass="carouselItem"

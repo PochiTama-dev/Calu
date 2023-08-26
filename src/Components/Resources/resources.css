@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
 
+
   transform: translateY(30%);
+
 
   flex-direction: column;
 }
@@ -49,6 +51,7 @@
   }
 }
 
+
 @media (max-width: 1024px) {
   .card_ctn {
     margin-left: 20px;
@@ -58,6 +61,7 @@
     transform: translateY(35%);
   }
 }
+
 
 @media (max-width: 767px) {
   .res_items {
