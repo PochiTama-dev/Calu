@@ -1,7 +1,11 @@
 .res_ctn {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+
+
+  transform: translateY(30%);
+
+
   flex-direction: column;
 }
 .res_title {
@@ -47,6 +51,18 @@
   }
 }
 
+
+@media (max-width: 1024px) {
+  .card_ctn {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .res_ctn {
+    transform: translateY(35%);
+  }
+}
+
+
 @media (max-width: 767px) {
   .res_items {
     margin-top: 50px;
@@ -57,6 +73,6 @@
 }
 @media (max-height: 600px) {
   .res_items {
-    margin-top: 100px;
+    margin-top: 20px;
   }
 }

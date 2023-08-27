@@ -3,7 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+
+
+  transform: translateY(35%);
+
 }
 .CTN_ctn2 {
   display: flex;

@@ -23,8 +23,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-height: 100vh;
- 
+
+
+  transform: translateY(35%);
+
 }
 .cards_novedades {
   text-decoration: none;
@@ -96,6 +98,9 @@
   .news_text {
     margin: 0 7% 0% 7%;
   }
+  .novedades_container {
+    transform: translateY(45%);
+  }
 }
 
 @media (max-width: 767px) {
@@ -122,5 +127,8 @@
   }
   .novedades_container p {
     margin: 0 0 -15px 0%;
+  }
+  .novedades_container {
+    transform: translateY(35%);
   }
 }

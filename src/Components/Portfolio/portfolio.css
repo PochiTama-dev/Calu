@@ -9,7 +9,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+
+
+  transform: translateY(30%);
+
 }
 
 .title_portfolio {
@@ -61,7 +64,9 @@
     text-align: left;
     margin-bottom: 10px;
   }
-
+  .portfolio_container {
+    transform: translateY(55%);
+  }
   .slider {
     margin-top: 10px;
   }

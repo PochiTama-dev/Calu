@@ -10,7 +10,7 @@ body {
 }
 
 section {
-  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 40%) top,
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 30%) top,
     linear-gradient(rgba(4, 25, 88, 0.6) 70%, transparent) bottom,
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
     linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
@@ -18,7 +18,8 @@ section {
     100% calc(50% - 5px), 100% 100%;
   background-repeat: no-repeat;
   backdrop-filter: blur(1px);
-  min-height: 700px;
+  min-height: 800px;
+  margin-top: 100px;
 }
 
 iframe[src^="https://www.google.com/recaptcha/"]
@@ -47,6 +48,9 @@ iframe[src^="https://www.google.com/recaptcha/"]
   p {
     font-size: 14px;
   }
+  section {
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 390px) {
@@ -72,6 +76,9 @@ iframe[src^="https://www.google.com/recaptcha/"]
   }
   p {
     font-size: 16px;
+  }
+  section {
+    margin-top: 20px;
   }
 }
 
