@@ -4,7 +4,7 @@
   margin: auto 15% auto 7%;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-55%);
 }
 .about_items {
   display: flex;
