@@ -80,11 +80,15 @@ const News = () => {
               ))}
           </div>
           <button className='btn_news'>
-            <Link className='btn_news' to={'/blog'} onClick={() => {
-                      window.scroll({
-                        top: 0,
-                      });
-                    }}>
+            <Link
+              className='btn_news'
+              to={'/blog'}
+              onClick={() => {
+                window.scroll({
+                  top: 0,
+                });
+              }}
+            >
               Ver Más
             </Link>
           </button>
@@ -118,11 +122,15 @@ const News = () => {
 
         <div className='btn_cont'>
           <button className='btn_news' onClick={() => ''}>
-            <Link className='btn_news' to={'/blog'} onClick={() => {
-                      window.scroll({
-                        top: 0,
-                      });
-                    }}>
+            <Link
+              className='btn_news'
+              to={'/blog'}
+              onClick={() => {
+                window.scroll({
+                  top: 0,
+                });
+              }}
+            >
               Ver Más
             </Link>
           </button>

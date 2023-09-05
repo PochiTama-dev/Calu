@@ -5,7 +5,8 @@
 
   position: absolute;
   top: 50%;
-  transform: translateY(-55%);
+  -webkit-transform: translateY(-55%);
+          transform: translateY(-55%);
 }
 
 .onb_items {
@@ -43,10 +44,7 @@
   bottom: 40vh;
 }
 .contact-btn {
-  background-image: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 50px;
   width: 15rem;
   height: 6vh;
@@ -64,7 +62,7 @@
   .onboarding .logoOnboard {
     display: block;
     position: relative;
-    margin-left: 200px;
+    margin-left: 150px;
     max-width: 35%;
   }
 
@@ -89,7 +87,8 @@
     align-items: center;
     overflow: hidden;
     margin-left: 7%;
-    transform: translateY(-70%);
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
   }
   .onb_items {
     display: flex;
@@ -125,10 +124,7 @@
     bottom: 40vh;
   }
   .contact-btn {
-    background-image: linear-gradient(
-      rgba(58, 246, 255, 0.2) 30%,
-      rgba(185, 4, 139, 0.2) 60%
-    );
+    background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
     border-radius: 50px;
     width: 15rem;
     height: 40px;
