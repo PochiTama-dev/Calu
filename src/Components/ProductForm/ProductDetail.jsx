@@ -163,7 +163,7 @@ function ProductDetail() {
               <div className="buying">
                 <p className="price-p">Precio: ${product.price}</p>
                 <button className="download-button" onClick={handleBuy}>
-                  Comprar
+                  Agregar al carrito
                 </button>
               </div>
             ) : (
