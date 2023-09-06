@@ -7,7 +7,6 @@ import "./product-detail.css";
 import cart_img from "../Resources/Card_resources/cart.svg";
 import elipse from "../Resources/Card_resources/elipse.svg";
 import { useCustomContext } from "../../Hooks/Context/Context";
-import ModalBuy from "../Cart/ModalBuy";
 import { Link } from "react-router-dom";
 import Contact_button from "../Home/Contact_button/Contact_button";
 import arrow_L from "../Home/icon_arrow_left.svg";
@@ -180,16 +179,6 @@ function ProductDetail() {
                 >
                   Agregar al carrito
                 </button>
-                <div className="modalBuy">
-                  {modal && (
-                    <ModalBuy
-                      setIsModalOpen={setModal}
-                      email={email}
-                      setEmail={setEmail}
-                      handleSubmit={handleSubmit}
-                    />
-                  )}
-                </div>
               </>
             )}
           </div>
