@@ -180,16 +180,6 @@ function ProductDetail() {
                 >
                   Agregar al carrito
                 </button>
-                <div className="modalBuy">
-                  {modal && (
-                    <ModalBuy
-                      setIsModalOpen={setModal}
-                      email={email}
-                      setEmail={setEmail}
-                      handleSubmit={handleSubmit}
-                    />
-                  )}
-                </div>
               </>
             )}
           </div>
