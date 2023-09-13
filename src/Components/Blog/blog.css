@@ -335,3 +335,9 @@
     margin-right: 15px;
   }
 }
+
+@media (min-width: 1300px) {
+  .cardContainerblog {
+    flex-wrap: nowrap;
+  }
+}
