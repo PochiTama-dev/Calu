@@ -94,110 +94,112 @@ export const Header = ({ cartItem, handleDelete }) => {
     });
   };
   return (
-    <header className="navBar">
-      <div className="header_items">
-        {isAuth && (
-          <div className="admin-menu">
-            <button className="admin-btn" onClick={handleAdminMenu}>
-              ADMIN
-            </button>
-            {showAdminMenu && (
-              <div className="admin-dropdown">
-                <Link to="/product-form">Create Product</Link>
-                <Link to="/create-post">Create Post</Link>
-                <Link to="/admin-crud">Create Services</Link>
-                <Link to="/admin-home">Edit Home</Link>
-                <Link to="/email-list">Email List</Link>
+    <div>
+      <header className="navBar">
+        <div className="header_items">
+          {isAuth && (
+            <div className="admin-menu">
+              <button className="admin-btn" onClick={handleAdminMenu}>
+                ADMIN
+              </button>
+              {showAdminMenu && (
+                <div className="admin-dropdown">
+                  <Link to="/product-form">Create Product</Link>
+                  <Link to="/create-post">Create Post</Link>
+                  <Link to="/admin-crud">Create Services</Link>
+                  <Link to="/admin-home">Edit Home</Link>
+                  <Link to="/email-list">Email List</Link>
 
-                <button onClick={signUserOut}>Log Out</button>
-              </div>
-            )}
-          </div>
-        )}
-        <nav>
-          <Link to={"/"}>
-            <img className="logoCalu" src={miImagen} alt="Logo Calu" />
-          </Link>
-
-          {!isAuth && <Link to="/admin-login"></Link>}
-          <nav className={showLinks ? "links " : "link show "}>
-            <div className="links_ctn">
-              <Link
-                onClick={scroll_top}
-                className={location.pathname === "/" ? "headerLinks" : ""}
-                to={"/"}
-              >
-                HOME
-              </Link>
-              <div className="line"></div>
-              <Link
-                onClick={scroll_top}
-                className={
-                  location.pathname === "/services" ? "headerLinks" : ""
-                }
-                to={"/services"}
-              >
-                SERVICIOS
-              </Link>
-              <div className="line"></div>
-              <Link
-                onClick={scroll_top}
-                className={
-                  location.pathname === "/product-list" ? "headerLinks" : ""
-                }
-                to={"/product-list"}
-              >
-                PRODUCTOS
-              </Link>
-              <div className="line"></div>
-              <Link
-                onClick={scroll_top}
-                className={location.pathname === "/blog" ? "headerLinks" : ""}
-                to={"/blog"}
-              >
-                {" "}
-                BLOG{" "}
-              </Link>
-              <div className="line"></div>
-              <Link
-                onClick={scroll_top}
-                className={
-                  location.pathname === "/Contact" ? "headerLinks" : ""
-                }
-                to={"/Contact"}
-              >
-                CONTACTO{" "}
-              </Link>
-            </div>
-          </nav>
-          <span
-            onClick={handleLinks}
-            className={`btn ${showLinks ? "bar" : "cross"}`}
-          >
-            <div>
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-          </span>
-          <div className="cart-2">
-            <div className="carrito" onClick={() => setShowCart(true)}>
-              <img src={cart} alt={cart} />
-              {Array.isArray(cartItem) && !showCart && (
-                <p className="totalItems">{cartItem.length}</p>
+                  <button onClick={signUserOut}>Log Out</button>
+                </div>
               )}
             </div>
-            {showCart && (
-              <Cart
-                close={handleClose}
-                cart={cartItem}
-                handleDelete={handleDelete}
-                buy={handlePay}
-              />
-            )}
-          </div>
-        </nav>
-      </div>
+          )}
+          <nav>
+            <Link to={"/"}>
+              <img className="logoCalu" src={miImagen} alt="Logo Calu" />
+            </Link>
+
+            {!isAuth && <Link to="/admin-login"></Link>}
+            <nav className={showLinks ? "links " : "link show "}>
+              <div className="links_ctn">
+                <Link
+                  onClick={scroll_top}
+                  className={location.pathname === "/" ? "headerLinks" : ""}
+                  to={"/"}
+                >
+                  HOME
+                </Link>
+                <div className="line"></div>
+                <Link
+                  onClick={scroll_top}
+                  className={
+                    location.pathname === "/services" ? "headerLinks" : ""
+                  }
+                  to={"/services"}
+                >
+                  SERVICIOS
+                </Link>
+                <div className="line"></div>
+                <Link
+                  onClick={scroll_top}
+                  className={
+                    location.pathname === "/product-list" ? "headerLinks" : ""
+                  }
+                  to={"/product-list"}
+                >
+                  PRODUCTOS
+                </Link>
+                <div className="line"></div>
+                <Link
+                  onClick={scroll_top}
+                  className={location.pathname === "/blog" ? "headerLinks" : ""}
+                  to={"/blog"}
+                >
+                  {" "}
+                  BLOG{" "}
+                </Link>
+                <div className="line"></div>
+                <Link
+                  onClick={scroll_top}
+                  className={
+                    location.pathname === "/Contact" ? "headerLinks" : ""
+                  }
+                  to={"/Contact"}
+                >
+                  CONTACTO{" "}
+                </Link>
+              </div>
+            </nav>
+            <span
+              onClick={handleLinks}
+              className={`btn ${showLinks ? "bar" : "cross"}`}
+            >
+              <div>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+            </span>
+            <div className="cart-2">
+              <div className="carrito" onClick={() => setShowCart(true)}>
+                <img src={cart} alt={cart} />
+                {Array.isArray(cartItem) && !showCart && (
+                  <p className="totalItems">{cartItem.length}</p>
+                )}
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      {showCart && (
+        <Cart
+          close={handleClose}
+          cart={cartItem}
+          handleDelete={handleDelete}
+          buy={handlePay}
+        />
+      )}
       {isModalOpen && (
         <ModalBuy
           email={email}
@@ -209,6 +211,6 @@ export const Header = ({ cartItem, handleDelete }) => {
           handleCheck={handleCheck}
         />
       )}
-    </header>
+    </div>
   );
 };
