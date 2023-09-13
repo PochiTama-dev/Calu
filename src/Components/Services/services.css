@@ -5,17 +5,25 @@
   margin-bottom: 100px;
   margin-top: 100px;
 }
-
-.serviceSection {
-  min-height: 700px;
+.srv_content {
+  margin: auto 0 auto 0;
 }
-
+.srv_section {
+  background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 30%) top,
+    linear-gradient(rgba(4, 25, 88, 0.6) 70%, transparent) bottom,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
+    linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
+  background-size: 100% 48%, 100% 52%, 100% calc(50% - 5px), 100% calc(50% - 5px), 100% 100%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(1px);
+  min-height: 600px;
+  margin-top: -50px;
+}
 .srv_title {
   display: flex;
   justify-content: center;
   color: #3af6ff;
-  margin-top: 150px;
-  margin-bottom: -130px;
+  margin-bottom: 20px;
 }
 .srv_title h1 {
   font-size: 38px;
@@ -29,6 +37,9 @@
 }
 
 .card_srv_cont {
+  margin: auto 0 auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   justify-content: center;
 }
@@ -40,8 +51,7 @@
 }
 .card_srv_info {
   margin: 0 50px 0 0;
-  -webkit-transform: translateY(210px);
-  transform: translateY(210px);
+  transform: translateY(150px);
   max-width: 70%;
   display: flex;
   justify-content: center;
@@ -50,8 +60,10 @@
 
 .card_srv_info_inv {
   max-width: 70%;
-  -webkit-transform: translateY(220px);
-  transform: translateY(220px);
+  transform: translateY(160px);
+
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   text-align: right;
@@ -64,13 +76,11 @@
   flex-direction: column;
   justify-content: center;
 
-  -webkit-transform: translateY(250px);
-
-  transform: translateY(250px);
+  transform: translateY(150px);
 }
 .srv_icon img {
   height: 100%;
-  width: 220px;
+  width: 190px;
 }
 .title_srv {
   color: rgba(185, 4, 139, 0.9154228855721394);
@@ -79,7 +89,7 @@
   font-size: 30px;
 }
 .title_srv h1 {
-  font-size: 28px;
+  font-size: 26px;
 }
 .sub_d {
   color: white;
@@ -89,7 +99,7 @@
   margin-bottom: -30px;
 }
 .sub_d h2 {
-  font-size: 22px;
+  font-size: 20px;
 }
 .des_1d {
   margin-bottom: -30px;
@@ -108,6 +118,15 @@
   font-size: 28px;
   font-weight: bold;
   margin-top: 10px;
+}
+
+@media (max-width: 1300px) {
+  .card_srv_info {
+    transform: translateY(130px);
+  }
+  .card_srv_info_inv {
+    transform: translateY(120px);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -130,7 +149,7 @@
     display: flex;
     justify-content: center;
 
-    margin-top: 30px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
   }

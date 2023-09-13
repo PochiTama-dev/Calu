@@ -66,12 +66,12 @@ const Services = () => {
           <div>
             {servicios.map((servicio, index) => {
               return (
-                <section
-                  className='serviceSection'
+                <div
+                  className='srv_section'
                   key={index}
                   ref={serviceName === servicio.title ? scrollRef : null}
                 >
-                  <div>
+                  <div className='srv_content'>
                     <div>
                       <div>
                         <div className={index % 2 === 0 ? 'card_srv_cont' : 'card_srv_cont_inv'}>
@@ -103,7 +103,7 @@ const Services = () => {
                       </div>
                     </div>
                   </div>
-                </section>
+                </div>
               );
             })}
           </div>

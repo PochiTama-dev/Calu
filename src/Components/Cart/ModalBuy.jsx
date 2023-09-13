@@ -41,7 +41,8 @@ const ModalBuy = ({
             </div>
             {!check && (
               <div className="noCheck">
-                Debes aceptar los {<Link>términos y condiciones</Link>}
+                Debes aceptar los{" "}
+                {<Link className="terms_link">términos y condiciones</Link>}
               </div>
             )}
           </div>
