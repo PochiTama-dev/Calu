@@ -102,10 +102,7 @@
   width: 220px;
   height: 50px;
   border-radius: 20px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   outline: none;
   border: none;
 
@@ -230,6 +227,7 @@
   width: 95%;
   display: flex;
   overflow: scroll;
+  justify-content: center;
 }
 .book-recomendation::-webkit-scrollbar {
   display: none;
