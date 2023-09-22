@@ -22,7 +22,7 @@
 }
 
 .blogCard {
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: rgba(2, 2, 73, 50%);
   backdrop-filter: blur(10px);
   width: 80%;
   color: white;

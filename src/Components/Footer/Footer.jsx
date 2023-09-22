@@ -22,83 +22,85 @@ const Footer = () => {
   if (width > breakpoint) {
     return (
       <div className="footer_container">
-        <div className="footer_elements">
-          <div className="logo_calu">
-            <img src={calu_logo} alt="calu" />
-            <p>TU AGENCIA DE MARKETING DIGITAL</p>
-          </div>
-
-          <div className="servicios">
-            <h1>SERVICIOS</h1>
-
-            <div className="servicios_">
-              <ul>
-                <li>
-                  <span>Consultoría Estratégica</span>
-                </li>
-                <li>
-                  <span>Gestión de Redes Sociales</span>
-                </li>
-                <li>
-                  <span>Publicidad Digital</span>
-                </li>
-                <li>
-                  <span>E-mail Marketings</span>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <span>Book Institucional</span>
-                </li>
-                <li>
-                  <span>Creación de Contenido</span>
-                </li>
-                <li>
-                  <span>Modelo de Negocio</span>
-                </li>
-                <li>
-                  <span>Desarrollo Web</span>
-                </li>
-              </ul>
+        <div className="footer_background">
+          <div className="footer_elements">
+            <div className="logo_calu">
+              <img src={calu_logo} alt="calu" />
+              <p>TU AGENCIA DE MARKETING DIGITAL</p>
             </div>
-          </div>
 
-          <div className="redes">
-            <h1>REDES</h1>
-            <div className="social_icons">
-              <a
-                href="https://www.linkedin.com/company/calu-mktdigital/"
-                target="_blank"
-              >
-                <img src={ld_logo} alt="linkedin" />
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=100090611090874"
-                target="_blank"
-              >
-                <img src={fb_logo} alt="facebook" />
-              </a>
-              <a
-                href="https://www.instagram.com/calu.mktdigital/ "
-                target="_blank"
-              >
-                <img src={insta_logo} alt="instagram" />
-              </a>
-              <a
-                href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc"
-                target="_blank"
-              >
-                <img src={tk_logo} alt="tiktok" />
-              </a>
-              <a
-                href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae "
-                target="_blank"
-              >
-                <img src={sp_logo} alt="spotify" />
-              </a>
-              <a href="https://youtube.com/@CaluMktdigital" target="_blank">
-                <img src={yt_logo} alt="youtube" />
-              </a>
+            <div className="servicios">
+              <h1>SERVICIOS</h1>
+
+              <div className="servicios_">
+                <ul>
+                  <li>
+                    <span>Consultoría Estratégica</span>
+                  </li>
+                  <li>
+                    <span>Gestión de Redes Sociales</span>
+                  </li>
+                  <li>
+                    <span>Publicidad Digital</span>
+                  </li>
+                  <li>
+                    <span>E-mail Marketings</span>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>Book Institucional</span>
+                  </li>
+                  <li>
+                    <span>Creación de Contenido</span>
+                  </li>
+                  <li>
+                    <span>Modelo de Negocio</span>
+                  </li>
+                  <li>
+                    <span>Desarrollo Web</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="redes">
+              <h1>REDES</h1>
+              <div className="social_icons">
+                <a
+                  href="https://www.linkedin.com/company/calu-mktdigital/"
+                  target="_blank"
+                >
+                  <img src={ld_logo} alt="linkedin" />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100090611090874"
+                  target="_blank"
+                >
+                  <img src={fb_logo} alt="facebook" />
+                </a>
+                <a
+                  href="https://www.instagram.com/calu.mktdigital/ "
+                  target="_blank"
+                >
+                  <img src={insta_logo} alt="instagram" />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@calumktdigital?is_from_webapp=1&sender_device=pc"
+                  target="_blank"
+                >
+                  <img src={tk_logo} alt="tiktok" />
+                </a>
+                <a
+                  href="https://open.spotify.com/user/31qdqqxbhaph6tshdgkoidsug6ae "
+                  target="_blank"
+                >
+                  <img src={sp_logo} alt="spotify" />
+                </a>
+                <a href="https://youtube.com/@CaluMktdigital" target="_blank">
+                  <img src={yt_logo} alt="youtube" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
