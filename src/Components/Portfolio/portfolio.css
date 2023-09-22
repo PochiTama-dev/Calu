@@ -10,6 +10,8 @@
   flex-direction: column;
   justify-content: center;
 
+  -webkit-transform: translateY(35%);
+
   transform: translateY(35%);
 }
 
@@ -37,13 +39,14 @@
 }
 .card_slider_port img {
   width: 120px;
-  box-shadow: 8px 8px 10px rgba(0, 22, 150, 0.7);
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
 }
 @media (max-width: 1024px) {
   .card_slider_port img {
     width: 100px;
   }
   .portfolio_container {
+    -webkit-transform: translateY(40%);
     transform: translateY(40%);
   }
 }
@@ -57,6 +60,8 @@
   .portfolio_container {
     width: 100%;
     margin-top: 10px;
+
+    -webkit-transform: translateY(50%);
 
     transform: translateY(50%);
   }
