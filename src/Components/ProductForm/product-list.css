@@ -4,10 +4,10 @@
   align-items: center;
   text-align: center;
   position: relative;
-  margin-top: 65px;
+  margin-top: 1vh;
 }
 .main-container .products {
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: rgba(2, 2, 73, 50%);
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   width: 90%;
   backdrop-filter: blur(10px);
