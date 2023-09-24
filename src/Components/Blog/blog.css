@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 12vh;
+  margin-top: 5vh;
 }
 .icons_novedades {
   width: 100px;
@@ -40,7 +40,7 @@
 .postContainer {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: rgba(2, 2, 73, 50%);
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   border-radius: 20px;
   width: 90%;
@@ -197,7 +197,7 @@
   .BlogPage {
     display: flex;
     align-items: center;
-    margin-top: 12vh;
+    margin-top: 5vh;
   }
   .postContainer {
     width: 560px;

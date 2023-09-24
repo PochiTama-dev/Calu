@@ -1,5 +1,5 @@
 .lateralBar {
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: rgba(2, 2, 73, 50%);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   width: 40%;
@@ -51,8 +51,8 @@ hr {
   height: 140px;
 }
 .sb_blog_image img {
-  height: 170px;
-  width: 200px;
+  height: 120px;
+  width: 130px;
 }
 @media (min-width: 340px) {
   .lateralBar {
