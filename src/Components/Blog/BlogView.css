@@ -23,7 +23,8 @@
 
 .blogCard {
   background-color: rgba(2, 2, 73, 50%);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   width: 80%;
   color: white;
   padding: 2rem;
@@ -139,6 +140,13 @@
   }
   .lateralBar {
     position: initial;
+  }
+  .lateralBar .lateralContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .lateralBar .lateralContainer .sb_blog_title {
+    margin: 5px;
   }
   .youtubePlayer {
     display: flex;
