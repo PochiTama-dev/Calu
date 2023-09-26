@@ -76,6 +76,7 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 18px;
+  font-weight: normal;
   width: 70%;
   text-align: center;
 }
@@ -188,7 +189,6 @@
 @media (min-width: 768px) {
   .postContainer .cardContainerblog {
     justify-content: flex-start;
-    /* overflow: scroll;*/
   }
   .postContainer .cardContainerblog .cards {
     width: 45%;
@@ -327,8 +327,9 @@
     margin: 0;
     margin-top: 25px;
   }
-  .lateralBar .lateralContainer {
+  .blog-sidebar .lateralBar .lateralContainer {
     margin-top: 60px;
+    flex-direction: column;
   }
   .card-blog {
     margin-left: 35px;
@@ -337,7 +338,7 @@
 }
 
 @media (min-width: 1300px) {
-  .cardContainerblog {
-    flex-wrap: nowrap;
+  .postContainer .cardContainerblog .card-blog {
+    width: 230px;
   }
 }
