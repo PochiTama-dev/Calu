@@ -18,13 +18,15 @@
   color: aqua;
 }
 
-.mini-description {
+.mini-description,
+.aditional-content {
+  white-space: 'per-line';
 }
 
 .blogCard {
   background-color: rgba(2, 2, 73, 50%);
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   width: 80%;
   color: white;
   padding: 2rem;
@@ -114,7 +116,7 @@
     height: 200px;
   }
   .youtubePlayer iframe {
-    width: 100%;
+    width: 90%;
     height: auto;
   }
 }
