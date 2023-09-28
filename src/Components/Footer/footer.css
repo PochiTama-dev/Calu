@@ -37,6 +37,13 @@
   flex-direction: row;
 }
 
+.servicios_ span {
+  text-transform: lowercase;
+}
+.servicios_ span::first-letter {
+  text-transform: uppercase;
+}
+
 .redes {
   font-size: 20px;
   color: rgb(250, 249, 249);

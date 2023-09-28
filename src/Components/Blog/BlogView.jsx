@@ -31,7 +31,8 @@ function BlogView() {
       const postDoc = doc(db, "posts", id);
       const docSnapshot = await getDoc(postDoc);
       if (docSnapshot.exists()) {
-        setPost(docSnapshot.data());
+        const date = new Date(docSnapshot.data().time).toLocaleDateString();
+        setPost({ ...docSnapshot.data(), date });
       } else {
         console.log("El post no existe");
       }
@@ -39,6 +40,7 @@ function BlogView() {
 
     getPost();
   }, [id]);
+  console.log(post);
 
   if (!post) {
     return <div>Loading...</div>;
@@ -93,6 +95,7 @@ function BlogView() {
             </div>
           </div>
           <Sidebar />
+
         </div>
       </div>
     </>

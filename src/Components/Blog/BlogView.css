@@ -15,7 +15,9 @@
   color: aqua;
 }
 
-.mini-description {
+.mini-description,
+.aditional-content {
+  white-space: 'per-line';
 }
 .banner img {
   width: 450px;
@@ -24,6 +26,7 @@
 }
 
 .blogCard {
+
   color: white;
   padding: 2rem;
   row-gap: 20px;
@@ -111,7 +114,7 @@
     height: 200px;
   }
   .youtubePlayer iframe {
-    width: 100%;
+    width: 90%;
     height: auto;
   }
   .lateralBar {
