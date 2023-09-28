@@ -64,7 +64,7 @@ hr {
     display: flex;
     overflow: scroll;
     margin: auto;
-    margin: 150px auto 50px auto;
+    margin: 150px 0 50px 0;
   }
   .sb_blog_image {
     margin: 10px;
