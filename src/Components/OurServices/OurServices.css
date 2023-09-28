@@ -41,21 +41,16 @@
 }
 .ctn-servicios .slider .card_our {
   width: 240px;
-  height: 200px;
+  height: 240px;
 }
 .ctn-servicios .slider .card_our .title_our {
   margin: -10px 5px 0px 5px;
 }
 .ctn-servicios .slider .card_our .button_portfolio {
-  bottom: 30px;
 }
 .ourServices {
   flex-direction: column;
   justify-content: center;
-
-  -webkit-transform: translateY(30%);
-
-  transform: translateY(30%);
 }
 
 .ctn-servicios .nuestros-servicios {
@@ -65,17 +60,15 @@
 }
 
 @media (max-width: 1024px) {
-  .ourServices {
-    -webkit-transform: translateY(40%);
-    transform: translateY(40%);
+  .ctn-servicios .slider .card_our {
+    width: 210px;
+    height: 210px;
   }
 }
 @media (max-width: 767px) {
   .ourServices {
     flex-direction: column;
     justify-content: center;
-    -webkit-transform: translateY(55%);
-    transform: translateY(55%);
   }
 }
 
