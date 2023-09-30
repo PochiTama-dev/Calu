@@ -10,8 +10,11 @@ import yt_logo from './icons/youtube.png';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { Navigate, useNavigate } from 'react-router-dom';
+import Terms from '../Cart/Terms';
 
 const Footer = () => {
+  const [modal, setModal] = useState(false);
+
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
   React.useEffect(() => {
@@ -37,7 +40,9 @@ const Footer = () => {
   const handleNavigate = () => {
     navigate('/services');
   };
-
+  const handleModal = () => {
+    navigate('terms');
+  };
   if (width > breakpoint) {
     return (
       <div className='footer_container'>
@@ -59,33 +64,6 @@ const Footer = () => {
                     </li>
                   ))}
                   <p onClick={handleNavigate}>Ver más</p>
-                  {/* <li>
-                    <span>Consultoría Estratégica</span>
-                  </li>
-                  <li>
-                    <span>Gestión de Redes Sociales</span>
-                  </li>
-                  <li>
-                    <span>Publicidad Digital</span>
-                  </li>
-                  <li>
-                    <span>E-mail Marketings</span>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <span>Book Institucional</span>
-                  </li>
-                  <li>
-                    <span>Creación de Contenido</span>
-                  </li>
-                  <li>
-                    <span>Modelo de Negocio</span>
-                  </li>
-                  <li>
-                    <span>Desarrollo Web</span>
-                  </li>
-                */}
                 </ul>
               </div>
             </div>
@@ -118,6 +96,9 @@ const Footer = () => {
                   <img src={yt_logo} alt='youtube' />
                 </a>
               </div>
+            </div>
+            <div className='terminos'>
+              <p onClick={handleModal}>Términos y condiciones</p>
             </div>
           </div>
         </div>
