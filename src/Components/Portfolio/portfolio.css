@@ -9,10 +9,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  -webkit-transform: translateY(35%);
-
-  transform: translateY(35%);
 }
 
 .title_portfolio {
@@ -46,8 +42,6 @@
     width: 100px;
   }
   .portfolio_container {
-    -webkit-transform: translateY(40%);
-    transform: translateY(40%);
   }
 }
 
@@ -60,10 +54,6 @@
   .portfolio_container {
     width: 100%;
     margin-top: 10px;
-
-    -webkit-transform: translateY(50%);
-
-    transform: translateY(50%);
   }
   .title_portfolio {
     color: #3af6ff;
