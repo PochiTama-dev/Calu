@@ -166,7 +166,7 @@ export const Header = ({ cartItem, handleDelete }) => {
               </div>
             </nav>
             <span onClick={handleLinks} className={`btn ${showLinks ? 'bar' : 'cross'}`}>
-              <div>
+              <div className='hamburguesa'>
                 <i></i>
                 <i></i>
                 <i></i>

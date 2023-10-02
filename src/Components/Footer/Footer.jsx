@@ -58,12 +58,34 @@ const Footer = () => {
 
               <div className='servicios_'>
                 <ul>
-                  {servicios.map((servicio, index) => (
-                    <li key={index}>
-                      <span>{servicio.title}</span>
-                    </li>
-                  ))}
-                  <p onClick={handleNavigate}>Ver más</p>
+                  <li>
+                    <span>Consultoría Estratégica</span>
+                  </li>
+                  <li>
+                    <span>Gestión de Redes Sociales</span>
+                  </li>
+                  <li>
+                    <span>Publicidad Digital</span>
+                  </li>
+                  <li>
+                    <span>E-mail Marketings</span>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <span>Book Institucional</span>
+                  </li>
+                  <li>
+                    <span>Creación de Contenido</span>
+                  </li>
+                  <li>
+                    <span>Modelo de Negocio</span>
+                  </li>
+                  <li>
+                    <span className='verMasFooter' onClick={handleNavigate}>
+                      Ver más
+                    </span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -96,9 +118,12 @@ const Footer = () => {
                   <img src={yt_logo} alt='youtube' />
                 </a>
               </div>
-            </div>
-            <div className='terminos'>
-              <p onClick={handleModal}>Términos y condiciones</p>
+              <div className='terminos'>
+                <span onClick={handleModal}>
+                  Para saber más acerca de nuestras políticas, te recomendamos consultar nuestros
+                  Términos y Condiciones.
+                </span>
+              </div>
             </div>
           </div>
         </div>

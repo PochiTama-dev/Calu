@@ -70,10 +70,7 @@
 }
 
 .compra_btn {
-  background-image: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 50px;
   width: 220px;
   margin: auto;
@@ -116,16 +113,14 @@
   backdrop-filter: blur(5px);
 
   left: 50%;
+  -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
 .email_btn {
   color: white;
   width: 220px;
   height: 50px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 3rem 0 3rem 0;
   text-decoration: none;
   border: none;
@@ -181,11 +176,11 @@
 }
 .terms_link {
   text-decoration: none;
-  color: white;
-}
-.terms .noCheck {
   color: #3af6ff;
   font-weight: bold;
+}
+.terms .noCheck {
+  color: white;
 }
 .terms p {
   font-size: 15px;
