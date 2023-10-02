@@ -82,6 +82,7 @@ function CreatePost() {
         youtubeLink,
         additionalContent,
         category,
+        time,
       };
 
       await setDoc(doc(db, 'posts', editPost.id), updatedPost);
@@ -98,6 +99,7 @@ function CreatePost() {
         youtubeLink,
         additionalContent,
         category,
+        time,
       };
 
       await setDoc(doc(db, 'posts', editPost.id), updatedPost);

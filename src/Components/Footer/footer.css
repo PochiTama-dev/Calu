@@ -74,6 +74,17 @@ li {
 li span {
   color: white; /* text color */
 }
+.terminos {
+  position: relative;
+  right: 30%;
+  color: white;
+  cursor: pointer;
+}
+.terminos p {
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
+}
 @media (max-width: 1400px) {
   .footer_container {
     bottom: 0;
