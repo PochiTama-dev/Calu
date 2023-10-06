@@ -32,7 +32,6 @@
   margin-top: 80px;
   margin-bottom: 50px;
   color: aqua;
-  font-size: 38px;
 }
 .lateralBarTitle {
   text-align: center;
@@ -192,9 +191,7 @@
 
 @media (min-width: 768px) {
   .postContainer .cardContainerblog {
-
     justify-content: center;
-
   }
   .postContainer .cardContainerblog .cards {
     width: 45%;
@@ -341,14 +338,10 @@
     flex-direction: column;
   }
   .card-blog {
-    margin-left: 35px;
-    margin-right: 15px;
   }
 }
 
 @media (min-width: 1300px) {
-
   .cardContainerblog {
-
   }
 }
