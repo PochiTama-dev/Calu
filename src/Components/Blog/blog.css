@@ -192,9 +192,7 @@
 
 @media (min-width: 768px) {
   .postContainer .cardContainerblog {
-
     justify-content: center;
-
   }
   .postContainer .cardContainerblog .cards {
     width: 45%;
@@ -291,10 +289,12 @@
     margin-top: 0;
   }
   .postContainer .cardContainerblog {
-    justify-content: left;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-around;
   }
   .postContainer .cardContainerblog .card-blog {
-    width: 250px;
+    width: 130px;
   }
   .postContainer .cardContainerblog .card-blog .cardHeaderblog {
     margin-left: auto;
@@ -309,6 +309,14 @@
   .card-blog .blogImage h2 {
     margin: 0;
     width: auto;
+  }
+  .card-blog .blogImage .card_news {
+    width: 200px;
+    margin-right: 50px;
+  }
+  .card-blog .blogImage .card_news .card_f_news {
+    width: 200px;
+    height: 225;
   }
   .card-blog .blogImage .arrow {
     margin-left: 200px;
@@ -347,8 +355,6 @@
 }
 
 @media (min-width: 1300px) {
-
   .cardContainerblog {
-
   }
 }
