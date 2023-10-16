@@ -62,7 +62,7 @@
   }
 
   .blogTitle {
-    margin-top: 200px;
+    margin-top: 175px;
     color: aqua;
     display: flex;
     justify-content: center;
@@ -149,12 +149,14 @@
   }
 
   .blogCard .youtubePlayer {
-    height: 300px;
     display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
   }
   .youtubePlayer iframe {
-    width: 600px;
-    height: 250px;
+    width: 716px;
+    height: 300px;
   }
   .lateralBar {
     display: flex;
@@ -164,6 +166,18 @@
     height: -moz-fit-content;
     height: fit-content;
   }
-  .blogTitle {
+}
+
+@media (min-width: 1025px) {
+  .blogContainer {
+    width: 60%;
+  }
+  .banner img {
+    width: 600px;
+    height: 400px;
+  }
+  .youtube iframe {
+    width: 800px;
+    height: 300px;
   }
 }
