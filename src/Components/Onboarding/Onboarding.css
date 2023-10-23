@@ -10,7 +10,6 @@
   flex-direction: row;
 }
 .onboarding .logoOnboard {
-  display: none;
 }
 .onboarding .parrafo {
   color: white;
@@ -59,9 +58,8 @@
 }
 @media (min-width: 900px) {
   .onboarding .logoOnboard {
-    display: block;
     position: relative;
-    margin-left: 250px;
+    margin-left: 420px;
     max-width: 550px;
   }
 

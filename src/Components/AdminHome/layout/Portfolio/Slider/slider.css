@@ -7,14 +7,14 @@
 }
 .arrowL {
   position: absolute;
-  z-index: 10;
+
   left: -1px;
   top: 100px;
   width: 40px;
 }
 .arrowR {
   position: absolute;
-  z-index: 10;
+
   right: -1px;
   top: 100px;
   width: 40px;

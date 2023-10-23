@@ -12,14 +12,12 @@ function PaymentGateway() {
   };
 
   return (
-    <div>
+    <div className="paymentCtn">
       <Header />
-
-      <h1 className="title-payment">Pasarela de Pagos</h1>
       <div className="payment-content">
+        <h1 className="title-payment">Pasarela de Pagos</h1>
         <div className="payment-options">
           {/* PayPal */}
-
           <div
             className="payment-option"
             onClick={() => handlePayment("paypal")}
