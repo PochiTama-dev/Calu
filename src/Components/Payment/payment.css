@@ -1,3 +1,8 @@
+.paymentCtn {
+  background: rgba(4, 25, 88, 0.6) 100%;
+  min-height: 100vh;
+}
+
 .payment-options {
   display: flex;
   justify-content: space-around;
@@ -10,18 +15,13 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  transform: translateY(50%);
-
-  min-height: 600px;
-
-  margin-top: -290px;
 }
 
 .title-payment {
   display: flex;
   justify-content: center;
   color: aqua;
-  margin: 150px 0 0 0;
+  margin-top: 150px;
 }
 
 .payment-option {
@@ -55,30 +55,11 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: -480px;
-    min-height: 950px;
   }
 }
 @media (max-width: 624px) {
-  .payment-content {
-    margin-top: -850px;
-    min-height: 1700px;
-    background: linear-gradient(transparent, rgba(4, 25, 88, 0.6) 10%) top,
-      linear-gradient(rgba(4, 25, 88, 0.6) 70%, transparent) bottom,
-      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) top,
-      linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) bottom;
-    background-size: 100% 48%, 100% 52%, 100% calc(50% - 5px),
-      100% calc(50% - 5px), 100% 100%;
-    background-repeat: no-repeat;
-    backdrop-filter: blur(1px);
-  }
-  .payment-options {
-    margin-top: -220px;
-  }
   .title-payment {
     display: flex;
     justify-content: center;
-    color: aqua;
-    margin: 150px 0 -200px 0;
   }
 }

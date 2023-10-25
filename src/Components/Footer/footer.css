@@ -108,6 +108,10 @@ li span {
   .logo_calu p {
     margin-top: -20px;
   }
+  .servicios_ {
+    display: flex;
+    flex-direction: column;
+  }
 
   .footer_elements_mobile {
     /* background: linear-gradient(transparent, rgb(4, 25, 120) 50%) top,
