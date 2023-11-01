@@ -73,10 +73,7 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
 }
 
 .carrito-img {
@@ -96,10 +93,7 @@
   min-height: 250px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   color: white;
 }
 
@@ -135,7 +129,7 @@
   color: #3af6ff;
   font-weight: 700;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   margin-top: 10px;
 }
 
@@ -208,6 +202,7 @@
 .product-inner.flipped {
   -webkit-animation: rotateFlip 0.5s;
   animation: rotateFlip 0.5s;
+  height: 280px;
 }
 
 @-webkit-keyframes rotateFlipReturn {
