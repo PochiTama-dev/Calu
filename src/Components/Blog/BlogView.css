@@ -126,7 +126,11 @@
     height: fit-content;
   }
 }
-
+@media (min-width: 500px) {
+  .lateralBar {
+    max-width: initial;
+  }
+}
 @media (min-width: 900px) {
   .blogContainer {
     width: 40%;

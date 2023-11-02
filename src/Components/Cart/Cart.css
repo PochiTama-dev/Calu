@@ -1,14 +1,11 @@
 .cartContainer {
   padding: 20px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 12px;
   color: white;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
   position: fixed;
   right: 100px;
   top: 100px;
@@ -96,10 +93,7 @@
 }
 
 .compra_btn {
-  background-image: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background-image: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 50px;
   width: 220px;
   margin: auto;
@@ -139,11 +133,13 @@
   position: absolute;
 }
 .emailModal {
+
   margin: 150px auto 0 auto;
   background: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
   );
+
   max-width: 350px;
   position: fixed;
   padding: 20px;
@@ -159,10 +155,7 @@
   color: white;
   width: 220px;
   height: 50px;
-  background: linear-gradient(
-    rgba(58, 246, 255, 0.2) 30%,
-    rgba(185, 4, 139, 0.2) 60%
-  );
+  background: linear-gradient(rgba(58, 246, 255, 0.2) 30%, rgba(185, 4, 139, 0.2) 60%);
   border-radius: 3rem 0 3rem 0;
   text-decoration: none;
   border: none;

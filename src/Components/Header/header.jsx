@@ -13,7 +13,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { useCustomContext } from "../../Hooks/Context/Context";
 
 export const Header = ({ cartItem, handleDelete }) => {
-  const { isAuth, logoutGoogle, handleBlur } = useCustomContext();
+  const { isAuth, logoutGoogle, handleBlur, blur } = useCustomContext();
   const [showAdminMenu, setShowAdminMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
@@ -21,6 +21,7 @@ export const Header = ({ cartItem, handleDelete }) => {
   const [email, setEmail] = useState("");
   const checkRef = useRef(null);
   const [check, setCheck] = useState(true);
+  const [showLinks, setShowLinks] = useState(true);
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
@@ -36,14 +37,13 @@ export const Header = ({ cartItem, handleDelete }) => {
     });
   };
 
-  const [showLinks, setShowLinks] = useState(true);
-
   const handleAdminMenu = () => {
     setShowAdminMenu(!showAdminMenu);
   };
 
   const handleLinks = () => {
     setShowLinks(!showLinks);
+    handleBlur();
   };
 
   const handleClose = () => {
@@ -95,8 +95,10 @@ export const Header = ({ cartItem, handleDelete }) => {
   };
   return (
     <div>
-      <header className="navBar">
-        <div className="header_items">
+
+      <header className={!blur ? 'navBar' : 'navBarBlur'}>
+        <div className='header_items'>
+
           {isAuth && (
             <div className="admin-menu">
               <button className="admin-btn" onClick={handleAdminMenu}>

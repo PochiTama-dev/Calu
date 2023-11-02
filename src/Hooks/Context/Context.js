@@ -29,7 +29,6 @@ export function Provider({ children }) {
   const logoutGoogle = () => {
     setIsAuth(false);
   };
-
   return (
     <Context.Provider
       value={{
