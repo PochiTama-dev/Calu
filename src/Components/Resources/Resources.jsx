@@ -151,6 +151,17 @@ const Resources = () => {
               </div>
             ))}
         </Slider>
+        <Link
+          className="btn_res_more"
+          to={"/product-list/"}
+          onClick={() => {
+            window.scroll({
+              top: 0,
+            });
+          }}
+        >
+          Ver Más
+        </Link>
       </div>
     </div>
   );

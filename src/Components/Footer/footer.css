@@ -110,7 +110,6 @@ li span {
   }
   .servicios_ {
     display: flex;
-    flex-direction: column;
   }
 
   .social_icons img {

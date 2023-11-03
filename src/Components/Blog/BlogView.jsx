@@ -60,7 +60,7 @@ function BlogView() {
     <>
       <div className="BlogView" ref={firstSection}>
         <Header cartItem={cart} handleDelete={removeFromCart} />
-        <button onClick={scrollToTop}>
+        <button className="arrow_up12" onClick={scrollToTop}>
           <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
         </button>
         <Contact_button />
