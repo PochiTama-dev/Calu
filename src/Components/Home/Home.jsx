@@ -48,8 +48,10 @@ const Home = () => {
     return (
       <div className='container'>
         <Header cartItem={cart} handleDelete={removeFromCart} />
-        <button onClick={scrollToTop}>
-          <img className='arrow_up' src={arrow_L} />
+
+        <button className="arrow_up12" onClick={scrollToTop}>
+          <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+
         </button>
         <Contact_button />
 
@@ -81,8 +83,10 @@ const Home = () => {
   return (
     <div className='container'>
       <Header cartItem={cart} />
-      <button onClick={scrollToTop}>
-        <img className='arrow_up' src={arrow_L} />
+
+      <button className="arrow_up12" onClick={scrollToTop}>
+        <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+
       </button>
       <Contact_button />
       <section ref={firstSection} style={sectionStyles} className={getSectionClassName(0)}>

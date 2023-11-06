@@ -37,4 +37,7 @@
   .arrowR {
     width: 40px;
   }
+  .carousel-container {
+    width: 80%;
+  }
 }

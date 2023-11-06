@@ -39,6 +39,7 @@
   bottom: 40vh;
 }
 .contact-btn {
+  box-shadow: 8px 8px 10px rgba(1, 13, 79, 58%);
   background-image: linear-gradient(
     rgba(58, 246, 255, 0.2) 30%,
     rgba(185, 4, 139, 0.2) 60%
@@ -97,11 +98,12 @@
     align-items: center;
     overflow: hidden;
     margin-left: 7%;
-    margin-top: 180px;
+    margin-top: 100px;
     margin-bottom: 150px;
   }
   .onb_items {
     display: flex;
+    height: 420px;
   }
   .onboarding .logoOnboard {
     display: none;
@@ -116,7 +118,6 @@
     z-index: 2;
   }
   .onboarding .parrafo {
-    text-align: justify;
     margin-right: 7%;
     margin-bottom: 0;
   }

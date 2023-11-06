@@ -1,16 +1,20 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase-config';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Header } from '../Header/header';
-import './product-detail.css';
-import cart_img from '../Resources/Card_resources/cart.svg';
-import elipse from '../Resources/Card_resources/elipse.svg';
-import { useCustomContext } from '../../Hooks/Context/Context';
-import { Link } from 'react-router-dom';
-import Contact_button from '../Home/Contact_button/Contact_button';
-import arrow_L from '../Home/icon_arrow_left.svg';
+
+import React, { useEffect, useState, useRef } from "react";
+import { addDoc, collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { db } from "../../firebase-config";
+import { useNavigate, useParams } from "react-router-dom";
+import { Header } from "../Header/header";
+import "./product-detail.css";
+import cart_img from "../Resources/Card_resources/cart.svg";
+import elipse from "../Resources/Card_resources/elipse.svg";
+import { useCustomContext } from "../../Hooks/Context/Context";
+import { Link } from "react-router-dom";
+import Contact_button from "../Home/Contact_button/Contact_button";
+import arrow_L from "../Home/icon_arrow_left.svg";
+import { useLocation } from "react-router-dom";
+
 function ProductDetail() {
+  const location = useLocation();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -142,11 +146,13 @@ function ProductDetail() {
       <br />
 
       <div className={`main-detail-container `} ref={firstSection}>
-        <h2>DETALLE DEL PRODUCTO</h2>
-        <div className='main-detail'>
-          <div className='img-container'>
-            <div className='title-mobile'>
-              <h3 className='title-mobile>'>{product.title}</h3>
+
+        <h1>DETALLE DEL PRODUCTO</h1>
+        <div className="main-detail">
+          <div className="img-container">
+            <div className="title-mobile">
+              <h3 className="title-mobile>">{product.title}</h3>
+
             </div>
             <img src={product.thumbnail} alt={product.title} />
           </div>
@@ -203,29 +209,57 @@ function ProductDetail() {
           <div className='recomendation'>
             {similarProducts.length >= 1 ? (
               <>
-                <h3>Mas de esta serie</h3>
-                <div className='book-recomendation'>
-                  {similarProducts.map((product, index) => (
-                    <div className='book' key={index}>
-                      <Link className='link_' to={`/product/${product.id}`} onClick={scrollToTop}>
-                        <div>
-                          <img src={product.thumbnail} alt='' width='150px' height='150px' />
+
+                <h3>Más de esta serie</h3>
+                <div className="book-recomendation">
+                  {similarProducts.map((product, index) => {
+                    const productPath = `/product/${product.id}`;
+                    if (location.pathname !== productPath) {
+                      return (
+                        <div className="book" key={index}>
+                          <Link
+                            className="link_"
+                            to={productPath}
+                            onClick={scrollToTop}
+                          >
+                            <div>
+                              <img
+                                src={product.thumbnail}
+                                alt=""
+                                width="150px"
+                                height="150px"
+                              />
+                            </div>
+                            <div className="title-autor">
+                              <h4>{product.title}</h4>
+                              <h6>Autor</h6>
+                            </div>
+                          </Link>
+                          <div className="type-price">
+                            <p>Tipo de libro</p>
+                            <p>${product.price}</p>
+                          </div>
+                          <div
+                            className="product_cart"
+                            onClick={() => handleAddToCart(product.id)}
+                          >
+                            <img
+                              src={elipse}
+                              alt=" "
+                              className="elipse_product"
+                            />
+                            <img
+                              src={cart_img}
+                              alt=" "
+                              className="cart_product"
+                            />
+                          </div>
                         </div>
-                        <div className='title-autor'>
-                          <h4>{product.title}</h4>
-                          <h6>Autor</h6>
-                        </div>
-                      </Link>
-                      <div className='type-price'>
-                        <p>Tipo de libro</p>
-                        <p>${product.price}</p>
-                      </div>
-                      <div className='product_cart' onClick={() => handleAddToCart(product.id)}>
-                        <img src={elipse} alt=' ' className='elipse_product' />
-                        <img src={cart_img} alt=' ' className='cart_product' />
-                      </div>
-                    </div>
-                  ))}
+                      );
+                    }
+                    return null; // No mostrar el producto actual
+                  })}
+
                 </div>
               </>
             ) : (

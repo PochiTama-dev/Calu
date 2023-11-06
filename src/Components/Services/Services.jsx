@@ -54,9 +54,11 @@ const Services = () => {
 
   if (width > breakpoint) {
     return (
-      <div className='scroll_ctn' ref={firstSection}>
-        <button onClick={scrollToTop}>
-          <img className='arrow_up' src={arrow_L} alt='Arrow Left' />
+
+      <div className="scroll_ctn" ref={firstSection}>
+        <button className="arrow_up12" onClick={scrollToTop}>
+          <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+
         </button>
         <ContactButton />
         <Header cartItem={cart} handleDelete={removeFromCart} />;
@@ -115,9 +117,11 @@ const Services = () => {
 
   return (
     <>
-      <div className='mobileCtn'>
-        <button onClick={scrollToTop}>
-          <img className='arrow_up' src={arrow_L} alt='Arrow Left' />
+
+      <div className="mobileCtn">
+        <button className="arrow_up12" onClick={scrollToTop}>
+          <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+
         </button>
         <ContactButton />
         <Header cartItem={cart} handleDelete={removeFromCart} />
