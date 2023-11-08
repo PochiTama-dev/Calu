@@ -84,13 +84,12 @@ const Footer = () => {
                 <li>
                   <span>E-mail marketing</span>
                 </li>
-                <li>
+              
+              </ul>
+            </div>
                   <span className="verMasFooter" onClick={handleNavigate}>
                     Ver más
                   </span>
-                </li>
-              </ul>
-            </div>
           </div>
 
           <div className="redes">
@@ -180,13 +179,12 @@ const Footer = () => {
               <li>
                 <span>E-mail marketing</span>
               </li>
-              <li>
+             
+            </ul>
+          </div>
                 <span className="verMasFooter" onClick={handleNavigate}>
                   Ver más
                 </span>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="redes">

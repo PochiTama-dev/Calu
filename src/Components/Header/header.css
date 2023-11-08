@@ -3,7 +3,7 @@
   height: 18%;
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 2;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
@@ -13,8 +13,8 @@
 }
 
 .logoCalu {
-  height: 7rem;
-  margin: 10px 100px 0 0;
+  height: 6.5rem;
+  margin:0 100px 0 0;
 }
 
 .navBar nav {
@@ -164,7 +164,7 @@
   .cart-2 .totalItems {
     top: -25px;
   }
-  .navBarBlur {
+ /*.navBarBlur {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -172,7 +172,7 @@
     z-index: 99;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-  }
+  }*/
   .navBar nav {
     display: flex;
     justify-content: space-between;
