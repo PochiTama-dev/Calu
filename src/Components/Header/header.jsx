@@ -96,7 +96,7 @@ export const Header = ({ cartItem, handleDelete }) => {
   return (
     <div>
 
-      <header className={!blur ? 'navBar' : 'navBarBlur'}>
+      <header className='navBar'>
         <div className='header_items'>
 
           {isAuth && (
