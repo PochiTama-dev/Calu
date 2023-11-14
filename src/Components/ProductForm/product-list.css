@@ -135,6 +135,16 @@
   margin-top: 10px;
 }
 
+.more_products {
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: rgba(185, 4, 139, 0.9154228855721394);
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .main-product {
     width: 50%;

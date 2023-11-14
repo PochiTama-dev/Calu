@@ -186,6 +186,11 @@
 .description {
   font-size: 16px;
 }
+.vermas-btn{
+  display: flex;
+  justify-content: center;
+  margin: 60px 4% 0 0 ;
+}
 
 @media (min-width: 768px) {
   .postContainer .cardContainerblog {
@@ -309,7 +314,7 @@
     margin-right: 50px;
   }
   .card-blog .blogImage .card_news .card_f_news {
-    width: 200px;
+    width: 230px;
     height: 225;
   }
   .card-blog .blogImage .arrow {

@@ -110,7 +110,7 @@ const Resources = () => {
           >
             <div className='verMas'>
               Ver Más
-              <img className='arrow_up' src={arrow_L} alt='arrow up' />
+           
             </div>
           </Link>
         </div>

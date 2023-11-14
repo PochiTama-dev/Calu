@@ -41,9 +41,14 @@
 .servicios_ span::first-letter {
   text-transform: uppercase;
 }
-.servicios_ li .verMasFooter {
+.verMasFooter {
+  display: flex;
+  justify-content: center;
+  margin-top:-15px;
   cursor: pointer;
+  font-size: 14px;
   font-weight: bold;
+  
 }
 
 .redes {
@@ -56,7 +61,7 @@
 }
 .redes h1 {
   font-size: 22px;
-  margin-left: 5px;
+
 }
 .logo_calu img {
   width: 190px;
@@ -100,6 +105,13 @@ li span {
   }
 }
 @media (max-width: 1024px) {
+  .verMasFooter {
+    display: flex;
+    justify-content: center;
+    margin-top:0 ;
+    margin-left: 2%;
+ 
+  }
   .footer_container {
     display: flex;
     bottom: 0;

@@ -13,7 +13,9 @@ function ProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [flippedProductId, setFlippedProductId] = useState(null);
-  const [user, setUser] = useState(null); // Add user state
+  const [user, setUser] = useState(null);
+  const [initialProductsToShow, setInitialProductsToShow] = useState(6);
+  const [additionalProductsToShow, setAdditionalProductsToShow] = useState(3);
   const navigate = useNavigate();
   const { cart, addToCart, removeFromCart } = useCustomContext();
 
@@ -33,7 +35,6 @@ function ProductList() {
       await deleteObject(thumbnailRef);
     }
 
-    // Update the product list after deleting
     setProducts((prevList) => prevList.filter((product) => product.id !== id));
   };
 
@@ -127,7 +128,6 @@ function ProductList() {
                 >
                   Ver Detalles
                 </Link>
-                {/* Botones de editar y eliminar */}
                 {user && (
                   <div>
                     <button className='edit-button' onClick={() => handleEditProduct(product.id)}>
@@ -145,6 +145,16 @@ function ProductList() {
             </div>
           ))}
         </div>
+        {products.length > initialProductsToShow && (
+          <button
+            className='more_products'
+            onClick={() =>
+              setInitialProductsToShow(initialProductsToShow + additionalProductsToShow)
+            }
+          >
+            Ver más
+          </button>
+        )}
       </div>
     </div>
   );

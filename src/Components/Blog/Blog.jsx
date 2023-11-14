@@ -19,7 +19,8 @@ function Blog() {
   const postsCollectionRef = collection(db, "posts");
   const navigate = useNavigate();
   const { cart, removeFromCart } = useCustomContext();
-
+  const [visibleCards, setVisibleCards] = useState(6);
+  const cardsPerPage = 3;
   useEffect(() => {
     setIsAuth(localStorage.getItem("isAuth") === "true");
   }, []);
@@ -93,7 +94,7 @@ function Blog() {
         <div className="blog-sidebar">
           <div className="postContainer">
             <div className="cardContainerblog">
-              {sortedPostList.map((post) => (
+              {sortedPostList.slice(0, visibleCards).map((post) => (
                 <div className="card-blog" key={post.id}>
                   <div
                     className="blogImage"
@@ -129,7 +130,7 @@ function Blog() {
                           </button>
                           <button
                             onClick={() => {
-                              editPost(post.id); // Aquí pasamos el id del post al editar
+                              editPost(post.id);
                             }}
                             className="editblogButton"
                           >
@@ -143,8 +144,17 @@ function Blog() {
                 </div>
               ))}
             </div>
+            {visibleCards < sortedPostList.length && (
+              <div className="vermas-btn">
+                <button
+                  className="more_products"
+                  onClick={() => setVisibleCards(visibleCards + cardsPerPage)}
+                >
+                  Ver más
+                </button>
+              </div>
+            )}
           </div>
-
           <Sidebar />
         </div>
       </div>
