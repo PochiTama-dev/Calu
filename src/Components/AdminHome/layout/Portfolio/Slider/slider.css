@@ -9,14 +9,13 @@
   position: absolute;
 
   left: -1px;
-  top: 100px;
+  top: 200px;
   width: 40px;
 }
 .arrowR {
   position: absolute;
-
   right: -1px;
-  top: 100px;
+  top: 200px;
   width: 40px;
 }
 
