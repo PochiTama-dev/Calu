@@ -5,7 +5,8 @@
   src: url('./Archive-Regular.ttf');
 }
 html {
-  scrollbar-color: rgb(95, 84, 255) rgba(5, 0, 75, 0);
+  scrollbar-color:  rgba(5, 0, 75,1) rgba(5, 0, 75, 0);
+
   
 }
 body {
@@ -102,12 +103,14 @@ iframe[src^="https://www.google.com/recaptcha/"]
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  background: transparent;
+  background:  transparent;
+  
+
 }
 
 ::-webkit-scrollbar:vertical {
-  width: 10px;
-  background-color: rgba(95, 84, 255, 0.74);
+
+ 
 }
 
 ::-webkit-scrollbar-button:increment,
@@ -122,4 +125,12 @@ iframe[src^="https://www.google.com/recaptcha/"]
 ::-webkit-scrollbar-thumb {
   background-color: rgba(5, 0, 75,1);
   border-radius: 20px;
+  width: 10px;
 }
+.thumb-vertical {
+  width: 25px;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(5, 0, 75,1);
+}
+

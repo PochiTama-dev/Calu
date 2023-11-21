@@ -22,6 +22,7 @@ import { auth } from './firebase-config';
 import EmailList from './Components/Contact/EmailList';
 import { Provider } from './Hooks/Context/Context';
 import Terms from './Components/Cart/Terms';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -39,10 +40,21 @@ function App() {
   }, []);
 
   return (
+      <Scrollbars     autoHeight   autoHeightMin={`calc(100vh)`}
+      renderThumbVertical={({ style, ...props }) => (
+        <div
+            style={{ ...style, backgroundColor: 'rgba(5, 0, 75,1)', borderRadius:"10px"}}
+            {...props}
+        />
+    )}
+    
+       >
+        
     <Provider >
       <VideoBackgroundComponent />
       <Router>
         <div>
+
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/admin-home' element={<AdminHome />} />
@@ -65,6 +77,7 @@ function App() {
         </div>
       </Router>
     </Provider>
+          </Scrollbars>
   );
 }
 
