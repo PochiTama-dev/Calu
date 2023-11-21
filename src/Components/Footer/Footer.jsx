@@ -128,12 +128,12 @@ const Footer = () => {
               <a href="https://youtube.com/@CaluMktdigital" target="_blank">
                 <img src={yt_logo} alt="youtube" />
               </a>
-            </div>
             <div className="terminos">
               <span onClick={handleModal}>
                 Para saber más acerca de nuestras políticas, te recomendamos
                 consultar nuestros Términos y Condiciones.
               </span>
+            </div>
             </div>
           </div>
         </div>
@@ -220,8 +220,11 @@ const Footer = () => {
             <a href="https://youtube.com/@CaluMktdigital" target="_blank">
               <img src={yt_logo} alt="youtube" />
             </a>
+            
           </div>
+          
         </div>
+        
       </div>
     </div>
   );

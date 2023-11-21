@@ -4,6 +4,10 @@
 .carousel-container {
   width: 75%;
 }
+.carousel {
+  display: flex;
+  justify-content: center;
+}
 .arrowL {
   position: absolute;
 

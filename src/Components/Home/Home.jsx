@@ -16,17 +16,13 @@ import Resources from '../Resources/Resources';
 import { useCustomContext } from '../../Hooks/Context/Context';
 const Home = () => {
   const { cart, removeFromCart } = useCustomContext();
-  const numSections = 5;
-  const [currentSection, setCurrentSection] = useState(0);
+
 
   const sectionStyles = {
     transition: 'transform 0.5s ease-in-out',
   };
 
-  const getSectionClassName = (sectionNumber) =>
-    `section-${sectionNumber} ${
-      currentSection === sectionNumber ? 'animate__animated animate__fadeIn' : ''
-    }`;
+
 
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 1024;
@@ -55,25 +51,25 @@ const Home = () => {
         </button>
         <Contact_button />
 
-        <section style={sectionStyles} className={getSectionClassName(0)} ref={firstSection}>
+        <section style={sectionStyles} ref={firstSection}>
           <Onboarding />
         </section>
-        <section style={sectionStyles} className={getSectionClassName(1)}>
+        <section style={sectionStyles} >
           <About />
         </section>
-        <section style={sectionStyles} className={getSectionClassName(2)}>
+        <section style={sectionStyles} >
           <OurServices />
         </section>
-        <section style={sectionStyles} className={getSectionClassName(3)}>
+        <section style={sectionStyles} >
           <Portfolio />
         </section>
-        <section style={sectionStyles} className={getSectionClassName(4)}>
+        <section style={sectionStyles} >
           <News />
         </section>
-        <section style={sectionStyles} className={getSectionClassName(5)}>
+        <section style={sectionStyles} >
           <Resources />
         </section>
-        <section style={sectionStyles} className={getSectionClassName(6)}>
+        <section style={sectionStyles} >
           <CTN />
           <Footer />
         </section>
@@ -89,28 +85,28 @@ const Home = () => {
 
       </button>
       <Contact_button />
-      <section ref={firstSection} style={sectionStyles} className={getSectionClassName(0)}>
+      <section ref={firstSection} style={sectionStyles} >
         <Onboarding />
       </section>
-      <section style={sectionStyles} className={getSectionClassName(1)}>
+      <section style={sectionStyles} >
         <About />
       </section>
-      <section style={sectionStyles} className={getSectionClassName(2)}>
+      <section style={sectionStyles} >
         <OurServices />
       </section>
-      <section style={sectionStyles} className={getSectionClassName(3)}>
+      <section style={sectionStyles} >
         <Portfolio />
       </section>
-      <section style={sectionStyles} className={getSectionClassName(4)}>
+      <section style={sectionStyles} >
         <News />
       </section>
-      <section style={sectionStyles} className={getSectionClassName(5)}>
+      <section style={sectionStyles}>
         <Resources />
       </section>
-      <section style={sectionStyles} className={getSectionClassName(5)}>
+      <section style={sectionStyles} >
         <CTN />
       </section>
-      <section style={sectionStyles} className={getSectionClassName(6)}></section>
+      <section style={sectionStyles} ></section>
       <Footer />
     </div>
   );

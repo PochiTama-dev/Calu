@@ -40,9 +40,9 @@ function App() {
 
   return (
     <Provider >
+      <VideoBackgroundComponent />
       <Router>
         <div>
-          <VideoBackgroundComponent />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/admin-home' element={<AdminHome />} />
