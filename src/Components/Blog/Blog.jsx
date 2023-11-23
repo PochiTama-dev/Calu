@@ -113,9 +113,9 @@ function Blog() {
                     />
                   </div>
 
-                  <div className="container-leermas"></div>
-                  <div className="cardHeaderblog">
+                  
                     <span>{post.date}</span>
+                  <div className="cardHeaderblog">
                     <div className="deleteblog">
                       {isAuth && post.author && (
                         <>

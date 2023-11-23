@@ -83,20 +83,24 @@ function ProductList() {
 
   return (
     <div>
-      <Header cartItem={cart} handleDelete={removeFromCart} />
+
+
+      <Header cartItem={cart} handleDelete={removeFromCart} ref={firstSection} />
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
+
+
       </button>
       <Contact_button />
 
       <br ref={firstSection} />
-      <br />
-      <br />
-      <br />
-      <br />
 
+
+  
       <div className='main-container'>
         <h1 className='products_title'>Nuestro productos</h1>
+
+
 
         <div className='products'>
           {products.map((product) => (
