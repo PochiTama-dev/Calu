@@ -81,6 +81,7 @@ function ProductList() {
     addToCart(productToAdd);
   };
 
+
   return (
     <div>
 
@@ -88,22 +89,13 @@ function ProductList() {
       <Header cartItem={cart} handleDelete={removeFromCart} ref={firstSection} />
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
-
-
       </button>
       <Contact_button />
-
       <br ref={firstSection} />
-
-
-  
       <div className='main-container'>
         <h1 className='products_title'>Nuestro productos</h1>
-
-
-
         <div className='products'>
-          {products.map((product) => (
+        {products.slice(0, initialProductsToShow).map((product) => (
             <div className='main-product' key={product.id}>
               <div
                 className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}

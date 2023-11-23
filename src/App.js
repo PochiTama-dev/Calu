@@ -17,7 +17,6 @@ import ProductForm from './Components/ProductForm/ProductForm';
 import ProductDetail_Screen from './Components/ProductForm/ProductDetail_Screen';
 import Product_List from './Components/ProductForm/Product_List';
 import PaymentGateway from './Components/Payment/Payment';
-import Cart from './Components/Cart/Cart';
 import { auth } from './firebase-config';
 import EmailList from './Components/Contact/EmailList';
 import { Provider } from './Hooks/Context/Context';
@@ -40,20 +39,12 @@ function App() {
   }, []);
 
   return (
-      <Scrollbars     autoHeight   autoHeightMin={`calc(100vh)`}
-      renderThumbVertical={({ style, ...props }) => (
-        <div
-            style={{ ...style, backgroundColor: 'rgba(5, 0, 75,1)', borderRadius:"10px"}}
-            {...props}
-        />
-    )}
     
-       >
-        
     <Provider >
-      <VideoBackgroundComponent />
+   
       <Router>
-        <div>
+        <div className='container_'>
+      <VideoBackgroundComponent />
 
           <Routes>
             <Route path='/' element={<Home />} />
@@ -64,7 +55,7 @@ function App() {
             <Route path='/product-form' element={<ProductForm />} />
             <Route path='/product-list' element={<Product_List />} />
             <Route path='/product/:id' element={<ProductDetail_Screen />} />
-            <Route path='/edit-post/:id' element={<CreatePost />} />
+            <Route path='/edit-post/:id' element={<CreatePost  />} />
             <Route path='/about' element={<About />} />
             <Route path='/blog' element={<Blog_Screen isAuth={isAuth} />} />
             <Route path='/blog/:id' element={<BlogView_Screen />} />
@@ -76,8 +67,8 @@ function App() {
           </Routes>
         </div>
       </Router>
+      
     </Provider>
-          </Scrollbars>
   );
 }
 

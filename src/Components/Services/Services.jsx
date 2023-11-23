@@ -38,7 +38,6 @@ const Services = () => {
         }
       }, 100);
     };
-
     getPosts();
     return () => {
       window.removeEventListener('resize', handleResizeWindow);
@@ -54,12 +53,9 @@ const Services = () => {
 
   if (width > breakpoint) {
     return (
-
       <div className="scroll_ctn" ref={firstSection}>
-        
         <button className="arrow_up12" onClick={scrollToTop}>
           <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
-
         </button>
         <ContactButton />
         <Header cartItem={cart} handleDelete={removeFromCart} />;
@@ -119,7 +115,7 @@ const Services = () => {
   return (
     <>
 
-      <div className="mobileCtn">
+      <div className="mobileCtn" ref={firstSection}>
         <button className="arrow_up12" onClick={scrollToTop}>
           <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
 
