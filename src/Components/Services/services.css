@@ -151,12 +151,6 @@
   .slider_cards {
     margin-top: 50px;
   }
-  .srv_cards .carousel-container div .arrowL {
-    top: 200px;
-  }
-  .srv_cards .carousel-container div .arrowR {
-    top: 200px;
-  }
 }
 
 @media (max-width: 767px) {
