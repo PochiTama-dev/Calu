@@ -77,8 +77,8 @@
   -webkit-transform: rotateX(0deg);
   transform: rotateX(0deg); /* para bug firefox */
   border-radius: 30% 0% 30% 0%;
-  width: 290px;
-  height: 290px;
+  width: 270px;
+  height: 270px;
 
 
 }
@@ -117,7 +117,7 @@
 .sub {
   color: white;
   text-align: center;
-  margin: 5px 0px 0px 10px;
+  margin: 5px 10px 0px 10px;
 }
 
 @media (max-width: 830px) {
@@ -139,7 +139,7 @@
     
   }
   .sub {
-    margin: 10px 0px 0px 10px;
+    margin: 10px 10px 0px 10px;
   }
 }
 
@@ -157,7 +157,7 @@
     font-weight: bold;
   }
   .front_items img {
-    width: 150px;
+ 
     margin-bottom: 10px;
   }
 }

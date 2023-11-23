@@ -1,6 +1,6 @@
 /* Estilos para la tabla */
 .table-container {
-    margin: 20px auto;
+    margin: auto;
     border-collapse: collapse;
     width: 80%;
     background-color: aliceblue;
@@ -19,4 +19,3 @@
     font-weight: bold;
   }
 
-  

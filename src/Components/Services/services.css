@@ -3,14 +3,14 @@
 }
 
 .scroll_ctn {
-  background: rgba(4, 25, 88, 0.6) 100%;
+
   background-repeat: no-repeat;
 }
 
 
 .services_container {
   margin-bottom: 300px;
-  margin-top: 9vh;
+  margin-top: 74px;
 }
 .srv_content {
   margin: auto 0 auto 0;
@@ -141,7 +141,7 @@
     margin-top: 97px;
   }
   .mobileCtn {
-    background: rgba(4, 25, 88, 0.6) 100%;
+ 
     background-repeat: no-repeat;
   }
   .srv_cards {
@@ -162,7 +162,7 @@
   .srv_title h1 {
     display: flex;
     justify-content: center;
-
+margin-top: -2px;
     margin-left: auto;
     margin-right: auto;
   }

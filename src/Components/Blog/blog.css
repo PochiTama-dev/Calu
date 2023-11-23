@@ -1,10 +1,7 @@
 .blog .arrow_up {
   position: fixed;
 }
-.bv_ctn {
-  background: rgba(4, 25, 88, 0.6) 100%;
-  background-repeat: no-repeat;
-}
+
 .blog-sidebar {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +17,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 5vh;
+
   margin-bottom: 150px;
 }
 .icons_novedades {
@@ -46,6 +43,7 @@
   box-shadow: 5.5px 5px 10px rgb(61, 59, 59);
   border-radius: 20px;*/
   width: 90%;
+  padding: 0 5%;
   flex-wrap: wrap;
   align-items: flex-start;
   min-width: initial;
@@ -144,7 +142,7 @@
 .card-blog .cardHeaderblog .deleteblog {
   width: 200px;
   display: flex;
-  justify-content: space-between;
+ justify-content: center;
 }
 
 .card-blog .blogImage .arrow {
@@ -177,10 +175,7 @@
   text-align: start;
 }
 
-.ctn .CTN_ctn2 {
-  margin: 0;
-  height: 40vh;
-}
+
 
 .description {
   font-size: 16px;
@@ -191,12 +186,17 @@
   margin: 60px 4% 0 0 ;
 }
 @media (max-width: 1024px) {
-  .blogTitle_ {
-    margin-top: 67px;
 
+}
+@media (max-width: 768px) {
+  .blogTitle_ {
+    margin-top: 95px;
+  
   }
+  
 }
 @media (min-width: 768px) {
+  
   .postContainer .cardContainerblog {
     justify-content: center;
   }
@@ -207,7 +207,7 @@
   .BlogPage {
     display: flex;
     align-items: center;
-    margin-top: 5vh;
+    margin-top: 40px;
   }
   .postContainer {
     min-height: 400px;
@@ -271,12 +271,7 @@
     margin-top: 150px;
   }
 
-  .ctn {
-    margin-top: 0;
-  }
-  .ctn .CTN_ctn {
-    height: initial;
-  }
+
 }
 
 @media (min-width: 1025px) {
@@ -292,7 +287,7 @@
     flex-wrap: nowrap;
   }
   .blog-sidebar .lateralBar {
-    margin-top: 0;
+    margin-top: 40px;
   }
   .postContainer .cardContainerblog {
     display: grid;

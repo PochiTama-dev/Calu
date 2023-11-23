@@ -23,8 +23,10 @@ export const Header = ({ cartItem, handleDelete }) => {
   const [showLinks, setShowLinks] = useState(true);
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
+
+  
   useEffect(() => {
-    //console.log(isAuth);
+
   }, [location, check, isAuth]);
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -62,7 +64,7 @@ export const Header = ({ cartItem, handleDelete }) => {
   };
   const saveEmailToFirebase = async (email) => {
     try {
-      const emailsCollectionRef = collection(db, "email"); // Change to the correct collection name
+      const emailsCollectionRef = collection(db, "email"); 
       await addDoc(emailsCollectionRef, {
         email,
         timestamp: new Date(),
@@ -77,39 +79,25 @@ export const Header = ({ cartItem, handleDelete }) => {
     setShowCart(false);
     handleBlur();
   };
+  
   const scroll_top = () => {
     window.scroll({
       top: 0,
     });
   };
+  
   return (
     <div>
       <header className='navBar'>
         <div className='header_items'>
-          {isAuth && (
-            <div className="admin-menu">
-              <button className="admin-btn" onClick={handleAdminMenu}>
-                ADMIN
-              </button>
-              {showAdminMenu && (
-                <div className="admin-dropdown">
-                  <Link to="/product-form">Create Product</Link>
-                  <Link to="/create-post">Create Post</Link>
-                  <Link to="/admin-crud">Create Services</Link>
-                  <Link to="/admin-home">Edit Home</Link>
-                  <Link to="/email-list">Email List</Link>
-                  <button onClick={signUserOut}>Log Out</button>
-                </div>
-              )}
-            </div>
-          )}
-          <nav>
-            <Link to={"/"}>
+         
+          <nav >
+            <Link to={"/"} >
               <img className="logoCalu" src={miImagen} alt="Logo Calu" />
             </Link>
             {!isAuth && <Link to="/admin-login"></Link>}
-            <nav className={showLinks ? "links " : "link show "}>
-              <div className="links_ctn">
+            <nav className={showLinks ? "links " : "link show "} >
+              <div className="links_ctn" >
                 <Link
                   onClick={scroll_top}
                   className={location.pathname === "/" ? "headerLinks" : ""}
@@ -143,8 +131,8 @@ export const Header = ({ cartItem, handleDelete }) => {
                   className={location.pathname === "/blog" ? "headerLinks" : ""}
                   to={"/blog"}
                 >
-                  {" "}
-                  BLOG{" "}
+                 
+                  BLOG
                 </Link>
                 <div className="line"></div>
                 <Link
@@ -154,10 +142,11 @@ export const Header = ({ cartItem, handleDelete }) => {
                   }
                   to={"/Contact"}
                 >
-                  CONTACTO{" "}
+                  CONTACTO
                 </Link>
               </div>
             </nav>
+            
             <span
               onClick={handleLinks}
               className={`btn ${showLinks ? "bar" : "cross"}`}
@@ -178,6 +167,23 @@ export const Header = ({ cartItem, handleDelete }) => {
             </div>
           </nav>
         </div>
+        {isAuth && (
+            <div className="admin-menu">
+              <button className="admin-btn" onClick={handleAdminMenu}>
+                ADMIN
+              </button>
+              {showAdminMenu && (
+                <div className="admin-dropdown">
+                  <Link to="/product-form">Create Product</Link>
+                  <Link to="/create-post">Create Post</Link>
+                  <Link to="/admin-crud">Create Services</Link>
+                  <Link to="/admin-home">Edit Home</Link>
+                  <Link to="/email-list">Email List</Link>
+                  <button onClick={signUserOut}>Log Out</button>
+                </div>
+              )}
+            </div>
+          )}
       </header>
       {showCart && (
         <Cart
@@ -198,6 +204,7 @@ export const Header = ({ cartItem, handleDelete }) => {
           handleCheck={handleCheck}
         />
       )}
+      
     </div>
   );
 };

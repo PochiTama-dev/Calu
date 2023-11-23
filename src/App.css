@@ -11,9 +11,12 @@ html {
 }
 body {
   font-family: 'Montserrat', sans-serif;
+  
  
 }
-
+.container_{
+  background: rgba(4, 25, 88, 0.6) 100%;
+}
 section {
   margin-top: 12%;
   

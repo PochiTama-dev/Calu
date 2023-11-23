@@ -8,8 +8,21 @@ import CreateService from './CreateService';
 import logoCalu from '../../images/logocalu.png'; //TODO: ajustar handleChange en img para poner una imagen por defecto
 import EditService from './EditService';
 //import EditService from './EditService';
-
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase-config";
 const AdminCrud = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const checkAuthentication = () => {
+      const user = auth.currentUser;
+      if (!user) {
+        navigate('/admin-login');
+      }
+    };
+
+    checkAuthentication();
+  }, []);
+  
   const [servicesList, setServicesList] = useState([]);
   const [modal, setModal] = useState(false);
   const [imageEdit, setImageEdit] = useState('');
