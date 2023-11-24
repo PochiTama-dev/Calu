@@ -151,7 +151,7 @@ const Footer = () => {
     );
   }
   return (
-    <div className="filter-ctn">
+    <div className="filter-ctn-mbl">
     
     <div className="footer_container">
       <div className="footer_elements_mobile">
@@ -247,4 +247,5 @@ const Footer = () => {
     </div>
   );
 };
+
 export default Footer;

@@ -1,13 +1,11 @@
 .terms-modal {
-    position: absolute;
-    top: -400px;
-    left: 0;
+
+
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-     display: flex;
     flex-direction: column;
   }
   
@@ -17,8 +15,7 @@
     border-radius: 8px;
     max-width: 650px;
     width: 100%;
-
- backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
     color: white;
     z-index: 50;
   }
