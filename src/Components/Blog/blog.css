@@ -335,7 +335,8 @@
   }
   .blog-sidebar .lateralBar {
     width: 350px;
-
+border-left: 2px solid #c5c5c5 ;
+border-top: none;
     margin-right: 25px;
   }
   .lateralBar .blogTitle_ {
