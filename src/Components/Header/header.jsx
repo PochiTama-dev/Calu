@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
 import { useCustomContext } from "../../Hooks/Context/Context";
+import LinksModal from "./LinksModal";
 export const Header = ({ cartItem, handleDelete }) => {
   const { isAuth, logoutGoogle, handleBlur, blur } = useCustomContext();
   const [showAdminMenu, setShowAdminMenu] = useState(false);
@@ -23,7 +24,7 @@ export const Header = ({ cartItem, handleDelete }) => {
   const [showLinks, setShowLinks] = useState(true);
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   const navigate = useNavigate();
-
+  const [showLinksModal, setShowLinksModal] = useState(false);
   
   useEffect(() => {
 
@@ -39,7 +40,7 @@ export const Header = ({ cartItem, handleDelete }) => {
     setShowAdminMenu(!showAdminMenu);
   };
   const handleLinks = () => {
-    setShowLinks(!showLinks);
+    setShowLinksModal(!showLinksModal);
     handleBlur();
   };
   const handleClose = () => {
@@ -87,10 +88,10 @@ export const Header = ({ cartItem, handleDelete }) => {
   };
   
   return (
-    <div>
+    <div className="modal-link">
+      
       <header className='navBar'>
         <div className='header_items'>
-         
           <nav >
             <Link to={"/"} >
               <img className="logoCalu" src={miImagen} alt="Logo Calu" />
@@ -204,7 +205,7 @@ export const Header = ({ cartItem, handleDelete }) => {
           handleCheck={handleCheck}
         />
       )}
-      
+       {showLinksModal && <LinksModal closeModal={() => setShowLinksModal(false)} />}
     </div>
   );
 };

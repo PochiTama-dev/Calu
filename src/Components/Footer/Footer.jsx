@@ -10,8 +10,8 @@ import yt_logo from "./icons/youtube.png";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { Navigate, useNavigate } from "react-router-dom";
-import Terms from "../Cart/Terms";
 
+import Terms from "./Terms";
 const Footer = () => {
   const [modal, setModal] = useState(false);
 
@@ -42,10 +42,17 @@ const Footer = () => {
     navigate("/services");
   };
   const handleModal = () => {
-    navigate("terms");
+    setModal(true);
+  };
+
+  const closeModal = () => {
+    setModal(false);
   };
   if (width > breakpoint) {
     return (
+      <div className="filter-ctn">
+
+  
       <div className="footer_container">
         <div className="footer_elements">
           <div className="logo_calu">
@@ -138,9 +145,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+        {modal && <Terms closeModal={closeModal} />}
+            
+      </div>
     );
   }
   return (
+    <div className="filter-ctn">
+    
     <div className="footer_container">
       <div className="footer_elements_mobile">
         <div className="logo_calu">
@@ -220,12 +232,18 @@ const Footer = () => {
             <a href="https://youtube.com/@CaluMktdigital" target="_blank">
               <img src={yt_logo} alt="youtube" />
             </a>
-            
+            <div className="terminos">
+              <span onClick={handleModal}>
+                Para saber más acerca de nuestras políticas, te recomendamos
+                consultar nuestros Términos y Condiciones.
+              </span>
+            </div>
           </div>
-          
         </div>
         
       </div>
+    </div>
+          {modal && <Terms closeModal={closeModal} />}
     </div>
   );
 };

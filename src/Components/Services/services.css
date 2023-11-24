@@ -7,10 +7,18 @@
   background-repeat: no-repeat;
 }
 
-
+.mobileCtn  .carousel-container{
+width: 95%;
+}
 .services_container {
   margin-bottom: 300px;
   margin-top: 74px;
+}
+.mobileCtn .arrowR{ 
+  top:125px
+}
+.mobileCtn .arrowL{ 
+  top:125px
 }
 .srv_content {
   margin: auto 0 auto 0;
@@ -172,8 +180,16 @@ margin-top: -2px;
   .srv_title {
     margin-bottom: -40px;
   }
+  .mobileCtn  .carousel-container{
+    width: 75%;
+    }
 }
+@media (max-width: 485px) {
 
+  .mobileCtn  .carousel-container{
+    width: 95%;
+    }
+}
 @media (max-height: 600px) {
   .card_srv_cont {
   }
