@@ -140,7 +140,7 @@
   width: 60%;
 }
 .card-blog .cardHeaderblog .deleteblog {
-  width: 200px;
+ 
   display: flex;
  justify-content: center;
 }
@@ -299,6 +299,7 @@
   }
   .postContainer .cardContainerblog .card-blog .cardHeaderblog {
     align-items: center;
+    margin-right: 50px;
   }
   .postContainer .cardContainerblog .card-blog .cardHeaderblog .titleblog {
     justify-content: center;
@@ -320,7 +321,7 @@
     margin-left: 200px;
   }
   .card-blog button {
-    width: initial;
+  justify-content: center;
   }
   .card-blog .leerMas {
     width: 430px;
@@ -347,15 +348,19 @@ border-top: none;
     margin-top: 60px;
     flex-direction: column;
   }
-  .card-blog {
+  .card-blog .card_news{
+    margin-left: 0;
   }
 }
-
-@media (max-width: 1024px) {
-  .card-blog  span {
-    display: flex;
-    justify-content: center;
+.card-blog span {
+  display: flex;
+  justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+  }
+@media (min-width: 1090px) {
+  
+  .card-blog span {
+   margin-right: 40%;
       color: rgba(255, 255, 255, 0.7);
     }
-    
 }

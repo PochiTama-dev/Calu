@@ -1,6 +1,5 @@
 .createPostPage {
   width: 100%;
-
   display: grid;
   place-items: center;
 }
@@ -57,4 +56,9 @@
 input,
 textarea {
   margin-top: 5px;
+}
+@media (max-width: 560px) {
+  .cpContainer{
+    width: 90%;
+  }
 }

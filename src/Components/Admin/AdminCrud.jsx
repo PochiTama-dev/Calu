@@ -171,10 +171,13 @@ const AdminCrud = () => {
     closeModal();
   };
   return (
-    <div>
+    <div className='crud-ctn'>
       <Header />
+
+     
       <div className='services'>
-        <div className={blur ? 'crudBlur' : 'crudContainer'}>
+      <div className='crud-ctn2'>
+      <div className={blur ? 'crudBlur' : 'crudContainer'} style={{ overflowY: 'scroll', maxHeight: '900px' }}>
           <ul className='crudTags'>
             <li>ID</li>
             <li>Titulo</li>
@@ -228,6 +231,7 @@ const AdminCrud = () => {
           handleSubmit={handleSubmitEdit}
         />
       )}
+        </div>
     </div>
   );
 };
