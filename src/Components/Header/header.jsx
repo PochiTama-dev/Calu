@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./header.css";
-import miImagen from "../../images/logocalu.png";
+import miImagen from "../../images/logocalu.webp";
 import { Link, useLocation } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
