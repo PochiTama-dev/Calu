@@ -5,7 +5,7 @@ import { db, storage } from '../../firebase-config';
 import { collection, getDocs, deleteDoc, doc, addDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import CreateService from './CreateService';
-import logoCalu from '../../images/logocalu.png'; //TODO: ajustar handleChange en img para poner una imagen por defecto
+import logoCalu from '../../images/logocalu.webp'; //TODO: ajustar handleChange en img para poner una imagen por defecto
 import EditService from './EditService';
 //import EditService from './EditService';
 import { useNavigate } from "react-router-dom";

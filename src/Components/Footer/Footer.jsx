@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./footer.css";
-import calu_logo from "../../images/icono_calu.svg";
-import fb_logo from "./icons/Facebook.png";
-import insta_logo from "./icons/Instagram.png";
-import ld_logo from "./icons/Linkedin.png";
-import tk_logo from "./icons/TikTok.png";
-import sp_logo from "./icons/Spotify.png";
-import yt_logo from "./icons/youtube.png";
+import calu_logo from "../../images/logocalu.webp";
+import fb_logo from "./icons/Facebook.webp";
+import insta_logo from "./icons/Instagram.webp";
+import ld_logo from "./icons/Linkedin.webp";
+import tk_logo from "./icons/TikTok.webp";
+import sp_logo from "./icons/Spotify.webp";
+import yt_logo from "./icons/youtube.webp";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -27,13 +27,15 @@ const Footer = () => {
   }, []);
 
   const [servicios, setServicios] = useState([]);
+  const [showFooter, setShowFooter] = useState(false);
   const serviciosRef = collection(db, "servicios");
   useEffect(() => {
-    const getServices = async () => {
-      const data = await getDocs(serviciosRef);
-      setServicios(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getServices();
+    // Temporizador para retrasar la renderización del footer
+    const timer = setTimeout(() => {
+      setShowFooter(true);
+    }, 300); // Retraso de 1 segundo
+
+    return () => clearTimeout(timer);
   }, []);
 
   const navigate = useNavigate();
@@ -41,6 +43,7 @@ const Footer = () => {
     window.scrollTo(0, 0);
     navigate("/services");
   };
+
   const handleModal = () => {
     setModal(true);
   };
@@ -48,7 +51,16 @@ const Footer = () => {
   const closeModal = () => {
     setModal(false);
   };
+
+  if (!showFooter) {
+    return null; // No renderizar nada hasta que pase 1 segundo
+  }
+
+
+
   if (width > breakpoint) {
+
+
     return (
       <div className="filter-ctn">
 
