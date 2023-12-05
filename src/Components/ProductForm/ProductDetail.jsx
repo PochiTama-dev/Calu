@@ -11,6 +11,11 @@ import { Link } from "react-router-dom";
 import Contact_button from "../Home/Contact_button/Contact_button";
 import arrow_L from "../Home/icon_arrow_left.svg";
 import { useLocation } from "react-router-dom";
+import Slider from '../Portfolio/Slider/Slider';
+
+
+
+
 
 function ProductDetail() {
   const location = useLocation();
@@ -30,6 +35,16 @@ function ProductDetail() {
   const scrollToTop = () => {
     firstSection.current?.scrollIntoView({ behavior: 'smooth' });
   };
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 1200;
+  React.useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResizeWindow);
+    return () => {
+      window.removeEventListener('resize', handleResizeWindow);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -208,57 +223,121 @@ function ProductDetail() {
           </div>
 
           <div className='recomendation'>
-            {similarProducts.length >= 1 ? (
-              <>
-                <h3>Más de esta serie</h3>
-                <div className="book-recomendation">
-                  {similarProducts.map((similarProduct, index) => (
-                    <div className="book" key={index}>
-                      <Link
-                        className="link_"
-                        to={`/product/${similarProduct.id}`}
-                        onClick={scrollToTop}
-                      >
-                        <div>
-                          <img
-                            src={similarProduct.thumbnail}
-                            alt=""
-                            width="150px"
-                            height="150px"
-                          />
-                        </div>
-                        <div className="title-autor">
-                          <h4>{similarProduct.title}</h4>
-                          <h6>Autor</h6>
-                        </div>
-                      </Link>
-                      <div className="type-price">
-                        <p>Tipo de libro</p>
-                        <p>${similarProduct.price}</p>
-                      </div>
-                      <div
-                        className="product_cart"
-                        onClick={() => handleAddToCart(similarProduct.id)}
-                      >
-                        <img
-                          src={elipse}
-                          alt=" "
-                          className="elipse_product"
-                        />
-                        <img
-                          src={cart_img}
-                          alt=" "
-                          className="cart_product"
-                        />
-                      </div>
-                    </div>
-                  ))}
+
+
+          {width <= breakpoint || similarProducts.length > 3 ? (
+            <>
+              <h3>Más de esta serie</h3>
+              <Slider>
+                {similarProducts.map((similarProduct, index) => (
+                <div className="book" key={index}>
+                <Link
+                  className="link_"
+                  to={`/product/${similarProduct.id}`}
+                  onClick={scrollToTop}
+                >
+                  <div>
+                    <img
+                      src={similarProduct.thumbnail}
+                      alt=""
+                      width="150px"
+                      height="150px"
+                    />
+                  </div>
+                  <div className="title-autor">
+                    <h4>{similarProduct.title}</h4>
+                    <h6>Autor</h6>
+                  </div>
+                </Link>
+                <div className="type-price">
+                  <p>Tipo de libro</p>
+                  <p>${similarProduct.price}</p>
                 </div>
-              </>
-            ) : (
-              <h3>Por el momento no hay productos similares</h3>
-            )}
-          </div>
+                <div
+                  className="product_cart"
+                  onClick={() => handleAddToCart(similarProduct.id)}
+                >
+                  <img
+                    src={elipse}
+                    alt=" "
+                    className="elipse_product"
+                  />
+                  <img
+                    src={cart_img}
+                    alt=" "
+                    className="cart_product"
+                  />
+                </div>
+              </div>
+     
+         
+                ))}
+              </Slider>
+            </>
+          ) : width > breakpoint && similarProducts.length >= 1 ? (
+            <>
+              <h3>Más de esta serie</h3>
+              <div className="book-recomendation">
+                {similarProducts.map((similarProduct, index) => (
+             <div className="book" key={index}>
+             <Link
+               className="link_"
+               to={`/product/${similarProduct.id}`}
+               onClick={scrollToTop}
+             >
+               <div>
+                 <img
+                   src={similarProduct.thumbnail}
+                   alt=""
+                   width="150px"
+                   height="150px"
+                 />
+               </div>
+               <div className="title-autor">
+                 <h4>{similarProduct.title}</h4>
+                 <h6>Autor</h6>
+               </div>
+             </Link>
+             <div className="type-price">
+               <p>Tipo de libro</p>
+               <p>${similarProduct.price}</p>
+             </div>
+             <div
+               className="product_cart"
+               onClick={() => handleAddToCart(similarProduct.id)}
+             >
+               <img
+                 src={elipse}
+                 alt=" "
+                 className="elipse_product"
+               />
+               <img
+                 src={cart_img}
+                 alt=" "
+                 className="cart_product"
+               />
+             </div>
+           </div>
+         ))}
+       </div>
+        
+            </>
+          ) : (
+            <h3>Por el momento no hay productos similares</h3>
+          )}
+        </div>
+
+
+
+
+
+
+
+
+
+
+            
+          
         </div>
       </div>
     </div>

@@ -1,14 +1,14 @@
 .paymentCtn {
-  background: rgba(4, 25, 88, 0.6) 100%;
+ 
   min-height: 100vh;
 }
 
 .payment-options {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   width: 70%;
-  margin: 0 auto 0 auto;
+  margin: 50px auto;
 }
 
 .payment-content {
@@ -30,7 +30,7 @@
   text-align: center;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
-  margin: 30px 0px 30px 0px;
+  margin: 30px 20px 30px 20px;
   border-radius: 30% 0% 30% 0%;
   width: 210px;
   height: 210px;
@@ -52,13 +52,20 @@
 
 @media (max-width: 1248px) {
   .payment-content {
+ 
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
+  .paymentSlider{
+ 
+    margin-top: 10%;
+  }
+  
 }
 @media (max-width: 624px) {
   .title-payment {
+    
     display: flex;
     justify-content: center;
   }

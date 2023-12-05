@@ -26,6 +26,12 @@ export const Header = ({ cartItem, handleDelete }) => {
   const navigate = useNavigate();
   const [showLinksModal, setShowLinksModal] = useState(false);
   
+
+
+
+
+
+  
   useEffect(() => {
 
   }, [location, check, isAuth]);
@@ -193,7 +199,10 @@ export const Header = ({ cartItem, handleDelete }) => {
           handleDelete={handleDelete}
           buy={handlePay}
         />
+        
       )}
+     
+     <div className={isModalOpen || showLinksModal ? "modal-background" : ""}>
       {isModalOpen && (
         <ModalBuy
           email={email}
@@ -205,7 +214,13 @@ export const Header = ({ cartItem, handleDelete }) => {
           handleCheck={handleCheck}
         />
       )}
-       {showLinksModal && <LinksModal closeModal={() => setShowLinksModal(false)} />}
+
+      {showLinksModal && <LinksModal closeModal={() => setShowLinksModal(false)} />}
+      
+      {/* Resto del contenido de tu aplicación */}
+    </div>
+ 
+
     </div>
   );
 };

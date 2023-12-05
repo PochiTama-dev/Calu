@@ -127,6 +127,9 @@ const Services = () => {
             <div className='srv_title'>
               <h1>Nuestros Servicios</h1>
             </div>
+            <div className='srv-slider'>
+
+     
             <section>
               <Slider>
                 {servicios.map((servicios, index) => (
@@ -143,11 +146,12 @@ const Services = () => {
                 ))}
               </Slider>
             </section>
+            </div>
           </div>
           <section>
             <CTN />
           </section>
-          <Footer />
+          <Footer id="footer" />
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@ import Paypal from "../../images/payments/paypal.png";
 import Mercado from "../../images/payments/Mercado-Pago-Logo.png";
 import Stripe from "../../images/payments/2560px-Stripe_Logo,_revised_2016.svg.png";
 import Wise from "../../images/payments/1200x630wa.png";
+import Credito from "../../images/payments/credito.jpg";
 import { Header } from "../Header/header";
 import Slider from '../Portfolio/Slider/Slider';
 function PaymentGateway() {
@@ -56,15 +57,23 @@ function PaymentGateway() {
           <div className="payment-option" onClick={() => handlePayment("wise")}>
             <img src={Wise} alt="Wise" />
           </div>
+              {/* Tarjeta*/}
+    <div className="payment-option" onClick={() => handlePayment("wise")}>
+      <img src={Credito} alt="Tarjeta de credito" />
+    </div>
         </div>
       </div>
     </div>
   );
 }
-return (<div className="paymentCtn">
+return (
+<div className="paymentCtn">
 <Header />
 <div className="payment-content">
   <h1 className="title-payment">Pasarela de Pagos</h1>
+  <div className="paymentSlider">
+
+  
 <Slider>
  
     {/* PayPal */}
@@ -95,8 +104,13 @@ return (<div className="paymentCtn">
     <div className="payment-option" onClick={() => handlePayment("wise")}>
       <img src={Wise} alt="Wise" />
     </div>
+        {/* Tarjeta*/}
+    <div className="payment-option" onClick={() => handlePayment("wise")}>
+      <img src={Credito} alt="Tarjeta de credito" />
+    </div>
  
 </Slider>
+</div>
 </div>
 </div>
 );
