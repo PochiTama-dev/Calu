@@ -55,6 +55,16 @@ hr {
   height: 120px;
   width: 130px;
 }
+.sidebarSlider .arrowL {
+  margin-top: -50px;
+  width: 30px;
+}
+
+.sidebarSlider .arrowR {
+  margin-top: -50px;
+  width: 30px;
+}
+
 @media (min-width: 340px) {
   .lateralBar {
     position: initial;

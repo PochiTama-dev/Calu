@@ -31,6 +31,7 @@
     margin-bottom: 50px;
   }
   .contact-form {
+ 
     display: flex;
     flex-direction: column;
     background: linear-gradient(
@@ -43,7 +44,7 @@
   }
   .contact-form label {
     color: white;
-    margin: 20px 0 0 25px;
+    margin: 20px 0 0 30px;
     text-transform: uppercase;
   }
   .contact-form .contact-inputs {

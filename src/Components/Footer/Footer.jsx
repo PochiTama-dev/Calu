@@ -13,6 +13,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 import Terms from "./Terms";
 const Footer = () => {
+  
   const [modal, setModal] = useState(false);
 
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -149,8 +150,9 @@ const Footer = () => {
               </a>
             <div className="terminos">
               <span onClick={handleModal}>
-                Para saber más acerca de nuestras políticas, te recomendamos
-                consultar nuestros Términos y Condiciones.
+              Para
+sabér más acerca de nuestras políticas, te recomendamos consultar nuestra política de privacidad y
+datos personales.
               </span>
             </div>
             </div>
@@ -163,7 +165,7 @@ const Footer = () => {
     );
   }
   return (
-    <div className="filter-ctn-mbl">
+    <div className="filter-ctn-mbl" id="footer">
     
     <div className="footer_container">
       <div className="footer_elements_mobile">
@@ -246,8 +248,9 @@ const Footer = () => {
             </a>
             <div className="terminos">
               <span onClick={handleModal}>
-                Para saber más acerca de nuestras políticas, te recomendamos
-                consultar nuestros Términos y Condiciones.
+              Para
+sabér más acerca de nuestras políticas, te recomendamos consultar nuestra política de privacidad y
+datos personales..title-first-nuestros-servicios
               </span>
             </div>
           </div>

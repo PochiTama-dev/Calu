@@ -301,6 +301,15 @@
   color: white;
   background-color: rgba(4, 25, 88, 0.6);
 }
+.recomendation .arrowL {
+  margin-top: -50px;
+  width: 30px;
+}
+
+.recomendation .arrowR {
+  margin-top: -50px;
+  width: 30px;
+}
 
 @media (min-width: 768px) {
   .recomendation {

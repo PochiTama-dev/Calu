@@ -22,6 +22,7 @@ const LinksModal = ({ closeModal }) => {
         <Link   onClick={scroll_top} to="/Contact">CONTACTO</Link>
       
       </div>
+      
     </div>
   );
 };

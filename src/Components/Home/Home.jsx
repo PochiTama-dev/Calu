@@ -42,7 +42,7 @@ const Home = () => {
 
   const renderContent = () => (
     <Suspense fallback={<div>Cargando...</div>}>
-      <section style={sectionStyles} ref={firstSection}>
+      <section style={sectionStyles} >
         <Onboarding />
       </section>
       <section style={sectionStyles} >
@@ -67,7 +67,7 @@ const Home = () => {
   );
 
   return (
-    <div className='container'>
+    <div className='container'  ref={firstSection}>
       <Header cartItem={cart} handleDelete={removeFromCart} />
 
       <button className="arrow_up12" onClick={scrollToTop}>

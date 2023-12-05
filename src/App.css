@@ -116,13 +116,13 @@ iframe[src^="https://www.google.com/recaptcha/"]
 /* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
 
 ::-webkit-scrollbar {
-  -webkit-appearance: none;
-  background:  transparent;
+   
+ 
 }
 
 ::-webkit-scrollbar:vertical {
-
- 
+ background-color:transparent;
+ background:  transparent;
 }
 
 ::-webkit-scrollbar-button:increment,
@@ -132,6 +132,7 @@ iframe[src^="https://www.google.com/recaptcha/"]
 
 ::-webkit-scrollbar:horizontal {
   height: 10px;
+  
   
 }
 
