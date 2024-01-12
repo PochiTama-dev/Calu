@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Terms from './Terms';
 
 const ModalBuy = ({
@@ -11,9 +11,13 @@ const ModalBuy = ({
   check,
   handleCheck,
 }) => {
+  const navigate = useNavigate();
   const [modal, setModal] = useState(false);
   const handleModal = () => {
     setModal(!modal);
+  };
+  const handleNavigate = () => {
+    navigate('/payment');
   };
   return (
     <div className='ctn_modal'>
@@ -22,7 +26,7 @@ const ModalBuy = ({
           <h3>Ingrese su correo electrónico:</h3>
           <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
           <div className='email_btn_ctn'>
-            <button className='email_btn' type='submit'>
+            <button className='email_btn' type='submit' onClick={handleNavigate}>
               Continuar
             </button>
             <button className='email_btn' onClick={() => setIsModalOpen(false)}>

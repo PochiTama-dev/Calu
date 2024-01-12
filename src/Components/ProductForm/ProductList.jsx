@@ -18,7 +18,6 @@ function ProductList() {
   const [additionalProductsToShow, setAdditionalProductsToShow] = useState(3);
   const navigate = useNavigate();
   const { cart, addToCart, removeFromCart } = useCustomContext();
-
   const productsCollectionRef = collection(db, 'e-commerce');
   const firstSection = useRef(null);
 
@@ -81,11 +80,8 @@ function ProductList() {
     addToCart(productToAdd);
   };
 
-
   return (
     <div>
-
-
       <Header cartItem={cart} handleDelete={removeFromCart} ref={firstSection} />
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
@@ -95,7 +91,7 @@ function ProductList() {
       <div className='main-container'>
         <h1 className='products_title'>Nuestro productos</h1>
         <div className='products'>
-        {products.slice(0, initialProductsToShow).map((product) => (
+          {products.slice(0, initialProductsToShow).map((product) => (
             <div className='main-product' key={product.id}>
               <div
                 className={`product-inner ${flippedProductId === product.id ? 'flipped' : ''}`}

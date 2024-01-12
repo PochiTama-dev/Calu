@@ -13,11 +13,13 @@ export function Provider({ children }) {
 
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
+    localStorage.setItem('carrito', JSON.stringify([...cart, product]));
   };
 
   const removeFromCart = (position) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.filter((_, index) => index !== position);
+      localStorage.setItem('carrito', JSON.stringify(updatedCart));
       return updatedCart;
     });
   };
@@ -29,6 +31,17 @@ export function Provider({ children }) {
   const logoutGoogle = () => {
     setIsAuth(false);
   };
+
+  const handleDownload = (products) => {
+    if (products.compressed !== 0 && products.compressed !== null) {
+      const a = document.createElement('a');
+      a.href = products.compressed;
+      a.download = `productoCalu.rar`;
+      a.target = '_blank'; // Agregar esta línea para abrir en nueva pestaña
+      a.click();
+    }
+  };
+
   return (
     <Context.Provider
       value={{
@@ -40,6 +53,7 @@ export function Provider({ children }) {
         isAuth,
         handleBlur,
         blur,
+        handleDownload,
       }}
     >
       {children}
