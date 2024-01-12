@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-
 import './Cart.css';
 
 function Cart({ close, cart, handleDelete, buy }) {
   const [total, setTotal] = useState(0);
-
+  const [carrito, setCarrito] = useState([]);
+  const getCarrito = JSON.parse(localStorage.getItem('carrito'));
   useEffect(() => {
-    const calculateTotal = () => {
+    const calculateTotal = async () => {
+      setCarrito(getCarrito);
       let newTotal = 0;
-      if (cart && cart.length > 0) {
-        newTotal = cart.reduce((accumulator, product) => {
+      if (getCarrito !== null && getCarrito.length > 0) {
+        newTotal = getCarrito.reduce((accumulator, product) => {
           const productPrice = parseFloat(product.price);
           return isNaN(productPrice) ? accumulator : accumulator + productPrice;
         }, 0);
@@ -28,8 +29,9 @@ function Cart({ close, cart, handleDelete, buy }) {
           </p>
           <h2>Carrito de compras</h2>
           <div className='cartItems'>
-            {cart &&
-              cart.map((product, index) => (
+            {carrito !== null &&
+              carrito.length > 0 &&
+              carrito.map((product, index) => (
                 <div className='cartItem' key={index}>
                   <img src={product.thumbnail} alt={product.title} />
                   <p>
@@ -53,7 +55,7 @@ function Cart({ close, cart, handleDelete, buy }) {
           </div>
         </div>
 
-        <div class='modal-background' onClick={close}></div>
+        <div className='modal-background' onClick={close}></div>
       </div>
     </div>
   );

@@ -1,21 +1,17 @@
-import React, { useEffect, useState, useRef } from "react";
-import { addDoc, collection, doc, getDoc, getDocs } from "firebase/firestore";
-import { db } from "../../firebase-config";
-import { useNavigate, useParams } from "react-router-dom";
-import { Header } from "../Header/header";
-import "./product-detail.css";
-import cart_img from "../Resources/Card_resources/cart.svg";
-import elipse from "../Resources/Card_resources/elipse.svg";
-import { useCustomContext } from "../../Hooks/Context/Context";
-import { Link } from "react-router-dom";
-import Contact_button from "../Home/Contact_button/Contact_button";
-import arrow_L from "../Home/icon_arrow_left.svg";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState, useRef } from 'react';
+import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase-config';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Header } from '../Header/header';
+import './product-detail.css';
+import cart_img from '../Resources/Card_resources/cart.svg';
+import elipse from '../Resources/Card_resources/elipse.svg';
+import { useCustomContext } from '../../Hooks/Context/Context';
+import { Link } from 'react-router-dom';
+import Contact_button from '../Home/Contact_button/Contact_button';
+import arrow_L from '../Home/icon_arrow_left.svg';
+import { useLocation } from 'react-router-dom';
 import Slider from '../Portfolio/Slider/Slider';
-
-
-
-
 
 function ProductDetail() {
   const location = useLocation();
@@ -77,7 +73,9 @@ function ProductDetail() {
         id: doc.id,
         ...doc.data(),
       }));
-      const similars = products.filter((category) => category.category === fetched.category && category.id !== fetched.id);
+      const similars = products.filter(
+        (category) => category.category === fetched.category && category.id !== fetched.id
+      );
       setSimilarProducts(similars);
     }
   };
@@ -104,6 +102,7 @@ function ProductDetail() {
   const handleBuy = () => {
     // Lógica para comprar el e-book
     console.log('Comprando el e-book:', product.title);
+    navigate('/payment');
   };
 
   const handleDescriptionToggle = () => {
@@ -122,7 +121,7 @@ function ProductDetail() {
     setModal(true);
     alert('Producto Agregado');
     handleBlur();
-    //handleDownload();
+    handleDownload();
   };
 
   const saveEmailToFirebase = async (email) => {
@@ -144,7 +143,9 @@ function ProductDetail() {
       await saveEmailToFirebase(email); // Guardar el correo electrónico en Firebase
       navigate('/payment');
     } else {
-      alert('Formato de correo electrónico no válido. Por favor, ingresa un correo electrónico válido.');
+      alert(
+        'Formato de correo electrónico no válido. Por favor, ingresa un correo electrónico válido.'
+      );
     }
   };
 
@@ -163,12 +164,11 @@ function ProductDetail() {
       <br />
 
       <div className={`main-detail-container `} ref={firstSection}>
-
         <h1>DETALLE DEL PRODUCTO</h1>
-        <div className="main-detail">
-          <div className="img-container">
-            <div className="title-mobile">
-              <h3 className="title-mobile>">{product.title}</h3>
+        <div className='main-detail'>
+          <div className='img-container'>
+            <div className='title-mobile'>
+              <h3 className='title-mobile>'>{product.title}</h3>
             </div>
             <img src={product.thumbnail} alt={product.title} />
           </div>
@@ -223,121 +223,78 @@ function ProductDetail() {
           </div>
 
           <div className='recomendation'>
-
-
-          {width <= breakpoint || similarProducts.length > 3 ? (
-            <>
-              <h3>Más de esta serie</h3>
-              <Slider>
-                {similarProducts.map((similarProduct, index) => (
-                <div className="book" key={index}>
-                <Link
-                  className="link_"
-                  to={`/product/${similarProduct.id}`}
-                  onClick={scrollToTop}
-                >
-                  <div>
-                    <img
-                      src={similarProduct.thumbnail}
-                      alt=""
-                      width="150px"
-                      height="150px"
-                    />
-                  </div>
-                  <div className="title-autor">
-                    <h4>{similarProduct.title}</h4>
-                    <h6>Autor</h6>
-                  </div>
-                </Link>
-                <div className="type-price">
-                  <p>Tipo de libro</p>
-                  <p>${similarProduct.price}</p>
+            {width <= breakpoint || similarProducts.length > 3 ? (
+              <>
+                <h3>Más de esta serie</h3>
+                <Slider>
+                  {similarProducts.map((similarProduct, index) => (
+                    <div className='book' key={index}>
+                      <Link
+                        className='link_'
+                        to={`/product/${similarProduct.id}`}
+                        onClick={scrollToTop}
+                      >
+                        <div>
+                          <img src={similarProduct.thumbnail} alt='' width='150px' height='150px' />
+                        </div>
+                        <div className='title-autor'>
+                          <h4>{similarProduct.title}</h4>
+                          <h6>Autor</h6>
+                        </div>
+                      </Link>
+                      <div className='type-price'>
+                        <p>Tipo de libro</p>
+                        <p>${similarProduct.price}</p>
+                      </div>
+                      <div
+                        className='product_cart'
+                        onClick={() => handleAddToCart(similarProduct.id)}
+                      >
+                        <img src={elipse} alt=' ' className='elipse_product' />
+                        <img src={cart_img} alt=' ' className='cart_product' />
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </>
+            ) : width > breakpoint && similarProducts.length >= 1 ? (
+              <>
+                <h3>Más de esta serie</h3>
+                <div className='book-recomendation'>
+                  {similarProducts.map((similarProduct, index) => (
+                    <div className='book' key={index}>
+                      <Link
+                        className='link_'
+                        to={`/product/${similarProduct.id}`}
+                        onClick={scrollToTop}
+                      >
+                        <div>
+                          <img src={similarProduct.thumbnail} alt='' width='150px' height='150px' />
+                        </div>
+                        <div className='title-autor'>
+                          <h4>{similarProduct.title}</h4>
+                          <h6>Autor</h6>
+                        </div>
+                      </Link>
+                      <div className='type-price'>
+                        <p>Tipo de libro</p>
+                        <p>${similarProduct.price}</p>
+                      </div>
+                      <div
+                        className='product_cart'
+                        onClick={() => handleAddToCart(similarProduct.id)}
+                      >
+                        <img src={elipse} alt=' ' className='elipse_product' />
+                        <img src={cart_img} alt=' ' className='cart_product' />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div
-                  className="product_cart"
-                  onClick={() => handleAddToCart(similarProduct.id)}
-                >
-                  <img
-                    src={elipse}
-                    alt=" "
-                    className="elipse_product"
-                  />
-                  <img
-                    src={cart_img}
-                    alt=" "
-                    className="cart_product"
-                  />
-                </div>
-              </div>
-     
-         
-                ))}
-              </Slider>
-            </>
-          ) : width > breakpoint && similarProducts.length >= 1 ? (
-            <>
-              <h3>Más de esta serie</h3>
-              <div className="book-recomendation">
-                {similarProducts.map((similarProduct, index) => (
-             <div className="book" key={index}>
-             <Link
-               className="link_"
-               to={`/product/${similarProduct.id}`}
-               onClick={scrollToTop}
-             >
-               <div>
-                 <img
-                   src={similarProduct.thumbnail}
-                   alt=""
-                   width="150px"
-                   height="150px"
-                 />
-               </div>
-               <div className="title-autor">
-                 <h4>{similarProduct.title}</h4>
-                 <h6>Autor</h6>
-               </div>
-             </Link>
-             <div className="type-price">
-               <p>Tipo de libro</p>
-               <p>${similarProduct.price}</p>
-             </div>
-             <div
-               className="product_cart"
-               onClick={() => handleAddToCart(similarProduct.id)}
-             >
-               <img
-                 src={elipse}
-                 alt=" "
-                 className="elipse_product"
-               />
-               <img
-                 src={cart_img}
-                 alt=" "
-                 className="cart_product"
-               />
-             </div>
-           </div>
-         ))}
-       </div>
-        
-            </>
-          ) : (
-            <h3>Por el momento no hay productos similares</h3>
-          )}
-        </div>
-
-
-
-
-
-
-
-
-
-
-            
-          
+              </>
+            ) : (
+              <h3>Por el momento no hay productos similares</h3>
+            )}
+          </div>
         </div>
       </div>
     </div>
