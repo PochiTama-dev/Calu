@@ -80,12 +80,10 @@ function PaymentGateway() {
             {/* PayPal */}
             <div className='payment-option' onClick={() => handlePayment('paypal')}>
               <img src={Paypal} alt='PayPal' />
-              {modalPaypal && (
-                <PayPalButton
-                  createOrder={(data, actions) => createOrder(data, actions)}
-                  onApprove={(data, actions) => onApprove(data, actions)}
-                />
-              )}
+              <PayPalButton
+                createOrder={(data, actions) => createOrder(data, actions)}
+                onApprove={(data, actions) => onApprove(data, actions)}
+              />
             </div>
           </div>
         </div>
@@ -102,12 +100,10 @@ function PaymentGateway() {
           {/* PayPal */}
           <div className='payment-option' onClick={() => handlePayment('paypal')}>
             <img src={Paypal} alt='PayPal' />
-            {modalPaypal && (
-              <PayPalButton
-                createOrder={(data, actions) => createOrder(data, actions)}
-                onApprove={(data, actions) => onApprove(data, actions)}
-              />
-            )}
+            <PayPalButton
+              createOrder={(data, actions) => createOrder(data, actions)}
+              onApprove={(data, actions) => onApprove(data, actions)}
+            />
           </div>
         </div>
       </div>
