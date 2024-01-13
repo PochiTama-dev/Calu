@@ -121,7 +121,7 @@ function ProductDetail() {
     setModal(true);
     alert('Producto Agregado');
     handleBlur();
-    handleDownload();
+    //handleDownload();
   };
 
   const saveEmailToFirebase = async (email) => {
