@@ -7,6 +7,12 @@ import { useCustomContext } from '../../Hooks/Context/Context';
 
 function PaymentGateway() {
   const PayPalButton = window.paypal.Buttons.driver('react', { React, ReactDOM });
+  window.paypal.Buttons({
+    style: {
+      layout: 'horizontal',
+      color: 'blue',
+    },
+  });
   const { removeFromCart, handleDownload } = useCustomContext();
   const [modalPaypal, setModalPaypal] = useState(false);
   const [contadorCarrito, setContadorCarrito] = useState(false);
@@ -80,6 +86,8 @@ function PaymentGateway() {
             {/* PayPal */}
             <div className='payment-option' onClick={() => handlePayment('paypal')}>
               <img src={Paypal} alt='PayPal' />
+            </div>
+            <div className='paypalButton'>
               <PayPalButton
                 createOrder={(data, actions) => createOrder(data, actions)}
                 onApprove={(data, actions) => onApprove(data, actions)}
@@ -90,6 +98,7 @@ function PaymentGateway() {
       </div>
     );
   }
+
   return (
     <div className='paymentCtn'>
       <Header cartItem={localStorage.getItem('carrito')} handleDelete={removeFromCart} />
@@ -100,6 +109,8 @@ function PaymentGateway() {
           {/* PayPal */}
           <div className='payment-option' onClick={() => handlePayment('paypal')}>
             <img src={Paypal} alt='PayPal' />
+          </div>
+          <div className='paypalButton'>
             <PayPalButton
               createOrder={(data, actions) => createOrder(data, actions)}
               onApprove={(data, actions) => onApprove(data, actions)}
