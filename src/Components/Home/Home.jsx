@@ -42,36 +42,36 @@ const Home = () => {
 
   const renderContent = () => (
     <Suspense fallback={<div>Cargando...</div>}>
-      <section style={sectionStyles} >
+      <section style={sectionStyles}>
         <Onboarding />
       </section>
-      <section style={sectionStyles} >
+      <section style={sectionStyles}>
         <About />
       </section>
-      <section style={sectionStyles} >
+      <section style={sectionStyles}>
         <OurServices />
       </section>
-      <section style={sectionStyles} >
+      <section style={sectionStyles}>
         <Portfolio />
       </section>
-      <section style={sectionStyles} >
+      <section style={sectionStyles}>
         <News />
       </section>
-      <section style={sectionStyles} >
+      <section style={sectionStyles}>
         <Resources />
       </section>
-      <section style={sectionStyles} >
+      <section style={sectionStyles}>
         <CTN />
       </section>
     </Suspense>
   );
 
   return (
-    <div className='container'  ref={firstSection}>
+    <div className='container' ref={firstSection}>
       <Header cartItem={cart} handleDelete={removeFromCart} />
 
-      <button className="arrow_up12" onClick={scrollToTop}>
-        <img className="arrow_up" src={arrow_L} alt="Arrow Up" />
+      <button className='arrow_up12' onClick={scrollToTop}>
+        <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
       </button>
 
       <Contact_button />
