@@ -4,7 +4,7 @@ import miImagen from '../../images/logocalu.webp';
 import { Link, useLocation } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
-import cart from '../../images/carrito.png';
+import cart from '../../images/carrito.webp';
 import Cart from '../Cart/Cart';
 import ModalBuy from '../Cart/ModalBuy';
 import { useNavigate } from 'react-router-dom';

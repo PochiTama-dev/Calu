@@ -1,5 +1,5 @@
 import React from 'react';
-import videoBackground from '../../images/backgroundClouds.mp4';
+import videoBackground from '../../images/LOWbackgroundClouds.mp4';
 
 const VideoBackgroundComponent = () => {
   return (
