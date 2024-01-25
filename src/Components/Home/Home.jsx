@@ -1,11 +1,10 @@
-import { useState, useRef, lazy, Suspense } from 'react';
+import { useState, useRef, lazy, Suspense, useEffect, useCallback } from 'react';
 import 'animate.css/animate.min.css';
 import './home.css';
 import { Header } from '../Header/header';
 import Footer from '../Footer/Footer';
 import Contact_button from './Contact_button/Contact_button';
-import React from 'react';
-import arrow_L from './icon_arrow_left.svg';
+import arrow_L from './icon_arrow_left.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
 
 // Lazy loading de componentes
@@ -24,16 +23,13 @@ const Home = () => {
     transition: 'transform 0.5s ease-in-out',
   };
 
-  const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 1024;
-  React.useEffect(() => {
-    const handleResizeWindow = () => setWidth(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
 
+  const handleResizeWindow = useCallback(() => setWidth(window.innerWidth), []);
+  useEffect(() => {
     window.addEventListener('resize', handleResizeWindow);
-    return () => {
-      window.removeEventListener('resize', handleResizeWindow);
-    };
-  }, []);
+    return () => window.removeEventListener('resize', handleResizeWindow);
+  }, [handleResizeWindow]);
 
   const firstSection = useRef(null);
   const scrollToTop = () => {
@@ -69,15 +65,11 @@ const Home = () => {
   return (
     <div className='container' ref={firstSection}>
       <Header cartItem={cart} handleDelete={removeFromCart} />
-
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
       </button>
-
       <Contact_button />
-
       {renderContent()}
-
       <Footer />
     </div>
   );

@@ -6,13 +6,12 @@ import './resources.css';
 import { useState, useEffect } from 'react';
 import Slider from '../Portfolio/Slider/Slider';
 import { Link, useNavigate } from 'react-router-dom';
-import elipse from './Card_resources/elipse.svg';
-import cart_ from './Card_resources/cart.svg';
+import elipse from './Card_resources/elipse.webp';
+import cart_ from './Card_resources/carrito.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
-import arrow_L from '../Home/icon_arrow_left.svg';
 
 const Resources = () => {
-  const { cart, addToCart } = useCustomContext();
+  const { addToCart } = useCustomContext();
   const [cards, setCard] = useState([]);
 
   const getCard = async () => {
@@ -108,10 +107,7 @@ const Resources = () => {
               });
             }}
           >
-            <div className='verMas'>
-              Ver Más
-           
-            </div>
+            <div className='verMas'>Ver Más</div>
           </Link>
         </div>
       </div>
@@ -150,8 +146,8 @@ const Resources = () => {
             ))}
         </Slider>
         <Link
-          className="btn_res_more"
-          to={"/product-list/"}
+          className='btn_res_more'
+          to={'/product-list/'}
           onClick={() => {
             window.scroll({
               top: 0,

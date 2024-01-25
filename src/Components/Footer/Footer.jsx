@@ -7,9 +7,7 @@ import ld_logo from './icons/Linkedin.webp';
 import tk_logo from './icons/TikTok.webp';
 import sp_logo from './icons/Spotify.webp';
 import yt_logo from './icons/youtube.webp';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase-config';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Terms from './Terms';
 const Footer = () => {
@@ -26,9 +24,7 @@ const Footer = () => {
     };
   }, []);
 
-  const [servicios, setServicios] = useState([]);
   const [showFooter, setShowFooter] = useState(false);
-  const serviciosRef = collection(db, 'servicios');
   useEffect(() => {
     // Temporizador para retrasar la renderización del footer
     const timer = setTimeout(() => {
