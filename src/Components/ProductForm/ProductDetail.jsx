@@ -1,29 +1,24 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase-config';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Header } from '../Header/header';
 import './product-detail.css';
-import cart_img from '../Resources/Card_resources/cart.svg';
-import elipse from '../Resources/Card_resources/elipse.svg';
+import cart_img from '../Resources/Card_resources/carrito.webp';
+import elipse from '../Resources/Card_resources/elipse.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import { Link } from 'react-router-dom';
 import Contact_button from '../Home/Contact_button/Contact_button';
-import arrow_L from '../Home/icon_arrow_left.svg';
-import { useLocation } from 'react-router-dom';
+import arrow_L from '../Home/icon_arrow_left.webp';
 import Slider from '../Portfolio/Slider/Slider';
 
 function ProductDetail() {
-  const location = useLocation();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isDescriptionExpanded, setDescriptionExpanded] = useState(false);
 
   const [modal, setModal] = useState(false);
-  const [email, setEmail] = useState('');
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  const navigate = useNavigate();
 
   const { cart, addToCart, removeFromCart, handleBlur } = useCustomContext();
   const [similarProducts, setSimilarProducts] = useState([]);
@@ -88,23 +83,6 @@ function ProductDetail() {
     return <p>No se encontró el producto.</p>;
   }
 
-  const handleDownload = () => {
-    // Lógica para descargar el archivo .rar
-    if (product.compressed !== 0 && product.compressed !== null) {
-      const a = document.createElement('a');
-      a.href = product.compressed;
-      a.download = `${product.title}.rar`;
-      a.target = '_blank'; // Agregar esta línea para abrir en nueva pestaña
-      a.click();
-    }
-  };
-
-  const handleBuy = () => {
-    // Lógica para comprar el e-book
-    console.log('Comprando el e-book:', product.title);
-    navigate('/payment');
-  };
-
   const handleDescriptionToggle = () => {
     setDescriptionExpanded(!isDescriptionExpanded);
   };
@@ -134,18 +112,6 @@ function ProductDetail() {
       console.log('Correo electrónico guardado en Firebase exitosamente');
     } catch (error) {
       console.error('Error al guardar el correo electrónico en Firebase:', error);
-    }
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (email.match(emailRegex)) {
-      await saveEmailToFirebase(email); // Guardar el correo electrónico en Firebase
-      navigate('/payment');
-    } else {
-      alert(
-        'Formato de correo electrónico no válido. Por favor, ingresa un correo electrónico válido.'
-      );
     }
   };
 

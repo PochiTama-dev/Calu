@@ -13,12 +13,6 @@ const Portfolio = () => {
   const [portfolioinfo, setPortfolioinfo] = useState([]);
   const [card, setCard] = useState([]);
 
-  const [cardTitle, setCardTitle] = useState('');
-  const [title, setTitle] = useState('');
-  const [t1, setT1] = useState('');
-  const [image, setImage] = useState('');
-  const [link, setLink] = useState('');
-
   ////////////////////////////////////
   useEffect(() => {
     const getPortfolio = async () => {

@@ -54,9 +54,6 @@ function PaymentGateway() {
   const onApprove = (data, actions) => {
     return actions.order.capture(handlePay());
   };
-  const handlehandle = () => {
-    console.log(carrito);
-  };
   const handlePay = () => {
     handleDownload(carrito);
     localStorage.clear('carrito');
