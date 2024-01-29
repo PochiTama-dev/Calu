@@ -193,8 +193,6 @@ export const Header = ({ handleDelete }) => {
         )}
 
         {showLinksModal && <LinksModal closeModal={() => setShowLinksModal(false)} />}
-
-        {/* Resto del contenido de tu aplicación */}
       </div>
     </div>
   );

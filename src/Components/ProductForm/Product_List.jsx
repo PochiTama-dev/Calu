@@ -14,28 +14,26 @@ const Product_List = () => {
       window.removeEventListener('resize', handleResizeWindow);
     };
   }, []);
-  if (width > breakpoint) {
-    return (
-      <Suspense>
-        <div className='pl_ctn'>
-          <ProductList />
+  return (
+    <Suspense>
+      <div className='pl_ctn'>
+        <ProductList />
+        {width > breakpoint ? (
           <section>
             <CTN />
             <Footer />
           </section>
-        </div>
-      </Suspense>
-    );
-  }
-  return (
-    <div className='pl_ctn'>
-      <ProductList />
-      <section>
-        <CTN />
-      </section>
+        ) : (
+          <>
+            <section>
+              <CTN />
+            </section>
 
-      <Footer />
-    </div>
+            <Footer />
+          </>
+        )}
+      </div>
+    </Suspense>
   );
 };
 

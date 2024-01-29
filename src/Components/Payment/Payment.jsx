@@ -80,7 +80,7 @@ function PaymentGateway() {
           <div className='payment-content'>
             <h1 className='title-payment'>Pasarela de Pagos</h1>
             {/* <button onClick={handlehandle}>descargar</button> */}
-            <div className='payment-options'>
+            <div className={width > breakpoint ? 'payment-options' : 'paymentSlider'}>
               {/* PayPal */}
               <div className='payment-option' onClick={() => handlePayment('paypal')}>
                 <img src={Paypal} alt='PayPal' />
@@ -97,28 +97,6 @@ function PaymentGateway() {
       </Suspense>
     );
   }
-
-  return (
-    <div className='paymentCtn'>
-      <Header cartItem={localStorage.getItem('carrito')} handleDelete={removeFromCart} />
-      <div className='payment-content'>
-        <h1 className='title-payment'>Pasarela de Pagos</h1>
-        {/* <button onClick={handlehandle}>descargar</button> */}
-        <div className='paymentSlider'>
-          {/* PayPal */}
-          <div className='payment-option' onClick={() => handlePayment('paypal')}>
-            <img src={Paypal} alt='PayPal' />
-          </div>
-          <div className='paypalButton'>
-            <PayPalButton
-              createOrder={(data, actions) => createOrder(data, actions)}
-              onApprove={(data, actions) => onApprove(data, actions)}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 export default PaymentGateway;
