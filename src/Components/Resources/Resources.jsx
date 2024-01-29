@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import CardRes from './Card_resources/Card_res';
 import { getDocs, collection, query, getDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
@@ -68,11 +68,61 @@ const Resources = () => {
 
   if (width > breakpoint) {
     return (
+      <Suspense>
+        <div className='res_ctn'>
+          <div className='res_items'>
+            <h1 className='res_title_adm'>RECURSOS PARA TU NEGOCIO</h1>
+
+            <div className='res_card'>
+              {cards &&
+                cards.map((product, index) => (
+                  <div>
+                    <div
+                      onClick={() => {
+                        navigate(`/product/${product.id}`);
+                        window.scroll({
+                          top: 0,
+                        });
+                      }}
+                    >
+                      <CardRes
+                        key={index}
+                        description={product.data().thumbnail} // Pass the thumbnail URL as the description
+                        title={product.data().title}
+                        price={<p className='price'>${product.data().price}</p>}
+                      ></CardRes>
+                    </div>
+                    <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
+                      <img src={elipse} alt=' ' className='elipse' />
+                      <img src={cart_} alt=' ' className='cart' />
+                    </div>
+                  </div>
+                ))}
+            </div>
+            <Link
+              className='btn_res_more'
+              to={'/product-list/'}
+              onClick={() => {
+                window.scroll({
+                  top: 0,
+                });
+              }}
+            >
+              <div className='verMas'>Ver Más</div>
+            </Link>
+          </div>
+        </div>
+      </Suspense>
+    );
+  }
+
+  return (
+    <Suspense>
       <div className='res_ctn'>
         <div className='res_items'>
           <h1 className='res_title_adm'>RECURSOS PARA TU NEGOCIO</h1>
 
-          <div className='res_card'>
+          <Slider>
             {cards &&
               cards.map((product, index) => (
                 <div>
@@ -97,7 +147,7 @@ const Resources = () => {
                   </div>
                 </div>
               ))}
-          </div>
+          </Slider>
           <Link
             className='btn_res_more'
             to={'/product-list/'}
@@ -107,57 +157,11 @@ const Resources = () => {
               });
             }}
           >
-            <div className='verMas'>Ver Más</div>
+            Ver Más
           </Link>
         </div>
       </div>
-    );
-  }
-
-  return (
-    <div className='res_ctn'>
-      <div className='res_items'>
-        <h1 className='res_title_adm'>RECURSOS PARA TU NEGOCIO</h1>
-
-        <Slider>
-          {cards &&
-            cards.map((product, index) => (
-              <div>
-                <div
-                  onClick={() => {
-                    navigate(`/product/${product.id}`);
-                    window.scroll({
-                      top: 0,
-                    });
-                  }}
-                >
-                  <CardRes
-                    key={index}
-                    description={product.data().thumbnail} // Pass the thumbnail URL as the description
-                    title={product.data().title}
-                    price={<p className='price'>${product.data().price}</p>}
-                  ></CardRes>
-                </div>
-                <div className='res_cart' onClick={() => handleAddToCart(product.id)}>
-                  <img src={elipse} alt=' ' className='elipse' />
-                  <img src={cart_} alt=' ' className='cart' />
-                </div>
-              </div>
-            ))}
-        </Slider>
-        <Link
-          className='btn_res_more'
-          to={'/product-list/'}
-          onClick={() => {
-            window.scroll({
-              top: 0,
-            });
-          }}
-        >
-          Ver Más
-        </Link>
-      </div>
-    </div>
+    </Suspense>
   );
 };
 

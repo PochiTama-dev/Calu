@@ -1,5 +1,5 @@
 import './product-list.css';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { collection, getDocs, deleteDoc, doc, getDoc } from 'firebase/firestore';
 import { db, storage, auth } from '../../firebase-config';
 import { Link, useNavigate } from 'react-router-dom';
@@ -88,7 +88,7 @@ function ProductList() {
   };
 
   return (
-    <div>
+    <Suspense>
       <Header cartItem={cart} handleDelete={removeFromCart} ref={firstSection} />
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
@@ -197,7 +197,7 @@ function ProductList() {
           </button>
         )}
       </div>
-    </div>
+    </Suspense>
   );
 }
 
