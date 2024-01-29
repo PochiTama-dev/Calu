@@ -4,7 +4,7 @@ import { db } from '../../firebase-config';
 
 import React, { Suspense } from 'react';
 import Card from './Card/Card';
-import Slider from './Slider/Slider';
+import Slider from '../Slider/Slider';
 import './portfolio.css';
 
 import { useEffect, useState } from 'react';

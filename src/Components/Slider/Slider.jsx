@@ -1,6 +1,6 @@
 import React from 'react';
 import './slider.css';
-import arrow_L from '../../Home/icon_arrow_left.webp';
+import arrow_L from '../Home/icon_arrow_left.webp';
 import arrow_R from './icon_arrow_right.webp';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';

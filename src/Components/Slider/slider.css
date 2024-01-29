@@ -10,7 +10,6 @@
 }
 .arrowL {
   position: absolute;
-
   left: 0;
   top: 100px;
   width: 50px;
@@ -19,10 +18,15 @@
   position: absolute;
   right: 0;
   top: 100px;
+  width: 50px;
 }
 
 .carouselItem {
   justify-content: center;
+}
+
+.carousel-container .react-multi-carousel-track .react-multi-carousel-item {
+  display: flex;
 }
 
 @media (max-width: 1024px) {
