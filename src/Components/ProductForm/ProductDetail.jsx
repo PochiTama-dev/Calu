@@ -10,7 +10,7 @@ import { useCustomContext } from '../../Hooks/Context/Context';
 import { Link } from 'react-router-dom';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import arrow_L from '../Home/icon_arrow_left.webp';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 
 function ProductDetail() {
   const { id } = useParams();

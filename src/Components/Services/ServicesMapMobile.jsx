@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import CardSrvFlip from './Card_srv/Card_srv_flip';

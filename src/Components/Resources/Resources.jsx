@@ -1,6 +1,6 @@
 import React from 'react';
 import './resources.css';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 import { Link } from 'react-router-dom';
 import CardsMap from './CardsMap';
 

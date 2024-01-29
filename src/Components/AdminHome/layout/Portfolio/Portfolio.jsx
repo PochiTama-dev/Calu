@@ -13,7 +13,7 @@ import { db, storage } from '../../../../firebase-config';
 
 import React from 'react';
 import Card from './Card/Card';
-import Slider from './Slider/Slider';
+import Slider from '../../../Slider/Slider';
 import './portfolio.css';
 import { Card_delete } from './Card_Modal/Card_modal';
 import { useEffect, useState } from 'react';

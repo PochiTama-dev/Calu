@@ -1,4 +1,4 @@
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 import './OurServices.css';
 import CardOur from './Card_OurService/Card_our';
 import { Suspense, useState } from 'react';

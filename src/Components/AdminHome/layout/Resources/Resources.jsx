@@ -6,7 +6,7 @@ import { getDocs, collection, query } from 'firebase/firestore';
 import { db } from '../../../../firebase-config';
 import './resources.css';
 import { useState, useEffect } from 'react';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../../../Slider/Slider';
 const Resources = () => {
   const [cards, setCard] = useState([]);
 

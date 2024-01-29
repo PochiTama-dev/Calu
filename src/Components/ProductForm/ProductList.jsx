@@ -8,7 +8,7 @@ import { Header } from '../Header/header';
 import { useCustomContext } from '../../Hooks/Context/Context';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import arrow_L from '../Home/icon_arrow_left.webp';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 import CardSrvFlip from '../Services/Card_srv/Card_srv_flip';
 
 function ProductList() {

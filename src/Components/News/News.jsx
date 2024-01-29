@@ -1,6 +1,6 @@
 import React from 'react';
 import './news.css';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 import { useState } from 'react';
 import { getDoc, doc } from 'firebase/firestore';
 import { useEffect } from 'react';

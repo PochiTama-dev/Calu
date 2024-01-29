@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../News/news.css';
 import Card_news from '../../../News/Card_news/Card_news';
-import Slider from './Slider/Slider';
+import Slider from '../../../Slider/Slider';
 import { useState } from 'react';
 import { doc, getDoc, getDocs, query, collection, updateDoc } from 'firebase/firestore';
 import { useEffect } from 'react';
