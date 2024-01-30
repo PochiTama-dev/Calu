@@ -1,31 +1,32 @@
 .carousel {
-  display: flex;
   justify-content: center;
 }
 .carousel-container {
   width: 75%;
 }
+.carousel {
+  display: flex;
+  justify-content: center;
+}
 .arrowL {
   position: absolute;
-
-  left: -1px;
-
-
-  width: 40px;
+  left: 0;
+  top: 100px;
+  width: 50px;
 }
 .arrowR {
   position: absolute;
-  right: -1px;
-
-
-
-
-  width: 40px;
+  right: 0;
+  top: 100px;
+  width: 50px;
 }
 
 .carouselItem {
-  display: flex;
   justify-content: center;
+}
+
+.carousel-container .react-multi-carousel-track .react-multi-carousel-item {
+  display: flex;
 }
 
 @media (max-width: 1024px) {
@@ -39,8 +40,5 @@
   }
   .arrowR {
     width: 40px;
-  }
-  .carousel-container {
-    width: 80%;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { useParams } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { useCustomContext } from '../../Hooks/Context/Context';
 import { Link } from 'react-router-dom';
 import Contact_button from '../Home/Contact_button/Contact_button';
 import arrow_L from '../Home/icon_arrow_left.webp';
-import Slider from '../Portfolio/Slider/Slider';
+import Slider from '../Slider/Slider';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -116,7 +116,7 @@ function ProductDetail() {
   };
 
   return (
-    <div>
+    <Suspense>
       <Header cartItem={cart} handleDelete={removeFromCart} />
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
@@ -263,7 +263,7 @@ function ProductDetail() {
           </div>
         </div>
       </div>
-    </div>
+    </Suspense>
   );
 }
 

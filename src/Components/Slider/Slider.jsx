@@ -1,9 +1,9 @@
-import React from "react";
-import "./slider.css";
-import arrow_L from "../../Home/icon_arrow_left.webp";
-import arrow_R from "./icon_arrow_right.webp";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React from 'react';
+import './slider.css';
+import arrow_L from '../Home/icon_arrow_left.webp';
+import arrow_R from './icon_arrow_right.webp';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 function Slider({ children }) {
   const responsive = {
@@ -22,20 +22,19 @@ function Slider({ children }) {
   };
   const CustomLeftArrow = ({ onClick }) => (
     <div onClick={onClick}>
-      <img src={arrow_L} alt=" <= " className="arrowL" />
+      <img src={arrow_L} alt=' <= ' className='arrowL' />
     </div>
   );
 
   const CustomRightArrow = ({ onClick }) => (
     <div onClick={onClick}>
-      <img src={arrow_R} alt=" => " className="arrowR" />
+      <img src={arrow_R} alt=' => ' className='arrowR' />
     </div>
   );
-
   return (
-    <div className="carousel">
+    <div className='carousel'>
       <Carousel
-        containerClass="carousel-container"
+        containerClass='carousel-container'
         swipeable={true}
         draggable={false}
         /*   removeArrowOnDeviceType={["mobile"]}*/
@@ -44,13 +43,14 @@ function Slider({ children }) {
         showDots={true}
         customLeftArrow={<CustomLeftArrow />}
         customRightArrow={<CustomRightArrow />}
-        itemClass="carouselItem"
+        itemClass='carouselItem'
         autoPlay={true}
-        autoPlaySpeed={"4500"}
+        autoPlaySpeed={'4500'}
       >
-        {children.map((children, index) => {
-          return <div key={index}>{children}</div>;
-        })}
+        {children.length > 0 &&
+          children.map((children, index) => {
+            return <div key={index}>{children}</div>;
+          })}
       </Carousel>
     </div>
   );

@@ -3,7 +3,7 @@ import 'animate.css/animate.min.css';
 import './home.css';
 import { Header } from '../Header/header';
 import Footer from '../Footer/Footer';
-import Contact_button from './Contact_button/Contact_button';
+import ContactButton from './Contact_button/Contact_button';
 import arrow_L from './icon_arrow_left.webp';
 import { useCustomContext } from '../../Hooks/Context/Context';
 
@@ -68,7 +68,7 @@ const Home = () => {
       <button className='arrow_up12' onClick={scrollToTop}>
         <img className='arrow_up' src={arrow_L} alt='Arrow Up' />
       </button>
-      <Contact_button />
+      <ContactButton />
       {renderContent()}
       <Footer />
     </div>
